@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>738</width>
+    <height>737</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tube Definition</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_8">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QGroupBox" name="Fin_Parameters_group">
+       <property name="title">
+        <string>Tube parameters</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_19">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QLabel" name="Tube_OD_label">
+              <property name="text">
+               <string>Tube Outer Diameter</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLineEdit" name="Tube_OD"/>
+              </item>
+              <item>
+               <widget class="QComboBox" name="Tube_OD_unit">
+                <property name="currentIndex">
+                 <number>2</number>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>m</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>cm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>mm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>ft</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>in</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QLabel" name="Tube_type_label">
+              <property name="text">
+               <string>Tube Type</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QComboBox" name="Tube_type">
+                <item>
+                 <property name="text">
+                  <string>Smooth</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Microfin</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="Tube_ID_label">
+              <property name="text">
+               <string>Tube Inner Diameter</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QLineEdit" name="Tube_ID"/>
+              </item>
+              <item>
+               <widget class="QComboBox" name="Tube_ID_unit">
+                <property name="currentIndex">
+                 <number>2</number>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>m</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>cm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>mm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>ft</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>in</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QLabel" name="Tube_e_D_label">
+              <property name="text">
+               <string>Tube Surface Roughness (e/D)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QLineEdit" name="Tube_e_D"/>
+              </item>
+              <item>
+               <widget class="QComboBox" name="Tube_e_D_unit">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <widget class="QLabel" name="Tube_t_label">
+              <property name="text">
+               <string>Tube Total Thickness (t)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_12">
+              <item>
+               <widget class="QLineEdit" name="Tube_t">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="toolTip">
+                 <string>Ratio between internal tube roughness to the inner tube diameter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="Tube_t_unit">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="currentIndex">
+                 <number>2</number>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>m</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>cm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>mm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>ft</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>in</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_14">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <widget class="QLabel" name="Tube_e_label">
+                <property name="text">
+                 <string>Fin Height (e)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_13">
+                <item>
+                 <widget class="QLineEdit" name="Tube_e">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                   <string>Ratio between internal tube roughness to the inner tube diameter</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Tube_e_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="currentIndex">
+                   <number>2</number>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>m</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>cm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>mm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ft</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>in</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_15"/>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_13">
+            <item>
+             <widget class="QLabel" name="Tube_d_label">
+              <property name="text">
+               <string>Fin Base Thickness (d)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_14">
+              <item>
+               <widget class="QLineEdit" name="Tube_d">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="toolTip">
+                 <string>Ratio between internal tube roughness to the inner tube diameter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="Tube_d_unit">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="currentIndex">
+                 <number>2</number>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>m</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>cm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>mm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>ft</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>in</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_21">
+            <item>
+             <widget class="QLabel" name="Tube_gamma_label">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fin Apex Angle ‎(γ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_19">
+              <item>
+               <widget class="QLineEdit" name="Tube_gamma">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="toolTip">
+                 <string>Ratio between internal tube roughness to the inner tube diameter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="Tube_gamma_unit">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>degree</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>radian</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>minute</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>second</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_22">
+            <item>
+             <widget class="QLabel" name="Tube_beta_label">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fin Spiral Angle (β)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_20">
+              <item>
+               <widget class="QLineEdit" name="Tube_beta">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="toolTip">
+                 <string>Ratio between internal tube roughness to the inner tube diameter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="Tube_beta_unit">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>degree</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>radian</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>minute</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>second</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QLabel" name="Tube_n_label">
+              <property name="text">
+               <string>Number of fins or grooves (n)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QSpinBox" name="Tube_n">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+                <property name="value">
+                 <number>55</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <item>
+             <widget class="QLabel" name="Tube_K_label">
+              <property name="text">
+               <string>Tube Thermal Conductivity</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_16">
+              <item>
+               <widget class="QLineEdit" name="Tube_K">
+                <property name="toolTip">
+                 <string>Ratio between internal tube roughness to the inner tube diameter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="Tube_K_unit">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>W/m.K</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Btu/hr.ft.F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Tube Type</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Tube_type_image">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Cancel_Button">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Ok_button">
+       <property name="text">
+        <string>Ok</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

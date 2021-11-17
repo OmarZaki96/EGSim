@@ -1,0 +1,2956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FinTube_Circuit_Definition</class>
+ <widget class="QWidget" name="FinTube_Circuit_Definition">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1138</width>
+    <height>825</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Fin-Tube Circuit Definition</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="Fins">
+      <attribute name="title">
+       <string>Fins</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_23">
+       <item>
+        <widget class="QGroupBox" name="FinTube_circuit_fin_general_group">
+         <property name="title">
+          <string>Fin General Properties</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_23">
+          <item>
+           <widget class="QPushButton" name="Select_fin_button">
+            <property name="text">
+             <string>Select Fin from Database</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_16">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_25">
+            <item>
+             <widget class="QLabel" name="FinTube_circuit_fin_t_label">
+              <property name="text">
+               <string>Fin Thickness*</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_22">
+              <item>
+               <widget class="QLineEdit" name="FinTube_circuit_fin_t">
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="FinTube_circuit_fin_t_unit">
+                <property name="currentIndex">
+                 <number>2</number>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>m</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>cm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>mm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>ft</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>in</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_24">
+            <item>
+             <widget class="QLabel" name="FinTube_circuit_fin_FPI_label">
+              <property name="text">
+               <string>Fins Per Inch (FPI)*</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_21">
+              <item>
+               <widget class="QLineEdit" name="FinTube_circuit_fin_FPI">
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="FinTube_circuit_fin_FPI_unit">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="FinTube_circuit_fin_type_group">
+         <property name="title">
+          <string>Fin Type Properties</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_28">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_30">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_24">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_fin_type_label">
+                <property name="text">
+                 <string>Fin Type*</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QComboBox" name="FinTube_circuit_fin_type">
+                <item>
+                 <property name="text">
+                  <string>Plain Fin</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Wavy (Herringbone) Fin</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Slit Fin</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Louvered Fin</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Wavy-Louvered Fin</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_29">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_27">
+                <item>
+                 <widget class="Line" name="line_7">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="FinTube_circuit_fin_dim_1_label">
+                  <property name="text">
+                   <string>Fin Dimension 1</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_26">
+                  <item>
+                   <widget class="QLineEdit" name="FinTube_circuit_fin_dim_1">
+                    <property name="maxLength">
+                     <number>8</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="FinTube_circuit_fin_dim_1_unit">
+                    <property name="currentIndex">
+                     <number>2</number>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>m</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>cm</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>mm</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>ft</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>in</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_28">
+                <item>
+                 <widget class="QLabel" name="FinTube_circuit_fin_dim_2_label">
+                  <property name="text">
+                   <string>Fin Dimension 2</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_27">
+                  <item>
+                   <widget class="QLineEdit" name="FinTube_circuit_fin_dim_2">
+                    <property name="maxLength">
+                     <number>8</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="FinTube_circuit_fin_dim_2_unit">
+                    <property name="currentIndex">
+                     <number>2</number>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>m</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>cm</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>mm</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>ft</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>in</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_26">
+                <item>
+                 <widget class="QLabel" name="FinTube_circuit_fin_dim_3_label">
+                  <property name="text">
+                   <string>Fin Dimension 3</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_25">
+                  <item>
+                   <widget class="QLineEdit" name="FinTube_circuit_fin_dim_3">
+                    <property name="maxLength">
+                     <number>8</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="FinTube_circuit_fin_dim_3_unit">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>-</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="FinTube_circuit_fin_type_image">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Fields with * are important inputs from user</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Tubes Geometry</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QGroupBox" name="FinTube_circuit_tube_geometry_group">
+         <property name="title">
+          <string>Tube Geometry</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_20">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_22">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_40">
+              <item>
+               <spacer name="horizontalSpacer_22">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="Select_tube_button">
+                <property name="text">
+                 <string>Select Tube from Database</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_17">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_type_label">
+                <property name="toolTip">
+                 <string>The tube internal surface can be either smooth or internally finned</string>
+                </property>
+                <property name="text">
+                 <string>Tube Type</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="FinTube_circuit_tube_type">
+                <property name="toolTip">
+                 <string>The tube internal surface can be either smooth or internally finned</string>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Smooth</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Internal Microfin</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <widget class="Line" name="line_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_OD_label">
+                <property name="text">
+                 <string>Tube Outer Diameter*</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_11">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_OD">
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_OD_unit">
+                  <property name="currentIndex">
+                   <number>2</number>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>m</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>cm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>mm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ft</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>in</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_ID_label">
+                <property name="text">
+                 <string>Tube Inner Diameter*</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_19">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_ID">
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_ID_unit">
+                  <property name="currentIndex">
+                   <number>2</number>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>m</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>cm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>mm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ft</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>in</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_50">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_length_label">
+                <property name="text">
+                 <string>Tube Length*</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_55">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_length">
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_length_unit">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="currentIndex">
+                   <number>2</number>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>m</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>cm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>mm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ft</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>in</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_e_D_label">
+                <property name="text">
+                 <string>Tube Surface Roughness (e/D)*</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_12">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_e_D">
+                  <property name="toolTip">
+                   <string>The ratio between tube roughness to tube diameter.</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_e_D_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>-</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_20">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_17">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_t_label">
+                <property name="text">
+                 <string>Tube Total Thickness (t)*</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_16">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_t">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                   <string>Tube thickness between tube outside diameter to the fin tip</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_t_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="currentIndex">
+                   <number>2</number>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>m</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>cm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>mm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ft</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>in</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_e_label">
+                <property name="text">
+                 <string>Fin Height (e)*</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_13">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_e">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_e_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="currentIndex">
+                   <number>2</number>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>m</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>cm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>mm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ft</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>in</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_15">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_d_label">
+                <property name="text">
+                 <string>Fin base thickness (d)*</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_d">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_d_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="currentIndex">
+                   <number>2</number>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>m</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>cm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>mm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>ft</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>in</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_21">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_16">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_n_label">
+                <property name="text">
+                 <string>Number of Fins (n)*</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_15">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_n">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_n_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>-</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_18">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_gamma_label">
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fin Apex Angle ‎(γ)*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_17">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_gamma">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_gamma_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>degree</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>radian</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>minute</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>second</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <widget class="QLabel" name="FinTube_circuit_tube_beta_label">
+                <property name="text">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fin Spiral Angle (β)*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_18">
+                <item>
+                 <widget class="QLineEdit" name="FinTube_circuit_tube_beta">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_circuit_tube_beta_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>degree</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>radian</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>minute</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>second</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="FinTube_circuit_microfin_image">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="FinTube_circuit_circuit_geometry_group">
+         <property name="title">
+          <string>Circuit Geometry</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QGroupBox" name="FinTube_circuit_tube_spacing_group">
+            <property name="title">
+             <string>Tubes Spacing</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <widget class="QGroupBox" name="FinTube_circuit_tube_circuitry_group">
+               <property name="title">
+                <string>Tubes Circuitry</string>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_9">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_49">
+                  <item>
+                   <spacer name="verticalSpacer_6">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_8">
+                    <item>
+                     <widget class="QLabel" name="FinTube_circuit_circuitry_label">
+                      <property name="text">
+                       <string>Circuitry Style*</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="FinTube_circuit_circuitry">
+                      <property name="minimumSize">
+                       <size>
+                        <width>90</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string/>
+                      </property>
+                      <property name="sizeAdjustPolicy">
+                       <enum>QComboBox::AdjustToContents</enum>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Counter Flow</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Parallel Flow</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Customized</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="FinTube_circuit_circuitry_button">
+                      <property name="enabled">
+                       <bool>false</bool>
+                      </property>
+                      <property name="text">
+                       <string>Define Circuitry</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="Line" name="line_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="FinTube_circuit_N_circuits_label">
+                    <property name="toolTip">
+                     <string>This will duplicate this circuit multiple times, with air flow rate being devided equally between them.</string>
+                    </property>
+                    <property name="text">
+                     <string>Number of Parallel Duplicate Circuits*</string>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QSpinBox" name="FinTube_circuit_N_circuits">
+                    <property name="toolTip">
+                     <string>This will duplicate this circuit multiple times, with air flowrate being devided equally between them.</string>
+                    </property>
+                    <property name="minimum">
+                     <number>1</number>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="Line" name="line_3">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_11">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_10">
+                  <item>
+                   <widget class="QLabel" name="FinTube_circuit_circuitry_image">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="scaledContents">
+                     <bool>true</bool>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_10">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_7">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_7">
+                   <item>
+                    <widget class="QLabel" name="FinTube_circuit_tube_staggering_label">
+                     <property name="text">
+                      <string>Staggering Style</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_4">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="FinTube_circuit_tube_staggering">
+                     <item>
+                      <property name="text">
+                       <string>Inline</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Staggered AaA</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Staggered aAa</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="FinTube_circuit_tube_N_per_bank_label">
+                   <property name="text">
+                    <string>Number of Tubes per Bank per duplicate circuit*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <widget class="QSpinBox" name="FinTube_circuit_tube_N_per_bank">
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                     <property name="maximum">
+                      <number>100</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_14">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <item>
+                  <widget class="QLabel" name="FinTube_circuit_tube_N_bank_label">
+                   <property name="text">
+                    <string>Number of Banks per duplicate cirucit*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_4">
+                   <item>
+                    <widget class="QSpinBox" name="FinTube_circuit_tube_N_bank">
+                     <property name="minimum">
+                      <number>1</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_15">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_5">
+                 <item>
+                  <widget class="QLabel" name="FinTube_circuit_tube_Pl_label">
+                   <property name="text">
+                    <string>Longitudinal Tube Spacing (in Air Flow Direction)*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <item>
+                    <widget class="QLineEdit" name="FinTube_circuit_tube_Pl">
+                     <property name="maxLength">
+                      <number>8</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="FinTube_circuit_tube_Pl_unit">
+                     <property name="currentIndex">
+                      <number>2</number>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>m</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>cm</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>mm</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>ft</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>in</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item>
+                  <widget class="QLabel" name="FinTube_circuit_tube_Pt_label">
+                   <property name="text">
+                    <string>Transverse Tube Spacing (Normal to Air Flow Direction)*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <item>
+                    <widget class="QLineEdit" name="FinTube_circuit_tube_Pt">
+                     <property name="maxLength">
+                      <number>8</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="FinTube_circuit_tube_Pt_unit">
+                     <property name="currentIndex">
+                      <number>2</number>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>m</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>cm</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>mm</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>ft</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>in</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="Line" name="line_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_9">
+               <item>
+                <widget class="QLabel" name="FinTube_circuit_staggering_image">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="FinTube_circuit_visualize_button">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="text">
+                  <string>Visualize Circuit</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Thermal">
+      <attribute name="title">
+       <string>Thermal Properties</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_33">
+       <item>
+        <widget class="QGroupBox" name="FinTube_circuit_thermal_group">
+         <property name="title">
+          <string>Thermal Conductivity</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_29">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_31">
+            <item>
+             <widget class="QLabel" name="FinTube_circuit_tube_k_label">
+              <property name="text">
+               <string>Tube Thermal Conductivity*</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_30">
+              <item>
+               <widget class="QLineEdit" name="FinTube_circuit_tube_k">
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="FinTube_circuit_tube_k_unit">
+                <item>
+                 <property name="text">
+                  <string>W/m.K</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Btu/hr.ft.F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_32">
+            <item>
+             <widget class="QLabel" name="FinTube_circuit_fin_k_label">
+              <property name="text">
+               <string>Fin Thermal Conductivity*</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_31">
+              <item>
+               <widget class="QLineEdit" name="FinTube_circuit_fin_k">
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="FinTube_circuit_fin_k_unit">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>W/m.K</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Btu/hr.ft.F</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_9">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Correlations">
+      <attribute name="title">
+       <string>Correlations</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_53">
+       <item>
+        <spacer name="horizontalSpacer_12">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>30</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_42">
+         <item>
+          <widget class="QGroupBox" name="FinTube_subcool_correlations_group">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="title">
+            <string>Subcooled Refrigerant</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_43">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_44">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_42">
+                <item>
+                 <widget class="QLabel" name="FinTube_subcool_HTC_correlation_label">
+                  <property name="text">
+                   <string>Heat Transfer Coefficient</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_25">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_subcool_HTC_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Smooth Tubes: Gnielinski</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Microfin Tubes: Carnavos</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Microfin Tubes: Copetti</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_43">
+                <item>
+                 <widget class="QLabel" name="FinTube_subcool_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_23">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_subcool_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_45">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_44">
+                <item>
+                 <widget class="QLabel" name="FinTube_subcool_DP_correlation_label">
+                  <property name="text">
+                   <string>Pressure Drop</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_26">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_subcool_DP_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Smooth Tubes: Churchill</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Microfin Tubes: Carnavos</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Microfin Tubes: Copetti</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Smooth Tubes: Haaland</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_45">
+                <item>
+                 <widget class="QLabel" name="FinTube_subcool_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_27">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_subcool_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string>Refrigerant Charge and acceleration pressure drop calculations</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_41">
+            <item>
+             <widget class="QLabel" name="FinTube_2phase_charge_correlation_label">
+              <property name="text">
+               <string>Two-Phase Void Fraction Model</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="FinTube_2phase_charge_correlation">
+              <item>
+               <property name="text">
+                <string>Auto</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Homogeneous</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Zivi</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Premoli</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="FinTube_2phase_correlations_group">
+           <property name="title">
+            <string>Two-phase Refrigerant</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_38">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_39">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_36">
+                <item>
+                 <widget class="QLabel" name="FinTube_2phase_HTC_correlation_label">
+                  <property name="text">
+                   <string>Heat Transfer Coefficient</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_35">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_2phase_HTC_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Condensation: Shah (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Shah (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Kandlikar (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Condensation: Olivier (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Shah (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Condensation: Cavallini (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Condensation: Dobson-Chato (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Rollmann (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Kandlikar (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Wu (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Chen for 7.14 mm tubes (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Chen for 8.8 mm tubes (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Wongsangam (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Gungor-Winterton (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Condensation: Koyama (Microfin tubes)</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_37">
+                <item>
+                 <widget class="QLabel" name="FinTube_2phase_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_20">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_2phase_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_40">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_38">
+                <item>
+                 <widget class="QLabel" name="FinTube_2phase_DP_correlation_label">
+                  <property name="text">
+                   <string>Pressure Drop</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_34">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_2phase_DP_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>LockhartMartinelli (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Condensation: Olivier (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Souza (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Radermacher (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Chisholm (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Friedel (Smooth tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Choi (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Rollmann (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Condensation: Koyama (Microfin tubes)</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Wu (Microfin tubes)</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_39">
+                <item>
+                 <widget class="QLabel" name="FinTube_2phase_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_21">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_2phase_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_13">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_34">
+         <item>
+          <widget class="QGroupBox" name="FinTube_superheat_correlations_group">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="title">
+            <string>Superheated Refrigerant</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_35">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_36">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_32">
+                <item>
+                 <widget class="QLabel" name="FinTube_superheat_HTC_correlation_label">
+                  <property name="text">
+                   <string>Heat Transfer Coefficient</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_24">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_superheat_HTC_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Smooth Tubes: Gnielinski</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Microfin Tubes: Carnavos</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Microfin Tubes: Copetti</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_33">
+                <item>
+                 <widget class="QLabel" name="FinTube_superheat_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_18">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_superheat_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_37">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_34">
+                <item>
+                 <widget class="QLabel" name="FinTube_superheat_DP_correlation_label">
+                  <property name="text">
+                   <string>Pressure Drop</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_36">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_superheat_DP_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Smooth Tubes: Churchill</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Microfin Tubes: Carnavos</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Microfin Tubes: Copetti</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Smooth Tubes: Haaland</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_35">
+                <item>
+                 <widget class="QLabel" name="FinTube_superheat_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_19">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_superheat_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="FinTube_air_correlations_group">
+           <property name="title">
+            <string>Air-Side</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_46">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_47">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_47">
+                <item>
+                 <widget class="QLabel" name="FinTube_air_dry_correlation_label">
+                  <property name="text">
+                   <string>Dry Fins</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_28">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_air_dry_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Plain: Abumadi</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Plain: Wang 2000</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Louvered: Wang 1999</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Slit: Wang 2001</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Slit: Kim 2000</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Wavy: Wang 1997</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Wavy-Louvered: Wang 1998</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Plain: Wang 1996</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Wavy-Louvered: Wang 1996</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Wavy: Kim 1997</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_48">
+                <item>
+                 <widget class="QLabel" name="FinTube_air_dry_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Dry Heat Transfer Coefficient Correction Factor</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_29">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_air_dry_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_49">
+                <item>
+                 <widget class="QLabel" name="FinTube_air_dry_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Dry Pressure Drop Correcton Factor</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_30">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_air_dry_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_48">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_50">
+                <item>
+                 <widget class="QLabel" name="FinTube_air_wet_correlation_label">
+                  <property name="text">
+                   <string>Wet Fins</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_31">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="FinTube_air_wet_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Plain: Wang 1997</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Louvered: Wang 2000</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Slit: Kim 2000</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Wavy: Wang 1999</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Plain: Wang 2000</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Wavy: Wang 2002</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_51">
+                <item>
+                 <widget class="QLabel" name="FinTube_air_wet_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Wet Heat Transfer Coefficient Correction Factor</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_32">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_air_wet_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_52">
+                <item>
+                 <widget class="QLabel" name="FinTube_air_wet_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Wet Pressure Drop Correcton Factor</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_33">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="FinTube_air_wet_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                  <property name="maxLength">
+                   <number>8</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="wet_h_a_check">
+              <property name="text">
+               <string>Use Wet air heat transfer coefficient correlation</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="wet_DP_a_check">
+              <property name="text">
+               <string>Use wet air pressure drop correlation</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_12">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_40">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>41</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Fields with * are important inputs from user</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="FinTube_circuit_cancel_button">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="FinTube_circuit_ok_button">
+       <property name="text">
+        <string>Ok</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

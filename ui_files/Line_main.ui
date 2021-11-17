@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>501</width>
+    <height>730</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Line Definition</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_17">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_18">
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="Line_name_label">
+         <property name="text">
+          <string>Name</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLineEdit" name="Line_name">
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_20">
+     <item>
+      <spacer name="horizontalSpacer_12">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Select_line_button">
+       <property name="text">
+        <string>Select Line from Database</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_13">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="Line_properties_group">
+     <property name="title">
+      <string>Line Properties</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_22">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_19">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="Line_length_label">
+            <property name="text">
+             <string>Line Length*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLineEdit" name="Line_length"/>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_length_unit">
+              <item>
+               <property name="text">
+                <string>m</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>cm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ft</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>in</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="Line_OD_label">
+            <property name="text">
+             <string>Outer Diameter*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLineEdit" name="Line_OD"/>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_OD_unit">
+              <item>
+               <property name="text">
+                <string>m</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>cm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ft</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>in</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLabel" name="Line_ID_label">
+            <property name="text">
+             <string>Inner Diameter*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLineEdit" name="Line_ID"/>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_ID_unit">
+              <item>
+               <property name="text">
+                <string>m</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>cm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ft</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>in</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QLabel" name="Line_insulation_t_label">
+            <property name="text">
+             <string>Insulation Thickness*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLineEdit" name="Line_insulation_t"/>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_insulation_t_unit">
+              <item>
+               <property name="text">
+                <string>m</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>cm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ft</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>in</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <widget class="QLabel" name="Line_e_D_label">
+            <property name="text">
+             <string>Tube Internal Roughness (e/D)*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QLineEdit" name="Line_e_D">
+              <property name="toolTip">
+               <string>Ratio between internal tube roughness to the inner tube diameter</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_e_D_unit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>-</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_14">
+          <item>
+           <widget class="QLabel" name="Line_solve_HT_label">
+            <property name="text">
+             <string>Solve for Heat Transfer?*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QComboBox" name="Line_solve_HT">
+              <item>
+               <property name="text">
+                <string>Yes</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>No</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_15">
+          <item>
+           <widget class="QLabel" name="Line_solve_DP_label">
+            <property name="text">
+             <string>Solve for Pressure Drop?*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <item>
+             <widget class="QComboBox" name="Line_solve_DP">
+              <item>
+               <property name="text">
+                <string>Yes</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>No</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_10">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_13">
+          <item>
+           <widget class="QLabel" name="Line_q_tolerance_label">
+            <property name="text">
+             <string>Heat Trasnfer Error Tolerance</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_17">
+            <item>
+             <widget class="QDoubleSpinBox" name="Line_q_tolerance">
+              <property name="minimum">
+               <double>0.010000000000000</double>
+              </property>
+              <property name="value">
+               <double>0.500000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_q_tolerance_unit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>%</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_11">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_18">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QLabel" name="Line_tube_k_label">
+            <property name="text">
+             <string>Tube Thermal Conductivity*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLineEdit" name="Line_tube_k"/>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_tube_k_unit">
+              <item>
+               <property name="text">
+                <string>W/m.K</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Btu/hr.ft.F</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QLabel" name="Line_insulation_k_label">
+            <property name="text">
+             <string>Insulation Thermal Conductivity*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLineEdit" name="Line_insulation_k"/>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_insulation_k_unit">
+              <item>
+               <property name="text">
+                <string>W/m.K</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Btu/hr.ft.F</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QLabel" name="Line_surrounding_T_label">
+            <property name="text">
+             <string>Surrounding Air Temperature*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QLineEdit" name="Line_surrounding_T"/>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_surrounding_T_unit">
+              <item>
+               <property name="text">
+                <string>C</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>K</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>F</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="Line_surrounding_HTC_label">
+            <property name="text">
+             <string>Surrounding Air Heat Trasnfer Coefficient*</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QLineEdit" name="Line_surrounding_HTC">
+              <property name="text">
+               <string>5.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_surrounding_HTC_unit">
+              <item>
+               <property name="text">
+                <string>W/m^2.K</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Btu/hr.ft^2.K</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_21">
+            <item>
+             <widget class="QLabel" name="Line_N_90_bends_label">
+              <property name="toolTip">
+               <string>Devide the line to number of segments</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of 90&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt; bends*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_21">
+              <item>
+               <widget class="QSpinBox" name="Line_N_90_bends">
+                <property name="toolTip">
+                 <string>Devide the line to number of segments</string>
+                </property>
+                <property name="minimum">
+                 <number>0</number>
+                </property>
+                <property name="maximum">
+                 <number>100</number>
+                </property>
+                <property name="value">
+                 <number>0</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_15">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_20">
+            <item>
+             <widget class="QLabel" name="Line_N_180_bends_label">
+              <property name="toolTip">
+               <string>Devide the line to number of segments</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of 180&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt; bends*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_19">
+              <item>
+               <widget class="QSpinBox" name="Line_N_180_bends">
+                <property name="toolTip">
+                 <string>Devide the line to number of segments</string>
+                </property>
+                <property name="minimum">
+                 <number>0</number>
+                </property>
+                <property name="maximum">
+                 <number>100</number>
+                </property>
+                <property name="value">
+                 <number>0</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_14">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="Line_N_segments_label">
+            <property name="toolTip">
+             <string>Devide the line to number of segments</string>
+            </property>
+            <property name="text">
+             <string>Number of segments</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QSpinBox" name="Line_N_segments">
+              <property name="toolTip">
+               <string>Devide the line to number of segments</string>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="value">
+               <number>20</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_16">
+          <item>
+           <widget class="QLabel" name="Line_HT_correction_label">
+            <property name="text">
+             <string>Heat Transfer Correction Factor</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <item>
+             <widget class="QLineEdit" name="Line_HT_correction">
+              <property name="text">
+               <string>1.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_HT_correction_unit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>-</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QLabel" name="Line_DP_correction_label">
+            <property name="text">
+             <string>Pressure Drop Correction Factor</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QLineEdit" name="Line_DP_correction">
+              <property name="text">
+               <string>1.0</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Line_DP_correction_unit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>-</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Fields with * are important inputs from user</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Line_cancel_button">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Line_load_button">
+       <property name="text">
+        <string>Load</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Line_save_button">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Line_ok_button">
+       <property name="text">
+        <string>Ok</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

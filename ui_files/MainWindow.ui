@@ -1,0 +1,3245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>995</width>
+    <height>925</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>EGSim</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Cycle Parameters</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_50">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_23">
+          <item>
+           <widget class="QGroupBox" name="Cycle_props_group">
+            <property name="title">
+             <string>Cycle Properties</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_16">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_31">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_30">
+                 <item>
+                  <widget class="QLabel" name="Cycle_refrigerant_label">
+                   <property name="text">
+                    <string>Refrigerant*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Cycle_refrigerant"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_17">
+                 <item>
+                  <widget class="QLabel" name="Condenser_type_label">
+                   <property name="text">
+                    <string>Outdoor unit Type*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Condenser_type">
+                   <item>
+                    <property name="text">
+                     <string>Fin-tube</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Microchannel</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_29">
+                 <item>
+                  <widget class="QLabel" name="Evaporator_type_label">
+                   <property name="text">
+                    <string>Indoor Unit Type*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Evaporator_type">
+                   <item>
+                    <property name="text">
+                     <string>Fin-tube</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Microchannel</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_46">
+                 <item>
+                  <widget class="QLabel" name="Cycle_mode_label">
+                   <property name="text">
+                    <string>Cycle Mode*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Cycle_mode">
+                   <item>
+                    <property name="text">
+                     <string>Cooling Mode</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Heating Mode</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_32">
+                 <item>
+                  <widget class="QLabel" name="Capacity_target_label">
+                   <property name="text">
+                    <string>Target Capacity*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_31">
+                   <item>
+                    <widget class="QLineEdit" name="Capacity_target">
+                     <property name="minimumSize">
+                      <size>
+                       <width>120</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Capacity_target_unit">
+                     <item>
+                      <property name="text">
+                       <string>W</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Btu/hr</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_43">
+                 <item>
+                  <widget class="QLabel" name="Test_Condition_label">
+                   <property name="text">
+                    <string>Test Condition*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_46">
+                   <item>
+                    <widget class="QComboBox" name="Test_Condition"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_49">
+                 <item>
+                  <widget class="QLabel" name="accumulator_charge_label">
+                   <property name="toolTip">
+                    <string>This is the percentage of system charge stored in accumulator to total system charge</string>
+                   </property>
+                   <property name="text">
+                    <string>Accumulator Charge Capacity Ratio</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_47">
+                   <item>
+                    <widget class="QDoubleSpinBox" name="accumulator_charge">
+                     <property name="maximum">
+                      <double>100.000000000000000</double>
+                     </property>
+                     <property name="value">
+                      <double>70.000000000000000</double>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="accumulator_charge_unit">
+                     <item>
+                      <property name="text">
+                       <string>%</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_30">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>279</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_19">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="Line" name="line_23">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_20">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_16">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_12">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_13">
+                   <item>
+                    <widget class="QLabel" name="First_condition_label">
+                     <property name="text">
+                      <string>Solving for?*</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="First_condition">
+                     <item>
+                      <property name="text">
+                       <string>Subcooling at Condenser Outlet</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Cycle Charge</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_14">
+                   <item>
+                    <widget class="QLabel" name="Subcooling_label">
+                     <property name="text">
+                      <string>Subcooling Value*</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_14">
+                     <item>
+                      <widget class="QLineEdit" name="Subcooling">
+                       <property name="text">
+                        <string>5</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="Subcooling_unit">
+                       <item>
+                        <property name="text">
+                         <string>C</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>F</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_15">
+                   <item>
+                    <widget class="QLabel" name="Charge_label">
+                     <property name="text">
+                      <string>Charge Value*</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_15">
+                     <item>
+                      <widget class="QLineEdit" name="Charge">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="Charge_unit">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                       <item>
+                        <property name="text">
+                         <string>kg</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>lb</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="Expansion_device_label">
+                   <property name="text">
+                    <string>Solving for?</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Expansion_device">
+                   <item>
+                    <property name="text">
+                     <string>Constant Superheat</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Capillary Tube</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QLabel" name="Superheat_location_label">
+                   <property name="text">
+                    <string>Superheat At*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Superheat_location">
+                   <property name="currentIndex">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Evaporator Exit</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Compressor Inlet</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <item>
+                  <widget class="QLabel" name="Superheat_label">
+                   <property name="text">
+                    <string>Superheat Value*</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_13">
+                   <item>
+                    <widget class="QLineEdit" name="Superheat">
+                     <property name="text">
+                      <string>5</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Superheat_unit">
+                     <item>
+                      <property name="text">
+                       <string>C</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>F</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="Solver_options_group">
+            <property name="title">
+             <string>Solver Options</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_22">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_27">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_18">
+                 <item>
+                  <widget class="QLabel" name="Solver_label">
+                   <property name="text">
+                    <string>Solver</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Solver">
+                   <property name="toolTip">
+                    <string/>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Auto</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Newton</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Broyden 1</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Broyden 2</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Hybrid</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Least Squares</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Exciting Mixing</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_22">
+                 <item>
+                  <widget class="QLabel" name="Max_N_iterations_label">
+                   <property name="text">
+                    <string>Maximum Number of Iterations</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="Max_N_iterations">
+                   <property name="minimum">
+                    <number>1</number>
+                   </property>
+                   <property name="maximum">
+                    <number>500</number>
+                   </property>
+                   <property name="value">
+                    <number>30</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_21">
+                 <item>
+                  <widget class="QLabel" name="Energy_resid_label">
+                   <property name="text">
+                    <string>Energy Residual</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_19">
+                   <item>
+                    <widget class="QLineEdit" name="Energy_resid">
+                     <property name="text">
+                      <string>10.0</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Energy_resid_unit">
+                     <item>
+                      <property name="text">
+                       <string>W</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Btu/hr</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_19">
+                 <item>
+                  <widget class="QLabel" name="Pressire_resid_label">
+                   <property name="text">
+                    <string>Pressure Residual</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_17">
+                   <item>
+                    <widget class="QLineEdit" name="Pressire_resid">
+                     <property name="text">
+                      <string>10.0</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Pressire_resid_unit">
+                     <item>
+                      <property name="text">
+                       <string>Pa</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>kPa</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>MPa</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>bar</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>atm</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>psi</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_20">
+                 <item>
+                  <widget class="QLabel" name="Mass_flowrate_resid_label">
+                   <property name="text">
+                    <string>Mass Flow Rate Residual</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_18">
+                   <item>
+                    <widget class="QLineEdit" name="Mass_flowrate_resid">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="text">
+                      <string>0.001</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Mass_flowrate_resid_unit">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>kg/s</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>kg/min</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>kg/hr</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>lb/s</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>lb/min</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>lb/hr</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_45">
+                 <item>
+                  <widget class="QLabel" name="Mass_resid_label">
+                   <property name="text">
+                    <string>Mass Residual</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_34">
+                   <item>
+                    <widget class="QLineEdit" name="Mass_resid">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <property name="text">
+                      <string>0.1</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Mass_resid_unit">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>kg</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>lb</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_21">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="Line" name="line_24">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_22">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_28">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_26">
+                 <item>
+                  <widget class="QLabel" name="Tcond_guess_type_label">
+                   <property name="text">
+                    <string>Condensing Temperature Guess</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Tcond_guess_type">
+                   <item>
+                    <property name="text">
+                     <string>Auto</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Manual</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_24">
+                 <item>
+                  <widget class="QLabel" name="Tcond_guess_label">
+                   <property name="text">
+                    <string>Initial Condensing Temperature Guess</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_21">
+                   <item>
+                    <widget class="QLineEdit" name="Tcond_guess">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Tcond_guess_unit">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>C</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>K</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>F</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_25">
+                 <item>
+                  <widget class="QLabel" name="Tevap_guess_type_label">
+                   <property name="text">
+                    <string>Evaporating Temperature Guess</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Tevap_guess_type">
+                   <item>
+                    <property name="text">
+                     <string>Auto</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Manual</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_23">
+                 <item>
+                  <widget class="QLabel" name="Tevap_guess_label">
+                   <property name="text">
+                    <string>Initial Evaporating Temperature Guess</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_20">
+                   <item>
+                    <widget class="QLineEdit" name="Tevap_guess">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Tevap_guess_unit">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
+                     <item>
+                      <property name="text">
+                       <string>C</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>K</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>F</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_47">
+                 <item>
+                  <widget class="QLabel" name="Ref_library_label">
+                   <property name="text">
+                    <string>Refrigerant Library</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="Ref_library">
+                   <item>
+                    <property name="text">
+                     <string>REFPROP</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>HEOS</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_26">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Fields with * are important inputs from user</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Cycle Configuration</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <widget class="Line" name="line_10">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Liquidline_photo">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Liquidline_label">
+              <property name="text">
+               <string>Liquid Line</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="LiquidLine_selected_name">
+              <property name="text">
+               <string>No Liquid Line Selected</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <spacer name="horizontalSpacer_12">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="LiquidLine_select_button">
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_13">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="Line" name="line_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Condenser_photo">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Condenser_label">
+              <property name="text">
+               <string>Outdoor Unit</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="Condenser_selected_name">
+              <property name="text">
+               <string>No Condenser Selected</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <spacer name="horizontalSpacer_14">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="Condenser_select_button">
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_15">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="Line" name="line_12">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Dischargeline_photo">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Dischargeline_label">
+              <property name="text">
+               <string>Discharge Line</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="DischargeLine_selected_name">
+              <property name="text">
+               <string>No Discharge Line Selected</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_12">
+              <item>
+               <spacer name="horizontalSpacer_16">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="DischargeLine_select_button">
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_17">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_11">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="Line" name="line">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Expansion_photo">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Expansion_label">
+              <property name="text">
+               <string>Expansion Device</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="Expansion_selected_name">
+              <property name="text">
+               <string>Constant Superheat</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <spacer name="horizontalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="Expansion_select_button">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_9">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_16">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="swap_HXs_button">
+            <property name="text">
+             <string>Swap Outdoor and Indoor Units selection</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_18">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="Line" name="line_15">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="Line" name="line_13">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Compressor_photo">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Compressor_label">
+              <property name="text">
+               <string>Compressor</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="Compressor_selected_name">
+              <property name="text">
+               <string>No Compressor Selected</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <spacer name="horizontalSpacer_10">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="Compressor_select_button">
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_11">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_14">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
+            <item>
+             <widget class="Line" name="line_17">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Twophaseline_photo">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Twophaseline_label">
+              <property name="text">
+               <string>Two-Phase Line</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="TwophaseLine_selected_name">
+              <property name="text">
+               <string>No Two-phase Line Selected</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="TwophaseLine_select_button">
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_18">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="Line" name="line_20">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Evaporator_photo">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Evaporator_label">
+              <property name="text">
+               <string>Indoor Unit</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="Evaporator_selected_name">
+              <property name="text">
+               <string>No Evaporator Selected</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="Evaporator_select_button">
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_19">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="Line" name="line_22">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Suctionline_photo">
+              <property name="text">
+               <string>TextLabel</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="Suctionline_label">
+              <property name="text">
+               <string>Suction Line</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="SuctionLine_selected_name">
+              <property name="text">
+               <string>No Suction Line Selected</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="SuctionLine_select_button">
+                <property name="text">
+                 <string>Select</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_21">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>Parametrics</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_48">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_37">
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string>Defining Parametric study</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_39">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_42">
+               <item>
+                <widget class="QCheckBox" name="Parametric_cycle">
+                 <property name="text">
+                  <string>Cycle</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_42">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Parametric_cycle_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Define</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_25">
+               <item>
+                <widget class="QCheckBox" name="Parametric_compressor">
+                 <property name="text">
+                  <string>Compressor</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_34">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Parametric_compressor_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Define</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_26">
+               <item>
+                <widget class="QCheckBox" name="Parametric_evaporator">
+                 <property name="text">
+                  <string>Indoor Unit</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_35">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Parametric_evaporator_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Define</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_35">
+               <item>
+                <widget class="QCheckBox" name="Parametric_condenser">
+                 <property name="text">
+                  <string>Outdoor Unit</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_36">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Parametric_condenser_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Define</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_36">
+               <item>
+                <widget class="QCheckBox" name="Parametric_capillary">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Capillary</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_37">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Parametric_capillary_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Define</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_41">
+               <item>
+                <widget class="QCheckBox" name="Parametric_liquid">
+                 <property name="text">
+                  <string>Liquid Line</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_41">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Parametric_liquid_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Define</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_40">
+               <item>
+                <widget class="QCheckBox" name="Parametric_2phase">
+                 <property name="text">
+                  <string>Two-phase Line</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_40">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Parametric_2phase_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Define</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_39">
+               <item>
+                <widget class="QCheckBox" name="Parametric_suction">
+                 <property name="text">
+                  <string>Suction Line</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_39">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Parametric_suction_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Define</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_38">
+               <item>
+                <widget class="QCheckBox" name="Parametric_discharge">
+                 <property name="text">
+                  <string>Discharge Line</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_38">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Minimum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Parametric_discharge_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>120</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Define</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_7">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="parametric_data_table" native="true"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Solve</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_42">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_43">
+          <item>
+           <widget class="QGroupBox" name="groupBox">
+            <property name="title">
+             <string>Solve</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_40">
+             <item>
+              <widget class="QGroupBox" name="groupBox_2">
+               <property name="title">
+                <string>Terminal</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_37">
+                <item>
+                 <widget class="QListWidget" name="Terminal">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>200</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>500</height>
+                   </size>
+                  </property>
+                  <property name="defaultDropAction">
+                   <enum>Qt::CopyAction</enum>
+                  </property>
+                  <property name="isWrapping" stdset="0">
+                   <bool>false</bool>
+                  </property>
+                  <property name="batchSize">
+                   <number>100</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_32">
+                  <item>
+                   <widget class="QPushButton" name="clear_terminal_button">
+                    <property name="text">
+                     <string>Clear Terminal</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_31">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_25">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_24">
+               <item>
+                <spacer name="horizontalSpacer_23">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Solve_button">
+                 <property name="text">
+                  <string>Solve Cycle(s)</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_24">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Stop_button">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>Stop</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_25">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="title">
+             <string>Residuals</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_38">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_33">
+               <item>
+                <widget class="QLabel" name="Energy_residual_condenser_update_label">
+                 <property name="text">
+                  <string>Energy Residual of Subcooling</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_27">
+                 <item>
+                  <widget class="QLineEdit" name="Energy_residual_condenser_update">
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="Energy_residual_condenser_update_unit">
+                   <property name="text">
+                    <string>W</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_34">
+               <item>
+                <widget class="QLabel" name="Energy_residual_evaporator_update_label">
+                 <property name="text">
+                  <string>Energy Residual of the Superheat</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_28">
+                 <item>
+                  <widget class="QLineEdit" name="Energy_residual_evaporator_update">
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="Energy_residual_evaporator_update_unit">
+                   <property name="text">
+                    <string>W</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_35">
+               <item>
+                <widget class="QLabel" name="mass_flowrate_residual_update_label">
+                 <property name="text">
+                  <string>Mass Flow Rate Residual of Capillary and Compressor</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_29">
+                 <item>
+                  <widget class="QLineEdit" name="mass_flowrate_residual_update">
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="mass_flowrate_residual_update_unit">
+                   <property name="text">
+                    <string>kg/s</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_36">
+               <item>
+                <widget class="QLabel" name="pressure_residual_residual_update_label">
+                 <property name="text">
+                  <string>Pressure Drop Residual</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_30">
+                 <item>
+                  <widget class="QLineEdit" name="pressure_residual_residual_update">
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="pressure_residual_residual_update_unit">
+                   <property name="text">
+                    <string>Pa</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_44">
+               <item>
+                <widget class="QLabel" name="mass_residual_update_label">
+                 <property name="text">
+                  <string>Mass Residual of Charge</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_33">
+                 <item>
+                  <widget class="QLineEdit" name="mass_residual_update">
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="mass_residual_update_unit">
+                   <property name="text">
+                    <string>kg</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_45">
+          <item>
+           <widget class="QGroupBox" name="groupBox_5">
+            <property name="title">
+             <string>Design Check</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_41">
+             <item>
+              <widget class="QTextEdit" name="Design_check_result">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>300</height>
+                </size>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_44">
+               <item>
+                <spacer name="horizontalSpacer_28">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Check_design_button">
+                 <property name="text">
+                  <string>Check Design</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_27">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_29">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>252</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>995</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export Results</string>
+     </property>
+     <addaction name="actionExport_to_Excel_xlsx"/>
+    </widget>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpen_Cycle_with_Components"/>
+    <addaction name="actionSave_Cycle_with_Components"/>
+    <addaction name="separator"/>
+    <addaction name="menuExport"/>
+    <addaction name="separator"/>
+    <addaction name="actionImport_Database"/>
+    <addaction name="actionExport_Database"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>Database</string>
+    </property>
+    <widget class="QMenu" name="menuAdd_New">
+     <property name="title">
+      <string>Add New</string>
+     </property>
+     <addaction name="actionNew_Compressor"/>
+     <addaction name="actionNew_Fin_tube_HX"/>
+     <addaction name="actionNew_Microchannel_HX"/>
+     <addaction name="actionNew_Line"/>
+     <addaction name="actionNew_Capillary"/>
+    </widget>
+    <widget class="QMenu" name="menuEdit_Existing">
+     <property name="title">
+      <string>Edit Existing</string>
+     </property>
+     <addaction name="actionCompressors"/>
+     <addaction name="actionFin_tube_HX"/>
+     <addaction name="actionMicrochannel_HX"/>
+     <addaction name="actionLine"/>
+     <addaction name="actionCapillary_Tube"/>
+    </widget>
+    <widget class="QMenu" name="menuFins_Database">
+     <property name="title">
+      <string>Fins Database</string>
+     </property>
+     <widget class="QMenu" name="menuimport">
+      <property name="title">
+       <string>Import</string>
+      </property>
+      <addaction name="actionimport_Fin_tube_fin"/>
+      <addaction name="actionimport_Microchannel_fin"/>
+     </widget>
+     <addaction name="actionFin_tube"/>
+     <addaction name="actionMicrochannel"/>
+     <addaction name="separator"/>
+     <addaction name="menuimport"/>
+    </widget>
+    <widget class="QMenu" name="menuTubes_Database">
+     <property name="title">
+      <string>Tubes Database</string>
+     </property>
+     <widget class="QMenu" name="menuImport">
+      <property name="title">
+       <string>Import</string>
+      </property>
+      <addaction name="actionimport_Fin_tube_tube"/>
+      <addaction name="actionimport_Microchannel_tube"/>
+     </widget>
+     <addaction name="actionFin_tube_2"/>
+     <addaction name="actionMicrochannel_2"/>
+     <addaction name="separator"/>
+     <addaction name="menuImport"/>
+    </widget>
+    <widget class="QMenu" name="menuLines_Database">
+     <property name="title">
+      <string>Lines Database</string>
+     </property>
+     <addaction name="actionEdit_Database"/>
+     <addaction name="actionImport_Database_2"/>
+    </widget>
+    <addaction name="menuAdd_New"/>
+    <addaction name="menuEdit_Existing"/>
+    <addaction name="separator"/>
+    <addaction name="menuFins_Database"/>
+    <addaction name="menuTubes_Database"/>
+    <addaction name="menuLines_Database"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionDocumentation"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionREFPROP_Properties"/>
+    <addaction name="actionParallel_Processing"/>
+    <addaction name="actionDesign_Check_Properties"/>
+    <addaction name="actionRanges_Creator_Properties"/>
+   </widget>
+   <widget class="QMenu" name="menuExamples">
+    <property name="title">
+     <string>Examples</string>
+    </property>
+    <addaction name="actionR410A_Cycle_with_TXV"/>
+    <addaction name="actionR22_Cycle_with_TXV"/>
+    <addaction name="actionR32_Cycle_with_TXV"/>
+   </widget>
+   <widget class="QMenu" name="menuComponent_Simulation">
+    <property name="title">
+     <string>Component Simulation</string>
+    </property>
+    <addaction name="actionSimulate_Compressor"/>
+    <addaction name="actionFin_tube_Heat_Exchanger"/>
+    <addaction name="actionMicrochannel_Heat_Exchanger"/>
+    <addaction name="actionCapillary_Tube_2"/>
+    <addaction name="actionLine_2"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionCompressor_to_physics_model"/>
+    <addaction name="actionCapillary_Sizing"/>
+    <addaction name="actionCompressor_Rating_to_Physics"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuDatabase"/>
+   <addaction name="menuComponent_Simulation"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuExamples"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew">
+   <property name="text">
+    <string>New Cycle</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open Cycle</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionExport_to_CSV_csv">
+   <property name="text">
+    <string>Export to CSV (.csv)</string>
+   </property>
+  </action>
+  <action name="actionExport_to_Excel_xlsx">
+   <property name="text">
+    <string>Export to Excel (.xlsx)</string>
+   </property>
+  </action>
+  <action name="actionExport_to_PDF_pdf">
+   <property name="text">
+    <string>Export to PDF (.pdf)</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionNew_Compressor">
+   <property name="text">
+    <string>New Compressor</string>
+   </property>
+  </action>
+  <action name="actionNew_Fin_tube_HX">
+   <property name="text">
+    <string>New Fin-tube HX</string>
+   </property>
+  </action>
+  <action name="actionNew_Microchannel_HX">
+   <property name="text">
+    <string>New Microchannel HX</string>
+   </property>
+  </action>
+  <action name="actionNew_Line">
+   <property name="text">
+    <string>New Line</string>
+   </property>
+  </action>
+  <action name="actionNew_Capillary">
+   <property name="text">
+    <string>New Capillary Tube</string>
+   </property>
+  </action>
+  <action name="actionCompressors">
+   <property name="text">
+    <string>Compressors</string>
+   </property>
+  </action>
+  <action name="actionFin_tube_HX">
+   <property name="text">
+    <string>Fin-tube HX</string>
+   </property>
+  </action>
+  <action name="actionMicrochannel_HX">
+   <property name="text">
+    <string>Microchannel HX</string>
+   </property>
+  </action>
+  <action name="actionLine">
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actionCapillary_Tube">
+   <property name="text">
+    <string>Capillary Tube</string>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="text">
+    <string>Preferences</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="text">
+    <string>Update</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionDocumentation">
+   <property name="text">
+    <string>Documentation</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save Cycle</string>
+   </property>
+   <property name="visible">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionImport_Database">
+   <property name="text">
+    <string>Import Database</string>
+   </property>
+  </action>
+  <action name="actionExport_Database">
+   <property name="text">
+    <string>Export Database</string>
+   </property>
+  </action>
+  <action name="actionThemeNormal">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Normal</string>
+   </property>
+  </action>
+  <action name="actionThemeDark">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dark</string>
+   </property>
+  </action>
+  <action name="actionThemeFusion">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Fusion</string>
+   </property>
+  </action>
+  <action name="actionThemeIntegrid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Integrid</string>
+   </property>
+  </action>
+  <action name="actionThemeOxygen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Oxygen</string>
+   </property>
+  </action>
+  <action name="actionREFPROP_Properties">
+   <property name="text">
+    <string>REFPROP Path</string>
+   </property>
+  </action>
+  <action name="actionR410A_Cycle_with_TXV">
+   <property name="text">
+    <string>R410A Cycle with Constant Superheat</string>
+   </property>
+  </action>
+  <action name="actionSimulate_Compressor">
+   <property name="text">
+    <string>Compressor</string>
+   </property>
+  </action>
+  <action name="actionFin_tube_Heat_Exchanger">
+   <property name="text">
+    <string>Fin-tube Heat Exchanger</string>
+   </property>
+  </action>
+  <action name="actionMicrochannel_Heat_Exchanger">
+   <property name="text">
+    <string>Microchannel Heat Exchanger</string>
+   </property>
+  </action>
+  <action name="actionCapillary_Tube_2">
+   <property name="text">
+    <string>Capillary Tube</string>
+   </property>
+  </action>
+  <action name="actionLine_2">
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actionParallel_Processing">
+   <property name="text">
+    <string>Parallel Processing</string>
+   </property>
+  </action>
+  <action name="actionCompressor_to_physics_model">
+   <property name="text">
+    <string>Compressor to physics model</string>
+   </property>
+  </action>
+  <action name="actionDesign_Check_Properties">
+   <property name="text">
+    <string>Design Check Properties</string>
+   </property>
+  </action>
+  <action name="actionR22_Cycle_with_TXV">
+   <property name="text">
+    <string>R22 Cycle with Constant Superheat</string>
+   </property>
+  </action>
+  <action name="actionR32_Cycle_with_TXV">
+   <property name="text">
+    <string>R32 Cycle with Constant Superheat</string>
+   </property>
+  </action>
+  <action name="actionSave_Cycle_with_Components">
+   <property name="text">
+    <string>Save Cycle with Components</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionOpen_Cycle_with_Components">
+   <property name="text">
+    <string>Open Cycle with Components</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionRanges_Creator_Properties">
+   <property name="text">
+    <string>Ranges Creator Properties</string>
+   </property>
+  </action>
+  <action name="actionFin_tube">
+   <property name="text">
+    <string>Fin-tube</string>
+   </property>
+  </action>
+  <action name="actionFin_tube_2">
+   <property name="text">
+    <string>Fin-tube</string>
+   </property>
+  </action>
+  <action name="actionMicrochannel">
+   <property name="text">
+    <string>Microchannel</string>
+   </property>
+  </action>
+  <action name="actionMicrochannel_2">
+   <property name="text">
+    <string>Microchannel</string>
+   </property>
+  </action>
+  <action name="actionimport_Fin_tube_fin">
+   <property name="text">
+    <string>Fin-tube</string>
+   </property>
+  </action>
+  <action name="actionimport_Microchannel_fin">
+   <property name="text">
+    <string>Microchannel</string>
+   </property>
+  </action>
+  <action name="actionimport_Fin_tube_tube">
+   <property name="text">
+    <string>Fin-tube</string>
+   </property>
+  </action>
+  <action name="actionimport_Microchannel_tube">
+   <property name="text">
+    <string>Microchannel</string>
+   </property>
+  </action>
+  <action name="actionEdit_Database">
+   <property name="text">
+    <string>Edit Database</string>
+   </property>
+  </action>
+  <action name="actionImport_Database_2">
+   <property name="text">
+    <string>Import Database</string>
+   </property>
+  </action>
+  <action name="actionCapillary_Sizing">
+   <property name="text">
+    <string>Capillary Sizing</string>
+   </property>
+  </action>
+  <action name="actionCompressor_Rating_to_Physics">
+   <property name="text">
+    <string>Compressor Rating to Physics</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

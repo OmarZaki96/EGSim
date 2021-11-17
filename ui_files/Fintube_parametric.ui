@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1186</width>
+    <height>849</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Parametric Study</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_6">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Parameters</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_19">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5"/>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_4">
+        <property name="title">
+         <string>Circuit Parameters</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="Circuit_number_label">
+             <property name="text">
+              <string>Circuit Number</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="Circuit_number"/>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_27">
+           <item>
+            <widget class="QCheckBox" name="Tube_length_check">
+             <property name="text">
+              <string>Tube Length</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_27">
+             <item>
+              <widget class="QLineEdit" name="Tube_length">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="Tube_length_unit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>m</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>cm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>mm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ft</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>in</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_26">
+           <item>
+            <widget class="QCheckBox" name="Tube_OD_check">
+             <property name="text">
+              <string>Tube Outer Diameter</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_26">
+             <item>
+              <widget class="QLineEdit" name="Tube_OD">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="Tube_OD_unit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>m</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>cm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>mm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ft</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>in</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_25">
+           <item>
+            <widget class="QCheckBox" name="Tube_ID_check">
+             <property name="text">
+              <string>Tube Inner Diameter</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_25">
+             <item>
+              <widget class="QLineEdit" name="Tube_ID">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="Tube_ID_unit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>m</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>cm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>mm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ft</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>in</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_24">
+           <item>
+            <widget class="QCheckBox" name="Tube_Pl_check">
+             <property name="text">
+              <string>Longitudinal Tube Spacing (in Air Flow Direction)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_24">
+             <item>
+              <widget class="QLineEdit" name="Tube_Pl">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="Tube_Pl_unit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>m</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>cm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>mm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ft</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>in</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_29">
+           <item>
+            <widget class="QCheckBox" name="Tube_Pt_check">
+             <property name="text">
+              <string>Transverse Tube Spacing (Normal to Air Flow Direction)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_29">
+             <item>
+              <widget class="QLineEdit" name="Tube_Pt">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="Tube_Pt_unit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>m</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>cm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>mm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ft</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>in</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_28">
+           <item>
+            <widget class="QCheckBox" name="N_parallel_check">
+             <property name="text">
+              <string>Number of Parallel Duplicate Circuits</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_28">
+             <item>
+              <widget class="QLineEdit" name="N_parallel">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_31">
+           <item>
+            <widget class="QCheckBox" name="N_tubes_check">
+             <property name="text">
+              <string>Number of Tubes per Bank</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_31">
+             <item>
+              <widget class="QLineEdit" name="N_tubes">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_30">
+           <item>
+            <widget class="QCheckBox" name="N_banks_check">
+             <property name="text">
+              <string>Number of Banks</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_30">
+             <item>
+              <widget class="QLineEdit" name="N_banks">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_33">
+           <item>
+            <widget class="QCheckBox" name="Fin_thickness_check">
+             <property name="text">
+              <string>Fin Thickness</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_33">
+             <item>
+              <widget class="QLineEdit" name="Fin_thickness">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="Fin_thickness_unit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>m</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>cm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>mm</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>ft</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>in</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_32">
+           <item>
+            <widget class="QCheckBox" name="Fin_FPI_check">
+             <property name="text">
+              <string>Fins Per Inch (FPI)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_32">
+             <item>
+              <widget class="QLineEdit" name="Fin_FPI">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="Fin_FPI_unit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <item>
+                <property name="text">
+                 <string>1/in</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>Air Parameters</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_23">
+             <item>
+              <widget class="QCheckBox" name="Air_Vdot_check">
+               <property name="text">
+                <string>Inlet Humid Air Flow Rate</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_23">
+               <item>
+                <widget class="QLineEdit" name="Air_Vdot">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="Air_Vdot_unit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>m^3/s</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>m^3/min</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>m^3/h</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>liter/min</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>ft^3/s</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>ft^3/min</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>ft^3/h</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_22">
+             <item>
+              <widget class="QCheckBox" name="Air_Pressure_check">
+               <property name="text">
+                <string>Air inlet pressure</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_22">
+               <item>
+                <widget class="QLineEdit" name="Air_Pressure">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="Air_Pressure_unit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Pa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>kPa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>MPa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>bar</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>atm</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>psi</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_20">
+             <item>
+              <widget class="QCheckBox" name="Air_Temperature_check">
+               <property name="text">
+                <string>Air inlet Temperature</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_20">
+               <item>
+                <widget class="QLineEdit" name="Air_Temperature">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="Air_Temperature_unit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>C</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>K</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>F</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_16">
+             <item>
+              <widget class="QCheckBox" name="Air_RH_check">
+               <property name="text">
+                <string>Air inlet Relative Humidity</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_16">
+               <item>
+                <widget class="QLineEdit" name="Air_RH">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="Air_RH_unit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>0-100%</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="FinTube_air_calculator_group">
+          <property name="title">
+           <string>Air Properties Calculator</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_34">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_43">
+             <item>
+              <spacer name="horizontalSpacer_47">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QComboBox" name="FinTube_air_calculator_option">
+               <item>
+                <property name="text">
+                 <string>Wet Bulb Temperature to Relative Humidity</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Humidity Ratio to Relative Humidity</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_46">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_35">
+             <item>
+              <widget class="QLabel" name="FinTube_air_calculator_P_label">
+               <property name="text">
+                <string>Air Pressure</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_41">
+               <item>
+                <widget class="QLineEdit" name="FinTube_air_calculator_P"/>
+               </item>
+               <item>
+                <widget class="QComboBox" name="FinTube_air_calculator_P_unit">
+                 <item>
+                  <property name="text">
+                   <string>Pa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>kPa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>MPa</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>bar</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>atm</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>psi</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_36">
+             <item>
+              <widget class="QLabel" name="FinTube_air_calculator_T_label">
+               <property name="text">
+                <string>Air Dry Bulb Temperature</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_45">
+               <item>
+                <widget class="QLineEdit" name="FinTube_air_calculator_T"/>
+               </item>
+               <item>
+                <widget class="QComboBox" name="FinTube_air_calculator_T_unit">
+                 <item>
+                  <property name="text">
+                   <string>C</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>K</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>F</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_37">
+             <item>
+              <widget class="QLabel" name="FinTube_air_calculator_2nd_label">
+               <property name="text">
+                <string>Air Wet Bulb Temperature</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_44">
+               <item>
+                <widget class="QLineEdit" name="FinTube_air_calculator_2nd"/>
+               </item>
+               <item>
+                <widget class="QComboBox" name="FinTube_air_calculator_2nd_unit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QComboBox::AdjustToContents</enum>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>C</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>K</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>F</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_38">
+             <item>
+              <widget class="QLabel" name="FinTube_air_calculator_RH_label">
+               <property name="text">
+                <string>Air Relative Humidity</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_42">
+               <item>
+                <widget class="QLineEdit" name="FinTube_air_calculator_RH">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="FinTube_air_calculator_RH_unit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>0-100%</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Hint</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter comma separated values for parameters. for example:&lt;br&gt;3, 5, 7 ,11&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancel_button">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ok_button">
+       <property name="text">
+        <string>Ok</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>494</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Capillary Tube Sizing</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="Capillary_properties_group">
+     <property name="title">
+      <string>Design Properties</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_19">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_19">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QLabel" name="Ref_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Refrigerant</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QComboBox" name="Ref"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QLabel" name="Cycle_Mode_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Cycle Mode</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QComboBox" name="Cycle_Mode">
+              <item>
+               <property name="text">
+                <string>Cooling</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Heating</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="Cycle_Capacity_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Cycle Capacity</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLineEdit" name="Cycle_Capacity">
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Cycle_Capacity_unit">
+              <item>
+               <property name="text">
+                <string>W</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Btu/hr</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QRadioButton" name="Condensing_T_label">
+            <property name="text">
+             <string>Condensing Temperature</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLineEdit" name="Condensing_T">
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string>45.0</string>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Condensing_T_unit">
+              <item>
+               <property name="text">
+                <string>C</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>K</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>F</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_15">
+          <item>
+           <widget class="QRadioButton" name="Condensing_P_label">
+            <property name="text">
+             <string>Condensing Pressure</string>
+            </property>
+            <property name="autoExclusive">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <item>
+             <widget class="QLineEdit" name="Condensing_P">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Condensing_P_unit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Pa</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>kPa</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>MPa</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>bar</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>atm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>psi</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QRadioButton" name="Evaporating_T_label">
+            <property name="text">
+             <string>Evaporating Temperature</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLineEdit" name="Evaporating_T">
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string>7.0</string>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Evaporating_T_unit">
+              <item>
+               <property name="text">
+                <string>C</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>K</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>F</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_16">
+          <item>
+           <widget class="QRadioButton" name="Evaporating_P_label">
+            <property name="text">
+             <string>Evaporating Pressure</string>
+            </property>
+            <property name="autoExclusive">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_17">
+            <item>
+             <widget class="QLineEdit" name="Evaporating_P">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Evaporating_P_unit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Pa</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>kPa</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>MPa</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>bar</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>atm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>psi</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QLabel" name="N_tubes_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Number of Parallel Tubes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QSpinBox" name="N_tubes">
+              <property name="toolTip">
+               <string>If capillary tube consisted of several parallel tubes.</string>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_18">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <widget class="QLabel" name="Subcooling_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Subcooling Value</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QLineEdit" name="Subcooling">
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string>7.0</string>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Subcooling_unit">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>C</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>F</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QLabel" name="Superheat_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Superheat Value</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLineEdit" name="Superheat">
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string>5.0</string>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Superheat_unit">
+              <item>
+               <property name="text">
+                <string>C</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>F</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="Compressor_isen_eff_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Compressor Isentropic Efficiency</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QDoubleSpinBox" name="Compressor_isen_eff">
+              <property name="maximum">
+               <double>100.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="value">
+               <double>70.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Compressor_isen_eff_unit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>%</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_13">
+          <item>
+           <widget class="QLabel" name="Diameter_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Capillary Tube Diameter</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <item>
+             <widget class="QLineEdit" name="Diameter">
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Diameter_unit">
+              <property name="currentIndex">
+               <number>2</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>m</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>cm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ft</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>in</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QLabel" name="Correlation_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Correlation</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QComboBox" name="Correlation">
+              <property name="currentIndex">
+               <number>4</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>Choi</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Wolf</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Wolf Physics</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Wolf&amp;Pate</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Rasti</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <widget class="QLabel" name="Ref_library_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Refrigerant Library</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QComboBox" name="Ref_library">
+              <item>
+               <property name="text">
+                <string>REFPROP</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>HEOS</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_14">
+          <item>
+           <widget class="QLabel" name="Length_unit_label">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="text">
+             <string>Capillary Length Unit</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QComboBox" name="Length_unit">
+              <item>
+               <property name="text">
+                <string>m</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>cm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ft</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>in</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Calculate_button">
+       <property name="toolTip">
+        <string>Ok</string>
+       </property>
+       <property name="text">
+        <string>Calculate Length</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

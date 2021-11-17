@@ -1,0 +1,10 @@
+<Design_check_properties>
+  <TTD_evap_AC>5.0</TTD_evap_AC>
+  <TTD_cond_AC>5.0</TTD_cond_AC>
+  <TTD_evap_HP>1.0</TTD_evap_HP>
+  <TTD_cond_HP>14.0</TTD_cond_HP>
+  <typical_COP>3.0</typical_COP>
+  <Capacity_tolerance>0.2</Capacity_tolerance>
+  <DT_sat_max_evap>3.0</DT_sat_max_evap>
+  <DT_sat_max_cond>2.0</DT_sat_max_cond>
+</Design_check_properties>

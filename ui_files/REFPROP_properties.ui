@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>612</width>
+    <height>127</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>REFPROP Properties</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="refprop_path_label">
+       <property name="toolTip">
+        <string>Refprop main folder path; if empty, default location will be used.</string>
+       </property>
+       <property name="text">
+        <string>REFPROP Path</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="refprop_path">
+       <property name="toolTip">
+        <string>Refprop main folder path; if empty, default location will be used.</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="refprop_path_select_button">
+       <property name="toolTip">
+        <string>Select REFPROP main folder path</string>
+       </property>
+       <property name="text">
+        <string>Open Folder</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="refprop_path_test_label">
+       <property name="text">
+        <string>REFPROP Status:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="refprop_path_test">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="refprop_path_test_button">
+       <property name="toolTip">
+        <string>Test whether the REFPROP folder has the necissary files</string>
+       </property>
+       <property name="text">
+        <string>Test</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>After updating REFPROP path, you should restart EGSim to avoid unexpected errors.</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

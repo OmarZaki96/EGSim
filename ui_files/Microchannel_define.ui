@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Microchannel_HX_definiton</class>
+ <widget class="QWidget" name="Microchannel_HX_definiton">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>818</width>
+    <height>579</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Microchannel Heat Exchanger Definition</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="Microchannel_tabs">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="Basic">
+      <attribute name="title">
+       <string>Basic Info</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QGroupBox" name="Microchannel_solver_options_group">
+         <property name="title">
+          <string>Solver Options</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="Microchannel_mode_label">
+              <property name="text">
+               <string>Heat Exchanger Model</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Microchannel_mode">
+              <property name="currentIndex">
+               <number>1</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>Segment by Segment</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Phase by Phase</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="Microchannel_N_segments_label">
+              <property name="toolTip">
+               <string>Segment by segment devides each tube to number of segments, while phase by phase solve each phase as one segment</string>
+              </property>
+              <property name="text">
+               <string>Number of Segments per Tube</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_10">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="Microchannel_N_segments">
+              <property name="toolTip">
+               <string>Segment by segment devides each tube to number of segments, while phase by phase solve each phase as one segment</string>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>50</number>
+              </property>
+              <property name="value">
+               <number>10</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="Microchannel_accurate_label">
+              <property name="toolTip">
+               <string>Coolprop is more accurate but usually takes longer time to solve</string>
+              </property>
+              <property name="text">
+               <string>Air Properties Library</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_11">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Microchannel_accurate">
+              <property name="toolTip">
+               <string>Coolprop is more accurate but usually takes longer time to solve</string>
+              </property>
+              <item>
+               <property name="text">
+                <string>CoolProp</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Psychrolib</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="Microchannel_HX_info_group">
+         <property name="title">
+          <string>Heat Exchanger Info</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="Microchannel_name_label">
+              <property name="text">
+               <string>Heat Exchanger Name</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="Microchannel_name"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="Microchannel_N_bank_label">
+              <property name="text">
+               <string>Number of Banks*</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="Microchannel_N_bank">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QLabel" name="Microchannel_N_tube_per_bank_label">
+              <property name="text">
+               <string>Number of Tubes per Bank*</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_12">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="Microchannel_N_tube_per_bank">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_38">
+            <item>
+             <widget class="QLabel" name="Microchannel_bank_circuit_define_label">
+              <property name="text">
+               <string>Bank Circuiting Definition*</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_44">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Microchannel_bank_circuit_define_button">
+              <property name="text">
+               <string>Define Bank Circuiting</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_39">
+            <item>
+             <widget class="QLabel" name="Microchannel_bank_geometry_define_label">
+              <property name="text">
+               <string>Banks Geometry Definition*</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_45">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Microchannel_bank_geometry_define_button">
+              <property name="text">
+               <string>Define Banks Geometry</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="Microchannel_error_tolerance_group">
+         <property name="title">
+          <string>Error Tolerances</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <item>
+             <widget class="QLabel" name="Microchannel_HX_Q_tolerance_label">
+              <property name="text">
+               <string>Heat Exchanger Capacity Error Tolerance</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_41">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="Microchannel_HX_Q_tolerance">
+              <property name="minimum">
+               <double>0.010000000000000</double>
+              </property>
+              <property name="value">
+               <double>1.000000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Microchannel_HX_Q_tolerance_unit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>0-100%</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QLabel" name="Microchannel_max_N_iterations_label">
+              <property name="text">
+               <string>Maximum Number of Iterations for Each Circuit</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_42">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="Microchannel_max_N_iterations">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="value">
+               <number>20</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Air">
+      <attribute name="title">
+       <string>Air</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_9">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_16">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="QGroupBox" name="Microchannel_air_flow_group">
+             <property name="title">
+              <string>Air Flow</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_47">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_7">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_12">
+                  <item>
+                   <widget class="QLabel" name="Microchannel_fan_model_label">
+                    <property name="text">
+                     <string>Fan Model*</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_13">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="Microchannel_fan_model">
+                    <item>
+                     <property name="text">
+                      <string>Fan Efficiency Model</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Fan Curve Model</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>Fan Power Model</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="Microchannel_fan_model_button">
+                    <property name="text">
+                     <string>Define Fan</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_13">
+                  <item>
+                   <widget class="QRadioButton" name="Microchannel_air_flowrate_label">
+                    <property name="text">
+                     <string>Inlet Humid Air Flow Rate*</string>
+                    </property>
+                    <property name="checked">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_48">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="Microchannel_air_flowrate"/>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="Microchannel_air_flowrate_unit">
+                    <item>
+                     <property name="text">
+                      <string>m^3/s</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>m^3/min</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>m^3/h</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>liter/min</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>ft^3/s</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>ft^3/min</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>ft^3/h</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_17">
+                  <item>
+                   <widget class="QRadioButton" name="Microchannel_air_mass_flowrate_label">
+                    <property name="text">
+                     <string>Inlet Dry Air Mass Flow Rate*</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_49">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="Microchannel_air_mass_flowrate">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="Microchannel_air_mass_flowrate_unit">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>kg/s</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>kg/min</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>kg/hr</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>lb/s</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>lb/min</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>lb/hr</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="Microchannel_air_inlet_group">
+             <property name="title">
+              <string>Air Inlet State</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <item>
+                 <widget class="QLabel" name="Microchannel_air_inlet_P_label">
+                  <property name="text">
+                   <string>Air inlet pressure*</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_15">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_inlet_P"/>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_air_inlet_P_unit">
+                  <item>
+                   <property name="text">
+                    <string>Pa</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>kPa</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>MPa</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>bar</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>atm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>psi</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_9">
+                <item>
+                 <widget class="QLabel" name="Microchannel_air_inlet_T_label">
+                  <property name="text">
+                   <string>Air inlet Temperature*</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_16">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_inlet_T"/>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_air_inlet_T_unit">
+                  <item>
+                   <property name="text">
+                    <string>C</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>K</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>F</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_10">
+                <item>
+                 <widget class="QLabel" name="Microchannel_air_inlet_RH_label">
+                  <property name="text">
+                   <string>Air inlet Relative Humidity*</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_17">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QDoubleSpinBox" name="Microchannel_air_inlet_RH">
+                  <property name="maximum">
+                   <double>100.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>50.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_air_inlet_RH_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>0-100%</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>Note that choosing a standard test condition in cycle parameters will overwrite the values above</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="Microchannel_air_calculator_group">
+           <property name="title">
+            <string>Air Properties Calculator</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_28">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_43">
+              <item>
+               <spacer name="horizontalSpacer_47">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QComboBox" name="Microchannel_air_calculator_option">
+                <item>
+                 <property name="text">
+                  <string>Wet Bulb Temperature to Relative Humidity</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Humidity Ratio to Relative Humidity</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_46">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_24">
+              <item>
+               <widget class="QLabel" name="Microchannel_air_calculator_P_label">
+                <property name="text">
+                 <string>Air Pressure</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_41">
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_calculator_P">
+                  <property name="text">
+                   <string>101325</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_air_calculator_P_unit">
+                  <item>
+                   <property name="text">
+                    <string>Pa</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>kPa</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>MPa</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>bar</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>atm</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>psi</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_27">
+              <item>
+               <widget class="QLabel" name="Microchannel_air_calculator_T_label">
+                <property name="text">
+                 <string>Air Dry Bulb Temperature</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_45">
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_calculator_T"/>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_air_calculator_T_unit">
+                  <item>
+                   <property name="text">
+                    <string>C</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>K</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>F</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_26">
+              <item>
+               <widget class="QLabel" name="Microchannel_air_calculator_2nd_label">
+                <property name="text">
+                 <string>Air Wet Bulb Temperature</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_44">
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_calculator_2nd"/>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_air_calculator_2nd_unit">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="sizeAdjustPolicy">
+                   <enum>QComboBox::AdjustToContents</enum>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>C</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>K</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>F</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_25">
+              <item>
+               <widget class="QLabel" name="Microchannel_air_calculator_RH_label">
+                <property name="text">
+                 <string>Air Relative Humidity</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_42">
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_calculator_RH">
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_air_calculator_RH_unit">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>0-100%</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>140</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Correlations">
+      <attribute name="title">
+       <string>Correlations</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_202">
+       <item>
+        <spacer name="horizontalSpacer_138">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_166">
+         <item>
+          <widget class="QGroupBox" name="Microchannel_subcool_correlations_group">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="title">
+            <string>Subcooled Refrigerant</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_167">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_168">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_191">
+                <item>
+                 <widget class="QLabel" name="Microchannel_subcool_HTC_correlation_label">
+                  <property name="text">
+                   <string>Heat Transfer Coefficient</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_128">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_subcool_HTC_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Gnielinski</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_192">
+                <item>
+                 <widget class="QLabel" name="Microchannel_subcool_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_129">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_subcool_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_169">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_193">
+                <item>
+                 <widget class="QLabel" name="Microchannel_subcool_DP_correlation_label">
+                  <property name="text">
+                   <string>Pessure Drop</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_130">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_subcool_DP_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Churchill</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_194">
+                <item>
+                 <widget class="QLabel" name="Microchannel_subcool_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_131">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_subcool_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string> Refrigerant Charge and acceleration pressure drop calculations</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_18">
+            <item>
+             <widget class="QLabel" name="Microchannel_2phase_charge_correlation_label">
+              <property name="text">
+               <string>Two-Phase Void Fraction Model</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="Microchannel_2phase_charge_correlation">
+              <item>
+               <property name="text">
+                <string>Auto</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Homogeneous</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Zivi</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Premoli</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="Microchannel_2phase_correlations_group">
+           <property name="title">
+            <string>Two-phase Refrigerant</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_162">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_163">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_185">
+                <item>
+                 <widget class="QLabel" name="Microchannel_2phase_HTC_correlation_label">
+                  <property name="text">
+                   <string>Heat Transfer Coefficient</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_122">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_2phase_HTC_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Condensation: Kim-Mudawar</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Kim-Mudawar</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_186">
+                <item>
+                 <widget class="QLabel" name="Microchannel_2phase_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_123">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_2phase_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_164">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_187">
+                <item>
+                 <widget class="QLabel" name="Microchannel_2phase_DP_correlation_label">
+                  <property name="text">
+                   <string>Pessure Drop</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_124">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_2phase_DP_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Condensation: Kim-Mudawar</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Evaporation: Kim-Mudawar</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_188">
+                <item>
+                 <widget class="QLabel" name="Microchannel_2phase_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_125">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_2phase_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_158">
+         <item>
+          <widget class="QGroupBox" name="Microchannel_superheat_correlations_group">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="title">
+            <string>Superheated Refrigerant</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_159">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_160">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_181">
+                <item>
+                 <widget class="QLabel" name="Microchannel_superheat_HTC_correlation_label">
+                  <property name="text">
+                   <string>Heat Transfer Coefficient</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_118">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_superheat_HTC_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Gnielinski</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_182">
+                <item>
+                 <widget class="QLabel" name="Microchannel_superheat_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_119">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_superheat_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_161">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_183">
+                <item>
+                 <widget class="QLabel" name="Microchannel_superheat_DP_correlation_label">
+                  <property name="text">
+                   <string>Pessure Drop</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_120">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_superheat_DP_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Churchill</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_184">
+                <item>
+                 <widget class="QLabel" name="Microchannel_superheat_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Correction Factor</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_121">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_superheat_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="Microchannel_air_correlations_group">
+           <property name="title">
+            <string>Air-Side</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_170">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_171">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_196">
+                <item>
+                 <widget class="QLabel" name="Microchannel_air_dry_correlation_label">
+                  <property name="text">
+                   <string>Dry Fins</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_132">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_air_dry_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Louvered: Kim 2002</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_197">
+                <item>
+                 <widget class="QLabel" name="Microchannel_air_dry_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Dry Heat Transfer Coefficient Correction Factor</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_133">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_dry_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_198">
+                <item>
+                 <widget class="QLabel" name="Microchannel_air_dry_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Dry Pressure Drop Correcton Factor</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_134">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_dry_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_172">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_199">
+                <item>
+                 <widget class="QLabel" name="Microchannel_air_wet_correlation_label">
+                  <property name="text">
+                   <string>Wet Fins</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_135">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="Microchannel_air_wet_correlation">
+                  <item>
+                   <property name="text">
+                    <string>Auto</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Louvered: Kim 2002</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_200">
+                <item>
+                 <widget class="QLabel" name="Microchannel_air_wet_HTC_correlation_correction_label">
+                  <property name="text">
+                   <string>Wet Heat Transfer Coefficient Correction Factor</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_136">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_wet_HTC_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_201">
+                <item>
+                 <widget class="QLabel" name="Microchannel_air_wet_DP_correlation_correction_label">
+                  <property name="text">
+                   <string>Wet Pressure Drop Correcton Factor</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_137">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="Microchannel_air_wet_DP_correlation_correction">
+                  <property name="text">
+                   <string>1.0</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="wet_h_a_check">
+              <property name="text">
+               <string>Use Wet air heat transfer coefficient correlation</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="wet_DPa_check">
+              <property name="text">
+               <string>Use wet air pressure drop correlation</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_117">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Fields with * are important inputs from user</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_6">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Microchannel_cancel_button">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Microchannel_load_button">
+       <property name="text">
+        <string>Load</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Microchannel_save_button">
+       <property name="text">
+        <string>Save</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Microchannel_ok_button">
+       <property name="text">
+        <string>Ok</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

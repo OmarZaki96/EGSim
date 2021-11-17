@@ -1,0 +1,26 @@
+<Design_check_errors>
+  <AC>
+	<Evaporator_Capacity_over>Evaporator capacity might be oversized with target capacity; consider decreasing air-side area and/or decreasing air flow rate.</Evaporator_Capacity_over>
+	<Evaporator_Capacity_under>Evaporator capacity might not be sufficient to fulfill target capacity; consider increasing air-side area and/or increasing air flow rate.</Evaporator_Capacity_under>
+	<Evaporator_Capacity_under_pinched>Evaporator capacity might not be sufficient to fulfill target capacity. However, evaporator is pinched. consider increasing air flow rate.</Evaporator_Capacity_under_pinched>
+	<Evaporator_Pressure_Drop>Evaporator pressure drop is high, consider increasing the number of circuits, decreasing tube length and/or increasing tube diameter.</Evaporator_Pressure_Drop>
+	<Condenser_Capacity_over>Condenser capacity might be oversized with regected heat; consider decreasing air-side area and/or decreasing air flow rate.</Condenser_Capacity_over>
+	<Condenser_Capacity_under>Condenser capacity might not be sufficient to fulfill regecting heat; consider increasing air-side area and/or increasing air flow rate.</Condenser_Capacity_under>
+	<Condenser_Capacity_under_pinched>Condenser capacity might not be sufficient to fulfill regecting heat. However, condenser is pinched. consider increasing air flow rate.</Condenser_Capacity_under_pinched>
+	<Condenser_Pressure_Drop>Condenser pressure drop is high, consider increasing the number of circuits, decreasing tube length and/or increasing tube diameter.</Condenser_Pressure_Drop>
+	<Compressor_Capacity_over>Compressor capacity might be oversized with target capacity; consider changing compressor parameters, decreasing superheat and/or decreasing subcooling to reduce compressor capacity.</Compressor_Capacity_over>
+	<Compressor_Capacity_under>Compressor capacity might not be sufficient to fulfill target capacity; consider changing compressor parameters, increasing superheat and/or increasing subcooling to increase compressor capacity.</Compressor_Capacity_under>
+  </AC>
+  <HP>
+	<Evaporator_Capacity_over>Evaporator capacity might be oversized with absorbed heat; consider decreasing air-side area and/or decreasing air flow rate.</Evaporator_Capacity_over>
+	<Evaporator_Capacity_under>Evaporator capacity might not be sufficient to fulfill absorbing heat; consider increasing air-side area and/or increasing air flow rate.</Evaporator_Capacity_under>
+	<Evaporator_Capacity_under_pinched>Evaporator capacity might not be sufficient to fulfill absorbing heat. However, evaporator is pinched. consider increasing air flow rate.</Evaporator_Capacity_under_pinched>
+	<Evaporator_Pressure_Drop>Evaporator pressure drop is high, consider increasing the number of circuits, decreasing tube length and/or increasing tube diameter.</Evaporator_Pressure_Drop>
+	<Condenser_Capacity_over>Condenser capacity might be oversized with target capacity; consider decreasing air-side area and/or decreasing air flow rate.</Condenser_Capacity_over>
+	<Condenser_Capacity_under>Condenser capacity might not be sufficient to fulfill target capacity; consider increasing air-side area and/or increasing air flow rate.</Condenser_Capacity_under>
+	<Condenser_Capacity_under_pinched>Condenser capacity might not be sufficient to fulfill target capacity. However, condenser is pinched. consider increasing air flow rate.</Condenser_Capacity_under_pinched>
+	<Condenser_Pressure_Drop>Condenser pressure drop is high, consider increasing the number of circuits, decreasing tube length and/or increasing tube diameter.</Condenser_Pressure_Drop>
+	<Compressor_Capacity_over>Compressor capacity might be oversized with target capacity; consider changing compressor parameters, decreasing superheat and/or decreasing subcooling to reduce compressor capacity.</Compressor_Capacity_over>
+	<Compressor_Capacity_under>Compressor capacity might not be sufficient to fulfill target capacity; consider changing compressor parameters, increasing superheat and/or increasing subcooling to increase compressor capacity.</Compressor_Capacity_under>
+  </HP>
+</Design_check_errors>

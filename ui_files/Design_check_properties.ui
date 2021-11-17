@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>414</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Design Check Properties</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_10">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="TTD_cond_AC_label">
+       <property name="text">
+        <string>Condenser Terminal Temperature Difference in Cooling Mode</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="TTD_cond_AC"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="TTD_cond_AC_unit">
+         <item>
+          <property name="text">
+           <string>C</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>F</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="TTD_evap_AC_label">
+       <property name="text">
+        <string>Evaporator Terminal Temperature Difference in Cooling Mode</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="TTD_evap_AC"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="TTD_evap_AC_unit">
+         <item>
+          <property name="text">
+           <string>C</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>F</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <widget class="QLabel" name="TTD_cond_HP_label">
+       <property name="text">
+        <string>Condenser Terminal Temperature Difference in Heating Mode</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QLineEdit" name="TTD_cond_HP"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="TTD_cond_HP_unit">
+         <item>
+          <property name="text">
+           <string>C</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>F</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_9">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_7">
+     <item>
+      <widget class="QLabel" name="TTD_evap_HP_label">
+       <property name="text">
+        <string>Evaporator Terminal Temperature Difference in Heating Mode</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <item>
+        <widget class="QLineEdit" name="TTD_evap_HP"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="TTD_evap_HP_unit">
+         <item>
+          <property name="text">
+           <string>C</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>F</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_10">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_8">
+     <item>
+      <widget class="QLabel" name="typical_COP_label">
+       <property name="text">
+        <string>Typical unit COP</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item>
+        <widget class="QLineEdit" name="typical_COP"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="typical_COP_unit">
+         <item>
+          <property name="text">
+           <string>W/W</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>(Btu/hr)/W</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_11">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_9">
+     <item>
+      <widget class="QLabel" name="typical_eta_isen_label">
+       <property name="text">
+        <string>Typical Compressor Isentropic Efficiency</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <widget class="QDoubleSpinBox" name="typical_eta_isen">
+         <property name="minimum">
+          <double>1.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>100.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>70.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="typical_eta_isen_unit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>%</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_12">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLabel" name="Capacity_tolerance_label">
+       <property name="text">
+        <string>Cycle Capacity Tolerance</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QDoubleSpinBox" name="Capacity_tolerance">
+         <property name="maximum">
+          <double>100.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>10.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="Capacity_tolerance_unit">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>%</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QLabel" name="DT_sat_max_cond_label">
+       <property name="text">
+        <string>Condenser Maximum Saturation Temperature Drop</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLineEdit" name="DT_sat_max_cond"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="DT_sat_max_cond_unit">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>C</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>F</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="QLabel" name="DT_sat_max_evap_label">
+       <property name="text">
+        <string>Evaporator Maximum Saturation Temperature Drop</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLineEdit" name="DT_sat_max_evap"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="DT_sat_max_evap_unit">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>C</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>F</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="insta_activated">
+     <property name="text">
+      <string>Instantaneous Design check for components</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Cancel_button">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Ok_button">
+       <property name="text">
+        <string>Ok</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
