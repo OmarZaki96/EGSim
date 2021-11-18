@@ -6,11 +6,15 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+
+<p align="center">
+  <a href="https://github.com/OmarZaki96/EGSim/releases/"><img alt="Releases" src="https://img.shields.io/github/v/release/OmarZaki96/EGSim?display_name=tag&include_prereleases" /></a>
+  <a href="https://github.com/OmarZaki96/EGSim/issues/"><img alt="Issues" src="https://img.shields.io/github/issues/OmarZaki96/EGSim" /></a>
+  <a href="https://github.com/OmarZaki96/EGSim/network/members"><img alt="Forks" src="https://img.shields.io/github/forks/OmarZaki96/EGSim?label=Fork" /></a>
+  <a href="https://github.com/OmarZaki96/EGSim/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/OmarZaki96/EGsim?label=Stars" /></a>
+  <a href="https://github.com/OmarZaki96/EGSim/watchers"><img alt="Watchers" src="https://img.shields.io/github/watchers/OmarZaki96/EGsim?label=watchers" /></a>
+  <a href="https://github.com/OmarZaki96/EGSim/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/OmarZaki96/EGSim?label=contributors" /></a>
+</p>
 
 
 <!-- PROJECT LOGO -->
@@ -49,7 +53,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
