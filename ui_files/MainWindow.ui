@@ -2921,6 +2921,7 @@
     <addaction name="actionCompressor_to_physics_model"/>
     <addaction name="actionCapillary_Sizing"/>
     <addaction name="actionCompressor_Rating_to_Physics"/>
+    <addaction name="actionImport_Compressor_from_Manufacturer_Datasheet"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuDatabase"/>
@@ -3237,6 +3238,11 @@
   <action name="actionCompressor_Rating_to_Physics">
    <property name="text">
     <string>Compressor Rating to Physics</string>
+   </property>
+  </action>
+  <action name="actionImport_Compressor_from_Manufacturer_Datasheet">
+   <property name="text">
+    <string>Import Compressor from Manufacturer Datasheet</string>
    </property>
   </action>
  </widget>

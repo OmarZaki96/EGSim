@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>822</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Available Testing Conditions</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTableWidget" name="Table">
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>Code</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Condensing Temp. (C)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Evaporating Temp. (C)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Condenser Subcooling (C)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Suction Temperature (C)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Ambient Temperature (C)</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>ASHRAE</string>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string>54.4</string>
+      </property>
+     </item>
+     <item row="0" column="2">
+      <property name="text">
+       <string>7.2</string>
+      </property>
+     </item>
+     <item row="0" column="3">
+      <property name="text">
+       <string>8.3</string>
+      </property>
+     </item>
+     <item row="0" column="4">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+     <item row="0" column="5">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>HP</string>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string>46</string>
+      </property>
+     </item>
+     <item row="1" column="2">
+      <property name="text">
+       <string>7.2</string>
+      </property>
+     </item>
+     <item row="1" column="3">
+      <property name="text">
+       <string>8.3</string>
+      </property>
+     </item>
+     <item row="1" column="4">
+      <property name="text">
+       <string>18.3</string>
+      </property>
+     </item>
+     <item row="1" column="5">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string>High EER</string>
+      </property>
+     </item>
+     <item row="2" column="1">
+      <property name="text">
+       <string>45</string>
+      </property>
+     </item>
+     <item row="2" column="2">
+      <property name="text">
+       <string>12</string>
+      </property>
+     </item>
+     <item row="2" column="3">
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item row="2" column="4">
+      <property name="text">
+       <string>24</string>
+      </property>
+     </item>
+     <item row="2" column="5">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+     <item row="3" column="0">
+      <property name="text">
+       <string>HPD</string>
+      </property>
+     </item>
+     <item row="3" column="1">
+      <property name="text">
+       <string>70</string>
+      </property>
+     </item>
+     <item row="3" column="2">
+      <property name="text">
+       <string>25</string>
+      </property>
+     </item>
+     <item row="3" column="3">
+      <property name="text">
+       <string>9</string>
+      </property>
+     </item>
+     <item row="3" column="4">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+     <item row="3" column="5">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+     <item row="4" column="0">
+      <property name="text">
+       <string>Refrigeration</string>
+      </property>
+     </item>
+     <item row="4" column="1">
+      <property name="text">
+       <string>54.4</string>
+      </property>
+     </item>
+     <item row="4" column="2">
+      <property name="text">
+       <string>-23.3</string>
+      </property>
+     </item>
+     <item row="4" column="3">
+      <property name="text">
+       <string>22.2</string>
+      </property>
+     </item>
+     <item row="4" column="4">
+      <property name="text">
+       <string>18.3</string>
+      </property>
+     </item>
+     <item row="4" column="5">
+      <property name="text">
+       <string>32.2</string>
+      </property>
+     </item>
+     <item row="5" column="0">
+      <property name="text">
+       <string>60Hz Inverter</string>
+      </property>
+     </item>
+     <item row="5" column="1">
+      <property name="text">
+       <string>46</string>
+      </property>
+     </item>
+     <item row="5" column="2">
+      <property name="text">
+       <string>10</string>
+      </property>
+     </item>
+     <item row="5" column="3">
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item row="5" column="4">
+      <property name="text">
+       <string>18</string>
+      </property>
+     </item>
+     <item row="5" column="5">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

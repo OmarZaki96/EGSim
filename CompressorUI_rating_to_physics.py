@@ -239,7 +239,7 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
                     else:
                         mdot = Capacity / (h2 - h3)
                     PR = P2 / P1
-                    isen_eff = mdot * (h2s - h1) / Power
+                    isen_eff = mdot * (h2s - h1) / (Power)
                     vol_eff = mdot / (Vdot * Speed / 60 * rho1)
                     results.append([PR,isen_eff,vol_eff])
                     

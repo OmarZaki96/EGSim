@@ -51,6 +51,7 @@ from inputs_validation import check_compressor_capacity, check_condenser_capacit
 from Capillary_SizingUI import Capillary_sizing_window
 from CoolProp.CoolProp import HAPropsSI
 from CompressorUI_rating_to_physics import Compressor_rating_to_physics_Window
+from Compressor_select_datasheet import Compressor_select_datasheet_window
 
 FROM_Main_Window,_ = loadUiType(os.path.join(os.path.dirname(__file__),"ui_files/MainWindow.ui"))
 
@@ -298,6 +299,7 @@ class MainWindow(QMainWindow, FROM_Main_Window):
         self.actionimport_Fin_tube_tube.triggered.connect(self.import_fintube_tube_file)
         self.actionImport_Database_2.triggered.connect(self.import_line_tube_file)
         self.actionCapillary_Sizing.triggered.connect(self.Capillary_sizing)
+        self.actionImport_Compressor_from_Manufacturer_Datasheet.triggered.connect(self.import_compressor_from_datahseet)
         
         self.Subcooling.editingFinished.connect(self.check_components_capacity)
         self.Superheat.editingFinished.connect(self.check_components_capacity)
@@ -323,7 +325,11 @@ class MainWindow(QMainWindow, FROM_Main_Window):
 
     def open_comp_rating_to_physics(self):
         Compressor_rating_to_physics_window = Compressor_rating_to_physics_Window()
-        Compressor_rating_to_physics_window.exec_()
+        Compressor_rating_to_physics_window.exec_()        
+
+    def import_compressor_from_datahseet(self):
+        compressor_from_datasheet = Compressor_select_datasheet_window()
+        compressor_from_datasheet.exec_()
         self.refresh_selected_components()
 
     def Capillary_sizing(self):
