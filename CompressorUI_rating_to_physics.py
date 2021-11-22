@@ -87,8 +87,6 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
         units.append(create_dropbox(["W","Btu/hr"],power_unit_converter))
         units.append(create_dropbox(["W"],None))
         for i,unit in enumerate(units):
-            if i==5: # default capacity unit is btu/hr
-                unit.setCurrentIndex(1)
             self.Rating_table.setCellWidget(0,i,unit)
         self.mode_combos = []
         self.refresh_inputs_rows()
@@ -101,10 +99,6 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
                 return return_object
         delegate = MyDelegate()
         self.Rating_table.setItemDelegate(delegate)
-
-        # initial values for the table
-        for i,value in enumerate([54.5,7.2,8.4,27.8]):
-            self.Rating_table.setItem(1,i+1,QTableWidgetItem(str(value)))
 
     def get_rating_table_values(self):
         try:
@@ -151,9 +145,6 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
                 combo.addItems(["Cooling","Heating"])
                 self.mode_combos.append(combo)
                 self.Rating_table.setCellWidget(i,0,combo)
-                # initial values for the table
-                for j,value in enumerate([54.5,7.2,8.4,27.8]):
-                    self.Rating_table.setItem(i,j+1,QTableWidgetItem(str(value)))
         self.volumetric_degree.setValue(max(N_points-2,0))
         self.isentropic_degree.setValue(max(N_points-2,0))
 
@@ -188,7 +179,7 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
             Backend = "REFPROP"
         else:
             Backend = "HEOS"
-        AS = get_AS(Backend,self.Comp_ref.currentText(),None)
+        AS = get_AS(Backend,Ref,None)
         if AS[0]:
             self.AS = AS[1]
         else:        
