@@ -179,7 +179,7 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
             Backend = "REFPROP"
         else:
             Backend = "HEOS"
-        AS = get_AS(Backend,Ref,None)
+        AS = get_AS(Backend,self.Comp_ref.currentText(),None)
         if AS[0]:
             self.AS = AS[1]
         else:        
