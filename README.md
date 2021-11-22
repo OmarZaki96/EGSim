@@ -151,8 +151,9 @@ Project Link: [https://github.com/OmarZaki96/EGSim](https://github.com/OmarZaki9
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
+We would like to thank UNIDO for their continuous support of the project through Egyptian HPMP-II.
 
-I learned a lot from the tool created by <a href="https://github.com/ibell">Dr. Ian Bell</a>, which is <a href="https://github.com/CenterHighPerformanceBuildingsPurdue/ACHP">ACHP</a>.
+Thanks to <a href="https://github.com/ibell">Dr. Ian Bell</a> for his work on <a href="https://github.com/CenterHighPerformanceBuildingsPurdue/ACHP">ACHP</a> which inspired some the ideas used in EGSim.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
