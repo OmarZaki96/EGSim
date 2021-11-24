@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>822</width>
-    <height>300</height>
+    <width>940</width>
+    <height>364</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -52,6 +52,16 @@
        <string>6</string>
       </property>
      </row>
+     <row>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </row>
      <column>
       <property name="text">
        <string>Code</string>
@@ -84,7 +94,7 @@
      </column>
      <item row="0" column="0">
       <property name="text">
-       <string>ASHRAE</string>
+       <string>ASH</string>
       </property>
      </item>
      <item row="0" column="1">
@@ -144,7 +154,7 @@
      </item>
      <item row="2" column="0">
       <property name="text">
-       <string>High EER</string>
+       <string>EER</string>
       </property>
      </item>
      <item row="2" column="1">
@@ -204,7 +214,7 @@
      </item>
      <item row="4" column="0">
       <property name="text">
-       <string>Refrigeration</string>
+       <string>REF</string>
       </property>
      </item>
      <item row="4" column="1">
@@ -234,7 +244,7 @@
      </item>
      <item row="5" column="0">
       <property name="text">
-       <string>60Hz Inverter</string>
+       <string>GX</string>
       </property>
      </item>
      <item row="5" column="1">
@@ -258,6 +268,66 @@
       </property>
      </item>
      <item row="5" column="5">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+     <item row="6" column="0">
+      <property name="text">
+       <string>SEER60</string>
+      </property>
+     </item>
+     <item row="6" column="1">
+      <property name="text">
+       <string>42.3</string>
+      </property>
+     </item>
+     <item row="6" column="2">
+      <property name="text">
+       <string>2.7</string>
+      </property>
+     </item>
+     <item row="6" column="3">
+      <property name="text">
+       <string>8</string>
+      </property>
+     </item>
+     <item row="6" column="4">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+     <item row="6" column="5">
+      <property name="text">
+       <string>35</string>
+      </property>
+     </item>
+     <item row="7" column="0">
+      <property name="text">
+       <string>ARI</string>
+      </property>
+     </item>
+     <item row="7" column="1">
+      <property name="text">
+       <string>54.4</string>
+      </property>
+     </item>
+     <item row="7" column="2">
+      <property name="text">
+       <string>7.2</string>
+      </property>
+     </item>
+     <item row="7" column="3">
+      <property name="text">
+       <string>8.3</string>
+      </property>
+     </item>
+     <item row="7" column="4">
+      <property name="text">
+       <string>18.3</string>
+      </property>
+     </item>
+     <item row="7" column="5">
       <property name="text">
        <string>35</string>
       </property>

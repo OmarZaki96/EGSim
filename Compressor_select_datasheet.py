@@ -72,7 +72,7 @@ class Compressor_select_datasheet_window(QDialog, FROM_COMPRESSOR_SELECT_MAIN):
                 self.compressor_data[cols] = self.compressor_data[cols].apply(lambda x: pd.to_numeric(x, errors='coerce'))
                 self.compressor_data['Test Condition'] = self.compressor_data['Test Condition'].str.strip()
                 self.compressor_data['Test Condition'] = self.compressor_data['Test Condition'].str.lower()
-                self.compressor_data = self.compressor_data[self.compressor_data['Test Condition'].isin(["ashrae","hp","high eer","hpd","refrigeration","60hz inverter"])]
+                self.compressor_data = self.compressor_data[self.compressor_data['Test Condition'].isin(["ash","hp","eer","hpd","ref","gx","seer60","ari"])]
                 self.compressor_data = self.compressor_data[self.compressor_data['Refrigerant'].isin(self.ref_list[:,0])]
                 self.compressor_data['Minimum Voltage'] = self.compressor_data['Minimum Voltage'].fillna("-")
                 self.compressor_data['Maximum Voltage'] = self.compressor_data['Maximum Voltage'].fillna("-")
@@ -255,7 +255,7 @@ class Compressor_select_datasheet_window(QDialog, FROM_COMPRESSOR_SELECT_MAIN):
                 for i,compressor in compressors.iterrows():
                     try:
                         name = str(compressor["Manufacturer"])+" "+str(compressor["Model"])+" "+str(compressor["Refrigerant"])+" "+str(round(compressor["Capacity"]/12000,2))+" TR"
-                        if compressor["Test Condition"] == "ashrae":
+                        if compressor["Test Condition"] == "ash":
                             Tcond = 54.4
                             Tevap = 7.2
                             SC = 8.3
@@ -267,7 +267,7 @@ class Compressor_select_datasheet_window(QDialog, FROM_COMPRESSOR_SELECT_MAIN):
                             SC = 8.3
                             Suction_T = 18.3
     
-                        elif compressor["Test Condition"] == "high eer":
+                        elif compressor["Test Condition"] == "eer":
                             Tcond = 45
                             Tevap = 12
                             SC = 5
@@ -279,17 +279,29 @@ class Compressor_select_datasheet_window(QDialog, FROM_COMPRESSOR_SELECT_MAIN):
                             SC = 9
                             Suction_T = 35
     
-                        elif compressor["Test Condition"] == "refrigeration":
+                        elif compressor["Test Condition"] == "ref":
                             Tcond = 54.4
                             Tevap = -23.3
                             SC = 22.2
                             Suction_T = 18.3
     
-                        elif compressor["Test Condition"] == "60hz inverter":
+                        elif compressor["Test Condition"] == "gx":
                             Tcond = 46
                             Tevap = 10
                             SC = 5
                             Suction_T = 18
+
+                        elif compressor["Test Condition"] == "ari":
+                            Tcond = 54.4
+                            Tevap = 7.2
+                            SC = 8.3
+                            Suction_T = 18.3
+
+                        elif compressor["Test Condition"] == "seer60":
+                            Tcond = 42.3
+                            Tevap = 2.7
+                            SC = 8
+                            Suction_T = 12.8
                                             
                         Tcond += 273.15
                         Tevap += 273.15
