@@ -27,7 +27,7 @@
        <attribute name="title">
         <string>Cycle Parameters</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_50">
+       <layout class="QVBoxLayout" name="verticalLayout_52">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_23">
           <item>
@@ -222,6 +222,148 @@
                    </item>
                    <item>
                     <spacer name="horizontalSpacer_30">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_51">
+                 <item>
+                  <widget class="QLabel" name="Indoor_Fan_add_DP_label">
+                   <property name="toolTip">
+                    <string>This is the percentage of system charge stored in accumulator to total system charge</string>
+                   </property>
+                   <property name="text">
+                    <string>Indoor Unit Additional Air Pressure Drop</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_49">
+                   <item>
+                    <widget class="QLineEdit" name="Indoor_Fan_add_DP"/>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Indoor_Fan_add_DP_unit">
+                     <item>
+                      <property name="text">
+                       <string>Pa</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>kPa</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>MPa</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>bar</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>atm</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>psi</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_33">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_50">
+                 <item>
+                  <widget class="QLabel" name="Outdoor_Fan_add_DP_label">
+                   <property name="toolTip">
+                    <string>This is the percentage of system charge stored in accumulator to total system charge</string>
+                   </property>
+                   <property name="text">
+                    <string>Outdoor Unit Additional Air Pressure Drop</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_48">
+                   <item>
+                    <widget class="QLineEdit" name="Outdoor_Fan_add_DP"/>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Outdoor_Fan_add_DP_unit">
+                     <item>
+                      <property name="text">
+                       <string>Pa</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>kPa</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>MPa</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>bar</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>atm</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>psi</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_32">
                      <property name="orientation">
                       <enum>Qt::Horizontal</enum>
                      </property>

@@ -70,6 +70,7 @@ class solver(QObject):
         self.HX.Pin_a = HX.Air_P
         Win_a = HAPropsSI("W","T",HX.Air_T,"P",HX.Air_P,"R",HX.Air_RH)
         self.HX.Win_a = Win_a
+        self.HX.Fan_add_DP = 0
         if HX.Air_flow_direction == "Parallel":
             self.HX.Air_sequence = 'parallel'
             self.HX.Air_distribution = HX.Air_Distribution

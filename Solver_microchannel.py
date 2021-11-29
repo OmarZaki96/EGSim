@@ -60,6 +60,7 @@ class solver(QObject):
         self.HX.Pin_a = HX.Air_P
         Win_a = HAPropsSI("W","T",HX.Air_T,"P",HX.Air_P,"R",HX.Air_RH)
         self.HX.Win_a = Win_a
+        self.HX.Fan_add_DP = 0
         if HX.model == "Segment by Segment":
             self.HX.model = 'segment'
             self.HX.Thermal.Nsegments = HX.N_segments

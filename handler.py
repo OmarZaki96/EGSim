@@ -178,7 +178,6 @@ def define_single(compressor,condenser,evaporator,liquid_line,suction_line,
                 number_of_circuits = condenser.N_series_Circuits + 1
             elif condenser.Air_flow_direction in ["Parallel","Series-Parallel","Series-Counter"]:
                 number_of_circuits = condenser.N_series_Circuits
-    
             Cycle.Condenser.name = condenser.name
             if condenser.Accurate == "CoolProp":
                 Cycle.Condenser.Accurate = True
@@ -192,6 +191,7 @@ def define_single(compressor,condenser,evaporator,liquid_line,suction_line,
             Cycle.Condenser.Tin_a = Tin_a_cond
             Cycle.Condenser.Pin_a = condenser.Air_P
             Cycle.Condenser.Win_a = Win_a_cond
+            Cycle.Condenser.Fan_add_DP = options['Condenser_Fan_add_DP']
             if condenser.Air_flow_direction == "Parallel":
                 Cycle.Condenser.Air_sequence = 'parallel'
                 Cycle.Condenser.Air_distribution = condenser.Air_Distribution
@@ -347,6 +347,7 @@ def define_single(compressor,condenser,evaporator,liquid_line,suction_line,
             Cycle.Condenser.Tin_a = Tin_a_cond
             Cycle.Condenser.Pin_a = condenser.Air_P
             Cycle.Condenser.Win_a = Win_a_cond
+            Cycle.Condenser.Fan_add_DP = options['Condenser_Fan_add_DP']
             if condenser.model == "Segment by Segment":
                 Cycle.Condenser.model = 'segment'
                 Cycle.Condenser.Thermal.Nsegments = condenser.N_segments
@@ -459,6 +460,7 @@ def define_single(compressor,condenser,evaporator,liquid_line,suction_line,
             Cycle.Evaporator.Tin_a = Tin_a_evap
             Cycle.Evaporator.Pin_a = evaporator.Air_P
             Cycle.Evaporator.Win_a = Win_a_evap
+            Cycle.Evaporator.Fan_add_DP = options['Evaporator_Fan_add_DP']
             if evaporator.Air_flow_direction == "Parallel":
                 Cycle.Evaporator.Air_sequence = 'parallel'
                 Cycle.Evaporator.Air_distribution = evaporator.Air_Distribution
@@ -588,6 +590,7 @@ def define_single(compressor,condenser,evaporator,liquid_line,suction_line,
             Cycle.Evaporator.Tin_a = Tin_a_evap
             Cycle.Evaporator.Pin_a = evaporator.Air_P
             Cycle.Evaporator.Win_a = Win_a_evap
+            Cycle.Evaporator.Fan_add_DP = options['Evaporator_Fan_add_DP']
             if evaporator.model == "Segment by Segment":
                 Cycle.Evaporator.model = 'segment'
                 Cycle.Evaporator.Thermal.Nsegments = evaporator.N_segments

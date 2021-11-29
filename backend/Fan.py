@@ -179,24 +179,6 @@ class FanClass():
         self.isen_eff = isen_eff
         
     def Calculate(self):
-        dirname = os.path.dirname(__file__)
-        filename = os.path.join(dirname, 'Settings.xml')
-        try:
-            tree = ET.parse(filename)
-            root = tree.getroot()
-            if root.tag == "Settings":
-                root = root.find("Parameters")
-                if root != None:
-                    root = root.find("Fan_Throw_DP")
-                    if root != None:
-                        self.DP_fan_add = float(root.text)
-                else:
-                    raise
-            else:
-                raise
-        except:
-            self.DP_fan_add = 125
-                
         if self.model == 'efficiency':
             self.Calculate_efficiency()
         elif self.model == 'curve':

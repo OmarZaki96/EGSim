@@ -211,7 +211,9 @@ class MainWindow(QMainWindow, FROM_Main_Window):
         self.Tevap_guess.setValidator(only_number_negative)
         self.Tcond_guess.setValidator(only_number_negative)
         self.Capacity_target.setValidator(only_number)
-
+        self.Outdoor_Fan_add_DP.setValidator(only_number)
+        self.Indoor_Fan_add_DP.setValidator(only_number)
+        
         # connections
         self.swap_HXs_button.clicked.connect(self.swap_HXs)
         self.actionNew_Compressor.triggered.connect(self.add_new_compressor)
@@ -964,6 +966,8 @@ class MainWindow(QMainWindow, FROM_Main_Window):
                 cycle.Ref_library_index = self.Ref_library.currentIndex()
                 cycle.Test_cond = self.Test_Condition.currentText()
                 cycle.accum_charge_per = self.accumulator_charge.value()/100.0
+                cycle.Outdoor_Fan_add_DP = pressure_unit_converter(self.Outdoor_Fan_add_DP.text(),self.Outdoor_Fan_add_DP_unit.currentIndex())
+                cycle.Indoor_Fan_add_DP = pressure_unit_converter(self.Indoor_Fan_add_DP.text(),self.Indoor_Fan_add_DP_unit.currentIndex())
                 
                 cycle.Capacity_target = power_unit_converter(self.Capacity_target.text(),self.Capacity_target_unit.currentIndex())
                 
@@ -1600,9 +1604,13 @@ class MainWindow(QMainWindow, FROM_Main_Window):
 
             if self.Cycle_mode.currentIndex() == 0:
                 Cycle_mode = 'AC'
+                Condenser_Fan_add_DP = pressure_unit_converter(self.Outdoor_Fan_add_DP.text(),self.Outdoor_Fan_add_DP_unit.currentIndex())
+                Evaporator_Fan_add_DP = pressure_unit_converter(self.Indoor_Fan_add_DP.text(),self.Indoor_Fan_add_DP_unit.currentIndex())
                 
             elif self.Cycle_mode.currentIndex() == 1:
                 Cycle_mode = 'HP'
+                Condenser_Fan_add_DP = pressure_unit_converter(self.Indoor_Fan_add_DP.text(),self.Indoor_Fan_add_DP_unit.currentIndex())
+                Evaporator_Fan_add_DP = pressure_unit_converter(self.Outdoor_Fan_add_DP.text(),self.Outdoor_Fan_add_DP_unit.currentIndex())
 
             if self.Ref_library.currentIndex() == 0:
                 Ref_library = 'REFPROP'
@@ -1646,6 +1654,8 @@ class MainWindow(QMainWindow, FROM_Main_Window):
                        'refprop_path': refprop_path,
                        'Test_cond': self.Test_Condition.currentText(),
                        'Accum_charge_per': self.accumulator_charge.value()/100,
+                       'Condenser_Fan_add_DP': Condenser_Fan_add_DP,
+                       'Evaporator_Fan_add_DP': Evaporator_Fan_add_DP,
                 }
 
             # check for parametric study
@@ -2499,6 +2509,8 @@ class MainWindow(QMainWindow, FROM_Main_Window):
             self.Test_Condition.setCurrentIndex(1)
 
         self.accumulator_charge.setValue(cycle.accum_charge_per * 100.0)
+        self.Outdoor_Fan_add_DP.setText("%.5g" % cycle.Outdoor_Fan_add_DP)
+        self.Indoor_Fan_add_DP.setText("%.5g" % cycle.Indoor_Fan_add_DP)
 
         if self.Cycle_mode.currentIndex() == 0:
             condenser_name = "Outdoor Unit"
@@ -2752,7 +2764,9 @@ class MainWindow(QMainWindow, FROM_Main_Window):
                 cycle.Capacity_target = power_unit_converter(self.Capacity_target.text(),self.Capacity_target_unit.currentIndex())
                 cycle.Test_cond = self.Test_Condition.currentText()
                 cycle.accum_charge_per = self.accumulator_charge.value()/100.0
-                                
+                cycle.Outdoor_Fan_add_DP = pressure_unit_converter(self.Outdoor_Fan_add_DP.text(),self.Outdoor_Fan_add_DP_unit.currentIndex())
+                cycle.Indoor_Fan_add_DP = pressure_unit_converter(self.Indoor_Fan_add_DP.text(),self.Indoor_Fan_add_DP_unit.currentIndex())
+                                                
                 if hasattr(self,"selected_condenser_index"):
                     if self.Condenser_type.currentIndex() == 0:
                         filename = self.selected_condenser_filename

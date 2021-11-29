@@ -185,6 +185,7 @@ class MicroChannelHEXClass():
                ('Header_CS_Type',str,None,None),
                ('Header_dim_a',float,0,10000000),
                ('Header_length',float,0,10000000),
+               ('Fan_add_DP',float,0,10000000)
                ]
         optFields=['E_t','E_h','E_n','P_b','Fin_Lp','N_tube_per_bank_per_pass','A_r','inner_circum','A_CS','Aw','tw','Dh','Header_dim_b','N_tube_per_bank','A_a','N_bank','N_circuits','L_circuit', 'A_face']
         ValidateFields(self.Geometry.__dict__,reqFields,optFields)
@@ -1522,6 +1523,7 @@ class MicroChannelHEXClass():
         '''
         if self.Fan.model == 'efficiency' or self.Fan.model == 'power':
             # solving HX depending on solver
+            self.Fan.DP_fan_add = self.Fan_add_DP
             if self.model == 'segment':
                 self.Fins.calculated_before = False
                 self.initialize(Max_Q_error,initial_Nsegments)
@@ -1578,6 +1580,7 @@ class MicroChannelHEXClass():
             error = 100
             # get initial guess from given volume flow rate value
             Vdot_a_initial = self.Vdot_ha
+            self.Fan.DP_fan_add = self.Fan_add_DP
             def objective(Vdot_a):
                 Vdot_a = float(Vdot_a)
                 self.Fan.Vdot_a = Vdot_a

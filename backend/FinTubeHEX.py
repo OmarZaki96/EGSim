@@ -672,6 +672,7 @@ class FinTubeHEXClass():
                 self.results_creator()
     
                 # solving fan
+                self.Fan.DP_fan_add = self.Fan_add_DP
                 if self.Fan.Fan_position == 'before':
                     self.Fan.Vdot_a = self.Results.Vdot_ha_in
                     self.Fan.DP_a = -self.Results.DP_a
@@ -705,6 +706,7 @@ class FinTubeHEXClass():
             elif self.Fan.model == 'curve':
                 # get initial guess from given volume flow rate value
                 Vdot_a_initial = self.Vdot_ha
+                self.Fan.DP_fan_add = self.Fan_add_DP
                 global error
                 error = 1
                 def objective(Vdot_a):

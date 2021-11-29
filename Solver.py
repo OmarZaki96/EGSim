@@ -28,6 +28,8 @@ class solver(QObject):
         self.Backend = options["Ref_library"]
         self.Mode = options["Cycle_mode"]
         self.Accum_charge_per = options["Accum_charge_per"]
+        self.Condenser_Fan_add_DP = options["Condenser_Fan_add_DP"]
+        self.Evaporator_Fan_add_DP = options["Evaporator_Fan_add_DP"]
         self.Test_cond = options["Test_cond"]
         self.terminate = False
         self.condenser_type = options["condenser_type"]
@@ -130,6 +132,8 @@ class solver(QObject):
                                    'max_n_iterations': self.max_n_iterations,
                                    'Test_cond': self.Test_cond,
                                    'Accum_charge_per': self.Accum_charge_per,
+                                   'Condenser_Fan_add_DP': self.Condenser_Fan_add_DP,
+                                   'Evaporator_Fan_add_DP': self.Evaporator_Fan_add_DP,
                                    },self.update_residuals,
                                      self.capillary)
             if result[0]:
@@ -174,6 +178,8 @@ class solver(QObject):
                                    'max_n_iterations': self.max_n_iterations,
                                    'Test_cond': self.Test_cond,
                                    'Accum_charge_per': self.Accum_charge_per,
+                                   'Condenser_Fan_add_DP': self.Condenser_Fan_add_DP,
+                                   'Evaporator_Fan_add_DP': self.Evaporator_Fan_add_DP,
                                    },self.update_residuals,)
             if result[0]:
                 self.Cycle = result[1]
@@ -456,6 +462,8 @@ class solver(QObject):
                                     'max_n_iterations': value[3],
                                    'Test_cond': self.Test_cond,
                                    'Accum_charge_per': self.Accum_charge_per,
+                                   'Condenser_Fan_add_DP': self.Condenser_Fan_add_DP,
+                                   'Evaporator_Fan_add_DP': self.Evaporator_Fan_add_DP,
                                     })
         else:
             options_list = [{'Expansion_Device_Type':self.expansion_type,
@@ -479,6 +487,8 @@ class solver(QObject):
                             'max_n_iterations': self.max_n_iterations,
                             'Test_cond': self.Test_cond,
                             'Accum_charge_per': self.Accum_charge_per,
+                            'Condenser_Fan_add_DP': self.Condenser_Fan_add_DP,
+                            'Evaporator_Fan_add_DP': self.Evaporator_Fan_add_DP,
                             }]
         
         return tuple(options_list)

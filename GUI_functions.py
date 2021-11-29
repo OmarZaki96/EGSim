@@ -1299,6 +1299,18 @@ def read_cycle_file(path):
         else:
             cycle.accum_charge_per = 0.7
 
+        Outdoor_Fan_Additional_DP = root.find("Outdoor_Fan_Additional_DP")
+        if Outdoor_Fan_Additional_DP != None:
+            cycle.Outdoor_Fan_add_DP = float(Outdoor_Fan_Additional_DP.text)
+        else:
+            cycle.Outdoor_Fan_add_DP = 0
+
+        Indoor_Fan_Additional_DP = root.find("Indoor_Fan_Additional_DP")
+        if Indoor_Fan_Additional_DP != None:
+            cycle.Indoor_Fan_add_DP = float(Indoor_Fan_Additional_DP.text)
+        else:
+            cycle.Indoor_Fan_add_DP = 120
+
         condenser_selected = root.find("condenser_selected")
         if condenser_selected != None:
             cycle.condenser_selected = str(root.find("condenser_selected").text)
@@ -1639,6 +1651,12 @@ def write_cycle_file(cycle,path):
 
         Accumulator_charge_percentage = ET.SubElement(data, 'Accumulator_charge_percentage')
         Accumulator_charge_percentage.text = str(cycle.accum_charge_per)
+
+        Outdoor_Fan_Additional_DP = ET.SubElement(data, 'Outdoor_Fan_Additional_DP')
+        Outdoor_Fan_Additional_DP.text = str(cycle.Outdoor_Fan_add_DP)
+
+        Indoor_Fan_Additional_DP = ET.SubElement(data, 'Indoor_Fan_Additional_DP')
+        Indoor_Fan_Additional_DP.text = str(cycle.Indoor_Fan_add_DP)
 
         Test_Condition = ET.SubElement(data, 'Test_Condition')
         Test_Condition.text = str(cycle.Test_cond)
