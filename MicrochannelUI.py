@@ -463,7 +463,12 @@ class MicrochannelWindow(QDialog, FROM_Microchannel_Main):
                     HX.Fan_model_DP_exp = self.Fan_Model_Curve_DP
                 elif self.Microchannel_fan_model.currentIndex() == 2:
                     HX.Fan_model_power_exp = self.Fan_Model_Power
-                HX.Vdot_ha = volume_flowrate_unit_converter(self.Microchannel_air_flowrate.text(),self.Microchannel_air_flowrate_unit.currentIndex())
+
+                if self.Microchannel_air_flowrate_label.isChecked():
+                    HX.Vdot_ha = volume_flowrate_unit_converter(self.Microchannel_air_flowrate.text(),self.Microchannel_air_flowrate_unit.currentIndex())
+                elif self.Microchannel_air_mass_flowrate_label.isChecked():
+                    HX.mdot_da = mass_flowrate_unit_converter(self.Microchannel_air_mass_flowrate.text(),self.Microchannel_air_mass_flowrate_unit.currentIndex())                
+
                 HX.Air_P = pressure_unit_converter(self.Microchannel_air_inlet_P.text(),self.Microchannel_air_inlet_P_unit.currentIndex())
                 HX.Air_T = temperature_unit_converter(self.Microchannel_air_inlet_T.text(),self.Microchannel_air_inlet_T_unit.currentIndex())
                 HX.Air_RH = float(self.Microchannel_air_inlet_RH.value()) / 100

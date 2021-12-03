@@ -26,7 +26,7 @@ class Component_selection(QDialog, FROM_Component_Selection):
         self.setupUi(self)
         self.parent = parent
         self.Delete_validation_range = False
-
+        self.capacity_validation = False
         # create database path
         self.database_path = appdirs.user_data_dir("EGSim")+"/Database/"
 

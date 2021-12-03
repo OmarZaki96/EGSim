@@ -500,6 +500,7 @@ class MainWindow(QMainWindow, FROM_Main_Window):
                         elif self.Cycle_mode == 1:
                             self.capacity_validation_table["TTD_cond_HP"] = condenser.TTD
                 else:
+                    Pin_a_cond = 101325
                     if Test_condition == "Custom":
                         if mode == 0:
                             Tin_a_cond = 35 + 273.15
@@ -524,8 +525,8 @@ class MainWindow(QMainWindow, FROM_Main_Window):
                         elif self.Cycle_mode == 1:
                             self.capacity_validation_table["TTD_evap_HP"] = evaporator.TTD
                 else:
+                    Pin_a_evap = 101325
                     if Test_condition == "Custom":
-                        Pin_a_evap = 101325
                         if mode == 0:
                             Tin_a_evap = 27 + 273.15
                             Win_a_evap = HAPropsSI("W","T", 27 + 273.15,"P",101325,"B", 19 + 273.15)
@@ -2029,6 +2030,12 @@ class MainWindow(QMainWindow, FROM_Main_Window):
                         
             elif self.Condenser_type.currentIndex() == 1:
                 select_component_window = Component_selection("Microchannel",self)
+                if self.capacity_validation:
+                    select_component_window.capacity_validation = True
+                    select_component_window.capacity_validation_table = self.capacity_validation_table                
+                    select_component_window.capacity_validation_table["HX_type"] = "cond"
+                else:
+                    select_component_window.capacity_validation = False
                 if hasattr(self,"selected_condenser_index"):
                     select_component_window.Components_list.setCurrentRow(self.selected_condenser_index)
 
@@ -2055,9 +2062,9 @@ class MainWindow(QMainWindow, FROM_Main_Window):
                         delattr(self,"parametric_condenser_data")
 
         elif sender_name == "Evaporator_select_button":
+            self.update_capacity_validation_table()
             if self.Evaporator_type.currentIndex() == 0:
                 select_component_window = Component_selection("Fintube",self)
-                self.update_capacity_validation_table()
                 if self.capacity_validation:
                     select_component_window.capacity_validation = True
                     select_component_window.capacity_validation_table = self.capacity_validation_table                
@@ -2092,7 +2099,6 @@ class MainWindow(QMainWindow, FROM_Main_Window):
 
             elif self.Evaporator_type.currentIndex() == 1:
                 select_component_window = Component_selection("Microchannel",self)
-                self.update_capacity_validation_table()
                 if self.capacity_validation:
                     select_component_window.capacity_validation = True
                     select_component_window.capacity_validation_table = self.capacity_validation_table                

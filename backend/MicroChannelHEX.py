@@ -2048,7 +2048,7 @@ class MicroChannelHEXClass():
                 if self.Results.xin_r > self.Results.xout_r:
                     h_array_superheat = reversed(np.linspace(min(hin_superheat,hout_superheat),max(hin_superheat,hout_superheat),i_superheat*2))
                 else:
-                    h_array_superheat = np.linspace(min(hin_subcool,hout_subcool),max(hin_subcool,hout_subcool),i_subcool*2)
+                    h_array_superheat = np.linspace(min(hin_superheat,hout_superheat),max(hin_superheat,hout_superheat),i_superheat*2)
                 
                 for i,(P,h) in enumerate(zip(P_array_superheat,h_array_superheat)):
                     AS.update(CP.PQ_INPUTS,P,0.0)

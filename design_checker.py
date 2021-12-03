@@ -478,6 +478,7 @@ class check_design_object(QObject):
             HX_fast.Tin_a = Tin_a
             HX_fast.Pin_a = HX.Air_P
             HX_fast.Win_a = Win_a
+            HX_fast.Fan_add_DP = 0.0
             if HX.Air_flow_direction == "Parallel":
                 HX_fast.Air_sequence = 'parallel'
                 HX_fast.Air_distribution = HX.Air_Distribution
@@ -613,6 +614,7 @@ class check_design_object(QObject):
             HX_fast.Pin_a = HX.Air_P
             Win_a = HAPropsSI("W","T",HX.Air_T,"P",HX.Air_P,"R",HX.Air_RH)
             HX_fast.Win_a = Win_a
+            HX_fast.Fan_add_DP = 0.0
             HX_fast.model = 'phase'
             HX_fast.Thermal.Nsegments = 1
             HX_fast.Q_error_tol = HX.HX_Q_tol
@@ -781,8 +783,8 @@ class check_design_object(QObject):
             self.AC_errors.Condenser_Capacity_under = AC_errors.find("Condenser_Capacity_under").text
             self.AC_errors.Condenser_Capacity_under_pinched = AC_errors.find("Condenser_Capacity_under_pinched").text
             self.AC_errors.Condenser_Pressure_Drop = AC_errors.find("Condenser_Pressure_Drop").text
-            self.AC_errors.Compressor_Capacity_over = AC_errors.find("Compressor_Capacity_over").text
-            self.AC_errors.Compressor_Capacity_under = AC_errors.find("Compressor_Capacity_under").text
+            self.AC_errors.Compressor_Capacity_over_AC = AC_errors.find("Compressor_Capacity_over").text
+            self.AC_errors.Compressor_Capacity_under_AC = AC_errors.find("Compressor_Capacity_under").text
 
             HP_errors = root.find("HP")
             self.HP_errors.Evaporator_Capacity_over = HP_errors.find("Evaporator_Capacity_over").text
@@ -793,8 +795,8 @@ class check_design_object(QObject):
             self.HP_errors.Condenser_Capacity_under = HP_errors.find("Condenser_Capacity_under").text
             self.HP_errors.Condenser_Capacity_under_pinched = HP_errors.find("Condenser_Capacity_under_pinched").text
             self.HP_errors.Condenser_Pressure_Drop = HP_errors.find("Condenser_Pressure_Drop").text
-            self.HP_errors.Compressor_Capacity_over = HP_errors.find("Compressor_Capacity_over").text
-            self.HP_errors.Compressor_Capacity_under = HP_errors.find("Compressor_Capacity_under").text
+            self.HP_errors.Compressor_Capacity_over_AC = HP_errors.find("Compressor_Capacity_over").text
+            self.HP_errors.Compressor_Capacity_under_AC = HP_errors.find("Compressor_Capacity_under").text
             
             return 1
         except:

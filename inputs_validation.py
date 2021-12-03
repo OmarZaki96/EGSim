@@ -258,6 +258,7 @@ def check_evaporator_capacity_fintube(evaporator):
     Evaporator.Tin_a = validation_table["Tin_a_evap"]
     Evaporator.Pin_a = evaporator.Air_P
     Evaporator.Win_a = validation_table["win_a_evap"]
+    Evaporator.Fan_add_DP = 0.0
     if evaporator.Air_flow_direction == "Parallel":
         Evaporator.Air_sequence = 'parallel'
         Evaporator.Air_distribution = evaporator.Air_Distribution
@@ -492,6 +493,7 @@ def check_condenser_capacity_fintube(condenser):
     Condenser.Tin_a = validation_table["Tin_a_cond"]
     Condenser.Pin_a = condenser.Air_P
     Condenser.Win_a = validation_table["win_a_cond"]
+    Condenser.Fan_add_DP = 0.0
     if condenser.Air_flow_direction == "Parallel":
         Condenser.Air_sequence = 'parallel'
         Condenser.Air_distribution = condenser.Air_Distribution
@@ -718,6 +720,7 @@ def check_evaporator_capacity_microchannel(evaporator):
     Evaporator.Tin_a = validation_table["Tin_a_evap"]
     Evaporator.Pin_a = evaporator.Air_P
     Evaporator.Win_a = validation_table["win_a_evap"]
+    Evaporator.Fan_add_DP = 0.0
     if evaporator.model == "Segment by Segment":
         Evaporator.model = 'segment'
         Evaporator.Thermal.Nsegments = evaporator.N_segments
@@ -889,6 +892,7 @@ def check_condenser_capacity_microchannel(condenser):
     Condenser.Tin_a = validation_table["Tin_a_cond"]
     Condenser.Pin_a = condenser.Air_P
     Condenser.Win_a = validation_table["win_a_cond"]
+    Condenser.Fan_add_DP = 0.0
     if condenser.model == "Segment by Segment":
         Condenser.model = 'segment'
         Condenser.Thermal.Nsegments = condenser.N_segments
