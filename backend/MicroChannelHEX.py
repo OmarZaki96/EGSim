@@ -185,7 +185,6 @@ class MicroChannelHEXClass():
                ('Header_CS_Type',str,None,None),
                ('Header_dim_a',float,0,10000000),
                ('Header_length',float,0,10000000),
-               ('Fan_add_DP',float,0,10000000)
                ]
         optFields=['E_t','E_h','E_n','P_b','Fin_Lp','N_tube_per_bank_per_pass','A_r','inner_circum','A_CS','Aw','tw','Dh','Header_dim_b','N_tube_per_bank','A_a','N_bank','N_circuits','L_circuit', 'A_face']
         ValidateFields(self.Geometry.__dict__,reqFields,optFields)

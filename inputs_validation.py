@@ -1341,8 +1341,8 @@ def check_microchannel(HX):
     if  width >= HX.Geometry.T_w:
         return (0,"Microchannel total ports width should be smaller than tube width in geometry")
 
-    if HX.Geometry.header_a_dim < HX.Geometry.T_w:
-        return (0,"Microchannel header dimension (a) in geometry can not be less than tube width")
+    if HX.Geometry.header_a_dim < HX.Geometry.T_w * HX.N_bank:
+        return (0,"Microchannel header dimension (a) in geometry can not be less than tubes width")
 
     if HX.Geometry.header_shape_index == 0:
         if HX.Geometry.header_b_dim == 0:
