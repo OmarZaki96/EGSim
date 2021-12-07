@@ -1540,7 +1540,7 @@ class FinTubeCircuitClass():
                         A_r = L * self.Geometry.inner_circum
                         self.Correlations.update(AS,self.Geometry,self.Thermal,'1phase',Pin_r,hin_r,mdot_r,A_r,mode)
                         DP_friction_straight = self.Correlations.calculate_dPdz_f_1phase() * L
-                        DP_r = DP_friction_straight + DP_r_bend
+                        DP_r = DP_friction_straight + DP_r
         
                 Pout_r = Pin_r+DP_r
                 
