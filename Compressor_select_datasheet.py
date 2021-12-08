@@ -57,7 +57,8 @@ class Compressor_select_datasheet_window(QDialog, FROM_COMPRESSOR_SELECT_MAIN):
         self.speed.currentIndexChanged.connect(self.populate_table)
         self.op_cond.currentIndexChanged.connect(self.populate_table)
         self.test_cond.currentIndexChanged.connect(self.populate_table)
-
+        self.search_keyword.textEdited.connect(self.populate_table)
+        
     def load_database(self,path=None):
         if path == None:
             imported = False
@@ -221,9 +222,14 @@ class Compressor_select_datasheet_window(QDialog, FROM_COMPRESSOR_SELECT_MAIN):
             compressors = compressors[rows]
             index = index[rows]
         
+        if self.search_keyword.text() != "":
+            rows = np.array(np.sum(compressors.apply(lambda col: col.str.contains(self.search_keyword.text(), na=False,case=False), axis=1),axis=1),dtype=bool)
+            compressors = compressors[rows]
+            index = index[rows]
+        
         compressors = compressors.to_numpy()
         self.Table.setRowCount(len(compressors)+1)
-
+        
         for i in range(len(compressors)):
             self.Table.setItem(i+1,0,QTableWidgetItem(index[i]))
             for j in range(len(compressors[0,1:])):
