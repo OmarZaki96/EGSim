@@ -1790,11 +1790,10 @@ def save_results_excel_parametric(outputs,Path):
         for output in outputs[1:]:
             Configurations.append("Configuration "+str(output[0]))
             outputs_only.append(output[1])
-            for row in output[1][0][1]:
-                if "Heat pump" in row[2]:
-                    mode = "HP"
-                elif "Air conditioning" in row[2]:
-                    mode = "AC"
+            if "Heat pump" in output[1][0][1][:,2]:
+                mode = "HP"
+            else:
+                mode = "AC"
         if mode == "AC":
             condenser_name = "Outdoor Unit"
             evaporator_name = "Indoor Unit"
