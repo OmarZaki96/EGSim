@@ -73,6 +73,9 @@ class MainWindow(QMainWindow, FROM_Main_Window):
         # disabling system charge and capillary tube options
         self.First_condition.model().item(1).setEnabled(False)
         self.Expansion_device.model().item(1).setEnabled(False)
+        
+        # hiding swap HXs button
+        self.swap_HXs_button.hide()
 
         # create database path
         self.database_path = appdirs.user_data_dir("EGSim")+"/Database/"
