@@ -10,7 +10,7 @@ class AboutWindow(QDialog, FROM_ABOUT):
     def __init__(self, parent=None):
         super(AboutWindow, self).__init__(parent)
         self.setupUi(self)
-        self.version.setText("1.3.7")
+        self.version.setText("1.4.0")
         # intially load images
         def images_loader(path,var_name,size):
             try:
@@ -20,9 +20,14 @@ class AboutWindow(QDialog, FROM_ABOUT):
             except:
                 pass
         images_loader("photos/Large_icon.png",'Logo',96)
+        images_loader("photos/unido_logo.png",'unido_logo',250)
         
         self.about_label.setOpenExternalLinks(True)
-        self.logo_label.setPixmap(self.Logo)
+        if hasattr(self,"Logo"):
+            self.logo_label.setPixmap(self.Logo)
+        
+        if hasattr(self,"unido_logo"):
+            self.unido_label.setPixmap(self.unido_logo)
 
 if __name__ == '__main__':
     def main():

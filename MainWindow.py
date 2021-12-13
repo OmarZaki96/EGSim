@@ -70,7 +70,7 @@ class MainWindow(QMainWindow, FROM_Main_Window):
         # enable checking capacity
         self.capacity_check = True
 
-        # disabling cycle charge and capillary tube options
+        # disabling system charge and capillary tube options
         self.First_condition.model().item(1).setEnabled(False)
         self.Expansion_device.model().item(1).setEnabled(False)
 
@@ -128,6 +128,7 @@ class MainWindow(QMainWindow, FROM_Main_Window):
         images_loader("photos/Dischargeline.png",'Dischargeline_image',150)
         images_loader("photos/Suctionline.png",'Suctionline_image',150)
         images_loader("photos/Twophaseline.png",'Twophaseline_image',150)
+        images_loader("photos/unido_logo.png",'unido_logo',250)
 
         if hasattr(self,'HX_image'):
             self.Condenser_photo.setPixmap(self.HX_image)
@@ -168,6 +169,11 @@ class MainWindow(QMainWindow, FROM_Main_Window):
             self.Twophaseline_photo.setPixmap(self.Twophaseline_image)
         else:
             self.Twophaseline_photo.setText("")
+
+        if hasattr(self,'unido_logo'):
+            self.UNIDO_logo_label.setPixmap(self.unido_logo)
+        else:
+            self.UNIDO_logo_label.setText("")
         
         # intialize components lists
         self.Fintube_list = []
