@@ -3407,9 +3407,10 @@ class MicroChannelHEXClass():
         else:
             Tdp = pl.GetTDewPointFromHumRatio(Tin_a-273.15, Win_a, Pin_a) + 273.15
             
-        # to get approximate value of q_flux
-        #approximate overall heat transfer coefficient, assume h_r is very large
-        UA_approx = h_a_dry * A_a * eta_a_dry;
+        h_r = 1500 # approcimate assumption
+
+        #approximate overall heat transfer coefficient
+        UA_approx = 1/(1/(h_a_dry * A_a * eta_a_dry) + 1/(h_r * A_r) + Rw);
         
         #Number of transfer units
         Ntu_approx = UA_approx / (mdot_da * cp_da);
@@ -3640,7 +3641,7 @@ class MicroChannelHEXClass():
             error_Q = abs((Q - Q_old_major)/Q)
             Q_old_major = Q
             iter_num += 1
-
+        
         # calculating charge
         AS.update(CP.HmassP_INPUTS,hout_r,Pout_r)
         Tout_r = AS.T()
@@ -4314,6 +4315,7 @@ if __name__=='__main__':
     Cond = MicroChannelHEXClass()
     Cond.AS = AS # AbstractState
     Cond.model = 'phase' # either 'phase' or 'segment'
+    Cond.Fan_add_DP = 0
     # each major array element represent a bank, each element in minor array reperesent number of tubes per pass (number of elements in minor array is the number of passes)
     Cond.Geometry.N_tube_per_bank_per_pass = [[22,14,8,6]]
     Cond.Geometry.Fin_rows = 51 # it can be more or less than number of tubes per bank by 1
@@ -4455,36 +4457,36 @@ if __name__=='__main__':
     print('A_r:',Cond.Geometry.A_r)
     print('SC:',Cond.Results.SC)
     print('Converged:',Cond.Converged)
-    # from copy import deepcopy
-    # Cond1 = deepcopy(Cond.Results)
-    # Cond.model='segment'
-    # T1 = time.time()
-    # Cond.solve(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-    # T2 = time.time()
-    # print("----------------------")
-    # print("total time:",T2-T1)
-    # print('model:',Cond.model)
-    # print('DP_r:',Cond.Results.DP_r)
-    # print('DP_r_subcool:',Cond.Results.DP_r_subcool)
-    # print('DP_r_2phase:',Cond.Results.DP_r_2phase)
-    # print('DP_r_superheat:',Cond.Results.DP_r_superheat)
-    # print('h_r_subcool:',Cond.Results.h_r_subcool)
-    # print('h_r_2phase:',Cond.Results.h_r_2phase)
-    # print('h_r_superheat:',Cond.Results.h_r_superheat)
-    # print('DP_a:',Cond.Results.DP_a)
-    # print('h_a_dry:',Cond.Results.h_a_dry)
-    # print('h_a_wet:',Cond.Results.h_a_wet)
-    # print('Q:',Cond.Results.Q)
-    # print('Q_superheat:',Cond.Results.Q_superheat)
-    # print('Q_2phase:',Cond.Results.Q_2phase)
-    # print('Q_subcool:',Cond.Results.Q_subcool)
-    # print('Q_sensible:',Cond.Results.Q_sensible)
-    # print('Q_latent:',Cond.Results.Q - Cond.Results.Q_sensible)
-    # print('w_superheat:',Cond.Results.w_superheat)
-    # print('w_2phase:',Cond.Results.w_2phase)
-    # print('w_subcool:',Cond.Results.w_subcool)
-    # print('x_out',Cond.Results.xout_r)
-    # print('Charge',Cond.Results.Charge)
-    # print('A_r:',Cond.Geometry.A_r)
-    # print('Converged:',Cond.Converged)
+    from copy import deepcopy
+    Cond1 = deepcopy(Cond.Results)
+    Cond.model='segment'
+    T1 = time.time()
+    Cond.solve(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
+    T2 = time.time()
+    print("----------------------")
+    print("total time:",T2-T1)
+    print('model:',Cond.model)
+    print('DP_r:',Cond.Results.DP_r)
+    print('DP_r_subcool:',Cond.Results.DP_r_subcool)
+    print('DP_r_2phase:',Cond.Results.DP_r_2phase)
+    print('DP_r_superheat:',Cond.Results.DP_r_superheat)
+    print('h_r_subcool:',Cond.Results.h_r_subcool)
+    print('h_r_2phase:',Cond.Results.h_r_2phase)
+    print('h_r_superheat:',Cond.Results.h_r_superheat)
+    print('DP_a:',Cond.Results.DP_a)
+    print('h_a_dry:',Cond.Results.h_a_dry)
+    print('h_a_wet:',Cond.Results.h_a_wet)
+    print('Q:',Cond.Results.Q)
+    print('Q_superheat:',Cond.Results.Q_superheat)
+    print('Q_2phase:',Cond.Results.Q_2phase)
+    print('Q_subcool:',Cond.Results.Q_subcool)
+    print('Q_sensible:',Cond.Results.Q_sensible)
+    print('Q_latent:',Cond.Results.Q - Cond.Results.Q_sensible)
+    print('w_superheat:',Cond.Results.w_superheat)
+    print('w_2phase:',Cond.Results.w_2phase)
+    print('w_subcool:',Cond.Results.w_subcool)
+    print('x_out',Cond.Results.xout_r)
+    print('Charge',Cond.Results.Charge)
+    print('A_r:',Cond.Geometry.A_r)
+    print('Converged:',Cond.Converged)
     

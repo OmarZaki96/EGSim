@@ -205,7 +205,7 @@ if __name__=='__main__':
     def fun1():
         #Abstract State        
         Ref = 'R410a'
-        Backend = 'HEOS' #choose between: 'HEOS','TTSE&HEOS','BICUBIC&HEOS','REFPROP','SRK','PR', 'INCOMP'
+        Backend = 'HEOS'
         AS = CP.AbstractState(Backend, Ref)
         Tcond = (125 - 32) * 5 / 9
         Tevap = (51 - 32) * 5 / 9
@@ -216,75 +216,24 @@ if __name__=='__main__':
         DT = 7*5/9
         AS.update(CP.PT_INPUTS,Pin_r,Tevap+DT+273.15)
         hin_r = AS.hmass()
-        for i in range(1):
-            kwds={
-                  'isen_eff': '0.7',
-                  'vol_eff': '0.9',
-                  'AS': AS, #Abstract state
-                  'Ref': Ref,
-                  'hin_r':hin_r,
-                  'Pin_r':Pin_r,
-                  'Pout_r':Pout_r,
-                  'fp':0.1, #Fraction of electrical power lost as heat to ambient
-                  'Vdot_ratio_P': 1.0, #Displacement Scale factor
-                  'Vdot_ratio_M': 1.0, #Displacement Scale factor
-                  'Displacement':0.000530671 * 0.3048**3,
-                  'act_speed':5200,
-                  'Elec_eff':1.0
-                  }
-            Comp=CompressorPHYClass(**kwds)
-            Comp.Calculate()
-            print ('Mechanical power:', Comp.power_mech,'W')
-            print ('Electrical power:', Comp.power_elec,'W')
-            print ('Flow rate:',Comp.Vdot_pumped,'m^3/s')
-            print ('Heat loss rate:', Comp.Q_amb, 'W')
-            print(*Comp.OutputList(),sep="\n")
-    def fun2():
-        #Abstract State        
-        Ref = 'R410a'
-        Backend = 'HEOS' #choose between: 'HEOS','TTSE&HEOS','BICUBIC&HEOS','REFPROP','SRK','PR', 'INCOMP'
-        AS = CP.AbstractState(Backend, Ref)
-        Tcond = [110,110,110,110,110,110,120,120]
-        Tcond = [(i-32)*5/9 for i in Tcond]
-        Tevap = [50,50,50,50,50,50,70,70]
-        Tevap = [(i-32)*5/9 for i in Tevap]
-        DT = [20,20,20,10,10,10,15,15]
-        DT = [(i)*5/9 for i in DT]
-        fp = [0,0,0,0,0,0,0.3,0.1]
-        eta_s = [0.7,0.8,0.5,0.5,0.5,0.8,0.75,0.92]
-        eta_v = [0.8,0.6,0.4,0.9,0.7,0.95,0.84,0.73]
-        speed = [3500,4000,4500,3500,4000,4500,3500,4000]
-        hin_r = []
-        Pin_r = []
-        Pout_r = []
-        for i in range(8):
-            AS.update(CP.QT_INPUTS,1.0,Tcond[i]+273.15)
-            Pout_r.append(AS.p())
-            AS.update(CP.QT_INPUTS,1.0,Tevap[i]+273.15)
-            Pin_r.append(AS.p())
-            AS.update(CP.PT_INPUTS,Pin_r[i],Tevap[i]+DT[i]+273.15)
-            hin_r.append(AS.hmass())
-        results = np.zeros([8,14])
-        for i in range(8):
-            kwds={
-                  'isen_eff': str(eta_s[i]),
-                  'vol_eff': str(eta_v[i]),
-                  'AS': AS, #Abstract state
-                  'Ref': Ref,
-                  'hin_r':hin_r[i],
-                  'Pin_r':Pin_r[i],
-                  'Pout_r':Pout_r[i],
-                  'fp':fp[i], #Fraction of electrical power lost as heat to ambient
-                  'Vdot_ratio_P': 1.0, #Displacement Scale factor
-                  'Vdot_ratio_M': 1.0, #Displacement Scale factor
-                  'Displacement':0.000530671 * 0.3048**3,
-                  'act_speed':speed[i],
-                  'Elec_eff':1.0
-                  }
-            Comp=CompressorPHYClass(**kwds)
-            Comp.Calculate()
-            results[i] = [round(Comp.hin_r/2326,3),round(Comp.hout_r/2326,3),round(Comp.mdot_r*7936.64,3),round(Comp.power_mech,2),round(Comp.Pin_r/6894.76,3),round(Comp.Pout_r/6894.76,3),round(Comp.mdot_r_adj,5),round(Comp.sin_r/4186.8,6),round(Comp.hout_r_s/2326,3),round(Comp.vin_r*16.0185,6),round(Comp.eta_isen,6),round(Comp.eta_v,6),round((Comp.Tout_r-273.15)*9/5+32,3),round(Comp.PR,5)]
-        import pandas as pd
-        results = pd.DataFrame(results)
-        results.to_csv(r'E:\UNIDO\Validation\Compressor PHY\DXDesigner.csv')    #Abstract State        
-    fun2()
+        kwds={
+              'name': 'physics_generic_compressor',
+              'isen_eff': '0.7', # isentropic efficiency expression as f(Pressure ratio)
+              'vol_eff': '0.9', # volumetric efficiency expression as f(Pressure ratio)
+              'AS': AS, #Abstract state
+              'Ref': Ref, # refrgierant name
+              'hin_r':hin_r, # inlet refrigerant enthalpy
+              'Pin_r':Pin_r, # inlet refrigerant pressure
+              'Pout_r':Pout_r, # outlet refrigerant pressure
+              'fp':0.1, #Fraction of electrical power lost as heat to ambient
+              'Vdot_ratio_P': 1.0, #Displacement Scale factor
+              'Vdot_ratio_M': 1.0, #Displacement Scale factor
+              'Displacement':0.000530671 * 0.3048**3, # displacement volume per revolution
+              'act_speed':5200, # operating speed of the compressor
+              'Elec_eff':1.0 # electrical efficiency
+              }
+        Comp=CompressorPHYClass(**kwds)
+        Comp.Calculate()
+        print(*Comp.OutputList(),sep="\n")
+            
+    fun1()

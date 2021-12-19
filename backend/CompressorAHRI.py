@@ -305,68 +305,7 @@ class CompressorAHRIClass():
 if __name__=='__main__':
     def fun1():
         Ref = 'R410a'
-        Backend = 'HEOS' #choose between: 'HEOS','TTSE&HEOS','BICUBIC&HEOS','REFPROP','SRK','PR'
-        AS = CP.AbstractState(Backend, Ref)
-    
-        Tcond = [110,110,110,110,110,110,120,120]
-        Tcond = [(i-32)*5/9 for i in Tcond]
-        Tevap = [50,50,50,50,50,50,70,70]
-        Tevap = [(i-32)*5/9 for i in Tevap]
-        DT = [20,20,20,10,10,10,15,15]
-        DT = [(i)*5/9 for i in DT]
-        fp = [0,0,0,0,0,0,0,0]
-        speed = [3500,4000,4500,3500,4000,4500,3500,4000]
-        hin_r = []
-        Pin_r = []
-        Pout_r = []
-        for i in range(8):
-            AS.update(CP.QT_INPUTS,1.0,Tcond[i]+273.15)
-            Pout_r.append(AS.p())
-            AS.update(CP.QT_INPUTS,1.0,Tevap[i]+273.15)
-            Pin_r.append(AS.p())
-            AS.update(CP.PT_INPUTS,Pin_r[i],Tevap[i]+DT[i]+273.15)
-            hin_r.append(AS.hmass())
-        results = np.zeros([8,14])
-        for i in range(8):
-            kwds={
-                  'name':'Generic',
-                  'M':[(1.26E+01,-4.97E-03,2.40E-01,7.53E-03,3.50E-03,-3.26E-03,-2.56E-05,-6.20E-08,-1.68E-05,1.13E-05),
-                       (3.78E+01,-1.49E-02,7.19E-01,2.26E-02,1.05E-02,-9.78E-03,-7.67E-05,-1.86E-07,-5.03E-05,3.38E-05),
-                       (1.76E+02,2.72E+00,-2.12E+00,1.72E-02,-1.12E-02,1.81E-02,6.52E-05,1.08E-05,4.00E-05,-5.54E-05),
-                       (2.06E+02,2.68E+00,-1.97E+00,2.48E-02,-3.95E-03,1.52E-02,7.10E-05,3.68E-05,-2.24E-06,-4.24E-05),
-                       (2.36E+02,2.64E+00,-1.81E+00,3.24E-02,3.29E-03,1.24E-02,7.67E-05,6.28E-05,-4.45E-05,-2.94E-05),
-                       (1.84E+02,4.36E+00,8.08E-01,5.98E-02,-1.88E-02,-7.89E-03,-6.90E-05,8.60E-05,3.94E-05,2.14E-05)],
-                  'P':[(3.20E+02,1.44E+00,-7.03E+00,-2.18E-02,-2.86E-02,7.40E-02,-5.57E-05,6.40E-05,2.39E-04,-2.05E-04),
-                       (9.59E+02,4.33E+00,-2.11E+01,-6.53E-02,-8.57E-02,2.22E-01,-1.67E-04,1.92E-04,7.16E-04,-6.16E-04),
-                       (1.59E+03,6.79E+00,-3.49E+01,-2.26E-01,-6.60E-02,3.88E-01,-1.37E-05,1.01E-03,7.41E-04,-1.12E-03),
-                       (-1.23E+02,-1.80E+00,1.65E+01,-2.38E-01,8.79E-02,-6.70E-02,-1.56E-05,9.67E-04,2.37E-04,2.66E-04),
-                       (-1.84E+03,-1.04E+01,6.79E+01,-2.50E-01,2.42E-01,-5.22E-01,-1.74E-05,9.29E-04,-2.66E-04,1.65E-03),
-                       (-3.11E+03,-2.31E+01,1.15E+02,-1.66E-01,4.47E-01,-9.52E-01,-4.18E-04,2.02E-04,-6.70E-04,3.09E-03)],
-                  'Speeds':[600,1800,3600,4500,5400,7200],
-                  'AS': AS, #Abstract state
-                  'Ref': Ref,
-                  'hin_r':hin_r[i],
-                  'Pin_r':Pin_r[i],
-                  'Pout_r':Pout_r[i],
-                  'fp':fp[i], #Fraction of electrical power lost as heat to ambient
-                  'Vdot_ratio_P': 1.0, #Displacement Scale factor
-                  'Vdot_ratio_M': 1.0, #Displacement Scale factor
-                  'Displacement':1.502692929782e-5,
-                  'SH_Ref':20 * 5 /9, #in C
-                  'act_speed': speed[i],
-                  'Unit_system':'ip',
-                  'Elec_eff':1.0,
-                  'F_factor':0.75, # volumetric efficiency correction factor, used as 0.75 in several sources
-                  }
-            Comp=CompressorAHRIClass(**kwds)
-            Comp.Calculate()
-            print(*Comp.OutputList())
-            results[i] = [round(Comp.hin_r/2326,3),round(Comp.hout_r/2326,3),round(Comp.mdot_r*7936.64,3),round(Comp.power_mech,2),round(Comp.Pin_r/6894.76,3),round(Comp.Pout_r/6894.76,3),round(Comp.mdot_r_adj,5),round(Comp.sin_r/4186.8,6),round(Comp.hout_r_s/2326,3),round(Comp.vin_r*16.0185,6),round(Comp.eta_isen,6),round(Comp.eta_v,6),round((Comp.Tout_r-273.15)*9/5+32,3),round(Comp.PR,5)]
-        import pandas as pd
-        results = pd.DataFrame(results)
-    def fun2():
-        Ref = 'R410a'
-        Backend = 'HEOS' #choose between: 'HEOS','TTSE&HEOS','BICUBIC&HEOS','REFPROP','SRK','PR'
+        Backend = 'HEOS'
         AS = CP.AbstractState(Backend, Ref)
         Tcond = 51.66666666667
         Tevap = 10.55555555556
@@ -377,77 +316,69 @@ if __name__=='__main__':
         DT = 20*5/9
         AS.update(CP.PT_INPUTS,Pin_r,Tevap+DT+273.15)
         hin_r = AS.hmass()
-        for i in range(1):
-            kwds={
-                  'name':'Generic',
-                  'M':[(1.26E+01,-4.97E-03,2.40E-01,7.53E-03,3.50E-03,-3.26E-03,-2.56E-05,-6.20E-08,-1.68E-05,1.13E-05),
-                       (3.78E+01,-1.49E-02,7.19E-01,2.26E-02,1.05E-02,-9.78E-03,-7.67E-05,-1.86E-07,-5.03E-05,3.38E-05),
-                       (1.76E+02,2.72E+00,-2.12E+00,1.72E-02,-1.12E-02,1.81E-02,6.52E-05,1.08E-05,4.00E-05,-5.54E-05),
-                       (2.06E+02,2.68E+00,-1.97E+00,2.48E-02,-3.95E-03,1.52E-02,7.10E-05,3.68E-05,-2.24E-06,-4.24E-05),
-                       (2.36E+02,2.64E+00,-1.81E+00,3.24E-02,3.29E-03,1.24E-02,7.67E-05,6.28E-05,-4.45E-05,-2.94E-05),
-                       (1.84E+02,4.36E+00,8.08E-01,5.98E-02,-1.88E-02,-7.89E-03,-6.90E-05,8.60E-05,3.94E-05,2.14E-05)],
-                  'P':[(3.20E+02,1.44E+00,-7.03E+00,-2.18E-02,-2.86E-02,7.40E-02,-5.57E-05,6.40E-05,2.39E-04,-2.05E-04),
-                       (9.59E+02,4.33E+00,-2.11E+01,-6.53E-02,-8.57E-02,2.22E-01,-1.67E-04,1.92E-04,7.16E-04,-6.16E-04),
-                       (1.59E+03,6.79E+00,-3.49E+01,-2.26E-01,-6.60E-02,3.88E-01,-1.37E-05,1.01E-03,7.41E-04,-1.12E-03),
-                       (-1.23E+02,-1.80E+00,1.65E+01,-2.38E-01,8.79E-02,-6.70E-02,-1.56E-05,9.67E-04,2.37E-04,2.66E-04),
-                       (-1.84E+03,-1.04E+01,6.79E+01,-2.50E-01,2.42E-01,-5.22E-01,-1.74E-05,9.29E-04,-2.66E-04,1.65E-03),
-                       (-3.11E+03,-2.31E+01,1.15E+02,-1.66E-01,4.47E-01,-9.52E-01,-4.18E-04,2.02E-04,-6.70E-04,3.09E-03)],
-                  'Speeds':[600,1800,3600,4500,5400,7200],
-                  'AS': AS, #Abstract state
-                  'Ref': Ref,
-                  'hin_r':hin_r,
-                  'Pin_r':Pin_r,
-                  'Pout_r':Pout_r,
-                  'fp':0.1, #Fraction of electrical power lost as heat to ambient
-                  'Vdot_ratio_P': 1.0, #Displacement Scale factor
-                  'Vdot_ratio_M': 1.0, #Displacement Scale factor
-                  'Displacement':1.502692929782e-5,
-                  'SH_Ref':20 * 5 / 9, #in C
-                  'act_speed': 6200,
-                  'Unit_system':'ip',
-                  'Elec_eff':1.0,
-                  'F_factor':0.75, # volumetric efficiency correction factor, used as 0.75 in several sources
-                  }
-            Comp=CompressorAHRIClass(**kwds)
-            Comp.Calculate()
-            print ('Mechanical power:', Comp.power_mech,'W')
-            print ('Electrical power:', Comp.power_elec,'W')
-            print ('Flow rate:',Comp.Vdot_pumped,'m^3/s')
-            print ('Heat loss rate:', Comp.Q_amb, 'W')
-            print(*Comp.OutputList(),sep="\n")
-    def fun3():
+        kwds={
+              'name':'Generic',
+              'M':[(1.26E+01,-4.97E-03,2.40E-01,7.53E-03,3.50E-03,-3.26E-03,-2.56E-05,-6.20E-08,-1.68E-05,1.13E-05),
+                   (3.78E+01,-1.49E-02,7.19E-01,2.26E-02,1.05E-02,-9.78E-03,-7.67E-05,-1.86E-07,-5.03E-05,3.38E-05),
+                   (1.76E+02,2.72E+00,-2.12E+00,1.72E-02,-1.12E-02,1.81E-02,6.52E-05,1.08E-05,4.00E-05,-5.54E-05),
+                   (2.06E+02,2.68E+00,-1.97E+00,2.48E-02,-3.95E-03,1.52E-02,7.10E-05,3.68E-05,-2.24E-06,-4.24E-05),
+                   (2.36E+02,2.64E+00,-1.81E+00,3.24E-02,3.29E-03,1.24E-02,7.67E-05,6.28E-05,-4.45E-05,-2.94E-05),
+                   (1.84E+02,4.36E+00,8.08E-01,5.98E-02,-1.88E-02,-7.89E-03,-6.90E-05,8.60E-05,3.94E-05,2.14E-05)],
+              'P':[(3.20E+02,1.44E+00,-7.03E+00,-2.18E-02,-2.86E-02,7.40E-02,-5.57E-05,6.40E-05,2.39E-04,-2.05E-04),
+                   (9.59E+02,4.33E+00,-2.11E+01,-6.53E-02,-8.57E-02,2.22E-01,-1.67E-04,1.92E-04,7.16E-04,-6.16E-04),
+                   (1.59E+03,6.79E+00,-3.49E+01,-2.26E-01,-6.60E-02,3.88E-01,-1.37E-05,1.01E-03,7.41E-04,-1.12E-03),
+                   (-1.23E+02,-1.80E+00,1.65E+01,-2.38E-01,8.79E-02,-6.70E-02,-1.56E-05,9.67E-04,2.37E-04,2.66E-04),
+                   (-1.84E+03,-1.04E+01,6.79E+01,-2.50E-01,2.42E-01,-5.22E-01,-1.74E-05,9.29E-04,-2.66E-04,1.65E-03),
+                   (-3.11E+03,-2.31E+01,1.15E+02,-1.66E-01,4.47E-01,-9.52E-01,-4.18E-04,2.02E-04,-6.70E-04,3.09E-03)],
+              'Speeds':[600,1800,3600,4500,5400,7200], # map speeds
+              'AS': AS, #Abstract state
+              'Ref': Ref, # refrgierant name
+              'hin_r':hin_r, # inlet refrigerant enthalpy
+              'Pin_r':Pin_r, # inlet refrigerant pressure
+              'Pout_r':Pout_r, # outlet refrigernat pressure
+              'fp':0.1, #Fraction of electrical power lost as heat to ambient
+              'Vdot_ratio_P': 1.0, #Displacement Scale factor
+              'Vdot_ratio_M': 1.0, #Displacement Scale factor
+              'Displacement':1.502692929782e-5, # displacement volume per revolution
+              'SH_Ref':20 * 5 / 9, #in C
+              'act_speed': 6200, # operating speed of the compressor
+              'Unit_system':'ip', # choose from "ip", "si", "si2"
+              'Elec_eff':1.0, # electrical efficiency of the compressor
+              'F_factor':0.75, # volumetric efficiency correction factor, used as 0.75 in several sources
+              }
+        Comp=CompressorAHRIClass(**kwds)
+        Comp.Calculate()
+        print(*Comp.OutputList(),sep="\n")
+
+    def fun2():
         Ref = 'R410a'
-        Backend = 'HEOS' #choose between: 'HEOS','TTSE&HEOS','BICUBIC&HEOS','REFPROP','SRK','PR'
+        Backend = 'HEOS'
         AS = CP.AbstractState(Backend, Ref)
         Pout_r = 2.8367e+06
         Pin_r = 9.798e+05
         hin_r = 4.3075e+05
-        for i in range(1):
-            kwds={
-                  'name':'Generic',
-                  'M':[(129.6200839,4.246382916,-0.196,0.055359014,-0.000478,-0.000658732,0.000435873,-4.74E-06,-2.86E-06,-1.00E-05)],
-                  'P':[(171.4573606,-14.15995084,34.91149717,-0.144,0.132,-0.0398,0.000179894,-0.00228,0.005493878,0.001111111)],
-                  'Speeds':[2900],
-                  'AS': AS, #Abstract state
-                  'Ref': Ref,
-                  'hin_r':hin_r,
-                  'Pin_r':Pin_r,
-                  'Pout_r':Pout_r,
-                  'fp':0.0, #Fraction of electrical power lost as heat to ambient
-                  'Vdot_ratio_P': 1.0, #Displacement Scale factor
-                  'Vdot_ratio_M': 1.0, #Displacement Scale factor
-                  'Displacement':26e-6,
-                  'SH_Ref':20 * 5 / 9, #in C
-                  'act_speed': 2900,
-                  'Unit_system':'si2',
-                  'Elec_eff':1.0,
-                  'F_factor':0, # volumetric efficiency correction factor, used as 0.75 in several sources
-                  }
-            Comp=CompressorAHRIClass(**kwds)
-            Comp.Calculate()
-            print ('Mechanical power:', Comp.power_mech,'W')
-            print ('Electrical power:', Comp.power_elec,'W')
-            print ('Flow rate:',Comp.Vdot_pumped,'m^3/s')
-            print ('Heat loss rate:', Comp.Q_amb, 'W')
-            print(*Comp.OutputList(),sep="\n")
-    fun3()
+        kwds={
+              'name':'Generic',
+              'M':[(129.6200839,4.246382916,-0.196,0.055359014,-0.000478,-0.000658732,0.000435873,-4.74E-06,-2.86E-06,-1.00E-05)],
+              'P':[(171.4573606,-14.15995084,34.91149717,-0.144,0.132,-0.0398,0.000179894,-0.00228,0.005493878,0.001111111)],
+              'Speeds':[2900],
+              'AS': AS, #Abstract state
+              'Ref': Ref,
+              'hin_r':hin_r,
+              'Pin_r':Pin_r,
+              'Pout_r':Pout_r,
+              'fp':0.0, #Fraction of electrical power lost as heat to ambient
+              'Vdot_ratio_P': 1.0, #Displacement Scale factor
+              'Vdot_ratio_M': 1.0, #Displacement Scale factor
+              'Displacement':26e-6,
+              'SH_Ref':20 * 5 / 9, #in C
+              'act_speed': 2900,
+              'Unit_system':'si2',
+              'Elec_eff':1.0,
+              'F_factor':0, # volumetric efficiency correction factor, used as 0.75 in several sources
+              }
+        Comp=CompressorAHRIClass(**kwds)
+        Comp.Calculate()
+        print(*Comp.OutputList(),sep="\n")
+
+    fun2()

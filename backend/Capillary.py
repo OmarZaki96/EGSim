@@ -609,11 +609,7 @@ class CapillaryClass():
 
         AS.update(CP.HmassP_INPUTS,hin_r,Pin_r)
         Tin_r = AS.T()
-        P_c = AS.p_critical()
         
-        AS.update(CP.QT_INPUTS,0.0,Tin_r)
-        P_sat = AS.p()
-
         AS.update(CP.PQ_INPUTS,Pin_r,0.0)
         T_sat = AS.T()
         cp_f = AS.cpmass()
@@ -888,7 +884,6 @@ class CapillaryClass():
 
         AS.update(CP.PQ_INPUTS,Pin_r,1.0)
         rho_g = AS.rhomass()
-        vis_g = AS.viscosity()
         hg = AS.hmass()        
 
         hfg = hg - hf
@@ -1127,21 +1122,21 @@ if __name__=='__main__':
         
         kwds={
               'name': "Generic Capillary",
-              'AS': AS,
-              'Ref': Ref,
-              'Pin_r': Pin_r,
-              'hin_r': hin_r,
-              'Pout_r_target': Pout_target,
-              'L': 1.1334,
-              'D': 0.06*25.4/1000,
-              'D_liquid': 0.01,
-              'Ntubes': 1,
-              'DT_2phase':0.5,
-              'DP_converged':1,
-              'method':"rasti",
+              'AS': AS, # Abstract state
+              'Ref': Ref, # refrigerant name
+              'Pin_r': Pin_r, # inlet refrigerant pressure
+              'hin_r': hin_r, # inlet refrigerant enthalpy
+              'Pout_r_target': Pout_target, # target outlet refrigerant pressure
+              'L': 1.1334, # capillary tube length
+              'D': 0.06*25.4/1000, # capillary tube internal diameter
+              'D_liquid': 0.01, # inlet diameter before capillary (used only in 1 correlation)
+              'Ntubes': 1, # number of capillary parallel tubes
+              'DT_2phase':0.5, # temperature discretization in C
+              'DP_converged':1, # pressure convergence tolerance in Pa
+              'method':"rasti", # correlation to be used
               }
         
         Capillary = CapillaryClass(**kwds)
         Capillary.Calculate()
-        print(Capillary.mdot_r*3600)
+        print(*Capillary.OutputList(),sep="\n")
     f1()

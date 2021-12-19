@@ -4462,91 +4462,91 @@ if __name__=='__main__':
         if '&' in Ref:
             if Ref == 'R32&R125':
                 AS.set_mass_fractions([0.5,0.5])
-        Cond = FinTubeCircuitClass()
-        Cond.AS = AS    
-        Cond.model = 'phase'
-        Cond.Geometry.Ntubes_per_bank_per_subcircuit = 5       #number of tubes per bank per subcircuit
-        Cond.Geometry.Nbank = 4                             #number of banks or rows
-        Cond.Geometry.Nsubcircuits = 1                         #number of circuits
-        Cond.Geometry.Ltube = 0.5                         #one tube length
-        Cond.Geometry.Staggering = 'AaA'
-        Cond.Geometry.OD = 0.0127
-        Cond.Geometry.ID = 0.0118
-        Cond.Geometry.Tubes_type ='Smooth'
-        # Cond.Geometry.Tubes_type ='Microfin'
-        # Cond.Geometry.t = 0.00065
-        # Cond.Geometry.beta = 25
-        # Cond.Geometry.e = 0.0002
-        # Cond.Geometry.d = 0.00037
-        # Cond.Geometry.w = 0.000172
-        # Cond.Geometry.n = 60
-        Cond.Geometry.Pl = 0.019               #distance between center of tubes in flow direction                                                
-        Cond.Geometry.Pt = 0.019               #distance between center of tubes orthogonal to flow direction
-        # Cond.Geometry.Connections = [16,11,6,1,2,7,12,17,18,13,8,3,4,9,14,19,20,15,10,5]
-        Cond.Geometry.Connections = [16,17,18,19,20,15,14,13,12,11,6,7,8,9,10,5,4,3,2,1]
-        # Cond.Geometry.Connections = [6,7,8,9,10,5,4,3,2,1]
-        Cond.Geometry.FarBendRadius = 0.01
-        Cond.Geometry.e_D = 0
-        Cond.Geometry.FPI = 18
-        Cond.Geometry.FinType = 'Plain'
-        Cond.Geometry.Fin_t = 0.0001
-        Cond.Geometry.Fin_Pd = 0.001
-        Cond.Geometry.Fin_xf = 0.001
-        Cond.Geometry.Fin_Lp = 0.001
-        Cond.Geometry.Fin_Lh = 0.001
-        Cond.Geometry.Fin_Sn = 10
-        Cond.Geometry.Fin_Sh = 0.0001
-        Cond.Geometry.Fin_Ss = 0.001
+        HX = FinTubeCircuitClass()
+        HX.AS = AS    
+        HX.model = 'phase'
+        HX.Geometry.Ntubes_per_bank_per_subcircuit = 5       #number of tubes per bank per subcircuit
+        HX.Geometry.Nbank = 4                             #number of banks or rows
+        HX.Geometry.Nsubcircuits = 1                         #number of circuits
+        HX.Geometry.Ltube = 0.5                         #one tube length
+        HX.Geometry.Staggering = 'AaA'
+        HX.Geometry.OD = 0.0127
+        HX.Geometry.ID = 0.0118
+        HX.Geometry.Tubes_type ='Smooth'
+        # HX.Geometry.Tubes_type ='Microfin'
+        # HX.Geometry.t = 0.00065
+        # HX.Geometry.beta = 25
+        # HX.Geometry.e = 0.0002
+        # HX.Geometry.d = 0.00037
+        # HX.Geometry.w = 0.000172
+        # HX.Geometry.n = 60
+        HX.Geometry.Pl = 0.019               #distance between center of tubes in flow direction                                                
+        HX.Geometry.Pt = 0.019               #distance between center of tubes orthogonal to flow direction
+        HX.Geometry.Connections = [16,17,18,19,20,15,14,13,12,11,6,7,8,9,10,5,4,3,2,1]
+        HX.Geometry.FarBendRadius = 0.01
+        HX.Geometry.e_D = 0
+        HX.Geometry.FPI = 18
+        HX.Geometry.FinType = 'Plain'
+        HX.Geometry.Fin_t = 0.0001
+        HX.Geometry.Fin_Pd = 0.001
+        HX.Geometry.Fin_xf = 0.001
+        HX.Geometry.Fin_Lp = 0.001
+        HX.Geometry.Fin_Lh = 0.001
+        HX.Geometry.Fin_Sn = 10
+        HX.Geometry.Fin_Sh = 0.0001
+        HX.Geometry.Fin_Ss = 0.001
         
-        # Cond.Thermal.Vdot_ha = 0.15
-        Cond.Thermal.mdot_ha = 0.2
-        # Cond.Thermal.Vel_dist = [[0.8 for i in range(20)],
+        # HX.Thermal.Vdot_ha = 0.15
+        HX.Thermal.mdot_ha = 0.2
+        # HX.Thermal.Vel_dist = [[0.8 for i in range(20)],
         #                           [0.9 for i in range(20)],
         #                           [1.1 for i in range(20)],
         #                           [0.9 for i in range(20)],
         #                           [0.7 for i in range(20)],]
         
-        Cond.Thermal.Pin_a = 101325
-        Cond.Thermal.mdot_r = 0.04
-        Cond.Thermal.Nsegments = 1
-        Cond.Thermal.kw = 385
-        Cond.Thermal.h_r_superheat_tuning = 1.0
-        Cond.Thermal.h_r_subcooling_tuning = 1.0
-        Cond.Thermal.h_r_2phase_tuning = 1.0
-        Cond.Thermal.h_a_dry_tuning = 1.0
-        Cond.Thermal.h_a_wet_tuning = 1.0
-        Cond.Thermal.DP_r_superheat_tuning = 1.0
-        Cond.Thermal.DP_r_subcooling_tuning = 1.0
-        Cond.Thermal.DP_r_2phase_tuning = 1.0
-        Cond.Thermal.DP_a_dry_tuning = 1.0
-        Cond.Thermal.DP_a_wet_tuning = 1.0
-        Cond.Thermal.k_fin = 210
-        Cond.Thermal.FinsOnce = True
-        Cond.Accurate = True
+        HX.Thermal.Pin_a = 101325
+        HX.Thermal.mdot_r = 0.04
+        HX.Thermal.Nsegments = 1
+        HX.Thermal.kw = 385
+        HX.Thermal.h_r_superheat_tuning = 1.0
+        HX.Thermal.h_r_subcooling_tuning = 1.0
+        HX.Thermal.h_r_2phase_tuning = 1.0
+        HX.Thermal.h_a_dry_tuning = 1.0
+        HX.Thermal.h_a_wet_tuning = 1.0
+        HX.Thermal.DP_r_superheat_tuning = 1.0
+        HX.Thermal.DP_r_subcooling_tuning = 1.0
+        HX.Thermal.DP_r_2phase_tuning = 1.0
+        HX.Thermal.DP_a_dry_tuning = 1.0
+        HX.Thermal.DP_a_wet_tuning = 1.0
+        HX.Thermal.k_fin = 210
+        HX.Thermal.FinsOnce = True
+        HX.Thermal.DP_a_wet_on = False
+        HX.Thermal.h_a_wet_on = False
+        HX.Accurate = True
     
         # evaporator    
-        Cond.Thermal.Pin_r = 7 * 101325
-        AS.update(CP.PQ_INPUTS,Cond.Thermal.Pin_r,0.1)
+        HX.Thermal.Pin_r = 7 * 101325
+        AS.update(CP.PQ_INPUTS,HX.Thermal.Pin_r,0.1)
         h_in = AS.hmass()
-        Cond.Thermal.hin_r = h_in
-        Cond.Thermal.Tin_a = 295
-        Win_a = HAPropsSI('W','P',Cond.Thermal.Pin_a,'T',Cond.Thermal.Tin_a,'R',0.4)
-        Cond.Thermal.Win_a = Win_a
+        HX.Thermal.hin_r = h_in
+        HX.Thermal.Tin_a = 295
+        Win_a = HAPropsSI('W','P',HX.Thermal.Pin_a,'T',HX.Thermal.Tin_a,'R',0.4)
+        HX.Thermal.Win_a = Win_a
         
         # condenser
-        # Cond.Thermal.Pin_r = 25 * 101325
+        # HX.Thermal.Pin_r = 25 * 101325
         # DT = 5
-        # AS.update(CP.PQ_INPUTS,Cond.Thermal.Pin_r,1.0)
+        # AS.update(CP.PQ_INPUTS,HX.Thermal.Pin_r,1.0)
         # T_sat = AS.T()
         # T_in = T_sat + DT
-        # AS.update(CP.PT_INPUTS,Cond.Thermal.Pin_r, T_in)
-        # Cond.Thermal.hin_r = AS.hmass()
-        # Cond.Thermal.Tin_a = 305
-        # Win_a = HAPropsSI('W','P',Cond.Thermal.Pin_a,'T',Cond.Thermal.Tin_a,'R',0.4)
-        # Cond.Thermal.Win_a = Win_a
+        # AS.update(CP.PT_INPUTS,HX.Thermal.Pin_r, T_in)
+        # HX.Thermal.hin_r = AS.hmass()
+        # HX.Thermal.Tin_a = 305
+        # Win_a = HAPropsSI('W','P',HX.Thermal.Pin_a,'T',HX.Thermal.Tin_a,'R',0.4)
+        # HX.Thermal.Win_a = Win_a
         
         T1 = time.time()
-        Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
+        HX.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
         T2 = time.time()
         print("total time:",T2-T1)
         global A_a
@@ -4554,11 +4554,11 @@ if __name__=='__main__':
         i = 1
         global list_of_segments
         list_of_segments = []
-        if hasattr(Cond,'Tubes_list'):
-            for x,y in Cond.Tubes_list[:,[1,2]]:
+        if hasattr(HX,'Tubes_list'):
+            for x,y in HX.Tubes_list[:,[1,2]]:
                 x = int(x)
                 y = int(y)
-                for j,segment in enumerate(Cond.Tubes_grid[x][y].Segments):
+                for j,segment in enumerate(HX.Tubes_grid[x][y].Segments):
                     A_a += segment.A_a
                     i += 1
                     list_of_segments.append(segment)
@@ -4567,2198 +4567,118 @@ if __name__=='__main__':
             w = 0.0
             for i,Segment in enumerate(list_of_segments):
                 states[i] = [w, Segment.hin_r, Segment.Pin_r, Segment.x_in, Segment.Tout_a, Segment.Wout_a,Segment.w_phase,Segment.DP_a,Segment.h_r]
-                w = states[i,0]+Segment.A_r/(Cond.Geometry.inner_circum*Cond.Geometry.Ntubes_per_subcircuit*Cond.Geometry.Ltube)
+                w = states[i,0]+Segment.A_r/(HX.Geometry.inner_circum*HX.Geometry.Ntubes_per_subcircuit*HX.Geometry.Ltube)
                 states[-1] = [1.0, list_of_segments[-1].hout_r, list_of_segments[-1].Pout_r, list_of_segments[-1].x_out, -1, -1,0,0,0]
-        print('model:',Cond.model)
-        print('DP_r:',Cond.Results.DP_r)
-        print('DP_r_subcool:',Cond.Results.DP_r_subcool)
-        print('DP_r_2phase:',Cond.Results.DP_r_2phase)
-        print('DP_r_superheat:',Cond.Results.DP_r_superheat)
-        print('h_r_subcool:',Cond.Results.h_r_subcool)
-        print('h_r_2phase:',Cond.Results.h_r_2phase)
-        print('h_r_superheat:',Cond.Results.h_r_superheat)
-        print('DP_a:',Cond.Results.DP_a)
-        print('h_a_dry:',Cond.Results.h_a_dry)
-        print('h_a_wet:',Cond.Results.h_a_wet)
-        print('Q:',Cond.Results.Q)
-        print('x_out',Cond.Results.xout_r)
-        print('Converged:',Cond.Converged)
+        print('model:',HX.model)
+        print('DP_r:',HX.Results.DP_r)
+        print('DP_r_subcool:',HX.Results.DP_r_subcool)
+        print('DP_r_2phase:',HX.Results.DP_r_2phase)
+        print('DP_r_superheat:',HX.Results.DP_r_superheat)
+        print('h_r_subcool:',HX.Results.h_r_subcool)
+        print('h_r_2phase:',HX.Results.h_r_2phase)
+        print('h_r_superheat:',HX.Results.h_r_superheat)
+        print('DP_a:',HX.Results.DP_a)
+        print('h_a_dry:',HX.Results.h_a_dry)
+        print('h_a_wet:',HX.Results.h_a_wet)
+        print('Q:',HX.Results.Q)
+        print('x_out',HX.Results.xout_r)
+        print('Converged:',HX.Converged)
         from copy import deepcopy
-        Cond1 = deepcopy(Cond.Results)
-        Cond.model='segment'
+        HX1 = deepcopy(HX.Results)
+        HX.model='segment'
         T1 = time.time()
-        Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
+        HX.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
         T2 = time.time()
         print("----------------------")
         print("total time:",T2-T1)
-        print('model:',Cond.model)
-        print('DP_r:',Cond.Results.DP_r)
-        print('DP_r_subcool:',Cond.Results.DP_r_subcool)
-        print('DP_r_2phase:',Cond.Results.DP_r_2phase)
-        print('DP_r_superheat:',Cond.Results.DP_r_superheat)
-        print('h_r_subcool:',Cond.Results.h_r_subcool)
-        print('h_r_2phase:',Cond.Results.h_r_2phase)
-        print('h_r_superheat:',Cond.Results.h_r_superheat)
-        print('DP_a:',Cond.Results.DP_a)
-        print('h_a_dry:',Cond.Results.h_a_dry)
-        print('h_a_wet:',Cond.Results.h_a_wet)
-        print('Q:',Cond.Results.Q)
-        print('x_out',Cond.Results.xout_r)
-        print('Converged:',Cond.Converged)
+        print('model:',HX.model)
+        print('DP_r:',HX.Results.DP_r)
+        print('DP_r_subcool:',HX.Results.DP_r_subcool)
+        print('DP_r_2phase:',HX.Results.DP_r_2phase)
+        print('DP_r_superheat:',HX.Results.DP_r_superheat)
+        print('h_r_subcool:',HX.Results.h_r_subcool)
+        print('h_r_2phase:',HX.Results.h_r_2phase)
+        print('h_r_superheat:',HX.Results.h_r_superheat)
+        print('DP_a:',HX.Results.DP_a)
+        print('h_a_dry:',HX.Results.h_a_dry)
+        print('h_a_wet:',HX.Results.h_a_wet)
+        print('Q:',HX.Results.Q)
+        print('x_out',HX.Results.xout_r)
+        print('Converged:',HX.Converged)
 
-    def fun2():
-        N_cases = 10
-        Pin_r = [2533125,1925200,2845782,1658475,1856981,2545786,2055328,2378542,1325478,1611447]
-        xin_r = [1.02,1.025,1.03,1.032,1.018,1.01,1.016,1.01,1.022,1.015]
-        Fin_type = ['Wavy','Plain','Plain','Slit','Louvered','Wavy','Slit','Louvered','Plain','Louvered']
-        Ntubes_per_bank_per_circuit = [13,9,5,13,8,9,12,15,13,12]
-        Backend_list = ['REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP']
-        Nbanks = [2,4,3,2,2,4,3,2,3,4]
-        Ltube = [0.7,0.5,0.9,0.5,1.1,1.5,0.4,0.8,0.9,0.65]
-        Staggering = ['AaA','aAa','inline','AaA','aAa','inline','AaA','aAa','inline','AaA']
-        Tube_OD = [0.009525,0.008,0.007,0.0127,0.013,0.009,0.006,0.011,0.009,0.014]
-        Tube_ID = [0.9*OD for OD in Tube_OD]
-        Tube_Pl = [1.5*OD for OD in Tube_OD]
-        Tube_Pt = [2.5*OD for OD in Tube_OD]
-        HTC_1phase_Corr = [1 for _ in range(10)]
-        DP_1phase_Corr = [1 for _ in range(10)]
-        HTC_2phase_Corr = [1,6,7,1,6,7,1,6,7,1]
-        DP_2phase_Corr = [1,6,1,6,1,6,1,6,1,6]
-        DP_Accel_Corr = [1,1,1,1,1,1,1,1,1,1]
-        Circuting = ['Counter' for _ in range(10)]
-        FarBendRadius = [0.05 for _ in range(10)]
-        FPI = [13,9,12,11,14,10,9,17,12,16]
-        Fin_t = [0.0001,0.00015,0.00014,0.00017,0.0001,0.00012,0.0001,0.00014,0.00013,0.00016]
-        Fin_Pd = [0.001,0.0014,0.0015,0.002,0.0022,0.002,0.003,0.0005,0.001,0.001]
-        Fin_xf = [0.0015,0.0017,0.0014,0.0013,0.001,0.002,0.0024,0.003,0.0011,0.001]
-        Fin_Lp = [0.0015,0.0017,0.0014,0.0013,0.0025,0.002,0.0024,0.003,0.0011,0.0015]
-        Fin_Lh = [0.001,0.0014,0.0011,0.001,0.0022,0.0018,0.001,0.0005,0.001,0.001]
-        Fin_Sn = [10,7,8,11,13,8,8,6,4,7]
-        Fin_Sh = [0.001 for i in range(10)]
-        Fin_Ss = [0.001 for i in range(10)]
-        Pin_a = [101325 for i in range(10)]
-        Tin_a = [309,311,309,317,320,308,314,307,316,313]
-        RHin_a = [0.4,0.6,0.55,0.3,0.38,0.67,0.49,0.52,0.36,0.5]
-        Win_a = []
-        for T,P,RH in zip(Tin_a,Pin_a,RHin_a):
-            Win_a.append(HAPropsSI('W','T',T,'P',P,'R',RH))
-        mdot_r = [0.008,0.007,0.004,0.02,0.007,0.01,0.007,0.009,0.011,0.011]
-        Vdot_ha = [0.5,0.2,0.26,0.44,0.7,0.65,0.21,0.9,0.7,0.6]
-        Tube_K = [385 for i in range(10)]
-        Fin_K = [210 for i in range(10)]
-        Nsegments = [20 for i in range(10)]
-        Ref = ['R32&R125','R22','R32','R134A','Propane','R32&R125','R22','R32','R134A','Propane']
-        Tubes_Type = ['Smooth' for _ in range(10)]
-        results = np.zeros([N_cases,28])
-        global Tin_r
-        Tin_r = []
-        for i in range(N_cases):
-            Ref_i = Ref[i]
-            Backend = Backend_list[i]
-            AS = CP.AbstractState(Backend, Ref_i) # defining abstract state
-            if '&' in Ref_i:
-                if Ref_i == 'R32&R125':
-                    AS.set_mass_fractions([0.5,0.5])
-            global Cond
-            Cond = FinTubeCircuitClass()
-            Cond.AS = AS    
-            Cond.model = 'segment'
-            Cond.Geometry.Ntubes_per_bank_per_subcircuit = Ntubes_per_bank_per_circuit[i]       #number of tubes per bank per subcircuit
-            Cond.Geometry.Nbank = Nbanks[i]                             #number of banks or rows
-            Cond.Geometry.Nsubcircuits = 1                         #number of circuits
-            Cond.Geometry.Ltube = Ltube[i]                         #one tube length
-            Cond.Geometry.Staggering = Staggering[i]
-            Cond.Geometry.OD = Tube_OD[i]
-            Cond.Geometry.ID = Tube_ID[i]
-            Cond.Geometry.Tubes_type = Tubes_Type[i]
-                
-            Cond.Geometry.Pl = Tube_Pl[i]               #distance between center of tubes in flow direction                                                
-            Cond.Geometry.Pt = Tube_Pt[i]               #distance between center of tubes orthogonal to flow direction
-            if Circuting[i] == 'Counter':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in reversed(range(int(Nbanks[i]))):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Parallel':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in range(int(Nbanks[i])):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Cross':
-                pass
-            else:
-                raise
-            Cond.Thermal.HTC_1phase_Corr = HTC_1phase_Corr[i]
-            Cond.Thermal.DP_1phase_Corr = DP_1phase_Corr[i]
-            Cond.Thermal.HTC_2phase_Corr = HTC_2phase_Corr[i]
-            Cond.Thermal.DP_2phase_Corr = DP_2phase_Corr[i]
-            Cond.Thermal.DP_Accel_Corr = DP_Accel_Corr[i]
-            Cond.Geometry.FarBendRadius = FarBendRadius[i]
-            Cond.Geometry.e_D = 0
-            Cond.Geometry.FPI = FPI[i]
-            Cond.Geometry.FinType = Fin_type[i]
-            Cond.Geometry.Fin_t = Fin_t[i]
-            Cond.Geometry.Fin_Pd = Fin_Pd[i]
-            Cond.Geometry.Fin_xf = Fin_xf[i]
-            Cond.Geometry.Fin_Lp = Fin_Lp[i]
-            Cond.Geometry.Fin_Lh = Fin_Lh[i]
-            Cond.Geometry.Fin_Sn = Fin_Sn[i]
-            Cond.Geometry.Fin_Sh = Fin_Sh[i]
-            Cond.Geometry.Fin_Ss = Fin_Ss[i]
-            Cond.Thermal.Vdot_ha = Vdot_ha[i]
-            Cond.Thermal.Pin_a = Pin_a[i]
-            Cond.Thermal.mdot_r = mdot_r[i]
-            Cond.Thermal.Nsegments = Nsegments[i]
-            Cond.Thermal.kw = Tube_K[i]
-            Cond.Thermal.h_r_superheat_tuning = 1.0
-            Cond.Thermal.h_r_subcooling_tuning = 1.0
-            Cond.Thermal.h_r_2phase_tuning = 1.0
-            Cond.Thermal.h_a_dry_tuning = 1.0
-            Cond.Thermal.h_a_wet_tuning = 1.0
-            Cond.Thermal.DP_r_superheat_tuning = 1.0
-            Cond.Thermal.DP_r_subcooling_tuning = 1.0
-            Cond.Thermal.DP_r_2phase_tuning = 1.0
-            Cond.Thermal.DP_a_dry_tuning = 1.0
-            Cond.Thermal.DP_a_wet_tuning = 1.0
-            Cond.Thermal.k_fin = Fin_K[i]
-            Cond.Thermal.FinsOnce = True
-            Cond.Accurate = True
-            Cond.Thermal.Pin_r = Pin_r[i]
-            AS.update(CP.PQ_INPUTS,Cond.Thermal.Pin_r, 1.0)
-            hsat_V = AS.hmass()
-            AS.update(CP.PQ_INPUTS,Cond.Thermal.Pin_r, 0.0)
-            hsat_L = AS.hmass()
-            hin_r = hsat_L + (hsat_V - hsat_L) * xin_r[i]
-            AS.update(CP.HmassP_INPUTS,hin_r,Cond.Thermal.Pin_r)
-            Tin_r.append(AS.T())
-            Cond.Thermal.hin_r = hin_r
-            Cond.Thermal.Tin_a = Tin_a[i]
-            Cond.Thermal.Win_a = Win_a[i]
-            import time
-            T1 = time.time()
-            Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-            print("------------------------")
-            print('time:',time.time()-T1)
-            try:
-                print("SC:",round(Cond.Results.SC,3))
-            except:
-                print("Xout:",round(Cond.Results.xout_r,3))
-            print("DP:",round(Cond.Results.DP_r,3))
-            Face_Area = Cond.Geometry.Ntubes_per_bank_per_subcircuit * Cond.Geometry.Pt * Cond.Geometry.Ltube
-            Vel = Cond.Results.Vdot_ha_in / Face_Area
-            print("V_l:",Vel)
-            print("delta_T",Cond.Results.Tdew_in - Cond.Thermal.Tin_a)
-            print("h_r_2phase",Cond.Results.h_r_2phase)
-            RHout_a = HAPropsSI('R','T',Cond.Results.Tout_a,'P',Cond.Results.Pout_a,'W',Cond.Results.Wout_a)*100
-            
-            results[i] = [abs(Cond.Results.Q),
-                          abs(Cond.Results.Q_superheat),
-                          abs(Cond.Results.Q_2phase),
-                          abs(Cond.Results.Q_subcool),
-                          abs(Cond.Results.Q_sensible),
-                          abs(Cond.Results.Q) - abs(Cond.Results.Q_sensible),
-                          Cond.Results.SHR,
-                          Cond.Results.Charge,
-                          Cond.Results.Charge_superheat,
-                          Cond.Results.Charge_2phase,
-                          Cond.Results.Charge_subcool,
-                          Cond.Results.water_cond,
-                          abs(Cond.Results.DP_a),
-                          abs(Cond.Results.DP_r),
-                          Cond.Results.Tout_a,
-                          RHout_a,
-                          Cond.Results.Pout_r,
-                          Cond.Results.Tout_r,
-                          Cond.Results.xout_r,
-                          Cond.Geometry.A_a,
-                          Cond.Geometry.A_r,
-                          Cond.Results.h_a,
-                          Cond.Results.h_r_superheat,
-                          Cond.Results.h_r_2phase,
-                          Cond.Results.h_r_subcool,
-                          Cond.Results.w_superheat,
-                          Cond.Results.w_2phase,
-                          Cond.Results.w_subcool]
-        import pandas as pd
-        results = pd.DataFrame(results)
-        if not Cond.Converged:
-            raise
-        results.to_csv(r"E:\UNIDO\Validation\Fin-tube_Condenser\DXDesigner_Smooth.csv")
-    
-    def fun3():
-        N_cases = 10
-        Pin_r = [2533125,1925200,2845782,1658475,1856981,2545786,2055328,2378542,1325478,1611447]
-        xin_r = [1.02,1.025,1.03,1.032,1.018,1.01,1.016,1.01,1.022,1.015]
-        Fin_type = ['Wavy','Plain','Plain','Slit','Louvered','Wavy','Slit','Louvered','Plain','Louvered']
-        Ntubes_per_bank_per_circuit = [13,9,5,13,8,9,12,15,13,12]
-        Backend_list = ['REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP']
-        Nbanks = [2,4,3,2,2,4,3,2,3,4]
-        Ltube = [0.7,0.5,0.9,0.5,1.1,0.8,0.4,0.8,0.9,0.65]
-        Staggering = ['AaA','aAa','inline','AaA','aAa','inline','AaA','aAa','inline','AaA']
-        Tube_OD = [0.009525,0.008,0.007,0.0127,0.013,0.009,0.006,0.011,0.009,0.014]
-        Tube_ID = [0.9*OD for OD in Tube_OD]
-        Tube_Pl = [1.5*OD for OD in Tube_OD]
-        Tube_Pt = [2.5*OD for OD in Tube_OD]
-        HTC_1phase_Corr = [2 for _ in range(10)]
-        DP_1phase_Corr = [2 for _ in range(10)]
-        HTC_2phase_Corr = [15 for _ in range(10)]
-        DP_2phase_Corr = [9 for _ in range(10)]
-        DP_Accel_Corr = [1,1,1,1,1,1,1,1,1,1]
-        Circuting = ['Counter' for _ in range(10)]
-        FarBendRadius = [0.05 for _ in range(10)]
-        FPI = [13,9,12,11,14,10,9,17,12,16]
-        Fin_t = [0.0001,0.00015,0.00014,0.00017,0.0001,0.00012,0.0001,0.00014,0.00013,0.00016]
-        Fin_Pd = [0.001,0.0014,0.0015,0.002,0.0022,0.002,0.003,0.0005,0.001,0.001]
-        Fin_xf = [0.0015,0.0017,0.0014,0.0013,0.001,0.002,0.0024,0.003,0.0011,0.001]
-        Fin_Lp = [0.0015,0.0017,0.0014,0.0013,0.0025,0.002,0.0024,0.003,0.0011,0.0015]
-        Fin_Lh = [0.001,0.0014,0.0011,0.001,0.0022,0.0018,0.001,0.0005,0.001,0.001]
-        Fin_Sn = [10,7,8,11,13,8,8,6,4,7]
-        Fin_Sh = [0.001 for i in range(10)]
-        Fin_Ss = [0.001 for i in range(10)]
-        Pin_a = [101325 for i in range(10)]
-        Tin_a = [309,311,309,317,320,308,314,307,316,313]
-        RHin_a = [0.4,0.6,0.55,0.3,0.38,0.67,0.49,0.52,0.36,0.5]
-        Win_a = []
-        for T,P,RH in zip(Tin_a,Pin_a,RHin_a):
-            Win_a.append(HAPropsSI('W','T',T,'P',P,'R',RH))
-        mdot_r = [0.008,0.007,0.004,0.02,0.007,0.02,0.003,0.009,0.006,0.011]
-        Vdot_ha = [0.5,0.2,0.26,0.44,0.7,0.65,0.21,0.9,0.7,0.6]
-        Tube_K = [385 for i in range(10)]
-        Fin_K = [210 for i in range(10)]
-        Nsegments = [20 for i in range(10)]
-        Ref = ['R32&R125','R22','R32','R134A','Propane','R32&R125','R22','R32','R134A','Propane']
-        Tubes_Type = ['Microfin' for _ in range(10)]
-        MicroFin_t = [0.0012,0.0007,0.0009,0.0006,0.0014,0.0012,0.0007,0.001,0.0008,0.0005]
-        MicroFin_beta = [26,27,32,34,31,22,38,35,26,24]
-        MicroFin_e = [0.000168,0.00021,0.000108,0.00018,0.00014,0.00024,0.00021,0.0003,0.00024,0.00015]
-        MicroFin_d = [0.0002,0.0003,0.0001,0.00015,0.00022,0.00017,0.00013,0.00014,0.00024,0.00011]
-        MicroFin_gama = [35,55,45,40,45,30,30,20,35,40]
-        MicroFin_n = [60,55,40,45,65,58,52,59,62,66]
-        results = np.zeros([N_cases,28])
-        global Tin_r
-        Tin_r = []
-        for i in range(N_cases):
-            Ref_i = Ref[i]
-            Backend = Backend_list[i]
-            AS = CP.AbstractState(Backend, Ref_i) # defining abstract state
-            if '&' in Ref_i:
-                if Ref_i == 'R32&R125':
-                    AS.set_mass_fractions([0.5,0.5])
-            global Cond
-            Cond = FinTubeCircuitClass()
-            Cond.AS = AS
-            Cond.model = 'segment'
-            Cond.Geometry.Ntubes_per_bank_per_subcircuit = Ntubes_per_bank_per_circuit[i]       #number of tubes per bank per subcircuit
-            Cond.Geometry.Nbank = Nbanks[i]                             #number of banks or rows
-            Cond.Geometry.Nsubcircuits = 1                         #number of circuits
-            Cond.Geometry.Ltube = Ltube[i]                         #one tube length
-            Cond.Geometry.Staggering = Staggering[i]
-            Cond.Geometry.OD = Tube_OD[i]
-            Cond.Geometry.ID = Tube_ID[i]
-            Cond.Geometry.Tubes_type = Tubes_Type[i]
-            if Tubes_Type[i] == 'Microfin':
-                Cond.Geometry.t = MicroFin_t[i]
-                Cond.Geometry.beta = MicroFin_beta[i]
-                Cond.Geometry.e = MicroFin_e[i]
-                Cond.Geometry.d = MicroFin_d[i]
-                Cond.Geometry.gama = MicroFin_gama[i]
-                Cond.Geometry.n = MicroFin_n[i]
-                
-            Cond.Geometry.Pl = Tube_Pl[i]               #distance between center of tubes in flow direction                                                
-            Cond.Geometry.Pt = Tube_Pt[i]               #distance between center of tubes orthogonal to flow direction
-            if Circuting[i] == 'Counter':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in reversed(range(int(Nbanks[i]))):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Parallel':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in range(int(Nbanks[i])):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Cross':
-                pass 
-            else:
-                raise
-            Cond.Thermal.HTC_1phase_Corr = HTC_1phase_Corr[i]
-            Cond.Thermal.DP_1phase_Corr = DP_1phase_Corr[i]
-            Cond.Thermal.HTC_2phase_Corr = HTC_2phase_Corr[i]
-            Cond.Thermal.DP_2phase_Corr = DP_2phase_Corr[i]
-            Cond.Thermal.DP_Accel_Corr = DP_Accel_Corr[i]
-            Cond.Geometry.FarBendRadius = FarBendRadius[i]
-            Cond.Geometry.e_D = 0
-            Cond.Geometry.FPI = FPI[i]
-            Cond.Geometry.FinType = Fin_type[i]
-            Cond.Geometry.Fin_t = Fin_t[i]
-            Cond.Geometry.Fin_Pd = Fin_Pd[i]
-            Cond.Geometry.Fin_xf = Fin_xf[i]
-            Cond.Geometry.Fin_Lp = Fin_Lp[i]
-            Cond.Geometry.Fin_Lh = Fin_Lh[i]
-            Cond.Geometry.Fin_Sn = Fin_Sn[i]
-            Cond.Geometry.Fin_Sh = Fin_Sh[i]
-            Cond.Geometry.Fin_Ss = Fin_Ss[i]
-            Cond.Thermal.Vdot_ha = Vdot_ha[i]
-            Cond.Thermal.Pin_a = Pin_a[i]
-            Cond.Thermal.mdot_r = mdot_r[i]
-            Cond.Thermal.Nsegments = Nsegments[i]
-            Cond.Thermal.kw = Tube_K[i]
-            Cond.Thermal.h_r_superheat_tuning = 1.0
-            Cond.Thermal.h_r_subcooling_tuning = 1.0
-            Cond.Thermal.h_r_2phase_tuning = 1.0
-            Cond.Thermal.h_a_dry_tuning = 1.0
-            Cond.Thermal.h_a_wet_tuning = 1.0
-            Cond.Thermal.DP_r_superheat_tuning = 1.0
-            Cond.Thermal.DP_r_subcooling_tuning = 1.0
-            Cond.Thermal.DP_r_2phase_tuning = 1.0
-            Cond.Thermal.DP_a_dry_tuning = 1.0
-            Cond.Thermal.DP_a_wet_tuning = 1.0
-            Cond.Thermal.k_fin = Fin_K[i]
-            Cond.Thermal.FinsOnce = True
-            Cond.Accurate = True
-            Cond.Thermal.Pin_r = Pin_r[i]
-            AS.update(CP.PQ_INPUTS,Cond.Thermal.Pin_r, 1.0)
-            hsat_V = AS.hmass()
-            AS.update(CP.PQ_INPUTS,Cond.Thermal.Pin_r, 0.0)
-            hsat_L = AS.hmass()
-            hin_r = hsat_L + (hsat_V - hsat_L) * xin_r[i]
-            AS.update(CP.HmassP_INPUTS,hin_r,Cond.Thermal.Pin_r)
-            Tin_r.append(AS.T())
-            Cond.Thermal.hin_r = hin_r
-            Cond.Thermal.Tin_a = Tin_a[i]
-            Cond.Thermal.Win_a = Win_a[i]
-            import time
-            T1 = time.time()
-            Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-            print("------------------------")
-            print("Case:",i)
-            print('time:',time.time()-T1)
-            try:
-                print("SC:",round(Cond.Results.SC,3))
-            except:
-                print("Xout:",round(Cond.Results.xout_r,3))
-            print("DP:",round(Cond.Results.DP_r,3))
-            Face_Area = Cond.Geometry.Ntubes_per_bank_per_subcircuit * Cond.Geometry.Pt * Cond.Geometry.Ltube
-            Vel = Cond.Results.Vdot_ha_in / Face_Area
-            print("V_l:",Vel)
-            print("delta_T",Cond.Results.Tdew_in - Cond.Thermal.Tin_a)
-            RHout_a = HAPropsSI('R','T',Cond.Results.Tout_a,'P',Cond.Results.Pout_a,'W',Cond.Results.Wout_a)*100
-            
-            results[i] = [abs(Cond.Results.Q),
-                          abs(Cond.Results.Q_superheat),
-                          abs(Cond.Results.Q_2phase),
-                          abs(Cond.Results.Q_subcool),
-                          abs(Cond.Results.Q_sensible),
-                          abs(Cond.Results.Q) - abs(Cond.Results.Q_sensible),
-                          Cond.Results.SHR,
-                          Cond.Results.Charge,
-                          Cond.Results.Charge_superheat,
-                          Cond.Results.Charge_2phase,
-                          Cond.Results.Charge_subcool,
-                          Cond.Results.water_cond,
-                          abs(Cond.Results.DP_a),
-                          abs(Cond.Results.DP_r),
-                          Cond.Results.Tout_a,
-                          RHout_a,
-                          Cond.Results.Pout_r,
-                          Cond.Results.Tout_r,
-                          Cond.Results.xout_r,
-                          Cond.Geometry.A_a,
-                          Cond.Geometry.A_r,
-                          Cond.Results.h_a,
-                          Cond.Results.h_r_superheat,
-                          Cond.Results.h_r_2phase,
-                          Cond.Results.h_r_subcool,
-                          Cond.Results.w_superheat,
-                          Cond.Results.w_2phase,
-                          Cond.Results.w_subcool]
-        import pandas as pd
-        results = pd.DataFrame(results)
-        if not Cond.Converged:
-            raise
-        results.to_csv(r"E:\UNIDO\Validation\Fin-tube_Condenser\DXDesigner_Microfin.csv")
-    
-    def fun4():
-        N_cases = 10
-        Pin_r = [718745,607954,987547,384578,525665,984365,524587,983547,365874,587987]
-        xin_r = [0.2,0.25,0.2,0.28,0.21,0.22,0.18,0.26,0.25,0.17]
-        Backend_list = ['REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP']
-        Fin_type = ['Plain','Plain','Plain','Slit','Louvered','Wavy','Slit','Louvered','Plain','Louvered']
-        Ntubes_per_bank_per_circuit = [7,4,6,9,7,4,6,5,9,6]
-        Nbanks = [4,3,2,2,2,4,3,2,3,3]
-        Ltube = [0.8,0.5,0.6,0.9,0.85,0.7,0.4,0.9,0.6,1.25]
-        Staggering = ['AaA','aAa','inline','AaA','aAa','inline','AaA','aAa','inline','AaA']
-        Tube_OD = [0.009525,0.008,0.007,0.0127,0.013,0.009,0.006,0.011,0.009,0.014]
-        Tube_ID = [0.9*OD for OD in Tube_OD]
-        Tube_Pl = [1.5*OD for OD in Tube_OD]
-        Tube_Pt = [2.5*OD for OD in Tube_OD]
-        HTC_1phase_Corr = [1 for _ in range(10)]
-        DP_1phase_Corr = [1 for _ in range(10)]
-        HTC_2phase_Corr = [2,2,3,3,2,3,2,3,2,2]
-        DP_2phase_Corr = [1,4,6,1,4,6,1,4,6,4]
-        DP_Accel_Corr = [1,1,1,1,1,1,1,1,1,1]
-        Circuting = ['Counter' for _ in range(10)]
-        FarBendRadius = [0.05 for _ in range(10)]
-        FPI = [13,15,16,18,14,10,9,17,15,16]
-        Fin_t = [0.0001,0.00015,0.00014,0.00017,0.0001,0.00012,0.0001,0.00014,0.00013,0.00016]
-        Fin_Pd = [0.003,0.0014,0.0015,0.002,0.0022,0.005,0.003,0.0005,0.001,0.001]
-        Fin_xf = [0.010,0.0017,0.0014,0.0013,0.001,0.015,0.0024,0.003,0.0011,0.001]
-        Fin_Lp = [0.0015,0.0017,0.0014,0.0013,0.0021,0.002,0.0022,0.0025,0.0011,0.0015]
-        Fin_Lh = [0.001,0.0014,0.0011,0.001,0.0011,0.0018,0.001,0.0011,0.001,0.001]
-        Fin_Sn = [10,7,8,11,13,8,8,6,4,7]
-        Fin_Sh = [0.001 for i in range(10)]
-        Fin_Ss = [0.001 for i in range(10)]
-        Pin_a = [101325 for i in range(10)]
-        Tin_a = [295,299,297,294,296,299,297,294,293,295]
-        RHin_a = [0.4,0.5,0.55,0.42,0.48,0.53,0.49,0.52,0.46,0.49]
-        Win_a = []
-        for T,P,RH in zip(Tin_a,Pin_a,RHin_a):
-            Win_a.append(HAPropsSI('W','T',T,'P',P,'R',RH))
-        mdot_r = [0.011,0.009,0.005,0.018,0.012,0.011,0.004,0.016,0.008,0.017]
-        Vdot_ha = [0.3,0.07,0.1,0.28,0.45,0.14,0.06,0.26,0.2,0.5]
-        Tube_K = [385 for i in range(10)]
-        Fin_K = [210 for i in range(10)]
-        Nsegments = [20 for i in range(10)]
-        Ref = ['R32&R125','R22','R32','R134A','Propane','R32&R125','R22','R32','R134A','Propane']
-        Tubes_Type = ['Smooth' for _ in range(10)]
-        results = np.zeros([N_cases,28])
-        global Tin_r
-        Tin_r = []
-        for i in range(N_cases):
-            Ref_i = Ref[i]
-            Backend = Backend_list[i]
-            AS = CP.AbstractState(Backend, Ref_i) # defining abstract state
-            if '&' in Ref_i:
-                if Ref_i == 'R32&R125':
-                    AS.set_mass_fractions([0.5,0.5])
-            global Evap
-            Evap = FinTubeCircuitClass()
-            Evap.AS = AS    
-            Evap.model = 'segment'
-            Evap.Geometry.Ntubes_per_bank_per_subcircuit = Ntubes_per_bank_per_circuit[i]       #number of tubes per bank per subcircuit
-            Evap.Geometry.Nbank = Nbanks[i]                             #number of banks or rows
-            Evap.Geometry.Nsubcircuits = 1                         #number of circuits
-            Evap.Geometry.Ltube = Ltube[i]                         #one tube length
-            Evap.Geometry.Staggering = Staggering[i]
-            Evap.Geometry.OD = Tube_OD[i]
-            Evap.Geometry.ID = Tube_ID[i]
-            Evap.Geometry.Tubes_type = Tubes_Type[i]
-                
-            Evap.Geometry.Pl = Tube_Pl[i]               #distance between center of tubes in flow direction                                                
-            Evap.Geometry.Pt = Tube_Pt[i]               #distance between center of tubes orthogonal to flow direction
-            if Circuting[i] == 'Counter':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in reversed(range(int(Nbanks[i]))):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Evap.Geometry.Connections = connections
-            elif Circuting[i] == 'Parallel':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in range(int(Nbanks[i])):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Evap.Geometry.Connections = connections
-            elif Circuting[i] == 'Cross':
-                pass 
-            else:
-                raise
-            Evap.Thermal.HTC_1phase_Corr = HTC_1phase_Corr[i]
-            Evap.Thermal.DP_1phase_Corr = DP_1phase_Corr[i]
-            Evap.Thermal.HTC_2phase_Corr = HTC_2phase_Corr[i]
-            Evap.Thermal.DP_2phase_Corr = DP_2phase_Corr[i]
-            Evap.Thermal.DP_Accel_Corr = DP_Accel_Corr[i]
-            Evap.Geometry.FarBendRadius = FarBendRadius[i]
-            Evap.Geometry.e_D = 0
-            Evap.Geometry.FPI = FPI[i]
-            Evap.Geometry.FinType = Fin_type[i]
-            Evap.Geometry.Fin_t = Fin_t[i]
-            Evap.Geometry.Fin_Pd = Fin_Pd[i]
-            Evap.Geometry.Fin_xf = Fin_xf[i]
-            Evap.Geometry.Fin_Lp = Fin_Lp[i]
-            Evap.Geometry.Fin_Lh = Fin_Lh[i]
-            Evap.Geometry.Fin_Sn = Fin_Sn[i]
-            Evap.Geometry.Fin_Sh = Fin_Sh[i]
-            Evap.Geometry.Fin_Ss = Fin_Ss[i]
-            Evap.Thermal.Vdot_ha = Vdot_ha[i]
-            Evap.Thermal.Pin_a = Pin_a[i]
-            Evap.Thermal.mdot_r = mdot_r[i]
-            Evap.Thermal.Nsegments = Nsegments[i]
-            Evap.Thermal.kw = Tube_K[i]
-            Evap.Thermal.h_r_superheat_tuning = 1.0
-            Evap.Thermal.h_r_subcooling_tuning = 1.0
-            Evap.Thermal.h_r_2phase_tuning = 1.0
-            Evap.Thermal.h_a_dry_tuning = 1.0
-            Evap.Thermal.h_a_wet_tuning = 1.0
-            Evap.Thermal.DP_r_superheat_tuning = 1.0
-            Evap.Thermal.DP_r_subcooling_tuning = 1.0
-            Evap.Thermal.DP_r_2phase_tuning = 1.0
-            Evap.Thermal.k_fin = Fin_K[i]
-            Evap.Thermal.FinsOnce = True
-            Evap.Accurate = True
-            Evap.Thermal.Pin_r = Pin_r[i]
-            AS.update(CP.PQ_INPUTS,Evap.Thermal.Pin_r, 1.0)
-            hsat_V = AS.hmass()
-            AS.update(CP.PQ_INPUTS,Evap.Thermal.Pin_r, 0.0)
-            hsat_L = AS.hmass()
-            hin_r = hsat_L + (hsat_V - hsat_L) * xin_r[i]
-            AS.update(CP.HmassP_INPUTS,hin_r,Evap.Thermal.Pin_r)
-            Tin_r.append(AS.T())
-            Evap.Thermal.hin_r = hin_r
-            Evap.Thermal.Tin_a = Tin_a[i]
-            Evap.Thermal.Win_a = Win_a[i]
-            import time
-            T1 = time.time()
-            Evap.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=2)
-            global Segments
-            global Segments_P
-            Segments_P = []
-            Segments_T = []
-            Segments_x = []
-            Segments_h_r = []
-            Segments_DP_r = []
-            Segments_Tout_a = []
-            for num,x,y,orinet in Evap.Tubes_list:
-                Tube_P = []
-                Tube_T = []
-                Tube_x = []
-                Tube_h_r = []
-                Tube_DP_r = []
-                Tube_Tout_a = []
-                x = int(x)
-                y = int(y)
-                for segment in Evap.Tubes_grid[x][y].Segments:
-                    Tube_P.append(segment.Pout_r)
-                    Tube_T.append(segment.Tout_r)
-                    Tube_x.append(segment.x_out)
-                    Tube_h_r.append(segment.h_r)
-                    Tube_DP_r.append(segment.DP_r)
-                    Tube_Tout_a.append(segment.Tout_a)
-                Segments_P += Tube_P
-                Segments_T += Tube_T
-                Segments_x += Tube_x
-                Segments_h_r += Tube_h_r
-                Segments_DP_r += Tube_DP_r
-                Segments_Tout_a += Tube_Tout_a
-            Segments = np.transpose(np.array([Segments_P,Segments_T,Segments_x,Segments_h_r,Segments_DP_r,Segments_Tout_a]))
-            Segments = Segments[Segments[:,0].argsort()[::-1]]
-            print("------------------------")
-            print("Case:",i+1)
-            print('time:',time.time()-T1)
-            try:
-                print("SH:",round(Evap.Results.SH,3))
-            except:
-                print("Xout:",round(Evap.Results.xout_r,3))
-            print("DP:",round(Evap.Results.DP_r,3))
-            Face_Area = Evap.Geometry.Ntubes_per_bank_per_subcircuit * Evap.Geometry.Pt * Evap.Geometry.Ltube
-            Vel = Evap.Results.Vdot_ha_in / Face_Area
-            print("V_l:",Vel)
-            print("delta_T:", Evap.Thermal.Tin_a - Evap.Results.Tin_r)
-            print("Water_cond:",Evap.Results.water_cond)
-            print("Tin_a:",round(Evap.Results.Tin_a-273.15,2))
-            print("Tout_a:",round(Evap.Results.Tout_a-273.15,2))
-            RHout_a = HAPropsSI('R','T',Evap.Results.Tout_a,'P',Evap.Results.Pout_a,'W',Evap.Results.Wout_a)*100
-            
-            results[i] = [abs(Evap.Results.Q),
-                          abs(Evap.Results.Q_superheat),
-                          abs(Evap.Results.Q_2phase),
-                          abs(Evap.Results.Q_subcool),
-                          abs(Evap.Results.Q_sensible),
-                          abs(Evap.Results.Q) - abs(Evap.Results.Q_sensible),
-                          Evap.Results.SHR,
-                          Evap.Results.Charge,
-                          Evap.Results.Charge_superheat,
-                          Evap.Results.Charge_2phase,
-                          Evap.Results.Charge_subcool,
-                          Evap.Results.water_cond,
-                          abs(Evap.Results.DP_a),
-                          abs(Evap.Results.DP_r),
-                          Evap.Results.Tout_a,
-                          RHout_a,
-                          Evap.Results.Pout_r,
-                          Evap.Results.Tout_r,
-                          Evap.Results.xout_r,
-                          Evap.Geometry.A_a,
-                          Evap.Geometry.A_r,
-                          Evap.Results.h_a,
-                          Evap.Results.h_r_superheat,
-                          Evap.Results.h_r_2phase,
-                          Evap.Results.h_r_subcool,
-                          Evap.Results.w_superheat*100,
-                          Evap.Results.w_2phase*100,
-                          Evap.Results.w_subcool*100]
-        import pandas as pd
-        results = pd.DataFrame(results)
-        if not Evap.Converged:
-            raise
-        results.to_csv(r"E:\UNIDO\Validation\Fin-tube_Evaporator\DXDesigner_Smooth.csv")
-    
-    def fun5():
-        N_cases = 10
-        Pin_r = [918745,607954,987547,384578,525665,984365,524587,983547,365874,587987]
-        xin_r = [0.2,0.25,0.2,0.28,0.21,0.22,0.18,0.26,0.25,0.17]
-        Backend_list = ['REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP','REFPROP']
-        Fin_type = ['Wavy','Plain','Plain','Slit','Louvered','Plain','Slit','Plain','Plain','Louvered']
-        Ntubes_per_bank_per_circuit = [5,4,6,9,7,4,6,5,9,6]
-        Nbanks = [2,3,2,2,2,4,3,2,3,3]
-        Ltube = [0.4,0.5,0.6,0.9,0.85,0.7,0.4,0.9,0.6,1.25]
-        Staggering = ['AaA','aAa','inline','AaA','aAa','inline','AaA','aAa','inline','AaA']
-        Tube_OD = [0.009525,0.008,0.007,0.0127,0.013,0.009,0.006,0.011,0.009,0.014]
-        Tube_Pl = [1.5 * OD for OD in Tube_OD]
-        Tube_Pt = [2.5 * OD for OD in Tube_OD]
-        HTC_1phase_Corr = [2 for _ in range(10)]
-        DP_1phase_Corr = [2 for _ in range(10)]
-        HTC_2phase_Corr = [10 for _ in range(10)]
-        DP_2phase_Corr = [10 for _ in range(10)]
-        DP_Accel_Corr = [1,1,1,1,1,1,1,1,1,1]
-        Circuting = ['Counter' for _ in range(10)]
-        FarBendRadius = [0.05 for _ in range(10)]
-        FPI = [13,15,16,18,14,10,9,17,15,16]
-        Fin_t = [0.0001,0.00015,0.00014,0.00017,0.0001,0.00012,0.0001,0.00014,0.00013,0.00016]
-        Fin_Pd = [0.003,0.0014,0.0015,0.002,0.0022,0.005,0.003,0.0005,0.001,0.001]
-        Fin_xf = [0.01,0.0017,0.0014,0.0013,0.001,0.015,0.0024,0.003,0.0011,0.001]
-        Fin_Lp = [0.0015,0.0017,0.0014,0.0013,0.0021,0.002,0.0024,0.0022,0.0011,0.0015]
-        Fin_Lh = [0.001,0.0014,0.0011,0.001,0.0011,0.0018,0.001,0.0011,0.001,0.001]
-        Fin_Sn = [10,7,8,11,13,8,8,6,4,7]
-        Fin_Sh = [0.001 for i in range(10)]
-        Fin_Ss = [0.001 for i in range(10)]
-        Pin_a = [101325 for i in range(10)]
-        Tin_a = [295,299,297,294,296,299,297,294,293,295]
-        RHin_a = [0.4,0.5,0.55,0.42,0.48,0.53,0.49,0.52,0.46,0.49]
-        Win_a = []
-        for T,P,RH in zip(Tin_a,Pin_a,RHin_a):
-            Win_a.append(HAPropsSI('W','T',T,'P',P,'R',RH))
-        mdot_r = [0.011,0.009,0.005,0.018,0.012,0.011,0.004,0.016,0.008,0.017]
-        Vdot_ha = [0.12,0.07,0.1,0.28,0.45,0.14,0.06,0.26,0.2,0.5]
-        Tube_K = [385 for i in range(10)]
-        Fin_K = [210 for i in range(10)]
-        Nsegments = [20 for i in range(10)]
-        Ref = ['R32&R125','R22','R32','R134A','Propane','R32&R125','R22','R32','R134A','Propane']
-        Tubes_Type = ['Microfin' for _ in range(10)]
-        MicroFin_t = [0.0012,0.0007,0.0009,0.0006,0.0014,0.0008,0.0007,0.001,0.0008,0.0005]
-        MicroFin_beta = [26,27,32,34,31,22,38,35,26,24]
-        MicroFin_e = [0.000168,0.00021,0.000108,0.00018,0.00014,0.00024,0.00021,0.0003,0.00024,0.00015]
-        MicroFin_d = [0.00017,0.0003,0.0001,0.00015,0.00022,0.00017,0.00013,0.00014,0.00024,0.00011]
-        MicroFin_gama = [35,55,45,40,45,30,30,20,35,40]
-        MicroFin_n = [60,55,40,45,65,58,52,59,62,66]
-        results = np.zeros([N_cases,28])
-        global Tin_r
-        Tin_r = []
-        for i in range(N_cases):
-            Ref_i = Ref[i]
-            Backend = Backend_list[i]
-            AS = CP.AbstractState(Backend, Ref_i) # defining abstract state
-            if '&' in Ref_i:
-                if Ref_i == 'R32&R125':
-                    AS.set_mass_fractions([0.5,0.5])
-            global Evap
-            Evap = FinTubeCircuitClass()
-            Evap.AS = AS    
-            Evap.model = 'segment'
-            Evap.Geometry.Ntubes_per_bank_per_subcircuit = Ntubes_per_bank_per_circuit[i]       #number of tubes per bank per subcircuit
-            Evap.Geometry.Nbank = Nbanks[i]                             #number of banks or rows
-            Evap.Geometry.Nsubcircuits = 1                         #number of circuits
-            Evap.Geometry.Ltube = Ltube[i]                         #one tube length
-            Evap.Geometry.Staggering = Staggering[i]
-            Evap.Geometry.OD = Tube_OD[i]
-            Evap.Geometry.Tubes_type = Tubes_Type[i]
-            if Tubes_Type[i] == 'Microfin':
-                Evap.Geometry.t = MicroFin_t[i]
-                Evap.Geometry.beta = MicroFin_beta[i]
-                Evap.Geometry.e = MicroFin_e[i]
-                Evap.Geometry.d = MicroFin_d[i]
-                Evap.Geometry.gama = MicroFin_gama[i]
-                Evap.Geometry.n = MicroFin_n[i]
-                
-            Evap.Geometry.Pl = Tube_Pl[i]               #distance between center of tubes in flow direction                                                
-            Evap.Geometry.Pt = Tube_Pt[i]               #distance between center of tubes orthogonal to flow direction
-            if Circuting[i] == 'Counter':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in reversed(range(int(Nbanks[i]))):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Evap.Geometry.Connections = connections
-            elif Circuting[i] == 'Parallel':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in range(int(Nbanks[i])):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Evap.Geometry.Connections = connections
-            elif Circuting[i] == 'Cross':
-                pass 
-            else:
-                raise
-            Evap.Thermal.HTC_1phase_Corr = HTC_1phase_Corr[i]
-            Evap.Thermal.DP_1phase_Corr = DP_1phase_Corr[i]
-            Evap.Thermal.HTC_2phase_Corr = HTC_2phase_Corr[i]
-            Evap.Thermal.DP_2phase_Corr = DP_2phase_Corr[i]
-            Evap.Thermal.DP_Accel_Corr = DP_Accel_Corr[i]
-            Evap.Geometry.FarBendRadius = FarBendRadius[i]
-            Evap.Geometry.e_D = 0
-            Evap.Geometry.FPI = FPI[i]
-            Evap.Geometry.FinType = Fin_type[i]
-            Evap.Geometry.Fin_t = Fin_t[i]
-            Evap.Geometry.Fin_Pd = Fin_Pd[i]
-            Evap.Geometry.Fin_xf = Fin_xf[i]
-            Evap.Geometry.Fin_Lp = Fin_Lp[i]
-            Evap.Geometry.Fin_Lh = Fin_Lh[i]
-            Evap.Geometry.Fin_Sn = Fin_Sn[i]
-            Evap.Geometry.Fin_Sh = Fin_Sh[i]
-            Evap.Geometry.Fin_Ss = Fin_Ss[i]
-            Evap.Thermal.Vdot_ha = Vdot_ha[i]
-            Evap.Thermal.Pin_a = Pin_a[i]
-            Evap.Thermal.mdot_r = mdot_r[i]
-            Evap.Thermal.Nsegments = Nsegments[i]
-            Evap.Thermal.kw = Tube_K[i]
-            Evap.Thermal.h_r_superheat_tuning = 1.0
-            Evap.Thermal.h_r_subcooling_tuning = 1.0
-            Evap.Thermal.h_r_2phase_tuning = 1.0
-            Evap.Thermal.h_a_dry_tuning = 1.0
-            Evap.Thermal.h_a_wet_tuning = 1.0
-            Evap.Thermal.DP_r_superheat_tuning = 1.0
-            Evap.Thermal.DP_r_subcooling_tuning = 1.0
-            Evap.Thermal.DP_r_2phase_tuning = 1.0
-            Evap.Thermal.k_fin = Fin_K[i]
-            Evap.Thermal.FinsOnce = True
-            Evap.Accurate = True
-            Evap.Thermal.Pin_r = Pin_r[i]
-            AS.update(CP.PQ_INPUTS,Evap.Thermal.Pin_r, 1.0)
-            hsat_V = AS.hmass()
-            AS.update(CP.PQ_INPUTS,Evap.Thermal.Pin_r, 0.0)
-            hsat_L = AS.hmass()
-            hin_r = hsat_L + (hsat_V - hsat_L) * xin_r[i]
-            AS.update(CP.HmassP_INPUTS,hin_r,Evap.Thermal.Pin_r)
-            Tin_r.append(AS.T())
-            Evap.Thermal.hin_r = hin_r
-            Evap.Thermal.Tin_a = Tin_a[i]
-            Evap.Thermal.Win_a = Win_a[i]
-            import time
-            T1 = time.time()
-            Evap.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-            print("------------------------")
-            print("Case:",i+1)
-            print('time:',time.time()-T1)
-            try:
-                print("SH:",round(Evap.Results.SH,3))
-            except:
-                print("Xout:",round(Evap.Results.xout_r,3))
-            print("DP:",round(Evap.Results.DP_r,3))
-            Face_Area = Evap.Geometry.Ntubes_per_bank_per_subcircuit * Evap.Geometry.Pt * Evap.Geometry.Ltube
-            Vel = Evap.Results.Vdot_ha_in / Face_Area
-            print("V_l:",Vel)
-            print("delta_T:", Evap.Thermal.Tin_a - Evap.Results.Tin_r)
-            print("Water_cond:",Evap.Results.water_cond)
-            print("Tin_a:",round(Evap.Results.Tin_a-273.15,2))
-            print("Tout_a:",round(Evap.Results.Tout_a-273.15,2))
-            RHout_a = HAPropsSI('R','T',Evap.Results.Tout_a,'P',Evap.Results.Pout_a,'W',Evap.Results.Wout_a)*100
-            global Segments
-            global Segments_P
-            Segments_P = []
-            Segments_T = []
-            Segments_x = []
-            Segments_h_r = []
-            Segments_DP_r = []
-            if Evap.model == "segment":
-                for num,x,y,orinet in Evap.Tubes_list:
-                    Tube_P = []
-                    Tube_T = []
-                    Tube_x = []
-                    Tube_h_r = []
-                    Tube_DP_r = []
-                    x = int(x)
-                    y = int(y)
-                    for segment in Evap.Tubes_grid[x][y].Segments:
-                        Tube_P.append(segment.Pout_r)
-                        Tube_T.append(segment.Tout_r)
-                        Tube_x.append(segment.x_out)
-                        Tube_h_r.append(segment.h_r)
-                        Tube_DP_r.append(segment.DP_r)
-                    Segments_P += Tube_P
-                    Segments_T += Tube_T
-                    Segments_x += Tube_x
-                    Segments_h_r += Tube_h_r
-                    Segments_DP_r += Tube_DP_r
-                Segments = np.transpose(np.array([Segments_P,Segments_T,Segments_x,Segments_h_r,Segments_DP_r]))
-                Segments = Segments[Segments[:,0].argsort()[::-1]]
-            
-            results[i] = [abs(Evap.Results.Q),
-                          abs(Evap.Results.Q_superheat),
-                          abs(Evap.Results.Q_2phase),
-                          abs(Evap.Results.Q_subcool),
-                          abs(Evap.Results.Q_sensible),
-                          abs(Evap.Results.Q) - abs(Evap.Results.Q_sensible),
-                          Evap.Results.SHR,
-                          Evap.Results.Charge,
-                          Evap.Results.Charge_superheat,
-                          Evap.Results.Charge_2phase,
-                          Evap.Results.Charge_subcool,
-                          Evap.Results.water_cond,
-                          abs(Evap.Results.DP_a),
-                          abs(Evap.Results.DP_r),
-                          Evap.Results.Tout_a,
-                          RHout_a,
-                          Evap.Results.Pout_r,
-                          Evap.Results.Tout_r,
-                          Evap.Results.xout_r,
-                          Evap.Geometry.A_a,
-                          Evap.Geometry.A_r,
-                          Evap.Results.h_a,
-                          Evap.Results.h_r_superheat,
-                          Evap.Results.h_r_2phase,
-                          Evap.Results.h_r_subcool,
-                          Evap.Results.w_superheat * 100,
-                          Evap.Results.w_2phase * 100,
-                          Evap.Results.w_subcool * 100]
-        import pandas as pd
-        results = pd.DataFrame(results)
-        if not Evap.Converged:
-            raise
-        results.to_csv(r"E:\UNIDO\Validation\Fin-tube_Evaporator\DXDesigner_Microfin.csv")
-    def fun6():
-        N_cases = 1
-        Pin_r = [19*1e5]
-        Tin_r = [60+273.15]
-        Fin_type = ['Plain']
-        Ntubes_per_bank_per_circuit = [4]
-        Nbanks = [3]
-        Ltube = [0.4]
-        Staggering = ['inline']
-        Tube_OD = [0.01]
-        Tube_ID = [0.008]
-        Tube_Pl = [0.0254]
-        Tube_Pt = [0.0254]
-        HTC_1phase_Corr = [1]
-        DP_1phase_Corr = [1]
-        HTC_2phase_Corr = [1]
-        DP_2phase_Corr = [6]
-        DP_Accel_Corr = [1]
-        Circuting = ['Counter']
-        FarBendRadius = [0.05]
-        FPI = [16]
-        Fin_t = [0.0001]
-        Fin_Pd = [0.001]
-        Fin_xf = [0.001]
-        Fin_Lp = [0.001]
-        Fin_Lh = [0.001]
-        Fin_Sn = [8]
-        Fin_Sh = [0.005]
-        Fin_Ss = [0.001]
-        Pin_a = [101325]
-        Tin_a = [293.15]
-        RHin_a = [0.5]
-        Win_a = []
-        for T,P,RH in zip(Tin_a,Pin_a,RHin_a):
-            Win_a.append(HAPropsSI('W','T',T,'P',P,'R',RH))
-        mdot_r = [0.01]
-        Vel_dist = [[[2 for _ in range(20)],[2 for _ in range(20)]]]
-        Vdot_ha = [0.15]
-        Tube_K = [380 for i in range(10)]
-        Fin_K = [237 for i in range(10)]
-        Nsegments = [20 for i in range(10)]
-        Ref = ['R32&R125']
-        Tubes_Type = ['Smooth' for _ in range(10)]
-        results = np.zeros([N_cases,28])
-        for i in range(N_cases):
-            Ref_i = Ref[i]
-            Backend = 'REFPROP'
-            AS = CP.AbstractState(Backend, Ref_i) # defining abstract state
-            if '&' in Ref_i:
-                if Ref_i == 'R32&R125':
-                    AS.set_mass_fractions([0.5,0.5])
-            global Cond
-            Cond = FinTubeCircuitClass()
-            Cond.AS = AS
-            Cond.model = 'segment'
-            Cond.Geometry.Ntubes_per_bank_per_subcircuit = Ntubes_per_bank_per_circuit[i]       #number of tubes per bank per subcircuit
-            Cond.Geometry.Nbank = Nbanks[i]                             #number of banks or rows
-            Cond.Geometry.Nsubcircuits = 1                         #number of circuits
-            Cond.Geometry.Ltube = Ltube[i]                         #one tube length
-            Cond.Geometry.Staggering = Staggering[i]
-            Cond.Geometry.OD = Tube_OD[i]
-            Cond.Geometry.ID = Tube_ID[i]
-            Cond.Geometry.Tubes_type = Tubes_Type[i]
-                
-            Cond.Geometry.Pl = Tube_Pl[i]               #distance between center of tubes in flow direction                                                
-            Cond.Geometry.Pt = Tube_Pt[i]               #distance between center of tubes orthogonal to flow direction
-            if Circuting[i] == 'Counter':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in reversed(range(int(Nbanks[i]))):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Parallel':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in range(int(Nbanks[i])):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Cross':
-                pass 
-            else:
-                raise
-            # Cond.Geometry.Connections = [6,7,8,9,10,5,4,3,2,1]
-            Cond.Thermal.HTC_1phase_Corr = HTC_1phase_Corr[i]
-            Cond.Thermal.DP_1phase_Corr = DP_1phase_Corr[i]
-            Cond.Thermal.HTC_2phase_Corr = HTC_2phase_Corr[i]
-            Cond.Thermal.DP_2phase_Corr = DP_2phase_Corr[i]
-            Cond.Thermal.DP_Accel_Corr = DP_Accel_Corr[i]
-            Cond.Geometry.FarBendRadius = FarBendRadius[i]
-            Cond.Geometry.e_D = 0
-            Cond.Geometry.FPI = FPI[i]
-            Cond.Geometry.FinType = Fin_type[i]
-            Cond.Geometry.Fin_t = Fin_t[i]
-            Cond.Geometry.Fin_Pd = Fin_Pd[i]
-            Cond.Geometry.Fin_xf = Fin_xf[i]
-            Cond.Geometry.Fin_Lp = Fin_Lp[i]
-            Cond.Geometry.Fin_Lh = Fin_Lh[i]
-            Cond.Geometry.Fin_Sn = Fin_Sn[i]
-            Cond.Geometry.Fin_Sh = Fin_Sh[i]
-            Cond.Geometry.Fin_Ss = Fin_Ss[i]
-            # Cond.Thermal.Vel_dist = Vel_dist[i]
-            Cond.Thermal.Vdot_ha = Vdot_ha[i]
-            Cond.Thermal.Pin_a = Pin_a[i]
-            Cond.Thermal.mdot_r = mdot_r[i]
-            Cond.Thermal.Nsegments = Nsegments[i]
-            Cond.Thermal.kw = Tube_K[i]
-            Cond.Thermal.h_r_superheat_tuning = 1.0
-            Cond.Thermal.h_r_subcooling_tuning = 1.0
-            Cond.Thermal.h_r_2phase_tuning = 1.0
-            Cond.Thermal.h_a_dry_tuning = 1.0
-            Cond.Thermal.h_a_wet_tuning = 1.0
-            Cond.Thermal.DP_r_superheat_tuning = 1.0
-            Cond.Thermal.DP_r_subcooling_tuning = 1.0
-            Cond.Thermal.DP_r_2phase_tuning = 1.0
-            Cond.Thermal.k_fin = Fin_K[i]
-            Cond.Thermal.FinsOnce = True
-            Cond.Accurate = True
-            Cond.Thermal.Pin_r = Pin_r[i]
-            AS.update(CP.PT_INPUTS,Cond.Thermal.Pin_r, Tin_r[i])
-            hin_r = AS.hmass()
-            Cond.Thermal.hin_r = hin_r
-            Cond.Thermal.Tin_a = Tin_a[i]
-            Cond.Thermal.Win_a = Win_a[i]
-            import time
-            T1 = time.time()
-            Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-            print('time:',time.time()-T1)
-            RHout_a = HAPropsSI('R','T',Cond.Results.Tout_a,'P',Cond.Results.Pout_a,'W',Cond.Results.Wout_a)*100
-            global Segments
-            global Segments_P
-            Segments_P = []
-            Segments_T = []
-            Segments_x = []
-            Segments_h_r = []
-            Segments_DP_r = []
-            for num,x,y,orinet in Cond.Tubes_list:
-                Tube_P = []
-                Tube_T = []
-                Tube_x = []
-                Tube_h_r = []
-                Tube_DP_r = []
-                x = int(x)
-                y = int(y)
-                for segment in Cond.Tubes_grid[x][y].Segments:
-                    Tube_P.append(segment.Pout_r)
-                    Tube_T.append(segment.Tout_r)
-                    Tube_x.append(segment.x_out)
-                    Tube_h_r.append(segment.h_r)
-                    Tube_DP_r.append(segment.DP_r)
-                Segments_P += Tube_P
-                Segments_T += Tube_T
-                Segments_x += Tube_x
-                Segments_h_r += Tube_h_r
-                Segments_DP_r += Tube_DP_r
-            Segments = np.transpose(np.array([Segments_P,Segments_T,Segments_x,Segments_h_r,Segments_DP_r]))
-            Segments = Segments[Segments[:,0].argsort()[::-1]]
-            results[i] = [abs(Cond.Results.Q),
-                          abs(Cond.Results.Q_superheat),
-                          abs(Cond.Results.Q_2phase),
-                          abs(Cond.Results.Q_subcool),
-                          abs(Cond.Results.Q_sensible),
-                          abs(Cond.Results.Q) - abs(Cond.Results.Q_sensible),
-                          Cond.Results.SHR,
-                          Cond.Results.Charge,
-                          Cond.Results.Charge_superheat,
-                          Cond.Results.Charge_2phase,
-                          Cond.Results.Charge_subcool,
-                          Cond.Results.water_cond,
-                          abs(Cond.Results.DP_a),
-                          abs(Cond.Results.DP_r),
-                          Cond.Results.Tout_a,
-                          RHout_a,
-                          Cond.Results.Pout_r,
-                          Cond.Results.Tout_r,
-                          Cond.Results.xout_r,
-                          Cond.Geometry.A_a,
-                          Cond.Geometry.A_r,
-                          Cond.Results.h_a_dry,
-                          Cond.Results.h_r_superheat,
-                          Cond.Results.h_r_2phase,
-                          Cond.Results.h_r_subcool,
-                          Cond.Results.w_superheat,
-                          Cond.Results.w_2phase,
-                          Cond.Results.w_subcool]
-        import pandas as pd
-        results = pd.DataFrame(results)
-        if not Cond.Converged:
-            raise
-        results.to_csv(r"E:\UNIDO\Validation\Fin-tube_Condenser\DXDesigner_trial.csv")
-        import os
-        os.system(r"start EXCEL.EXE E:\UNIDO\Validation\Fin-tube_Condenser\DXDesigner_trial.csv")
-
-    def fun7():
-        N_cases = 1
-        Pin_r = [6*1e5]
-        xin_r = [0.2]
-        Fin_type = ['Plain']
-        Ntubes_per_bank_per_circuit = [5]
-        Nbanks = [2]
-        Ltube = [0.9]
-        Staggering = ['AaA']
-        Tube_OD = [0.01]
-        Tube_ID = [0.008]
-        Tube_Pl = [0.0254]
-        Tube_Pt = [0.0254]
-        HTC_1phase_Corr = [1]
-        DP_1phase_Corr = [1]
-        HTC_2phase_Corr = [14]
-        DP_2phase_Corr = [6]
-        DP_Accel_Corr = [1]
-        Circuting = ['Counter']
-        FarBendRadius = [0.05]
-        FPI = [16]
-        Fin_t = [0.0001]
-        Fin_Pd = [0.001]
-        Fin_xf = [0.001]
-        Fin_Lp = [0.001]
-        Fin_Lh = [0.001]
-        Fin_Sn = [10]
-        Fin_Sh = [0.0001]
-        Fin_Ss = [0.001]
-        Pin_a = [101325]
-        Tin_a = [293.15]
-        RHin_a = [0.5]
-        Win_a = []
-        for T,P,RH in zip(Tin_a,Pin_a,RHin_a):
-            Win_a.append(HAPropsSI('W','T',T,'P',P,'R',RH))
-        mdot_r = [0.01]
-        Vel_dist = [[[2 for _ in range(20)],[2 for _ in range(20)]]]
-        Vdot_ha = [0.15]
-        Tube_K = [380 for i in range(10)]
-        Fin_K = [237 for i in range(10)]
-        Nsegments = [80 for i in range(10)]
-        Ref = ['R32&R125']
-        Tubes_Type = ['Smooth' for _ in range(10)]
-        results = np.zeros([N_cases,28])
-        for i in range(N_cases):
-            Ref_i = Ref[i]
-            Backend = 'REFPROP'
-            AS = CP.AbstractState(Backend, Ref_i) # defining abstract state
-            if '&' in Ref_i:
-                if Ref_i == 'R32&R125':
-                    AS.set_mass_fractions([0.5,0.5])
-            global Cond
-            Cond = FinTubeCircuitClass()
-            Cond.AS = AS    
-            Cond.model = 'segment'
-            Cond.Geometry.Ntubes_per_bank_per_subcircuit = Ntubes_per_bank_per_circuit[i]       #number of tubes per bank per subcircuit
-            Cond.Geometry.Nbank = Nbanks[i]                             #number of banks or rows
-            Cond.Geometry.Nsubcircuits = 1                         #number of circuits
-            Cond.Geometry.Ltube = Ltube[i]                         #one tube length
-            Cond.Geometry.Staggering = Staggering[i]
-            Cond.Geometry.OD = Tube_OD[i]
-            Cond.Geometry.ID = Tube_ID[i]
-            Cond.Geometry.Tubes_type = Tubes_Type[i]
-                
-            Cond.Geometry.Pl = Tube_Pl[i]               #distance between center of tubes in flow direction                                                
-            Cond.Geometry.Pt = Tube_Pt[i]               #distance between center of tubes orthogonal to flow direction
-            if Circuting[i] == 'Counter':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in reversed(range(int(Nbanks[i]))):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Parallel':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in range(int(Nbanks[i])):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Cross':
-                pass 
-            else:
-                raise
-            Cond.Geometry.Connections = [6,7,8,9,10,5,4,3,2,1]
-            Cond.Thermal.HTC_1phase_Corr = HTC_1phase_Corr[i]
-            Cond.Thermal.DP_1phase_Corr = DP_1phase_Corr[i]
-            Cond.Thermal.HTC_2phase_Corr = HTC_2phase_Corr[i]
-            Cond.Thermal.DP_2phase_Corr = DP_2phase_Corr[i]
-            Cond.Thermal.DP_Accel_Corr = DP_Accel_Corr[i]
-            Cond.Geometry.FarBendRadius = FarBendRadius[i]
-            Cond.Geometry.e_D = 0
-            Cond.Geometry.FPI = FPI[i]
-            Cond.Geometry.FinType = Fin_type[i]
-            Cond.Geometry.Fin_t = Fin_t[i]
-            Cond.Geometry.Fin_Pd = Fin_Pd[i]
-            Cond.Geometry.Fin_xf = Fin_xf[i]
-            Cond.Geometry.Fin_Lp = Fin_Lp[i]
-            Cond.Geometry.Fin_Lh = Fin_Lh[i]
-            Cond.Geometry.Fin_Sn = Fin_Sn[i]
-            Cond.Geometry.Fin_Sh = Fin_Sh[i]
-            Cond.Geometry.Fin_Ss = Fin_Ss[i]
-            # Cond.Thermal.Vel_dist = Vel_dist[i]
-            Cond.Thermal.Vdot_ha = Vdot_ha[i]
-            Cond.Thermal.Pin_a = Pin_a[i]
-            Cond.Thermal.mdot_r = mdot_r[i]
-            Cond.Thermal.Nsegments = Nsegments[i]
-            Cond.Thermal.kw = Tube_K[i]
-            Cond.Thermal.h_r_superheat_tuning = 1.0
-            Cond.Thermal.h_r_subcooling_tuning = 1.0
-            Cond.Thermal.h_r_2phase_tuning = 1.0
-            Cond.Thermal.h_a_dry_tuning = 1.0
-            Cond.Thermal.h_a_wet_tuning = 1.0
-            Cond.Thermal.DP_r_superheat_tuning = 1.0
-            Cond.Thermal.DP_r_subcooling_tuning = 1.0
-            Cond.Thermal.DP_r_2phase_tuning = 1.0
-            Cond.Thermal.k_fin = Fin_K[i]
-            Cond.Thermal.FinsOnce = True
-            Cond.Accurate = True
-            Cond.Thermal.Pin_r = Pin_r[i]
-            AS.update(CP.PQ_INPUTS,Cond.Thermal.Pin_r, xin_r[i])
-            hin_r = AS.hmass()
-            Cond.Thermal.hin_r = hin_r
-            Cond.Thermal.Tin_a = Tin_a[i]
-            Cond.Thermal.Win_a = Win_a[i]
-            import time
-            T1 = time.time()
-            Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-            print('time:',time.time()-T1)
-            RHout_a = HAPropsSI('R','T',Cond.Results.Tout_a,'P',Cond.Results.Pout_a,'W',Cond.Results.Wout_a)*100
-            global Segments
-            global Segments_P
-            Segments_P = []
-            Segments_T = []
-            Segments_x = []
-            Segments_h_r = []
-            Segments_DP_r = []
-            for num,x,y,orinet in Cond.Tubes_list:
-                Tube_P = []
-                Tube_T = []
-                Tube_x = []
-                Tube_h_r = []
-                Tube_DP_r = []
-                x = int(x)
-                y = int(y)
-                for segment in Cond.Tubes_grid[x][y].Segments:
-                    Tube_P.append(segment.Pout_r)
-                    Tube_T.append(segment.Tout_r)
-                    Tube_x.append(segment.x_out)
-                    Tube_h_r.append(segment.h_r)
-                    Tube_DP_r.append(segment.DP_r)
-                Segments_P += Tube_P
-                Segments_T += Tube_T
-                Segments_x += Tube_x
-                Segments_h_r += Tube_h_r
-                Segments_DP_r += Tube_DP_r
-            Segments = np.transpose(np.array([Segments_P,Segments_T,Segments_x,Segments_h_r,Segments_DP_r]))
-            Segments = Segments[Segments[:,0].argsort()[::-1]]
-            results[i] = [abs(Cond.Results.Q),
-                          abs(Cond.Results.Q_superheat),
-                          abs(Cond.Results.Q_2phase),
-                          abs(Cond.Results.Q_subcool),
-                          abs(Cond.Results.Q_sensible),
-                          abs(Cond.Results.Q) - abs(Cond.Results.Q_sensible),
-                          Cond.Results.SHR,
-                          Cond.Results.Charge,
-                          Cond.Results.Charge_superheat,
-                          Cond.Results.Charge_2phase,
-                          Cond.Results.Charge_subcool,
-                          Cond.Results.water_cond,
-                          abs(Cond.Results.DP_a),
-                          abs(Cond.Results.DP_r),
-                          Cond.Results.Tout_a,
-                          RHout_a,
-                          Cond.Results.Pout_r,
-                          Cond.Results.Tout_r,
-                          Cond.Results.xout_r,
-                          Cond.Geometry.A_a,
-                          Cond.Geometry.A_r,
-                          Cond.Results.h_a_dry,
-                          Cond.Results.h_r_superheat,
-                          Cond.Results.h_r_2phase,
-                          Cond.Results.h_r_subcool,
-                          Cond.Results.w_superheat,
-                          Cond.Results.w_2phase,
-                          Cond.Results.w_subcool]
-        import pandas as pd
-        results = pd.DataFrame(results)
-        if not Cond.Converged:
-            raise
-        results.to_csv(r"E:\UNIDO\Validation\Fin-tube_Condenser\DXDesigner_trial.csv")
-        import os
-        os.system(r"start EXCEL.EXE E:\UNIDO\Validation\Fin-tube_Condenser\DXDesigner_trial.csv")
-
-    def fun8():
-        N_cases = 1
-        Pin_r = [7*1e5]
-        xin_r = [0.2]
-        Fin_type = ['Plain']
-        Ntubes_per_bank_per_circuit = [2]
-        Nbanks = [1]
-        Ltube = [1.0]
-        Staggering = ['AaA']
-        Tube_OD = [0.01]
-        Tube_ID = [0.008]
-        Tube_Pl = [0.0254]
-        Tube_Pt = [0.0254]
-        HTC_1phase_Corr = [2]
-        DP_1phase_Corr = [2]
-        HTC_2phase_Corr = [14]
-        DP_2phase_Corr = [6]
-        DP_Accel_Corr = [1]
-        Circuting = ['Counter']
-        FarBendRadius = [0.05]
-        FPI = [16]
-        Fin_t = [0.0001]
-        Fin_Pd = [0.008]
-        Fin_xf = [0.020]
-        Fin_Lp = [0.003]
-        Fin_Lh = [0.002]
-        Fin_Sn = [10]
-        Fin_Sh = [0.0001]
-        Fin_Ss = [0.001]
-        Pin_a = [101325]
-        Tin_a = [298]
-        RHin_a = [0.4]
-        Win_a = []
-        for T,P,RH in zip(Tin_a,Pin_a,RHin_a):
-            Win_a.append(HAPropsSI('W','T',T,'P',P,'R',RH))
-        mdot_r = [0.05]
-        Vel_dist = [[[2 for _ in range(20)],[2 for _ in range(20)]]]
-        Vdot_ha = [0.1]
-        Tube_K = [380 for i in range(10)]
-        Fin_K = [237 for i in range(10)]
-        Nsegments = [20 for i in range(10)]
-        Ref = ['R22']
-        Tubes_Type = ['Smooth']
-        MicroFin_t = [0.001]
-        MicroFin_beta = [26]
-        MicroFin_e = [0.000168]
-        MicroFin_d = [0.0002]
-        MicroFin_w = [0]
-        MicroFin_n = [60]
-        results = np.zeros([N_cases,28])
-        for i in range(N_cases):
-            Ref_i = Ref[i]
-            Backend = 'REFPROP'
-            AS = CP.AbstractState(Backend, Ref_i) # defining abstract state
-            if '&' in Ref_i:
-                if Ref_i == 'R32&R125':
-                    AS.set_mass_fractions([0.5,0.5])
-            global Cond
-            Cond = FinTubeCircuitClass()
-            Cond.AS = AS    
-            Cond.model = 'segment'
-            Cond.Geometry.Ntubes_per_bank_per_subcircuit = Ntubes_per_bank_per_circuit[i]       #number of tubes per bank per subcircuit
-            Cond.Geometry.Nbank = Nbanks[i]                             #number of banks or rows
-            Cond.Geometry.Nsubcircuits = 1                         #number of circuits
-            Cond.Geometry.Ltube = Ltube[i]                         #one tube length
-            Cond.Geometry.Staggering = Staggering[i]
-            Cond.Geometry.OD = Tube_OD[i]
-            Cond.Geometry.Tubes_type = Tubes_Type[i]
-            if Tubes_Type[i] == 'Microfin':
-                Cond.Geometry.t = MicroFin_t[i]
-                Cond.Geometry.beta = MicroFin_beta[i]
-                Cond.Geometry.e = MicroFin_e[i]
-                Cond.Geometry.d = MicroFin_d[i]
-                Cond.Geometry.w = MicroFin_w[i]
-                Cond.Geometry.n = MicroFin_n[i]
-            else:
-                Cond.Geometry.ID = Tube_ID[i]
-                
-            Cond.Geometry.Pl = Tube_Pl[i]               #distance between center of tubes in flow direction                                                
-            Cond.Geometry.Pt = Tube_Pt[i]               #distance between center of tubes orthogonal to flow direction
-            if Circuting[i] == 'Counter':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in reversed(range(int(Nbanks[i]))):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Parallel':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in range(int(Nbanks[i])):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Cross':
-                pass 
-            else:
-                raise
-            Cond.Thermal.HTC_1phase_Corr = HTC_1phase_Corr[i]
-            Cond.Thermal.DP_1phase_Corr = DP_1phase_Corr[i]
-            Cond.Thermal.HTC_2phase_Corr = HTC_2phase_Corr[i]
-            Cond.Thermal.DP_2phase_Corr = DP_2phase_Corr[i]
-            Cond.Thermal.DP_Accel_Corr = DP_Accel_Corr[i]
-            Cond.Geometry.FarBendRadius = FarBendRadius[i]
-            Cond.Geometry.e_D = 0
-            Cond.Geometry.FPI = FPI[i]
-            Cond.Geometry.FinType = Fin_type[i]
-            Cond.Geometry.Fin_t = Fin_t[i]
-            Cond.Geometry.Fin_Pd = Fin_Pd[i]
-            Cond.Geometry.Fin_xf = Fin_xf[i]
-            Cond.Geometry.Fin_Lp = Fin_Lp[i]
-            Cond.Geometry.Fin_Lh = Fin_Lh[i]
-            Cond.Geometry.Fin_Sn = Fin_Sn[i]
-            Cond.Geometry.Fin_Sh = Fin_Sh[i]
-            Cond.Geometry.Fin_Ss = Fin_Ss[i]
-            # Cond.Thermal.Vel_dist = Vel_dist[i]
-            Cond.Thermal.Vdot_ha = Vdot_ha[i]
-            Cond.Thermal.Pin_a = Pin_a[i]
-            Cond.Thermal.mdot_r = mdot_r[i]
-            Cond.Thermal.Nsegments = Nsegments[i]
-            Cond.Thermal.kw = Tube_K[i]
-            Cond.Thermal.h_r_superheat_tuning = 1.0
-            Cond.Thermal.h_r_subcooling_tuning = 1.0
-            Cond.Thermal.h_r_2phase_tuning = 1.0
-            Cond.Thermal.h_a_dry_tuning = 1.0
-            Cond.Thermal.h_a_wet_tuning = 1.0
-            Cond.Thermal.DP_r_superheat_tuning = 1.0
-            Cond.Thermal.DP_r_subcooling_tuning = 1.0
-            Cond.Thermal.DP_r_2phase_tuning = 1.0
-            Cond.Thermal.k_fin = Fin_K[i]
-            Cond.Thermal.FinsOnce = True
-            Cond.Thermal.DP_a_wet_on = False
-            Cond.Thermal.h_a_wet_on = False
-            Cond.Accurate = True
-            Cond.Thermal.Pin_r = Pin_r[i]
-            AS.update(CP.PQ_INPUTS,Cond.Thermal.Pin_r, xin_r[i])
-            hin_r = AS.hmass()
-            Cond.Thermal.hin_r = hin_r
-            Cond.Thermal.Tin_a = Tin_a[i]
-            Cond.Thermal.Win_a = Win_a[i]
-            import time
-            T1 = time.time()
-            Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-            print('time:',time.time()-T1)
-            RHout_a = HAPropsSI('R','T',Cond.Results.Tout_a,'P',Cond.Results.Pout_a,'W',Cond.Results.Wout_a)*100
-            global Segments
-            global Segments_P
-            Segments_P = []
-            Segments_T = []
-            Segments_x = []
-            Segments_h_r = []
-            Segments_DP_r = []
-            Segments_Tout_a = []
-            Segments_f_dry = []
-            Segments_water_cond = []
-            Segments_RHout_a = []
-            for num,x,y,orinet in Cond.Tubes_list:
-                Tube_P = []
-                Tube_T = []
-                Tube_x = []
-                Tube_h_r = []
-                Tube_DP_r = []
-                Tube_Tout_a = []
-                Tube_f_dry = []
-                Tube_water_cond = []
-                Tube_RHout_a = []
-                x = int(x)
-                y = int(y)
-                for segment in Cond.Tubes_grid[x][y].Segments:
-                    Tube_P.append(segment.Pout_r)
-                    Tube_T.append(segment.Tout_r)
-                    Tube_x.append(segment.x_out)
-                    Tube_h_r.append(segment.h_r)
-                    Tube_DP_r.append(segment.DP_r)
-                    Tube_Tout_a.append(segment.Tout_a)
-                    Tube_f_dry.append(segment.f_dry)
-                    Tube_water_cond.append(segment.water_condensed)
-                    RHout_a_segment = HAPropsSI('R','T',segment.Tout_a,'P',segment.Pout_a,'W',segment.Wout_a)*100
-                    Tube_RHout_a.append(RHout_a_segment)
-                Segments_P += Tube_P
-                Segments_T += Tube_T
-                Segments_x += Tube_x
-                Segments_h_r += Tube_h_r
-                Segments_DP_r += Tube_DP_r
-                Segments_Tout_a += Tube_Tout_a
-                Segments_f_dry += Tube_f_dry
-                Segments_water_cond += Tube_water_cond
-                Segments_RHout_a += Tube_RHout_a
-            Segments = np.transpose(np.array([Segments_P,Segments_T,Segments_x,Segments_h_r,Segments_DP_r,Segments_Tout_a,Segments_f_dry,Segments_water_cond,Segments_RHout_a]))
-            Segments = Segments[Segments[:,0].argsort()[::-1]]
-            results[i] = [abs(Cond.Results.Q),
-                          abs(Cond.Results.Q_superheat),
-                          abs(Cond.Results.Q_2phase),
-                          abs(Cond.Results.Q_subcool),
-                          abs(Cond.Results.Q_sensible),
-                          abs(Cond.Results.Q) - abs(Cond.Results.Q_sensible),
-                          Cond.Results.SHR,
-                          Cond.Results.Charge,
-                          Cond.Results.Charge_superheat,
-                          Cond.Results.Charge_2phase,
-                          Cond.Results.Charge_subcool,
-                          Cond.Results.water_cond,
-                          abs(Cond.Results.DP_a),
-                          abs(Cond.Results.DP_r),
-                          Cond.Results.Tout_a,
-                          RHout_a,
-                          Cond.Results.Pout_r,
-                          Cond.Results.Tout_r,
-                          Cond.Results.xout_r,
-                          Cond.Geometry.A_a,
-                          Cond.Geometry.A_r,
-                          Cond.Results.h_a,
-                          Cond.Results.h_r_superheat,
-                          Cond.Results.h_r_2phase,
-                          Cond.Results.h_r_subcool,
-                          Cond.Results.w_superheat,
-                          Cond.Results.w_2phase,
-                          Cond.Results.w_subcool]
-        import pandas as pd
-        results = pd.DataFrame(results)
-        if not Cond.Converged:
-            raise
-        results.to_csv(r"E:\UNIDO\Validation\Fin-tube_Condenser\DXDesigner_trial.csv")
-        import os
-        os.system(r"start EXCEL.EXE E:\UNIDO\Validation\Fin-tube_Condenser\DXDesigner_trial.csv")
-
-    def fun9():
-        N_cases = 1
-        Pin_r = [20*1e5]
-        xin_r = [0.8]
-        Fin_type = ['Plain']
-        Ntubes_per_bank_per_circuit = [2]
-        Nbanks = [1]
-        Ltube = [1.0]
-        Staggering = ['inline']
-        Tube_OD = [0.012]
-        Tube_Pl = [0.0254]
-        Tube_Pt = [0.0254]
-        HTC_1phase_Corr = [2]
-        DP_1phase_Corr = [2]
-        HTC_2phase_Corr = [15]
-        DP_2phase_Corr = [9]
-        DP_Accel_Corr = [1]
-        Circuting = ['Counter']
-        FarBendRadius = [0.05]
-        FPI = [16]
-        Fin_t = [0.0001]
-        Fin_Pd = [0.001]
-        Fin_xf = [0.001]
-        Fin_Lp = [0.001]
-        Fin_Lh = [0.001]
-        Fin_Sn = [10]
-        Fin_Sh = [0.0001]
-        Fin_Ss = [0.001]
-        Pin_a = [101325]
-        Tin_a = [313.15]
-        RHin_a = [0.4]
-        Win_a = []
-        for T,P,RH in zip(Tin_a,Pin_a,RHin_a):
-            Win_a.append(HAPropsSI('W','T',T,'P',P,'R',RH))
-        mdot_r = [0.05]
-        # Vel_dist = [[[2 for _ in range(20)],[2 for _ in range(20)]]]
-        Vdot_ha = [0.1]
-        Tube_K = [380 for i in range(10)]
-        Fin_K = [237 for i in range(10)]
-        Nsegments = [20 for i in range(10)]
-        Ref = ['R22']
-        Tubes_Type = ['Microfin']
-        MicroFin_t = [0.00120]
-        MicroFin_beta = [35]
-        MicroFin_e = [0.00020]
-        MicroFin_d = [0.0005]
-        MicroFin_gama = [80]
-        MicroFin_n = [40]
-        results = np.zeros([N_cases,28])
-        for i in range(N_cases):
-            Ref_i = Ref[i]
-            Backend = 'REFPROP'
-            AS = CP.AbstractState(Backend, Ref_i) # defining abstract state
-            global Cond
-            Cond = FinTubeCircuitClass()
-            Cond.AS = AS    
-            Cond.model = 'segment'
-            Cond.Geometry.Ntubes_per_bank_per_subcircuit = Ntubes_per_bank_per_circuit[i]       #number of tubes per bank per subcircuit
-            Cond.Geometry.Nbank = Nbanks[i]                             #number of banks or rows
-            Cond.Geometry.Nsubcircuits = 1                         #number of circuits
-            Cond.Geometry.Ltube = Ltube[i]                         #one tube length
-            Cond.Geometry.Staggering = Staggering[i]
-            Cond.Geometry.OD = Tube_OD[i]
-            Cond.Geometry.Tubes_type = Tubes_Type[i]
-            if Tubes_Type[i] == 'Microfin':
-                Cond.Geometry.t = MicroFin_t[i]
-                Cond.Geometry.beta = MicroFin_beta[i]
-                Cond.Geometry.e = MicroFin_e[i]
-                Cond.Geometry.d = MicroFin_d[i]
-                Cond.Geometry.gama = MicroFin_gama[i]
-                Cond.Geometry.n = MicroFin_n[i]
-
-            Cond.Geometry.Pl = Tube_Pl[i]               #distance between center of tubes in flow direction                                                
-            Cond.Geometry.Pt = Tube_Pt[i]               #distance between center of tubes orthogonal to flow direction
-            if Circuting[i] == 'Counter':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in reversed(range(int(Nbanks[i]))):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Parallel':
-                Ntubes = Ntubes_per_bank_per_circuit[i] * Nbanks[i]
-                connections = []
-                for k in range(int(Nbanks[i])):
-                    start = k * Ntubes_per_bank_per_circuit[i] + 1
-                    end = (k + 1) * Ntubes_per_bank_per_circuit[i] + 1
-                    if k%2==0:
-                        connections += range(start,end)
-                    else:
-                        connections += reversed(range(start,end))
-                Cond.Geometry.Connections = connections
-            elif Circuting[i] == 'Cross':
-                pass 
-            else:
-                raise
-            Cond.Thermal.HTC_2phase_Corr = HTC_2phase_Corr[i]
-            Cond.Thermal.DP_2phase_Corr = DP_2phase_Corr[i]
-            Cond.Thermal.DP_Accel_Corr = DP_Accel_Corr[i]
-            Cond.Geometry.FarBendRadius = FarBendRadius[i]
-            Cond.Geometry.e_D = 0
-            Cond.Geometry.FPI = FPI[i]
-            Cond.Geometry.FinType = Fin_type[i]
-            Cond.Geometry.Fin_t = Fin_t[i]
-            Cond.Geometry.Fin_Pd = Fin_Pd[i]
-            Cond.Geometry.Fin_xf = Fin_xf[i]
-            Cond.Geometry.Fin_Lp = Fin_Lp[i]
-            Cond.Geometry.Fin_Lh = Fin_Lh[i]
-            Cond.Geometry.Fin_Sn = Fin_Sn[i]
-            Cond.Geometry.Fin_Sh = Fin_Sh[i]
-            Cond.Geometry.Fin_Ss = Fin_Ss[i]
-            # Cond.Thermal.Vel_dist = Vel_dist[i]
-            Cond.Thermal.Vdot_ha = Vdot_ha[i]
-            Cond.Thermal.Pin_a = Pin_a[i]
-            Cond.Thermal.mdot_r = mdot_r[i]
-            Cond.Thermal.Nsegments = Nsegments[i]
-            Cond.Thermal.kw = Tube_K[i]
-            Cond.Thermal.h_r_superheat_tuning = 1.0
-            Cond.Thermal.h_r_subcooling_tuning = 1.0
-            Cond.Thermal.h_r_2phase_tuning = 1.0
-            Cond.Thermal.h_a_dry_tuning = 1.0
-            Cond.Thermal.h_a_wet_tuning = 1.0
-            Cond.Thermal.DP_r_superheat_tuning = 1.0
-            Cond.Thermal.DP_r_subcooling_tuning = 1.0
-            Cond.Thermal.DP_r_2phase_tuning = 1.0
-            Cond.Thermal.k_fin = Fin_K[i]
-            Cond.Thermal.FinsOnce = True
-            Cond.Thermal.DP_a_wet_on = False
-            Cond.Thermal.h_a_wet_on = False
-            Cond.Accurate = True
-            Cond.Thermal.Pin_r = Pin_r[i]
-            AS.update(CP.PQ_INPUTS,Cond.Thermal.Pin_r, xin_r[i])
-            hin_r = AS.hmass()
-            Cond.Thermal.hin_r = hin_r
-            Cond.Thermal.Tin_a = Tin_a[i]
-            Cond.Thermal.Win_a = Win_a[i]
-            import time
-            T1 = time.time()
-            Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-            print('time:',time.time()-T1)
-            RHout_a = HAPropsSI('R','T',Cond.Results.Tout_a,'P',Cond.Results.Pout_a,'W',Cond.Results.Wout_a)*100
-            global Segments
-            global Segments_P
-            Segments_P = []
-            Segments_T = []
-            Segments_x = []
-            Segments_h_r = []
-            Segments_DP_r = []
-            Segments_Tout_a = []
-            Segments_f_dry = []
-            Segments_water_cond = []
-            Segments_RHout_a = []
-            for num,x,y,orinet in Cond.Tubes_list:
-                Tube_P = []
-                Tube_T = []
-                Tube_x = []
-                Tube_h_r = []
-                Tube_DP_r = []
-                Tube_Tout_a = []
-                Tube_f_dry = []
-                Tube_water_cond = []
-                Tube_RHout_a = []
-                x = int(x)
-                y = int(y)
-                for segment in Cond.Tubes_grid[x][y].Segments:
-                    Tube_P.append(segment.Pout_r)
-                    Tube_T.append(segment.Tout_r)
-                    Tube_x.append(segment.x_out)
-                    Tube_h_r.append(segment.h_r)
-                    Tube_DP_r.append(segment.DP_r)
-                    Tube_Tout_a.append(segment.Tout_a)
-                    Tube_f_dry.append(segment.f_dry)
-                    Tube_water_cond.append(segment.water_condensed)
-                    RHout_a_segment = HAPropsSI('R','T',segment.Tout_a,'P',segment.Pout_a,'W',segment.Wout_a)*100
-                    Tube_RHout_a.append(RHout_a_segment)
-                Segments_P += Tube_P
-                Segments_T += Tube_T
-                Segments_x += Tube_x
-                Segments_h_r += Tube_h_r
-                Segments_DP_r += Tube_DP_r
-                Segments_Tout_a += Tube_Tout_a
-                Segments_f_dry += Tube_f_dry
-                Segments_water_cond += Tube_water_cond
-                Segments_RHout_a += Tube_RHout_a
-            Segments = np.transpose(np.array([Segments_P,Segments_T,Segments_x,Segments_h_r,Segments_DP_r,Segments_Tout_a,Segments_f_dry,Segments_water_cond,Segments_RHout_a]))
-            Segments = Segments[Segments[:,0].argsort()[::-1]]
-            results[i] = [abs(Cond.Results.Q),
-                          abs(Cond.Results.Q_superheat),
-                          abs(Cond.Results.Q_2phase),
-                          abs(Cond.Results.Q_subcool),
-                          abs(Cond.Results.Q_sensible),
-                          abs(Cond.Results.Q) - abs(Cond.Results.Q_sensible),
-                          Cond.Results.SHR,
-                          Cond.Results.Charge,
-                          Cond.Results.Charge_superheat,
-                          Cond.Results.Charge_2phase,
-                          Cond.Results.Charge_subcool,
-                          Cond.Results.water_cond,
-                          abs(Cond.Results.DP_a),
-                          abs(Cond.Results.DP_r),
-                          Cond.Results.Tout_a,
-                          RHout_a,
-                          Cond.Results.Pout_r,
-                          Cond.Results.Tout_r,
-                          Cond.Results.xout_r,
-                          Cond.Geometry.A_a,
-                          Cond.Geometry.A_r,
-                          Cond.Results.h_a_dry,
-                          Cond.Results.h_r_superheat,
-                          Cond.Results.h_r_2phase,
-                          Cond.Results.h_r_subcool,
-                          Cond.Results.w_superheat,
-                          Cond.Results.w_2phase,
-                          Cond.Results.w_subcool]
-        import pandas as pd
-        results = pd.DataFrame(results)
-        if not Cond.Converged:
-            raise
-        import os
-
-    def fun10():
-        global Cond, Cond1
+    def fun2(): 
+        global HX, HX1, geometry
         import time
         Ref = 'R410A'
         Backend = 'HEOS'
         AS = CP.AbstractState(Backend, Ref) # defining abstract state
-        if '&' in Ref:
-            if Ref == 'R32&R125':
-                AS.set_mass_fractions([0.5,0.5])
-        Cond = FinTubeCircuitClass()
-        Cond.AS = AS    
-        Cond.model = 'phase'
-        Cond.Geometry.Ntubes_per_bank_per_subcircuit = 6       #number of tubes per bank per subcircuit
-        Cond.Geometry.Nbank = 1                             #number of banks or rows
-        Cond.Geometry.Nsubcircuits = 3                         #number of circuits
-        Cond.Geometry.Ltube = 2.252                         #one tube length
-        Cond.Geometry.Staggering = 'inline'
-        Cond.Geometry.OD = 0.00913
-        Cond.Geometry.ID = 0.00849
-        Cond.Geometry.Tubes_type ='Smooth'
-        Cond.Geometry.Pl = 0.0191               #distance between center of tubes in flow direction                                                
-        Cond.Geometry.Pt = 0.0254               #distance between center of tubes orthogonal to flow direction
-        Cond.Geometry.Connections = [1,2,3,4,5,6]
-        Cond.Geometry.FarBendRadius = 0.01
-        Cond.Geometry.e_D = 0
-        Cond.Geometry.FPI = 24
-        Cond.Geometry.FinType = 'Wavy'
-        Cond.Geometry.Fin_t = 0.00011
-        Cond.Geometry.Fin_Pd = 0.001
-        Cond.Geometry.Fin_xf = 0.001
-        
-        Cond.Thermal.Vdot_ha = 1.7934
-        
-        Cond.Thermal.Pin_a = 101325
-        Cond.Thermal.mdot_r = 0.064018
-        Cond.Thermal.Nsegments = 1
-        Cond.Thermal.kw = 237
-        Cond.Thermal.h_r_superheat_tuning = 1.0
-        Cond.Thermal.h_r_subcooling_tuning = 1.0
-        Cond.Thermal.h_r_2phase_tuning = 1.0
-        Cond.Thermal.h_a_dry_tuning = 1.0
-        Cond.Thermal.h_a_wet_tuning = 1.0
-        Cond.Thermal.DP_r_superheat_tuning = 1.0
-        Cond.Thermal.DP_r_subcooling_tuning = 1.0
-        Cond.Thermal.DP_r_2phase_tuning = 1.0
-        Cond.Thermal.k_fin = 237
-        Cond.Thermal.FinsOnce = True
-        Cond.Accurate = True
-    
-        
-        Cond.Thermal.Pin_r = 2.8831e+06
-        Cond.Thermal.hin_r = 4.7022e+05
-        Cond.Thermal.Tin_a = 308.15
-        Cond.Thermal.Win_a = 0.017852
-        Cond.Thermal.DP_a_wet_on = False
-        Cond.Thermal.h_a_wet_on = False
-        
-        import time
-        T1 = time.time()
-        Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-        T2 = time.time()
-        print("total time:",T2-T1)
-        global A_a
-        A_a = 0
-        i = 1
-        global list_of_segments
-        list_of_segments = []
-        if hasattr(Cond,'Tubes_list'):
-            for x,y in Cond.Tubes_list[:,[1,2]]:
-                x = int(x)
-                y = int(y)
-                for j,segment in enumerate(Cond.Tubes_grid[x][y].Segments):
-                    A_a += segment.A_a
-                    i += 1
-                    list_of_segments.append(segment)
-            global states
-            states = np.zeros([len(list_of_segments)+1,9])
-            w = 0.0
-            for i,Segment in enumerate(list_of_segments):
-                states[i] = [w, Segment.hin_r, Segment.Pin_r, Segment.x_in, Segment.Tout_a, Segment.Wout_a,Segment.w_phase,Segment.DP_a,Segment.h_r]
-                w = states[i,0]+Segment.A_r/(Cond.Geometry.inner_circum*Cond.Geometry.Ntubes_per_subcircuit*Cond.Geometry.Ltube)
-                states[-1] = [1.0, list_of_segments[-1].hout_r, list_of_segments[-1].Pout_r, list_of_segments[-1].x_out, -1, -1,0,0,0]
-        print('model:',Cond.model)
-        print('DP_r:',Cond.Results.DP_r)
-        print('DP_r_subcool:',Cond.Results.DP_r_subcool)
-        print('DP_r_2phase:',Cond.Results.DP_r_2phase)
-        print('DP_r_superheat:',Cond.Results.DP_r_superheat)
-        print('h_r_subcool:',Cond.Results.h_r_subcool)
-        print('h_r_2phase:',Cond.Results.h_r_2phase)
-        print('h_r_superheat:',Cond.Results.h_r_superheat)
-        print('DP_a:',Cond.Results.DP_a)
-        print('h_a_dry:',Cond.Results.h_a_dry)
-        print('h_a_wet:',Cond.Results.h_a_wet)
-        print('Q:',Cond.Results.Q)
-        print('x_out',Cond.Results.xout_r)
-        print('Converged:',Cond.Converged)
-        from copy import deepcopy
-        Cond1 = deepcopy(Cond.Results)
-        Cond.model='segment'
-        T1 = time.time()
-        Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-        T2 = time.time()
-        print("----------------------")
-        print("total time:",T2-T1)
-        print('model:',Cond.model)
-        print('DP_r:',Cond.Results.DP_r)
-        print('DP_r_subcool:',Cond.Results.DP_r_subcool)
-        print('DP_r_2phase:',Cond.Results.DP_r_2phase)
-        print('DP_r_superheat:',Cond.Results.DP_r_superheat)
-        print('h_r_subcool:',Cond.Results.h_r_subcool)
-        print('h_r_2phase:',Cond.Results.h_r_2phase)
-        print('h_r_superheat:',Cond.Results.h_r_superheat)
-        print('DP_a:',Cond.Results.DP_a)
-        print('h_a_dry:',Cond.Results.h_a_dry)
-        print('h_a_wet:',Cond.Results.h_a_wet)
-        print('Q:',Cond.Results.Q)
-        print('x_out',Cond.Results.xout_r)
-        print('Converged:',Cond.Converged)
+        HX = FinTubeCircuitClass()
+        HX.AS = AS
+        HX.model = 'phase'
+        HX.Geometry.Ntubes_per_bank_per_subcircuit = 5       #number of tubes per bank per subcircuit
+        HX.Geometry.Nsubcircuits = 3                         #number of circuits
+        HX.Geometry.Ltube = 2.252                         #one tube length
+        HX.Geometry.Staggering = 'inline'
+        HX.Geometry.OD = 0.00913
+        HX.Geometry.ID = 0.00849
+        HX.Geometry.Tubes_type ='Smooth'
+        HX.Geometry.Pl = 0.0191               #distance between center of tubes in flow direction                                                
+        HX.Geometry.Pt = 0.0254               #distance between center of tubes orthogonal to flow direction
 
-    def fun11(): # circuit with sub-HX
-        global Cond, Cond1, geometry
-        import time
-        Ref = 'R410A'
-        Backend = 'HEOS'
-        AS = CP.AbstractState(Backend, Ref) # defining abstract state
-        if '&' in Ref:
-            if Ref == 'R32&R125':
-                AS.set_mass_fractions([0.5,0.5])
-        Cond = FinTubeCircuitClass()
-        Cond.AS = AS
-        Cond.model = 'phase'
-        Cond.Geometry.Ntubes_per_bank_per_subcircuit = 6       #number of tubes per bank per subcircuit
-        Cond.Geometry.Nsubcircuits = 3                         #number of circuits
-        Cond.Geometry.Ltube = 2.252                         #one tube length
-        Cond.Geometry.Staggering = 'inline'
-        Cond.Geometry.OD = 0.00913
-        Cond.Geometry.ID = 0.00849
-        Cond.Geometry.Tubes_type ='Smooth'
-        Cond.Geometry.Pl = 0.0191               #distance between center of tubes in flow direction                                                
-        Cond.Geometry.Pt = 0.0254               #distance between center of tubes orthogonal to flow direction
-
-        # Cond.Geometry.Nbank = 1                             #number of banks or rows
-        # Cond.Geometry.Connections = [1,2,3,4,5,6]
-        # Cond.Geometry.Sub_HX_matrix = [[6  ,0   ,0],
+        # HX.Geometry.Nbank = 1                             #number of banks or rows
+        # HX.Geometry.Connections = [1,2,3,4,5,6]
+        # HX.Geometry.Sub_HX_matrix = [[6  ,0   ,0],
         #                                 [5  ,0   ,0],
         #                                 ]
 
-        Cond.Geometry.Nbank = 2                             #number of banks or rows
-        Cond.Geometry.Connections = [12,11,10,9,8,7,1,2,3,4,5,6]
-        
-        Cond.Geometry.Sub_HX_matrix = [[12  ,0   ,0],
-                                        [11  ,0   ,0],
-                                        [10  ,0   ,0],
-                                        ]
-        
-        Cond.Geometry.FarBendRadius = 0.01
-        Cond.Geometry.e_D = 0
-        Cond.Geometry.FPI = 24
-        Cond.Geometry.FinType = 'Wavy'
-        Cond.Geometry.Fin_t = 0.00011
-        Cond.Geometry.Fin_Pd = 0.001
-        Cond.Geometry.Fin_xf = 0.001
-        
-        Cond.Thermal.Vdot_ha = 1.7934
-        
-        Cond.Thermal.Pin_a = 101325
-        Cond.Thermal.mdot_r = 0.09018
-        Cond.Thermal.Nsegments = 10
-        Cond.Thermal.kw = 237
-        Cond.Thermal.h_r_superheat_tuning = 1.0
-        Cond.Thermal.h_r_subcooling_tuning = 1.0
-        Cond.Thermal.h_r_2phase_tuning = 1.0
-        Cond.Thermal.h_a_dry_tuning = 1.0
-        Cond.Thermal.h_a_wet_tuning = 1.0
-        Cond.Thermal.DP_r_superheat_tuning = 1.0
-        Cond.Thermal.DP_r_subcooling_tuning = 1.0
-        Cond.Thermal.DP_r_2phase_tuning = 1.0
-        Cond.Thermal.k_fin = 237
-        Cond.Thermal.FinsOnce = True
-        Cond.Accurate = True
-        Cond.Thermal.DP_a_wet_on = False
-        Cond.Thermal.h_a_wet_on = False
-        
-        Cond.Thermal.Pin_r = 2.8831e+06
-        Cond.Thermal.hin_r = 4.7022e+05
-        Cond.Thermal.Tin_a = 308.15
-        Cond.Thermal.Win_a = 0.017852
-        
-        import time
-        T1 = time.time()
-        Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-        T2 = time.time()
-        print("total time:",T2-T1)
-        global A_a
-        A_a = 0
-        i = 1
-        global list_of_segments
-        list_of_segments = []
-        if hasattr(Cond,'Tubes_list'):
-            for x,y in Cond.Tubes_list[:,[1,2]]:
-                x = int(x)
-                y = int(y)
-                for j,segment in enumerate(Cond.Tubes_grid[x][y].Segments):
-                    A_a += segment.A_a
-                    i += 1
-                    list_of_segments.append(segment)
-            global states
-            states = np.zeros([len(list_of_segments)+1,9])
-            w = 0.0
-            for i,Segment in enumerate(list_of_segments):
-                states[i] = [w, Segment.hin_r, Segment.Pin_r, Segment.x_in, Segment.Tout_a, Segment.Wout_a,Segment.w_phase,Segment.DP_a,Segment.h_r]
-                w = states[i,0]+Segment.A_r/(Cond.Geometry.inner_circum*Cond.Geometry.Ntubes_per_subcircuit*Cond.Geometry.Ltube)
-                states[-1] = [1.0, list_of_segments[-1].hout_r, list_of_segments[-1].Pout_r, list_of_segments[-1].x_out, -1, -1,0,0,0]
-        print('model:',Cond.model)
-        print('DP_r:',Cond.Results.DP_r)
-        print('DP_r_subcool:',Cond.Results.DP_r_subcool)
-        print('DP_r_2phase:',Cond.Results.DP_r_2phase)
-        print('DP_r_superheat:',Cond.Results.DP_r_superheat)
-        print('h_r_subcool:',Cond.Results.h_r_subcool)
-        print('h_r_2phase:',Cond.Results.h_r_2phase)
-        print('h_r_superheat:',Cond.Results.h_r_superheat)
-        print('DP_a:',Cond.Results.DP_a)
-        print('h_a_dry:',Cond.Results.h_a_dry)
-        print('h_a_wet:',Cond.Results.h_a_wet)
-        print('Q:',Cond.Results.Q)
-        print("mdot_da",Cond.Results.mdot_da)
-        print("Tin_a",Cond.Results.Tin_a)
-        print("Tout_a",Cond.Results.Tout_a)
-        hin_a = HAPropsSI("H","P",Cond.Thermal.Pin_a,"T",Cond.Thermal.Tin_a,"W",Cond.Thermal.Win_a)
-        print("hin_a",hin_a)
-        hout_a = HAPropsSI("H","P",Cond.Results.Pout_a,"T",Cond.Results.Tout_a,"W",Cond.Results.Wout_a)
-        print("hout_a",hout_a)
-        print("Q_air",Cond.Results.mdot_da * (hout_a - hin_a))
-        print("x_in",Cond.Results.xin_r)
-        print('x_out',Cond.Results.xout_r)
-        print('Converged:',Cond.Converged)
-        from copy import deepcopy
-        Cond1 = deepcopy(Cond.Results)
-        geometry = Cond.Geometry
-        Cond.model='segment'
-        T1 = time.time()
-        Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-        T2 = time.time()
-        print("----------------------")
-        print("total time:",T2-T1)
-        print('model:',Cond.model)
-        print('DP_r:',Cond.Results.DP_r)
-        print('DP_r_subcool:',Cond.Results.DP_r_subcool)
-        print('DP_r_2phase:',Cond.Results.DP_r_2phase)
-        print('DP_r_superheat:',Cond.Results.DP_r_superheat)
-        print('h_r_subcool:',Cond.Results.h_r_subcool)
-        print('h_r_2phase:',Cond.Results.h_r_2phase)
-        print('h_r_superheat:',Cond.Results.h_r_superheat)
-        print('DP_a:',Cond.Results.DP_a)
-        print('h_a_dry:',Cond.Results.h_a_dry)
-        print('h_a_wet:',Cond.Results.h_a_wet)
-        print('Q:',Cond.Results.Q)
-        print("mdot_da",Cond.Results.mdot_da)
-        print("Tin_a",Cond.Results.Tin_a)
-        print("Tout_a",Cond.Results.Tout_a)
-        hin_a = HAPropsSI("H","P",Cond.Thermal.Pin_a,"T",Cond.Thermal.Tin_a,"W",Cond.Thermal.Win_a)
-        print("hin_a",hin_a)
-        hout_a = HAPropsSI("H","P",Cond.Results.Pout_a,"T",Cond.Results.Tout_a,"W",Cond.Results.Wout_a)
-        print("hout_a",hout_a)
-        print("Q_air",Cond.Results.mdot_da * (hout_a - hin_a))
-        print("x_in",Cond.Results.xin_r)
-        print('x_out',Cond.Results.xout_r)
-        print('Converged:',Cond.Converged)
-
-    def fun12(): 
-        global Cond, Cond1, geometry
-        import time
-        Ref = 'R410A'
-        Backend = 'HEOS'
-        AS = CP.AbstractState(Backend, Ref) # defining abstract state
-        Cond = FinTubeCircuitClass()
-        Cond.AS = AS
-        Cond.model = 'phase'
-        Cond.Geometry.Ntubes_per_bank_per_subcircuit = 5       #number of tubes per bank per subcircuit
-        Cond.Geometry.Nsubcircuits = 2                         #number of circuits
-        Cond.Geometry.Ltube = 1.352                         #one tube length
-        Cond.Geometry.Staggering = 'inline'
-        Cond.Geometry.OD = 0.00913
-        Cond.Geometry.ID = 0.00849
-        Cond.Geometry.Tubes_type ='Smooth'
-        Cond.Geometry.Pl = 0.0191               #distance between center of tubes in flow direction                                                
-        Cond.Geometry.Pt = 0.0254               #distance between center of tubes orthogonal to flow direction
-
-        # Cond.Geometry.Nbank = 1                             #number of banks or rows
-        # Cond.Geometry.Connections = [1,2,3,4,5,6]
-        # Cond.Geometry.Sub_HX_matrix = [[6  ,0   ,0],
-        #                                 [5  ,0   ,0],
-        #                                 ]
-
-        Cond.Geometry.Nbank = 2                             #number of banks or rows
-        Cond.Geometry.Connections = [6,7,8,9,10,5,4,3,2,1]
+        HX.Geometry.Nbank = 2                             #number of banks or rows
+        HX.Geometry.Connections = [6,7,8,9,10,5,4,3,2,1]
                 
-        Cond.Geometry.FarBendRadius = 0.01
-        Cond.Geometry.e_D = 0
-        Cond.Geometry.FPI = 24
-        Cond.Geometry.FinType = 'Plain'
-        Cond.Geometry.Fin_t = 0.00011
-        Cond.Geometry.Fin_Pd = 0.001
-        Cond.Geometry.Fin_xf = 0.001
+        HX.Geometry.FarBendRadius = 0.01
+        HX.Geometry.e_D = 0
+        HX.Geometry.FPI = 24
+        HX.Geometry.FinType = 'Plain'
+        HX.Geometry.Fin_t = 0.00011
+        HX.Geometry.Fin_Pd = 0.001
+        HX.Geometry.Fin_xf = 0.001
         
-        Cond.Thermal.Vdot_ha = 0.7
+        HX.Thermal.Vdot_ha = 1.7934
         
-        Cond.Thermal.Pin_a = 101325
-        Cond.Thermal.mdot_r = 0.057
-        Cond.Thermal.Nsegments = 10
-        Cond.Thermal.kw = 237
-        Cond.Thermal.h_r_superheat_tuning = 1.0
-        Cond.Thermal.h_r_subcooling_tuning = 1.0
-        Cond.Thermal.h_r_2phase_tuning = 1.0
-        Cond.Thermal.h_a_dry_tuning = 1.0
-        Cond.Thermal.h_a_wet_tuning = 1.0
-        Cond.Thermal.DP_r_superheat_tuning = 1.0
-        Cond.Thermal.DP_r_subcooling_tuning = 1.0
-        Cond.Thermal.DP_r_2phase_tuning = 1.0
-        Cond.Thermal.k_fin = 237
-        Cond.Thermal.FinsOnce = True
-        Cond.Accurate = True
-        Cond.Thermal.DP_a_wet_on = False
-        Cond.Thermal.h_a_wet_on = False
+        HX.Thermal.Pin_a = 101325
+        HX.Thermal.mdot_r = 0.057
+        HX.Thermal.Nsegments = 1
+        HX.Thermal.kw = 237
+        HX.Thermal.h_r_superheat_tuning = 1.0
+        HX.Thermal.h_r_subcooling_tuning = 1.0
+        HX.Thermal.h_r_2phase_tuning = 1.0
+        HX.Thermal.h_a_dry_tuning = 1.0
+        HX.Thermal.h_a_wet_tuning = 1.0
+        HX.Thermal.DP_r_superheat_tuning = 1.0
+        HX.Thermal.DP_r_subcooling_tuning = 1.0
+        HX.Thermal.DP_r_2phase_tuning = 1.0
+        HX.Thermal.k_fin = 237
+        HX.Thermal.FinsOnce = True
+        HX.Accurate = True
+        HX.Thermal.DP_a_wet_on = False
+        HX.Thermal.h_a_wet_on = False
         
-        Tcond_list = np.linspace(37.78,50,20)
-        Q_phase = []
-        UA = []
-        SH = 45
-        for Tcond in Tcond_list:
-            AS.update(CP.QT_INPUTS,1.0,Tcond+273.15)
-            Cond.Thermal.Pin_r = AS.p()
-            AS.update(CP.PT_INPUTS,Cond.Thermal.Pin_r,Tcond+SH+273.15)
-            Cond.Thermal.hin_r = 487529.6
-            Cond.Thermal.Tin_a = 308.15
-            Win_a = HAPropsSI("W","T",Cond.Thermal.Tin_a,"P",Cond.Thermal.Pin_a,"R",0.5)
-            Cond.Thermal.Win_a = Win_a
-            Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-            UA.append(Cond.phase_segments[0].UA_dry)
-            # Q_phase.append(abs(Cond.phase_segments[0].Q_dry))
-            Q_phase.append(abs(Cond.Results.Q))
-
-        Cond.model = 'segment'
-        Q_segment = []
-        for Tcond in Tcond_list:
-            AS.update(CP.QT_INPUTS,1.0,Tcond+273.15)
-            Cond.Thermal.Pin_r = AS.p()
-            AS.update(CP.PT_INPUTS,Cond.Thermal.Pin_r,Tcond+SH+273.15)
-            Cond.Thermal.hin_r = 487529.6
-            Cond.Thermal.Tin_a = 308.15
-            Win_a = HAPropsSI("W","T",Cond.Thermal.Tin_a,"P",Cond.Thermal.Pin_a,"R",0.5)
-            Cond.Thermal.Win_a = Win_a
-            Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-            UA.append(Cond.phase_segments[0].UA_dry)
-            # Q_phase.append(abs(Cond.phase_segments[0].Q_dry))
-            Q_segment.append(abs(Cond.Results.Q))
-        
-        Q_phase = np.array(Q_phase)
-        Q_segment = np.array(Q_segment)
-        Error = (Q_phase - Q_segment) / Q_segment * 100
-        import matplotlib.pyplot as plt
-        plt.figure()
-        plt.plot(Tcond_list,Q_phase)
-        plt.plot(Tcond_list,Q_segment)
-        plt.legend(["Q phase","Q segment"])
-        plt.figure()
-        plt.plot(Tcond_list,Error)
-
-    def fun13(): 
-        global Cond, Cond1, geometry
-        import time
-        Ref = 'R410A'
-        Backend = 'HEOS'
-        AS = CP.AbstractState(Backend, Ref) # defining abstract state
-        Cond = FinTubeCircuitClass()
-        Cond.AS = AS
-        Cond.model = 'phase'
-        Cond.Geometry.Ntubes_per_bank_per_subcircuit = 5       #number of tubes per bank per subcircuit
-        Cond.Geometry.Nsubcircuits = 3                         #number of circuits
-        Cond.Geometry.Ltube = 2.252                         #one tube length
-        Cond.Geometry.Staggering = 'inline'
-        Cond.Geometry.OD = 0.00913
-        Cond.Geometry.ID = 0.00849
-        Cond.Geometry.Tubes_type ='Smooth'
-        Cond.Geometry.Pl = 0.0191               #distance between center of tubes in flow direction                                                
-        Cond.Geometry.Pt = 0.0254               #distance between center of tubes orthogonal to flow direction
-
-        # Cond.Geometry.Nbank = 1                             #number of banks or rows
-        # Cond.Geometry.Connections = [1,2,3,4,5,6]
-        # Cond.Geometry.Sub_HX_matrix = [[6  ,0   ,0],
-        #                                 [5  ,0   ,0],
-        #                                 ]
-
-        Cond.Geometry.Nbank = 2                             #number of banks or rows
-        Cond.Geometry.Connections = [6,7,8,9,10,5,4,3,2,1]
-                
-        Cond.Geometry.FarBendRadius = 0.01
-        Cond.Geometry.e_D = 0
-        Cond.Geometry.FPI = 24
-        Cond.Geometry.FinType = 'Plain'
-        Cond.Geometry.Fin_t = 0.00011
-        Cond.Geometry.Fin_Pd = 0.001
-        Cond.Geometry.Fin_xf = 0.001
-        
-        Cond.Thermal.Vdot_ha = 1.7934
-        
-        Cond.Thermal.Pin_a = 101325
-        Cond.Thermal.mdot_r = 0.057
-        Cond.Thermal.Nsegments = 1
-        Cond.Thermal.kw = 237
-        Cond.Thermal.h_r_superheat_tuning = 1.0
-        Cond.Thermal.h_r_subcooling_tuning = 1.0
-        Cond.Thermal.h_r_2phase_tuning = 1.0
-        Cond.Thermal.h_a_dry_tuning = 1.0
-        Cond.Thermal.h_a_wet_tuning = 1.0
-        Cond.Thermal.DP_r_superheat_tuning = 1.0
-        Cond.Thermal.DP_r_subcooling_tuning = 1.0
-        Cond.Thermal.DP_r_2phase_tuning = 1.0
-        Cond.Thermal.k_fin = 237
-        Cond.Thermal.FinsOnce = True
-        Cond.Accurate = True
-        Cond.Thermal.DP_a_wet_on = False
-        Cond.Thermal.h_a_wet_on = False
-        
-        Tcond_list = np.linspace(40,50,50)
+        THX_list = np.linspace(40,50,50)
         Q = []
         Q_target = []
         Q_available = []
         Q_LMTD = []
         SH = 45
-        Tcond = 37.78
-        AS.update(CP.QT_INPUTS,1.0,Tcond+273.15)
-        Cond.Thermal.Pin_r = AS.p()
-        AS.update(CP.PT_INPUTS,Cond.Thermal.Pin_r,Tcond+SH+273.15)
-        Cond.Thermal.hin_r = 487529.6
-        Cond.Thermal.Tin_a = 308.15
-        Win_a = HAPropsSI("W","T",Cond.Thermal.Tin_a,"P",Cond.Thermal.Pin_a,"R",0.5)
-        Cond.Thermal.Win_a = Win_a
+        THX = 37.78
+        AS.update(CP.QT_INPUTS,1.0,THX+273.15)
+        HX.Thermal.Pin_r = AS.p()
+        AS.update(CP.PT_INPUTS,HX.Thermal.Pin_r,THX+SH+273.15)
+        HX.Thermal.hin_r = 487529.6
+        HX.Thermal.Tin_a = 308.15
+        Win_a = HAPropsSI("W","T",HX.Thermal.Tin_a,"P",HX.Thermal.Pin_a,"R",0.5)
+        HX.Thermal.Win_a = Win_a
         import time
         T1 = time.time()
-        Cond.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
+        HX.calculate(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
         T2 = time.time()
         print("total time:",T2-T1)
         global A_a
@@ -6766,11 +4686,11 @@ if __name__=='__main__':
         i = 1
         global list_of_segments
         list_of_segments = []
-        if hasattr(Cond,'Tubes_list'):
-            for x,y in Cond.Tubes_list[:,[1,2]]:
+        if hasattr(HX,'Tubes_list'):
+            for x,y in HX.Tubes_list[:,[1,2]]:
                 x = int(x)
                 y = int(y)
-                for j,segment in enumerate(Cond.Tubes_grid[x][y].Segments):
+                for j,segment in enumerate(HX.Tubes_grid[x][y].Segments):
                     A_a += segment.A_a
                     i += 1
                     list_of_segments.append(segment)
@@ -6780,32 +4700,31 @@ if __name__=='__main__':
             import pandas as pd
             for i,Segment in enumerate(list_of_segments):
                 states[i] = [w, Segment.hin_r, Segment.Pin_r, Segment.Tin_r, Segment.x_in,Segment.Tin_a, Segment.Tout_a, Segment.w_phase,Segment.DP_a,Segment.h_r,Segment.Q]
-                w = states[i,0]+Segment.A_r/(Cond.Geometry.inner_circum*Cond.Geometry.Ntubes_per_subcircuit*Cond.Geometry.Ltube)
+                w = states[i,0]+Segment.A_r/(HX.Geometry.inner_circum*HX.Geometry.Ntubes_per_subcircuit*HX.Geometry.Ltube)
             states[-1] = [1.0, list_of_segments[-1].hout_r, list_of_segments[-1].Pout_r, list_of_segments[-1].Tout_r, list_of_segments[-1].x_out, -1, -1,0,0,0,0]
             states = pd.DataFrame(states,columns=["w","hin_r","Pin_r","Tin_r","xin_r","Tin_a","Tout_a","w_phase","DP_a","h_r","Q"])
-        print('model:',Cond.model)
-        print('DP_r:',Cond.Results.DP_r)
-        print('DP_r_subcool:',Cond.Results.DP_r_subcool)
-        print('DP_r_2phase:',Cond.Results.DP_r_2phase)
-        print('DP_r_superheat:',Cond.Results.DP_r_superheat)
-        print('h_r_subcool:',Cond.Results.h_r_subcool)
-        print('h_r_2phase:',Cond.Results.h_r_2phase)
-        print('h_r_superheat:',Cond.Results.h_r_superheat)
-        print('DP_a:',Cond.Results.DP_a)
-        print('h_a_dry:',Cond.Results.h_a_dry)
-        print('h_a_wet:',Cond.Results.h_a_wet)
-        print('Q:',Cond.Results.Q)
-        print("mdot_da",Cond.Results.mdot_da)
-        print("Tin_a",Cond.Results.Tin_a)
-        print("Tout_a",Cond.Results.Tout_a)
-        hin_a = HAPropsSI("H","P",Cond.Thermal.Pin_a,"T",Cond.Thermal.Tin_a,"W",Cond.Thermal.Win_a)
+        print('model:',HX.model)
+        print('DP_r:',HX.Results.DP_r)
+        print('DP_r_subcool:',HX.Results.DP_r_subcool)
+        print('DP_r_2phase:',HX.Results.DP_r_2phase)
+        print('DP_r_superheat:',HX.Results.DP_r_superheat)
+        print('h_r_subcool:',HX.Results.h_r_subcool)
+        print('h_r_2phase:',HX.Results.h_r_2phase)
+        print('h_r_superheat:',HX.Results.h_r_superheat)
+        print('DP_a:',HX.Results.DP_a)
+        print('h_a_dry:',HX.Results.h_a_dry)
+        print('h_a_wet:',HX.Results.h_a_wet)
+        print('Q:',HX.Results.Q)
+        print("mdot_da",HX.Results.mdot_da)
+        print("Tin_a",HX.Results.Tin_a)
+        print("Tout_a",HX.Results.Tout_a)
+        hin_a = HAPropsSI("H","P",HX.Thermal.Pin_a,"T",HX.Thermal.Tin_a,"W",HX.Thermal.Win_a)
         print("hin_a",hin_a)
-        hout_a = HAPropsSI("H","P",Cond.Results.Pout_a,"T",Cond.Results.Tout_a,"W",Cond.Results.Wout_a)
+        hout_a = HAPropsSI("H","P",HX.Results.Pout_a,"T",HX.Results.Tout_a,"W",HX.Results.Wout_a)
         print("hout_a",hout_a)
-        print("Q_air",Cond.Results.mdot_da * (hout_a - hin_a))
-        print("x_in",Cond.Results.xin_r)
-        print('x_out',Cond.Results.xout_r)
-        print('Converged:',Cond.Converged)
+        print("Q_air",HX.Results.mdot_da * (hout_a - hin_a))
+        print("x_in",HX.Results.xin_r)
+        print('x_out',HX.Results.xout_r)
+        print('Converged:',HX.Converged)
     
-    
-    fun13()
+    fun2()

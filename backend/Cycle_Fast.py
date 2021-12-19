@@ -510,6 +510,7 @@ class CycleFastClass():
             
             self.Results.Capacity = abs(self.Compressor.mdot_r * (self.Evap_hout_r - self.Line_2phase.Results.hout_r))
             self.Results.Power = abs(self.Compressor.power_elec)
+            self.Results.Charge = self.Evaporator.Results.Charge + self.Condenser.Results.Charge + self.Line_Liquid.Results.Charge + self.Line_Suction.Results.Charge + self.Line_Discharge.Results.Charge + self.Line_Discharge.Results.Charge
             self.Results.CalculationTime = self.CalculationTime
             self.Results.Tdew_cond = self.Tdew_cond
             self.Results.Tdew_evap = self.Tdew_evap
@@ -599,155 +600,6 @@ if __name__ == '__main__':
         Cycle.max_n_iterations = 20
         Cycle.Update()
         
-        Cycle.Native_HX_files = True
-        # defining condenser
-        from GUI_functions import read_Fin_tube, read_Microchannel
-        # Cycle.Condenser = read_Fin_tube(r"E:\UNIDO\Python\20210117154634.hx")[1]
-        Cycle.Condenser = read_Microchannel(r"E:\UNIDO\Python\20210424012304.hx")[1]
-        Cycle.Condenser.Circuiting.bank_passes = [[12,12,12]]
-        
-        # defining evaporator
-        from GUI_functions import read_Fin_tube, read_Microchannel
-        Cycle.Evaporator = read_Fin_tube(r"E:\UNIDO\Python\20210117154452.hx")[1]
-        # Cycle.Evaporator = read_Microchannel(r"E:\UNIDO\Python\20210117154452.hx")[1]
-        
-        # defining Liquid line
-        Cycle.Line_Liquid.L = 5
-        Cycle.Line_Liquid.ID = 0.019
-        Cycle.Line_Liquid.OD = 0.022
-        Cycle.Line_Liquid.k_line = 385
-        Cycle.Line_Liquid.k_ins = 0.036
-        Cycle.Line_Liquid.t_ins = 0.01
-        Cycle.Line_Liquid.T_sur = 40 + 273.15
-        Cycle.Line_Liquid.h_sur = 20
-        Cycle.Line_Liquid.e_D = 0.00001
-        Cycle.Line_Liquid.Nsegments = 1
-        Cycle.Line_Liquid.Q_error_tol = 0.01
-        Cycle.Line_Liquid.DP_tuning = 1.0
-        Cycle.Line_Liquid.HT_tuning = 1.0
-    
-        # defining 2phase line
-        Cycle.Line_2phase.L = 5
-        Cycle.Line_2phase.ID = 0.019
-        Cycle.Line_2phase.OD = 0.022
-        Cycle.Line_2phase.k_line = 385
-        Cycle.Line_2phase.k_ins = 0.036
-        Cycle.Line_2phase.t_ins = 0.01
-        Cycle.Line_2phase.T_sur = 40 + 273.15
-        Cycle.Line_2phase.h_sur = 20
-        Cycle.Line_2phase.e_D = 0.00001
-        Cycle.Line_2phase.Nsegments = 1
-        Cycle.Line_2phase.Q_error_tol = 0.01
-        Cycle.Line_2phase.DP_tuning = 1.0
-        Cycle.Line_2phase.HT_tuning = 1.0
-    
-        # defining Suction line
-        Cycle.Line_Suction.L = 5
-        Cycle.Line_Suction.ID = 0.012
-        Cycle.Line_Suction.OD = 0.014
-        Cycle.Line_Suction.k_line = 385
-        Cycle.Line_Suction.k_ins = 0.036
-        Cycle.Line_Suction.t_ins = 0.01
-        Cycle.Line_Suction.T_sur = 40 + 273.15
-        Cycle.Line_Suction.h_sur = 20
-        Cycle.Line_Suction.e_D = 0.00001
-        Cycle.Line_Suction.Nsegments = 1
-        Cycle.Line_Suction.Q_error_tol = 0.01
-        Cycle.Line_Suction.DP_tuning = 1.0
-        Cycle.Line_Suction.HT_tuning = 1.0
-    
-        # defining Discharge line
-        Cycle.Line_Discharge.L = 5
-        Cycle.Line_Discharge.ID = 0.019
-        Cycle.Line_Discharge.OD = 0.022
-        Cycle.Line_Discharge.k_line = 385
-        Cycle.Line_Discharge.k_ins = 0.036
-        Cycle.Line_Discharge.t_ins = 0
-        Cycle.Line_Discharge.T_sur = 40 + 273.15
-        Cycle.Line_Discharge.h_sur = 20
-        Cycle.Line_Discharge.e_D = 0.00001
-        Cycle.Line_Discharge.Nsegments = 1
-        Cycle.Line_Discharge.Q_error_tol = 0.01
-        Cycle.Line_Discharge.DP_tuning = 1.0
-        Cycle.Line_Discharge.HT_tuning = 1.0
-        
-        # defining AHRI Compressor
-        if Cycle.Compressor_Type == 'AHRI':
-            Cycle.Compressor.M = [(158.38079	,4.72993	,1.23499	,0.04045298	,-0.0057017	,-0.0097998	,0.000126	,-6.36e-06	,2.67e-05	,7.51e-06)]
-            Cycle.Compressor.P = [(-576.86169	,-2.19523	,46.01597	,0.022031	,-0.0053035	,-0.3578	,0.000917	,-0.0010689	,0.000149	,0.0017934)]
-            Cycle.Compressor.Speeds = [2500]
-            Cycle.Compressor.fp = 0.0
-            Cycle.Compressor.Vdot_ratio_P = 1.0
-            Cycle.Compressor.Vdot_ratio_M = 1.0
-            Cycle.Compressor.Displacement = 0.00005
-            Cycle.Compressor.SH_Ref = 20 * 5 / 9
-            Cycle.Compressor.act_speed = 2500
-            Cycle.Compressor.Unit_system = 'ip'
-            Cycle.Compressor.Elec_eff = 1.0
-            Cycle.Compressor.F_factor = 0.75
-    
-        # defining Physics-based compressor
-        elif Cycle.Compressor_Type == 'Physics':
-            Cycle.Compressor.fp = 0.0
-            Cycle.Compressor.Vdot_ratio_P = 1.0
-            Cycle.Compressor.Vdot_ratio_M = 1.0
-            Cycle.Compressor.Displacement = 0.00005
-            Cycle.Compressor.act_speed = 2500
-            Cycle.Compressor.Elec_eff = 1.0
-            Cycle.Compressor.isen_eff = "0.7"
-            Cycle.Compressor.vol_eff = "0.8"
-            
-        if Cycle.Expansion_Device_Type == 'Capillary':
-            Cycle.Capillary.L = 4.0
-            Cycle.Capillary.D = 0.0009
-            Cycle.Capillary.D_liquid = Cycle.Line_Liquid.ID
-            Cycle.Capillary.Ntubes = 5
-            Cycle.Capillary.DT_2phase = 0.5
-            Cycle.Capillary.DP_converged = 1
-        
-        Cycle.REFPROP_path = ""
-        result = Cycle.Calculate('Hybrid')
-        if not result[0]:
-            Cycle.Error_message = result[1]
-        print(result)
-        print('Calculation time:',round(time.time() - T1,3),'s')
-        
-    def fun2():
-        T1 = time.time()
-        Cycle = CycleFastClass()
-        
-        # defining cycle parameters
-        Cycle.Compressor_Type = 'Physics'
-        # Cycle.Compressor_Type = 'Physics'
-        
-        Cycle.Condenser_Type = 'MicroChannel'
-        Cycle.Evaporator_Type = 'Fin-tube'
-        
-        Cycle.Second_Cond = "Subcooling"
-        Cycle.SC_value = 1
-    
-        # Cycle.Second_Cond = "Charge"
-        # Cycle.Charge_value = 31
-    
-        Cycle.Expansion_Device_Type = 'TXV'
-        Cycle.SH_value = 5.0
-        Cycle.Superheat_Type = 'Evaporator'
-        # Cycle.Superheat_Type = 'Compressor'
-    
-        # Cycle.Expansion_Device_Type = 'Capillary'
-    
-        Cycle.Backend = "HEOS"
-        Cycle.Ref = "R410A"
-        Cycle.Mode = "AC"
-        Cycle.Tevap_init_manual = False
-        Cycle.Tcond_init_manual = False
-        Cycle.energy_tol = 1
-        Cycle.pressure_tol = 100
-        Cycle.mass_flowrate_tol = 0.001
-        Cycle.mass_tol = 0.01
-        Cycle.max_n_iterations = 20
-        Cycle.Update()
-        
         Cycle.Native_HX_files = False
         # defining condenser
         Cycle.Condenser_fast = Fintube_fastClass()
@@ -799,6 +651,8 @@ if __name__ == '__main__':
         Cycle.Line_Liquid.Q_error_tol = 0.01
         Cycle.Line_Liquid.DP_tuning = 1.0
         Cycle.Line_Liquid.HT_tuning = 1.0
+        Cycle.Line_Liquid.N_90_bends = 0
+        Cycle.Line_Liquid.N_180_bends = 0
     
         # defining 2phase line
         Cycle.Line_2phase.L = 5
@@ -814,6 +668,8 @@ if __name__ == '__main__':
         Cycle.Line_2phase.Q_error_tol = 0.01
         Cycle.Line_2phase.DP_tuning = 1.0
         Cycle.Line_2phase.HT_tuning = 1.0
+        Cycle.Line_2phase.N_90_bends = 0
+        Cycle.Line_2phase.N_180_bends = 0
     
         # defining Suction line
         Cycle.Line_Suction.L = 5
@@ -829,6 +685,8 @@ if __name__ == '__main__':
         Cycle.Line_Suction.Q_error_tol = 0.01
         Cycle.Line_Suction.DP_tuning = 1.0
         Cycle.Line_Suction.HT_tuning = 1.0
+        Cycle.Line_Suction.N_90_bends = 0
+        Cycle.Line_Suction.N_180_bends = 0
     
         # defining Discharge line
         Cycle.Line_Discharge.L = 5
@@ -844,6 +702,8 @@ if __name__ == '__main__':
         Cycle.Line_Discharge.Q_error_tol = 0.01
         Cycle.Line_Discharge.DP_tuning = 1.0
         Cycle.Line_Discharge.HT_tuning = 1.0
+        Cycle.Line_Discharge.N_90_bends = 0
+        Cycle.Line_Discharge.N_180_bends = 0
         
         # defining AHRI Compressor
         if Cycle.Compressor_Type == 'AHRI':
@@ -882,8 +742,10 @@ if __name__ == '__main__':
         Cycle.REFPROP_path = ""
         result = Cycle.Calculate('Hybrid')
         if not result[0]:
+            print("Cycle was not solved!")
             Cycle.Error_message = result[1]
-        print(result)
+        else:
+            print("Cycle was solved successfully!")
         print('Calculation time:',round(time.time() - T1,3),'s')
     
     fun1()

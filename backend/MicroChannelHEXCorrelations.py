@@ -1216,6 +1216,7 @@ class CorrelationsClass():
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
     from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import    
+    from itertools import product
     AS = CP.AbstractState("HEOS", "R22")
     Correlation = CorrelationsClass()
     x_start = np.linspace(0,1,100)

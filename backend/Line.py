@@ -900,6 +900,7 @@ if __name__=='__main__':
 
         for i in range(1):
             kwds={
+                  'name':"Generic Line",
                   'AS': AS,
                   'Pin_r': Pin_r,
                   'hin_r': hin_r,
@@ -956,7 +957,7 @@ if __name__=='__main__':
             Line = LineClass(**kwds)
             Line.Calculate()
     T1 = time.time()
-    f2()
+    f1()
     print("total time:",time.time() - T1, "s")
     print(*Line.OutputList(),sep="\n")
     
