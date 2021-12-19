@@ -305,14 +305,28 @@ class FinTube_Circuit_Window(QDialog, FROM_FinTube_Circuit_Main):
             self.loaded_sub_HX_values = True
             self.Sub_HX_UI.Enable.setChecked(True)
             self.Sub_HX_UI.load_values(Circuit.sub_HX_values)
-            
 
     def enable_sub_HX(self):
         # creating sub_HX tab
         self.Sub_HX_UI.Enable.setChecked(True)
         self.Sub_HX_UI.Enable.hide()
         self.tabWidget.addTab(self.Sub_HX_UI,"Sub Heat Exchanger")
-
+        
+        # disabling number of banks field
+        self.FinTube_circuit_tube_N_bank.hide()
+        self.FinTube_circuit_tube_N_bank_label.hide()
+        self.FinTube_circuit_tube_N_bank.setValue(1)
+        
+        # disable number of duplicate circuits
+        self.FinTube_circuit_N_circuits_label.hide()
+        self.FinTube_circuit_N_circuits.hide()
+        self.line_8.hide()
+        self.FinTube_circuit_tube_circuitry_group.hide()
+        self.FinTube_circuit_N_circuits.setValue(1)
+        
+        # edit number of tubes field
+        self.FinTube_circuit_tube_N_per_bank_label.setText("Number of tubes per bank for the whole heat exchanger")
+        
         # intially update Sub_HX UI
         if not self.loaded_sub_HX_values:
             self.update_sub_HX_ui()

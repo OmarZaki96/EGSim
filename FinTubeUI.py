@@ -306,6 +306,9 @@ class FinTubeWindow(QDialog, FROM_FinTube_Main):
                 self.FinTube_circuits[to_id] = from_circuit
             else:
                 self.FinTube_Sub_Circuit = from_circuit
+                self.FinTube_Sub_Circuit.N_bank = 1
+                self.FinTube_Sub_Circuit.N_Circuits = 1
+                
             self.update_circuits_definition()
             self.raise_information_message("Circuit was copied successfully!")
         
