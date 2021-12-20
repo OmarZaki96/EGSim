@@ -560,7 +560,7 @@
              <item>
               <widget class="QCheckBox" name="Air_Pressure_check">
                <property name="text">
-                <string>Air inlet pressure</string>
+                <string>Air Inlet Pressure</string>
                </property>
               </widget>
              </item>
@@ -619,7 +619,7 @@
              <item>
               <widget class="QCheckBox" name="Air_Temperature_check">
                <property name="text">
-                <string>Air inlet Temperature</string>
+                <string>Air Inlet Temperature</string>
                </property>
               </widget>
              </item>
@@ -663,7 +663,7 @@
              <item>
               <widget class="QCheckBox" name="Air_RH_check">
                <property name="text">
-                <string>Air inlet Relative Humidity</string>
+                <string>Air Inlet Relative Humidity</string>
                </property>
               </widget>
              </item>

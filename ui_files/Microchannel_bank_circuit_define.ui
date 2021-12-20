@@ -52,7 +52,7 @@
         <item>
          <widget class="QLabel" name="Microchannel_bank_number_passes_label">
           <property name="text">
-           <string>Number of passes*</string>
+           <string>Number of Passes*</string>
           </property>
          </widget>
         </item>

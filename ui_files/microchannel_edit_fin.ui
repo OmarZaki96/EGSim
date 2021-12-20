@@ -132,7 +132,7 @@
               <item>
                <widget class="QLabel" name="Fin_Fd_label">
                 <property name="text">
-                 <string>Fin length</string>
+                 <string>Fin Length</string>
                 </property>
                </widget>
               </item>

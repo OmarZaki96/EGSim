@@ -454,7 +454,7 @@
              <string>The discretization temperature for the two-phase region. the capillary tube length will be devided to segments in the two phase region, with each segment has a temperature drop of the selected value of discretization temperature. choosing a very low value can cause the solver to be very slow.</string>
             </property>
             <property name="text">
-             <string>Discretization Temperature For Two-Phase</string>
+             <string>Discretization Temperature for Two-Phase</string>
             </property>
            </widget>
           </item>

@@ -367,7 +367,7 @@
                <string>These circuits has not been defined yet</string>
               </property>
               <property name="text">
-               <string>Circuits with not-defined Geometry:</string>
+               <string>Circuits with Not-defined Geometry:</string>
               </property>
              </widget>
             </item>
@@ -988,7 +988,7 @@
               <item>
                <widget class="QLabel" name="FinTube_air_inlet_P_label">
                 <property name="text">
-                 <string>Air inlet pressure*</string>
+                 <string>Air Inlet Pressure*</string>
                 </property>
                </widget>
               </item>
@@ -1049,7 +1049,7 @@
               <item>
                <widget class="QLabel" name="FinTube_air_inlet_T_label">
                 <property name="text">
-                 <string>Air inlet Temperature*</string>
+                 <string>Air Inlet Temperature*</string>
                 </property>
                </widget>
               </item>
@@ -1095,7 +1095,7 @@
               <item>
                <widget class="QLabel" name="FinTube_air_inlet_RH_label">
                 <property name="text">
-                 <string>Air inlet Relative Humidity*</string>
+                 <string>Air Inlet Relative Humidity*</string>
                 </property>
                </widget>
               </item>

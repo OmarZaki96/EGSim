@@ -49,7 +49,7 @@
              <string>Unit of the condensing temperatures of the map.</string>
             </property>
             <property name="text">
-             <string>Condensing Temperature unit*</string>
+             <string>Condensing Temperature Unit*</string>
             </property>
            </widget>
           </item>
@@ -130,7 +130,7 @@
              <string>Unit of the evaporating temperatures of the map.</string>
             </property>
             <property name="text">
-             <string>Evaporating Temperature unit*</string>
+             <string>Evaporating Temperature Unit*</string>
             </property>
            </widget>
           </item>
@@ -211,7 +211,7 @@
              <string>Mass flow rate unit of the map.</string>
             </property>
             <property name="text">
-             <string>Mass flow rate unit*</string>
+             <string>Mass Flow Rate Unit*</string>
             </property>
            </widget>
           </item>
@@ -307,7 +307,7 @@
              <string>Power unit of the map</string>
             </property>
             <property name="text">
-             <string>Power unit*</string>
+             <string>Power Unit*</string>
             </property>
            </widget>
           </item>

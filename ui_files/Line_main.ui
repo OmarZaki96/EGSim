@@ -644,7 +644,7 @@
                <string>Devide the line to number of segments</string>
               </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of 90&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt; bends*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of 90&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt; Bends*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -691,7 +691,7 @@
                <string>Devide the line to number of segments</string>
               </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of 180&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt; bends*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of 180&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt; Bends*&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -736,7 +736,7 @@
              <string>Devide the line to number of segments</string>
             </property>
             <property name="text">
-             <string>Number of segments</string>
+             <string>Number of Segments</string>
             </property>
            </widget>
           </item>

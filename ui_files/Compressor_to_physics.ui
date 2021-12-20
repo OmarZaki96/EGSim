@@ -54,7 +54,7 @@
           <item>
            <widget class="QLabel" name="label">
             <property name="text">
-             <string>Volumetric efficiency Model Degree</string>
+             <string>Volumetric Efficiency Model Degree</string>
             </property>
            </widget>
           </item>
@@ -88,7 +88,7 @@
           <item>
            <widget class="QLabel" name="label_2">
             <property name="text">
-             <string>Isentropic efficiency Model Degree</string>
+             <string>Isentropic Efficiency Model Degree</string>
             </property>
            </widget>
           </item>
@@ -122,7 +122,7 @@
           <item>
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>Evaporating temperature from</string>
+             <string>Evaporating Temperature from</string>
             </property>
            </widget>
           </item>
@@ -190,7 +190,7 @@
           <item>
            <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>Condensing temperature from</string>
+             <string>Condensing Temperature from</string>
             </property>
            </widget>
           </item>
@@ -282,7 +282,7 @@
              <string>Refrigerant that can be used with the compressor</string>
             </property>
             <property name="text">
-             <string>Refrigerant library</string>
+             <string>Refrigerant Library</string>
             </property>
             <property name="wordWrap">
              <bool>true</bool>
@@ -358,7 +358,7 @@
         <item>
          <widget class="QPushButton" name="Convert_button">
           <property name="text">
-           <string>Convert to physics Model</string>
+           <string>Convert to Physics Model</string>
           </property>
          </widget>
         </item>
@@ -414,7 +414,7 @@
             <item>
              <widget class="QLabel" name="RMSE_M_label">
               <property name="text">
-               <string>RMSE% in mass flow rate</string>
+               <string>RMSE% in Mass Flow Rate</string>
               </property>
              </widget>
             </item>
@@ -448,7 +448,7 @@
             <item>
              <widget class="QLabel" name="RMSE_P_label">
               <property name="text">
-               <string>RMSE% in power</string>
+               <string>RMSE% in Power</string>
               </property>
              </widget>
             </item>

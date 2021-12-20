@@ -886,7 +886,7 @@
               <item>
                <widget class="QLabel" name="FinTube_circuit_tube_d_label">
                 <property name="text">
-                 <string>Fin base thickness (d)*</string>
+                 <string>Fin Base Thickness (d)*</string>
                 </property>
                </widget>
               </item>
@@ -1362,7 +1362,7 @@
                  <item>
                   <widget class="QLabel" name="FinTube_circuit_tube_N_per_bank_label">
                    <property name="text">
-                    <string>Number of Tubes per Bank per duplicate circuit*</string>
+                    <string>Number of Tubes per Bank per Duplicate Circuit*</string>
                    </property>
                   </widget>
                  </item>
@@ -1400,7 +1400,7 @@
                  <item>
                   <widget class="QLabel" name="FinTube_circuit_tube_N_bank_label">
                    <property name="text">
-                    <string>Number of Banks per duplicate cirucit*</string>
+                    <string>Number of Banks per Duplicate Cirucit*</string>
                    </property>
                   </widget>
                  </item>

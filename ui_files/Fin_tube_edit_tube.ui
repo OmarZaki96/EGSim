@@ -495,7 +495,7 @@
             <item>
              <widget class="QLabel" name="Tube_n_label">
               <property name="text">
-               <string>Number of fins or grooves (n)</string>
+               <string>Number of Fins or Grooves (n)</string>
               </property>
              </widget>
             </item>

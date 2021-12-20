@@ -99,7 +99,7 @@
               <item>
                <widget class="QLabel" name="N_points_label">
                 <property name="text">
-                 <string>Number of rating points</string>
+                 <string>Number of Rating Points</string>
                 </property>
                </widget>
               </item>
@@ -201,6 +201,9 @@
                  <widget class="QComboBox" name="Vdot_unit">
                   <property name="enabled">
                    <bool>true</bool>
+                  </property>
+                  <property name="currentIndex">
+                   <number>1</number>
                   </property>
                   <item>
                    <property name="text">
@@ -333,7 +336,7 @@
               <item>
                <widget class="QLabel" name="label">
                 <property name="text">
-                 <string>Volumetric efficiency Polynomial Degree</string>
+                 <string>Volumetric Rfficiency Polynomial Degree</string>
                 </property>
                </widget>
               </item>
@@ -367,7 +370,7 @@
               <item>
                <widget class="QLabel" name="label_2">
                 <property name="text">
-                 <string>Isentropic efficiency Polynomial Degree</string>
+                 <string>Isentropic Rfficiency Polynomial Degree</string>
                 </property>
                </widget>
               </item>
@@ -422,7 +425,7 @@
                  <string>Refrigerant that can be used with the compressor</string>
                 </property>
                 <property name="text">
-                 <string>Refrigerant library</string>
+                 <string>Refrigerant Library</string>
                 </property>
                 <property name="wordWrap">
                  <bool>true</bool>
@@ -464,7 +467,7 @@
             <item>
              <widget class="QPushButton" name="Convert_button">
               <property name="text">
-               <string>Convert to physics Model</string>
+               <string>Convert to Physics Model</string>
               </property>
              </widget>
             </item>

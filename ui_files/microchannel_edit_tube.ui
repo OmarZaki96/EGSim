@@ -269,7 +269,7 @@
             <item>
              <widget class="QLabel" name="Port_n_label">
               <property name="text">
-               <string>Number of ports</string>
+               <string>Number of Ports</string>
               </property>
              </widget>
             </item>
