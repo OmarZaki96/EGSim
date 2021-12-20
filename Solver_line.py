@@ -64,6 +64,8 @@ class solver(QObject):
         self.Line.Q_error_tol = line.Line_q_tolerance
         self.Line.DP_tuning = line.Line_DP_correction
         self.Line.HT_tuning = line.Line_HT_correction
+        self.Line.N_90_bends = line.Line_N_90_bends
+        self.Line.N_180_bends = line.Line_N_180_bends
 
     def run(self):
         self.terminal_message.emit("Checked inputs")
