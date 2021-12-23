@@ -1982,6 +1982,7 @@ def load_refrigerant_list():
             mixed_ref_list.append([ref_name,ref_components,ref_fractions])
         
         ref_list = np.array(single_ref_list + mixed_ref_list,dtype=object)
+        ref_list = ref_list[np.argsort(ref_list[:,0])]        
         return (1,ref_list)
     except:
         import traceback
