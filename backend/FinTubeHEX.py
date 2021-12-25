@@ -461,6 +461,10 @@ class FinTubeHEXClass():
             Wout_a = sum(Wout_a_weighted) / mdot_da
             Pout_a = sum(Pout_a_weighted) / mdot_da
         
+        hout_a = float(hout_a)
+        Wout_a = float(Wout_a)
+        Pout_a = float(Pout_a)
+        
         self.Results.mdot_ha = mdot_ha
         self.Results.mdot_da = mdot_da
         self.Results.Pout_a = Pout_a

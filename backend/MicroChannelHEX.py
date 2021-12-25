@@ -617,9 +617,9 @@ class MicroChannelHEXClass():
                         h_out_weighted = np.sum(h_out * self.Air_grid_mdot_da[:,:,self.Geometry.N_bank - 1])
                         W_out_weighted = np.sum(W_out * self.Air_grid_mdot_da[:,:,self.Geometry.N_bank - 1])
                         
-                        h_out_average = h_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0])
-                        W_out_average = W_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0])
-                        P_out_average = np.average(self.Air_grid_P[last_tubes_list,2 * self.Geometry.N_bank,:])
+                        h_out_average = float(h_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0]))
+                        W_out_average = float(W_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0]))
+                        P_out_average = float(np.average(self.Air_grid_P[last_tubes_list,2 * self.Geometry.N_bank,:]))
                     
                         Pout = P_out_average
                         Wout = W_out_average
@@ -639,9 +639,9 @@ class MicroChannelHEXClass():
                                 hout_a_values.append(Segment.hout_a * Segment.w_phase)
                                 Wout_a_values.append(Segment.Wout_a * Segment.w_phase)
     
-                            h_out_average = sum(hout_a_values)
-                            W_out_average = sum(Wout_a_values)
-                            P_out_average = np.average(Pout_a_values)
+                            h_out_average = float(np.sum(hout_a_values))
+                            W_out_average = float(np.sum(Wout_a_values))
+                            P_out_average = float(np.average(Pout_a_values))
                     
                             Pout = P_out_average
                             Wout = W_out_average
@@ -1069,9 +1069,9 @@ class MicroChannelHEXClass():
         h_out_weighted = np.sum(h_out * self.Air_grid_mdot_da[:,:,self.Geometry.N_bank - 1])
         W_out_weighted = np.sum(W_out * self.Air_grid_mdot_da[:,:,self.Geometry.N_bank - 1])
         
-        h_out_average = h_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0])
-        W_out_average = W_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0])
-        P_out_average = np.average(self.Air_grid_P[last_tubes_list,2 * self.Geometry.N_bank,:])
+        h_out_average = float(h_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0]))
+        W_out_average = float(W_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0]))
+        P_out_average = float(np.average(self.Air_grid_P[last_tubes_list,2 * self.Geometry.N_bank,:]))
 
         self.Results.Pout_a = P_out_average
         self.Results.Wout_a = W_out_average
@@ -1404,14 +1404,15 @@ class MicroChannelHEXClass():
         self.Results.mdot_ha = self.Thermal.mdot_ha
         self.Results.mdot_da = self.Thermal.mdot_ha / (1 + self.Win_a)
 
-        h_out_average = sum(self.hout_a_values)
-        W_out_average = sum(self.Wout_a_values)
-        P_out_average = np.average(self.Pout_a_values)
+        h_out_average = float(np.sum(self.hout_a_values))
+        W_out_average = float(np.sum(self.Wout_a_values))
+        P_out_average = float(np.average(self.Pout_a_values))
 
         self.Results.Pout_a = P_out_average
         self.Results.Wout_a = W_out_average
         self.Results.hout_a = h_out_average
-        if self.Accurate:    
+        
+        if self.Accurate:
             self.Results.Tout_a = HAPropsSI('T','H',h_out_average,'P',self.Results.Pout_a,'W',self.Results.Wout_a)
         else:
             self.Results.Tout_a = pl.GetTDryBulbFromEnthalpyAndHumRatio(h_out_average, self.Results.Wout_a) + 273.15
@@ -1952,9 +1953,9 @@ class MicroChannelHEXClass():
                     Pout_subcool = self.Results.Pout_r
                     hout_subcool = self.Results.hout_r
                     
-                P_array_subcool = reversed(np.linspace(min(Pin_subcool,Pout_subcool),max(Pin_subcool,Pout_subcool),i_subcool*2))
+                P_array_subcool = np.linspace(min(Pin_subcool,Pout_subcool),max(Pin_subcool,Pout_subcool),i_subcool*2)[::-1]
                 if self.Results.xin_r > self.Results.xout_r:
-                    h_array_subcool = reversed(np.linspace(min(hin_subcool,hout_subcool),max(hin_subcool,hout_subcool),i_subcool*2))
+                    h_array_subcool = np.linspace(min(hin_subcool,hout_subcool),max(hin_subcool,hout_subcool),i_subcool*2)[::-1]
                 else:
                     h_array_subcool = np.linspace(min(hin_subcool,hout_subcool),max(hin_subcool,hout_subcool),i_subcool*2)
                 
@@ -2010,9 +2011,11 @@ class MicroChannelHEXClass():
                     elif 0.0 <= self.Results.xout_r <= 1.0:                    
                         Pout_2phase = self.Results.Pout_r
                         hout_2phase = self.Results.hout_r
-                P_array_2phase = reversed(np.linspace(min(Pin_2phase,Pout_2phase),max(Pin_2phase,Pout_2phase),i_2phase*2))
+
+                P_array_2phase = np.linspace(min(Pin_2phase,Pout_2phase),max(Pin_2phase,Pout_2phase),i_2phase*2)[::-1]
+
                 if self.Results.xin_r > self.Results.xout_r:
-                    h_array_2phase = reversed(np.linspace(min(hin_2phase,hout_2phase),max(hin_2phase,hout_2phase),i_2phase*2))
+                    h_array_2phase = np.linspace(min(hin_2phase,hout_2phase),max(hin_2phase,hout_2phase),i_2phase*2)[::-1]
                 else:
                     h_array_2phase = np.linspace(min(hin_2phase,hout_2phase),max(hin_2phase,hout_2phase),i_2phase*2)
                 for i,(P,h) in enumerate(zip(P_array_2phase,h_array_2phase)):
@@ -2043,10 +2046,10 @@ class MicroChannelHEXClass():
                     hin_superheat = AS.hmass()
                     Pout_superheat = self.Results.Pout_r
                     hout_superheat = self.Results.hout_r
-                    
-                P_array_superheat = reversed(np.linspace(min(Pin_superheat,Pout_superheat),max(Pin_superheat,Pout_superheat),i_superheat*2))
+                
+                P_array_superheat = np.linspace(min(Pin_superheat,Pout_superheat),max(Pin_superheat,Pout_superheat),i_superheat*2)[::-1]
                 if self.Results.xin_r > self.Results.xout_r:
-                    h_array_superheat = reversed(np.linspace(min(hin_superheat,hout_superheat),max(hin_superheat,hout_superheat),i_superheat*2))
+                    h_array_superheat = np.linspace(min(hin_superheat,hout_superheat),max(hin_superheat,hout_superheat),i_superheat*2)
                 else:
                     h_array_superheat = np.linspace(min(hin_superheat,hout_superheat),max(hin_superheat,hout_superheat),i_superheat*2)
                 
@@ -2940,13 +2943,13 @@ class MicroChannelHEXClass():
         Results.mdot_da = mdot_da
         Results.mdot_ha = mdot_ha
         Results.Pin_r = Pin_r
-        Results.Pout_r = Pout_r
+        Results.Pout_r = float(Pout_r)
         Results.x_in = x_in
         Results.x_out = x_out
         Results.Tout_r = Tout_r
         Results.Tin_r = Tin_r
         Results.hin_r = hin_r
-        Results.hout_r = hout_r
+        Results.hout_r = float(hout_r)
         Results.A_r = A_r
         Results.mdot_r = mdot_r
         Results.Rw = Rw
@@ -3301,13 +3304,13 @@ class MicroChannelHEXClass():
         Results.mdot_da = mdot_da
         Results.mdot_ha = mdot_ha
         Results.Pin_r = Pin_r
-        Results.Pout_r = Pout_r
+        Results.Pout_r = float(Pout_r)
         Results.x_in = x_in
         Results.x_out = x_out
         Results.Tout_r = Tout_r
         Results.Tin_r = Tin_r
         Results.hin_r = hin_r
-        Results.hout_r = hout_r
+        Results.hout_r = float(hout_r)
         Results.A_r = A_r
         Results.mdot_r = mdot_r
         Results.Rw = Rw
@@ -3679,13 +3682,13 @@ class MicroChannelHEXClass():
         Results.mdot_da = mdot_da
         Results.mdot_ha = mdot_ha
         Results.Pin_r = Pin_r
-        Results.Pout_r = Pout_r
+        Results.Pout_r = float(Pout_r)
         Results.x_in = x_in
         Results.x_out = x_out
         Results.Tout_r = Tout_r
         Results.Tin_r = Tin_r
         Results.hin_r = hin_r
-        Results.hout_r = hout_r
+        Results.hout_r = float(hout_r)
         Results.A_r = A_r
         Results.mdot_r = mdot_r
         Results.Rw = Rw
@@ -4061,13 +4064,13 @@ class MicroChannelHEXClass():
         Results.mdot_da = mdot_da
         Results.mdot_ha = mdot_ha
         Results.Pin_r = Pin_r
-        Results.Pout_r = Pout_r
+        Results.Pout_r = float(Pout_r)
         Results.x_in = x_in
         Results.x_out = x_out
         Results.Tout_r = Tout_r
         Results.Tin_r = Tin_r
         Results.hin_r = hin_r
-        Results.hout_r = hout_r
+        Results.hout_r = float(hout_r)
         Results.A_r = A_r
         Results.mdot_r = mdot_r
         Results.Rw = Rw

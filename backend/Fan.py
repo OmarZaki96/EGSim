@@ -80,9 +80,6 @@ class FanClass():
             eff_value = float(efficiency.subs(symbol_vals_efficiency))
         
         # making sure values are reasonable
-        if not (0 < eff_value < 1):
-            self.Solver_error = "Efficiency is value isn't between 0 and 1"
-            raise
             
         # calculating power
         DP_a = self.DP_a + self.DP_fan_add
@@ -123,9 +120,6 @@ class FanClass():
         # calculating power
         DP_a = self.DP_a + self.DP_fan_add
         efficiency = float(DP_a * Vdot / power_value)
-        if not (0 < efficiency < 1):
-            self.Solver_error = "Efficiency is value isn't between 0 and 1"
-            raise AttributeError("Efficiency is value isn't between 0 and 1")
         
         # results
         self.isen_eff = efficiency
@@ -178,9 +172,6 @@ class FanClass():
         # calculating efficiency
         isen_eff = Vdot * (DP_value + self.DP_fan_add) / power_value
         
-        if not (0 < isen_eff < 1):
-            self.Solver_error = "Efficiency is value isn't between 0 and 1"
-            raise
         
         # saving results
         self.DP_a = DP_value

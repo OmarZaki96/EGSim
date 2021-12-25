@@ -62,7 +62,7 @@ class ResultsTable_single(QTableWidget):
                     function = mass_flowrate_unit_converter
                     value = float(table[i,2])
                 elif table[i,1].lower() == "m^3/s":
-                    options = ["m3/s","m3/min","m3/hr","ft3/s","ft3/min","ft3/hr"]
+                    options = ["m3/s","m3/min","m3/hr","liter/min","ft3/s","ft3/min","ft3/hr"]
                     function = volume_flowrate_unit_converter
                     value = float(table[i,2])
                 elif table[i,1].lower() == "m":

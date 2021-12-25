@@ -707,9 +707,9 @@ class FinTubeCircuitClass():
                         h_out_weighted = np.sum(h_out * self.Air_grid_mdot_da[:,:,self.Geometry.Nbank - 1])
                         W_out_weighted = np.sum(W_out * self.Air_grid_mdot_da[:,:,self.Geometry.Nbank - 1])
                         
-                        h_out_average = h_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0])
-                        W_out_average = W_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0])
-                        P_out_average = np.average(self.Air_grid_P[last_tubes_list,2 * self.Geometry.Nbank,:])
+                        h_out_average = float(h_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0]))
+                        W_out_average = float(W_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0]))
+                        P_out_average = float(np.average(self.Air_grid_P[last_tubes_list,2 * self.Geometry.Nbank,:]))
                     
                         Pout = P_out_average
                         Wout = W_out_average
@@ -729,9 +729,9 @@ class FinTubeCircuitClass():
                                 hout_a_values.append(Segment.hout_a * Segment.w_phase)
                                 Wout_a_values.append(Segment.Wout_a * Segment.w_phase)
     
-                            h_out_average = sum(hout_a_values)
-                            W_out_average = sum(Wout_a_values)
-                            P_out_average = np.average(Pout_a_values)
+                            h_out_average = float(np.sum(hout_a_values))
+                            W_out_average = float(np.sum(Wout_a_values))
+                            P_out_average = float(np.average(Pout_a_values))
                     
                             Pout = P_out_average
                             Wout = W_out_average
@@ -1139,9 +1139,9 @@ class FinTubeCircuitClass():
         h_out_weighted = np.sum(h_out * self.Air_grid_mdot_da[:,:,self.Geometry.Nbank - 1])
         W_out_weighted = np.sum(W_out * self.Air_grid_mdot_da[:,:,self.Geometry.Nbank - 1])
         
-        h_out_average = h_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0])
-        W_out_average = W_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0])
-        P_out_average = np.average(self.Air_grid_P[last_tubes_list,2 * self.Geometry.Nbank,:])
+        h_out_average = float(h_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0]))
+        W_out_average = float(W_out_weighted / np.sum(self.Air_grid_mdot_da[:,:,0]))
+        P_out_average = float(np.average(self.Air_grid_P[last_tubes_list,2 * self.Geometry.Nbank,:]))
 
         self.Results.Pout_a = P_out_average
         self.Results.Wout_a = W_out_average
@@ -2638,13 +2638,13 @@ class FinTubeCircuitClass():
             Results.mdot_da = mdot_da
             Results.mdot_ha = mdot_ha
             Results.Pin_r = Pin_r
-            Results.Pout_r = Pout_r
+            Results.Pout_r = float(Pout_r)
             Results.x_in = x_in
             Results.x_out = x_out
             Results.Tout_r = Tout_r
             Results.Tin_r = Tin_r
             Results.hin_r = hin_r
-            Results.hout_r = hout_r
+            Results.hout_r = float(hout_r)
             Results.A_r = A_r
             Results.mdot_r = mdot_r
             Results.Rw = Rw
@@ -3037,13 +3037,13 @@ class FinTubeCircuitClass():
             Results.mdot_da = mdot_da
             Results.mdot_ha = mdot_ha
             Results.Pin_r = Pin_r
-            Results.Pout_r = Pout_r
+            Results.Pout_r = float(Pout_r)
             Results.x_in = x_in
             Results.x_out = x_out
             Results.Tout_r = Tout_r
             Results.Tin_r = Tin_r
             Results.hin_r = hin_r
-            Results.hout_r = hout_r
+            Results.hout_r = float(hout_r)
             Results.A_r = A_r
             Results.mdot_r = mdot_r
             Results.Rw = Rw
@@ -3503,13 +3503,13 @@ class FinTubeCircuitClass():
         Results.mdot_da = mdot_da
         Results.mdot_ha = mdot_ha
         Results.Pin_r = Pin_r
-        Results.Pout_r = Pout_r
+        Results.Pout_r = float(Pout_r)
         Results.x_in = x_in
         Results.x_out = x_out
         Results.Tout_r = Tout_r
         Results.Tin_r = Tin_r
         Results.hin_r = hin_r
-        Results.hout_r = hout_r
+        Results.hout_r = float(hout_r)
         Results.A_r = A_r
         Results.mdot_r = mdot_r
         Results.Rw = Rw
@@ -3906,13 +3906,13 @@ class FinTubeCircuitClass():
         Results.mdot_da = mdot_da
         Results.mdot_ha = mdot_ha
         Results.Pin_r = Pin_r
-        Results.Pout_r = Pout_r
+        Results.Pout_r = float(Pout_r)
         Results.x_in = x_in
         Results.x_out = x_out
         Results.Tout_r = Tout_r
         Results.Tin_r = Tin_r
         Results.hin_r = hin_r
-        Results.hout_r = hout_r
+        Results.hout_r = float(hout_r)
         Results.A_r = A_r
         Results.mdot_r = mdot_r
         Results.cp_r = cp_r
@@ -4395,9 +4395,9 @@ class FinTubeCircuitClass():
         self.Results.mdot_ha = self.Thermal.mdot_ha
         self.Results.mdot_da = self.Thermal.mdot_ha / (1 + self.Thermal.Win_a)
         
-        h_out_average = sum(self.hout_a_values)
-        W_out_average = sum(self.Wout_a_values)
-        P_out_average = np.average(self.Pout_a_values)
+        h_out_average = float(np.sum(self.hout_a_values))
+        W_out_average = float(np.sum(self.Wout_a_values))
+        P_out_average = float(np.average(self.Pout_a_values))
 
         self.Results.Pout_a = P_out_average
         self.Results.Wout_a = W_out_average

@@ -136,11 +136,7 @@ class CompressorPHYClass():
                     
             # evaluating expression
             vol_eff_value = float(vol_eff.subs(symbol_vals_vol))
-        
-        # making sure values are reasonable
-        if not (0 < isen_eff_value < 1):
-            raise ValueError("Isentropic efficiency value isn't between 0 and 1")
-        
+                
         # getting values
         h1 = self.hin_r
         P1 = self.Pin_r
