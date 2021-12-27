@@ -264,6 +264,7 @@ class MainWindow(QMainWindow, FROM_Main_Window):
         self.actionR410A_Cycle_with_TXV.triggered.connect(self.load_example)
         self.actionR22_Cycle_with_TXV.triggered.connect(self.load_example)
         self.actionR32_Cycle_with_TXV.triggered.connect(self.load_example)
+        self.actionR410A_Cycle_with_Microchannel_Condenser_and_Costant_Superheat.triggered.connect(self.load_example)
         self.actionFin_tube_Heat_Exchanger.triggered.connect(self.load_fintube_simulation)
         self.actionMicrochannel_Heat_Exchanger.triggered.connect(self.load_microchannel_simulation)
         self.actionLine_2.triggered.connect(self.load_line_simulation)
@@ -337,6 +338,7 @@ class MainWindow(QMainWindow, FROM_Main_Window):
     def open_comp_rating_to_physics(self):
         Compressor_rating_to_physics_window = Compressor_rating_to_physics_Window()
         Compressor_rating_to_physics_window.exec_()        
+        self.refresh_selected_components()        
 
     def import_compressor_from_datahseet(self):
         compressor_from_datasheet = Compressor_select_datasheet_window()
@@ -1384,6 +1386,8 @@ class MainWindow(QMainWindow, FROM_Main_Window):
             path = appdirs.user_data_dir("EGSim")+"\Examples\R22_(TXV).cyclec"
         elif sender == "actionR32_Cycle_with_TXV":
             path = appdirs.user_data_dir("EGSim")+"\Examples\R32_(TXV).cyclec"
+        elif sender == "actionR410A_Cycle_with_Microchannel_Condenser_and_Costant_Superheat":
+            path = appdirs.user_data_dir("EGSim")+"\Examples\R410A_MC_(TXV).cyclec"
         result = read_cycle_with_components_file(path)
         if result[0]:
             try:

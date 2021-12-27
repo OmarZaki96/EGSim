@@ -3082,6 +3082,7 @@
     <addaction name="actionR410A_Cycle_with_TXV"/>
     <addaction name="actionR22_Cycle_with_TXV"/>
     <addaction name="actionR32_Cycle_with_TXV"/>
+    <addaction name="actionR410A_Cycle_with_Microchannel_Condenser_and_Costant_Superheat"/>
    </widget>
    <widget class="QMenu" name="menuComponent_Simulation">
     <property name="title">
@@ -3285,7 +3286,7 @@
   </action>
   <action name="actionR410A_Cycle_with_TXV">
    <property name="text">
-    <string>R410A Cycle with Constant Superheat</string>
+    <string>R410A Cycle with Fin-tube Condenser and Constant Superheat</string>
    </property>
   </action>
   <action name="actionSimulate_Compressor">
@@ -3330,12 +3331,12 @@
   </action>
   <action name="actionR22_Cycle_with_TXV">
    <property name="text">
-    <string>R22 Cycle with Constant Superheat</string>
+    <string>R22 Cycle with Fin-tube Condenser and Constant Superheat</string>
    </property>
   </action>
   <action name="actionR32_Cycle_with_TXV">
    <property name="text">
-    <string>R32 Cycle with Constant Superheat</string>
+    <string>R32 Cycle with Fin-tube Condenser and Constant Superheat</string>
    </property>
   </action>
   <action name="actionSave_Cycle_with_Components">
@@ -3422,6 +3423,11 @@
   <action name="actionImport_Compressor_from_Manufacturer_Datasheet">
    <property name="text">
     <string>Import Compressor from Manufacturer Datasheet</string>
+   </property>
+  </action>
+  <action name="actionR410A_Cycle_with_Microchannel_Condenser_and_Costant_Superheat">
+   <property name="text">
+    <string>R410A Cycle with Microchannel Condenser and Costant Superheat</string>
    </property>
   </action>
  </widget>
