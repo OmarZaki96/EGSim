@@ -57,7 +57,7 @@
                  <item>
                   <widget class="QLabel" name="Condenser_type_label">
                    <property name="text">
-                    <string>Outdoor unit Type*</string>
+                    <string>Outdoor Unit Type*</string>
                    </property>
                   </widget>
                  </item>

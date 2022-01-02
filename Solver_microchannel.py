@@ -199,9 +199,6 @@ class solver(QObject):
                     self.AS.update(CP.PT_INPUTS,self.P_in ,self.T_in+self.T_diff_in)
                     self.h_in = self.AS.hmass()
             
-            print(self.P_in)
-            print(self.T_in+self.T_diff_in)
-            print(self.h_in)
             params={
                     'Pin_r': self.P_in ,
                     'hin_r': self.h_in,
