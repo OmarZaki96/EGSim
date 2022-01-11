@@ -102,7 +102,7 @@ EGSim is a vapor compression system tool developed based on physics-based simula
 
 - To use the python code instead of the compiled exe file:
   1. Create the folder `%USERNAME%\appdata\Local\EGSim`
-  2. Copy EGSim folder in the repository inside the created folder, so that the path would be `%USERNAME%\appdata\Local\EGSim\EGSim`
+  2. Copy EGSim folder in the repository to inside the created folder from step 1, so that the path would be `%USERNAME%\appdata\Local\EGSim\EGSim`
   3. Run the software using EGSim.py file
 
 <p align="right">(<a href="#top">back to top</a>)</p>
