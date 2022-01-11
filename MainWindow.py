@@ -1121,7 +1121,14 @@ class MainWindow(QMainWindow, FROM_Main_Window):
         compressor_to_physics_window.exec_()
 
     def documentation_clicked(self):
-        self.raise_error_meesage("Documentation is not available at the moment")
+        path = appdirs.user_data_dir("EGSim")+"\Documentation.pdf"
+        if os.path.exists(path):
+            try:
+                os.startfile(path)
+            except:
+                self.raise_error_meesage("Failed to open documentation file")                
+        else:
+            self.raise_error_meesage("Documentation file is not available")
 
     def show_copyrights(self):
         aboutWindow = AboutWindow()

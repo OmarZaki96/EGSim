@@ -10,7 +10,7 @@ class AboutWindow(QDialog, FROM_ABOUT):
     def __init__(self, parent=None):
         super(AboutWindow, self).__init__(parent)
         self.setupUi(self)
-        self.version.setText("1.4.0")
+        self.version.setText("2.0")
         # intially load images
         def images_loader(path,var_name,size):
             try:
