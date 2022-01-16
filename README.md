@@ -98,11 +98,12 @@ EGSim is a vapor compression system tool developed based on physics-based simula
 
 ### Installation
 
-- To use the Compiled exe file, install the latest release through <a href="https://github.com/OmarZaki96/EGSim/releases">Here</a>. You might encounter an error during installation because of the admin privileges; if so, try installing the tool in somewhere else than in program files folder. 
+- To use the Compiled exe file, install the latest release through <a href="https://github.com/OmarZaki96/EGSim/releases">Here</a>. You might encounter an error during installation because of the admin privileges; if so, try installing the tool in somewhere else other than in program files folder. 
 
 - To use the python code instead of the compiled exe file:
   1. Create the folder `%USERNAME%\appdata\Local\EGSim`
-  2. Copy EGSim folder in the repository inside the created folder, so that the path would be `%USERNAME%\appdata\Local\EGSim\EGSim`
+  2. Copy EGSim folder in the repository to inside the created folder from step 1, so that the path would be `%USERNAME%\appdata\Local\EGSim\EGSim`
+  3. Run the software using EGSim.py file
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
