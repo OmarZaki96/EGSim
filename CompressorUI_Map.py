@@ -99,11 +99,11 @@ class Compressor_Map(QDialog, FROM_Compressor_Map):
         self.Map_num_speed_change()
         if map_window.std_type == 0:
             self.Comp_Map_std_sh_radio.setChecked(True)
-            self.Comp_Map_std_sh.setText(str(round(map_window.std_sh,6)))
+            self.Comp_Map_std_sh.setText("%.5g" % map_window.std_sh)
         elif map_window.std_type == 1:
             self.Comp_Map_std_suction_radio.setChecked(True)
-            self.Comp_Map_std_suction.setText(str(round(temperature_unit_converter(map_window.std_suction,0,True),6)))
-        self.Comp_Map_F.setText(str(map_window.F_value))
+            self.Comp_Map_std_suction.setText("%.5g" % temperature_unit_converter(map_window.std_suction,0,True))
+        self.Comp_Map_F.setText("%.5g" % map_window.F_value)
         self.M_array = map_window.M_array
         self.P_array = map_window.P_array
         for i, speed in enumerate(map_window.Speeds):

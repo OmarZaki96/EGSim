@@ -276,8 +276,10 @@ class Plot_PH(QWidget):
             table.setEditTriggers(QAbstractItemView.NoEditTriggers)
     
             for i in range(len(P_list)):
-                table.setItem(0,i,QTableWidgetItem(str(round(P_list[i]/1e6,3))))
-                table.setItem(1,i,QTableWidgetItem(str(round(h_list[i]/1000,2))))
+                P = P_list[i]/1e6
+                h = h_list[i]/1000
+                table.setItem(0,i,QTableWidgetItem("%.5g" % P))
+                table.setItem(1,i,QTableWidgetItem("%.5g" % h))
                 
             table.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
             table.resizeColumnsToContents()
@@ -365,8 +367,9 @@ class Plot_TS(QWidget):
             table.setEditTriggers(QAbstractItemView.NoEditTriggers)
             
             for i in range(len(T_list)):
-                table.setItem(0,i,QTableWidgetItem(str(round(T_list[i],2))))
-                table.setItem(1,i,QTableWidgetItem(str(round(S_list[i]/1000,2))))
+                table.setItem(0,i,QTableWidgetItem("%.5g" % T_list[i]))
+                S = S_list[i]/1000
+                table.setItem(1,i,QTableWidgetItem("%.5g" % S))
                 
             table.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
             table.resizeColumnsToContents()

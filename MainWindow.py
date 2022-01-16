@@ -1748,15 +1748,15 @@ class MainWindow(QMainWindow, FROM_Main_Window):
 
     def update_residuals(self,residuals):
         if residuals[1] != None:
-            self.Energy_residual_condenser_update.setText(str(round(residuals[1],6)))
+            self.Energy_residual_condenser_update.setText("%.5g" % residuals[1])
         if residuals[2] != None:
-            self.Energy_residual_evaporator_update.setText(str(round(residuals[2],6)))
+            self.Energy_residual_evaporator_update.setText("%.5g" % residuals[2])
         if residuals[3] != None:
-            self.mass_flowrate_residual_update.setText(str(round(residuals[3],6)))
+            self.mass_flowrate_residual_update.setText("%.5g" % residuals[3])
         if residuals[4] != None:
-            self.mass_residual_update.setText(str(round(residuals[4],6)))
+            self.mass_residual_update.setText("%.5g" % residuals[4])
         if residuals[5] != None:
-            self.pressure_residual_residual_update.setText(str(round(residuals[5],6)))
+            self.pressure_residual_residual_update.setText("%.5g" % residuals[5])
         
     def finished_run(self,results):
         result = results[0]
@@ -2501,32 +2501,34 @@ class MainWindow(QMainWindow, FROM_Main_Window):
         self.Evaporator_type.setCurrentIndex(cycle.Evaporator_type)
         self.First_condition.setCurrentIndex(cycle.First_condition)
         if cycle.First_condition == 0:
-            self.Subcooling.setText(str(round(cycle.Subcooling,6)))
+            self.Subcooling.setText("%.5g" % cycle.Subcooling)
         elif cycle.First_condition == 1:
-            self.Charge.setText(str(round(cycle.Charge,6)))       
+            self.Charge.setText("%.5g" % cycle.Charge)
         
         if hasattr(cycle,"Mass_resid"):
-            self.Mass_resid.setText(str(round(cycle.Mass_resid,6)))
+            self.Mass_resid.setText("%.5g" % cycle.Mass_resid)
         self.Expansion_device.setCurrentIndex(cycle.Expansion_device)
         if cycle.Expansion_device == 0:
             self.Superheat_location.setCurrentIndex(cycle.Superheat_location)
-            self.Superheat.setText(str(round(cycle.Superheat,6)))
+            self.Superheat.setText("%.5g" % cycle.Superheat)
         self.Solver.setCurrentIndex(cycle.Solver)
         if hasattr(cycle,"Energy_resid"):
-            self.Energy_resid.setText(str(round(cycle.Energy_resid,6)))
-        self.Pressire_resid.setText(str(round(cycle.Pressire_resid,6)))
+            self.Energy_resid.setText("%.5g" % cycle.Energy_resid)
+        self.Pressire_resid.setText("%.5g" % cycle.Pressire_resid)
         if hasattr(cycle,"Mass_flowrate_resid"):
             self.Mass_flowrate_resid.setText(str(cycle.Mass_flowrate_resid))
         self.Tevap_guess_type.setCurrentIndex(cycle.Tevap_guess_type)
         if cycle.Tevap_guess_type == 1:
-            self.Tevap_guess.setText(str(round(cycle.Tevap_guess - 273.15,6)))
+            Tevap_guess = cycle.Tevap_guess - 273.15
+            self.Tevap_guess.setText("%.5g" % Tevap_guess)
         self.Tcond_guess_type.setCurrentIndex(cycle.Tcond_guess_type)
         if cycle.Tcond_guess_type == 1:
-            self.Tcond_guess.setText(str(round(cycle.Tcond_guess - 273.15,6)))
+            Tcond_guess = cycle.Tcond_guess - 273.15
+            self.Tcond_guess.setText("%.5g" % Tcond_guess)
         self.Ref_library.setCurrentIndex(cycle.Ref_library_index)
         
         if hasattr(cycle,"Capacity_target"):
-            self.Capacity_target.setText(str(round(cycle.Capacity_target,6)))
+            self.Capacity_target.setText("%.5g" % cycle.Capacity_target)
         
         if hasattr(cycle,"Test_cond"):
             index = self.Test_Condition.findText(cycle.Test_cond, Qt.MatchFixedString)

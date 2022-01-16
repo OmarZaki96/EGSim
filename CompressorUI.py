@@ -381,11 +381,11 @@ class CompressorWindow(QDialog, FROM_Compressor_Main):
                 if self.std_type == 0:
                     Comp_AHRI_dialog.Comp_AHRI_std_sh_radio.setChecked(True)
                     if hasattr(self,"std_sh"):
-                        Comp_AHRI_dialog.Comp_AHRI_std_sh.setText(str(round(self.std_sh,6)))
+                        Comp_AHRI_dialog.Comp_AHRI_std_sh.setText("%.5g" % self.std_sh)
                 elif self.std_type == 1:
                     Comp_AHRI_dialog.Comp_AHRI_std_suction_radio.setChecked(True)
                     if hasattr(self,"std_suction"):
-                        Comp_AHRI_dialog.Comp_AHRI_std_suction.setText(str(round(temperature_unit_converter(self.std_suction,0,True),6)))
+                        Comp_AHRI_dialog.Comp_AHRI_std_suction.setText("%.5g" % temperature_unit_converter(self.std_suction,0,True))
             if hasattr(self,"Comp_AHRI_F_value"):
                 Comp_AHRI_dialog.Comp_AHRI_F.setText(str(self.Comp_AHRI_F_value))
             if hasattr(self,"speeds"):

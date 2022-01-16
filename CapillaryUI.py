@@ -34,11 +34,11 @@ class CapillaryWindow(QDialog, FROM_Capillary_Main):
         
     def load_fields(self,capillary):
         self.Capillary_name.setText(str(capillary.Capillary_name))
-        self.Capillary_length.setText(str(round(capillary.Capillary_length,6)))
-        self.Capillary_D.setText(str(round(capillary.Capillary_D,6)))
-        self.Capillary_entrance_D.setText(str(round(capillary.Capillary_entrance_D,6)))
-        self.Capillary_DP_tolerance.setText(str(round(capillary.Capillary_DP_tolerance,6)))
-        self.Capillary_DT.setText(str(round(capillary.Capillary_DT,6)))
+        self.Capillary_length.setText("%.5g" % capillary.Capillary_length)
+        self.Capillary_D.setText("%.5g" % capillary.Capillary_D)
+        self.Capillary_entrance_D.setText("%.5g" % capillary.Capillary_entrance_D)
+        self.Capillary_DP_tolerance.setText("%.5g" % capillary.Capillary_DP_tolerance)
+        self.Capillary_DT.setText("%.5g" % capillary.Capillary_DT)
         self.Capillary_N_tubes.setValue(int(capillary.Capillary_N_tubes))
         self.Capillary_correlation.setCurrentIndex(int(capillary.Capillary_correlation))
     
