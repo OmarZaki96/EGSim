@@ -11,12 +11,12 @@ def temperature_diff_unit_converter(value,index,reverse=False):
     if not reverse:
         if index == 0: # C
             return value
-        elif index == 1: # F
+        elif index == 1: # R
             return value * 5 / 9
     else:
         if index == 0: # C
             return value
-        elif index == 1: # F
+        elif index == 1: # R
             return value / 5 * 9
         
 def mass_unit_converter(value,index,reverse=False):

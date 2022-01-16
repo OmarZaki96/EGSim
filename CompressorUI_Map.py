@@ -99,7 +99,7 @@ class Compressor_Map(QDialog, FROM_Compressor_Map):
         self.Map_num_speed_change()
         if map_window.std_type == 0:
             self.Comp_Map_std_sh_radio.setChecked(True)
-            self.Comp_Map_std_sh.setText(str(round(map_window.std_sh*9/5,6)))
+            self.Comp_Map_std_sh.setText(str(round(map_window.std_sh,6)))
         elif map_window.std_type == 1:
             self.Comp_Map_std_suction_radio.setChecked(True)
             self.Comp_Map_std_suction.setText(str(round(temperature_unit_converter(map_window.std_suction,0,True),6)))

@@ -310,7 +310,7 @@ class CorrelationsClass():
             Tbubble = self.AS.T()
             self.AS.update(CP.PQ_INPUTS,self.P,1.0)
             Tdew = self.AS.T()
-            DP_accel = self.AccelPressureDrop(min(self.x_out,self.x),max(self.x_out,self.x),self.AS,self.G_r,Tbubble,Tdew,slipModel='Premoli',D = self.ID)
+            DP_accel = self.AccelPressureDrop(min(self.x_out,self.x),max(self.x_out,self.x),self.AS,self.G_r,Tbubble,Tdew,slipModel='Premoli',D = self.Dh)
             if self.mode == 'heater': # Condenser
                 DP_accel *= -1
             else:

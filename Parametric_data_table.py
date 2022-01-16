@@ -144,7 +144,7 @@ def create_parametric_options(data,first_condition):
     elif first_condition == "charge":
         if data[0,0]: # subcooling
             parameters_list.append(tuple(data[0,1]))
-            parameters_names_list.append(['Cycle Charge','kg'])
+            parameters_names_list.append(['System Charge','kg'])
     for i in range(1,len(data)):
         if data[i,0]:
             parameters_list.append(tuple(data[i,1]))

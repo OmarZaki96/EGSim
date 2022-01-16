@@ -42,7 +42,7 @@ class ResultsTable_single(QTableWidget):
                     function = temperature_unit_converter
                     value = float(table[i,2])+273.15
                 elif table[i,1].lower() == "k":
-                    options = ["C","F"]
+                    options = ["C","R"]
                     function = temperature_diff_unit_converter
                     value = float(table[i,2])
                 elif table[i,1].lower() == "kg":
@@ -210,7 +210,7 @@ class ResultsTable_parametric(QTableWidget):
                         except:
                             values.append(value)
                 elif table[i,1].lower() == "k":
-                    options = ["C","F"]
+                    options = ["C","R"]
                     function = temperature_diff_unit_converter
                 elif table[i,1].lower() == "kg":
                     options = ["kg","lb"]

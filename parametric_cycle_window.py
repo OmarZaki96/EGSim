@@ -289,7 +289,7 @@ class parametric_cycle_Window(QDialog, FROM_cycle_Parametric_Main):
         self.cond_values = cond_values
         if cond_values[0] == 0:
             self.Cond_1_check.setText("Subcooling")
-            self.Cond_1_unit.addItems(["C","F"])
+            self.Cond_1_unit.addItems(["C","R"])
         else:
             self.Cond_1_check.setText("Charge")
             self.Cond_1_unit.addItems(["kg","lb"])

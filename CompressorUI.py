@@ -381,7 +381,7 @@ class CompressorWindow(QDialog, FROM_Compressor_Main):
                 if self.std_type == 0:
                     Comp_AHRI_dialog.Comp_AHRI_std_sh_radio.setChecked(True)
                     if hasattr(self,"std_sh"):
-                        Comp_AHRI_dialog.Comp_AHRI_std_sh.setText(str(round(self.std_sh*9/5,6)))
+                        Comp_AHRI_dialog.Comp_AHRI_std_sh.setText(str(round(self.std_sh,6)))
                 elif self.std_type == 1:
                     Comp_AHRI_dialog.Comp_AHRI_std_suction_radio.setChecked(True)
                     if hasattr(self,"std_suction"):

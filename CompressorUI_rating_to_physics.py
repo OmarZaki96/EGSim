@@ -21,6 +21,9 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
     def __init__(self, parent=None):
         super(Compressor_rating_to_physics_Window, self).__init__(parent)
         self.setupUi(self)
+        
+        # save parent
+        self.parent = parent
                 
         # create database path
         self.database_path = appdirs.user_data_dir("EGSim")+"/Database/"        
@@ -320,6 +323,7 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
         path = self.database_path + file_name
         self.Compressor.Comp_name = self.Comp_name.text()
         result = write_comp_xml(self.Compressor,path)        
+        
         if result:
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)

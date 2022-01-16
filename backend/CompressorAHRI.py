@@ -21,7 +21,7 @@ class CompressorAHRIClass():
     Pout_r         Pa               Refrigerant discharge3 pressure (absolute)
     fp             --               Fraction of shaft power lost as heat to ambient
     Elec_eff       --               Electrical efficiency (from electrical power to shaft power)
-    SH_Ref         F or C           Standard of Superheat for the map; F for IP, C for SI
+    SH_Ref         R or C           Standard of Superheat for the map; R for IP, C for SI
     Vdot_ratio_P   --               Power Scale factor
     Vdot_ratio_M   --               Mass flow rate Scale factor
     AS             --               Abstract state defining the refrigerant state
