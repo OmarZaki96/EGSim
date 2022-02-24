@@ -2904,6 +2904,12 @@ class MainWindow(QMainWindow, FROM_Main_Window):
         if str(self.Capacity_target.text()).strip() in ["","-","."]:
             return 0
 
+        if str(self.Indoor_Fan_add_DP.text()).strip() in ["","-","."]:
+            return 0
+
+        if str(self.Outdoor_Fan_add_DP.text()).strip() in ["","-","."]:
+            return 0
+
         if self.accumulator_charge.value == 1.0:
             self.raise_error_meesage("Accumulator charge capacity ratio can not be 100%")
             return 4
