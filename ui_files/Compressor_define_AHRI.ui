@@ -220,7 +220,7 @@
            <string>Standard superheat for the mass flowrate of the map. It is usually 20 F.</string>
           </property>
           <property name="text">
-           <string>20</string>
+           <string>11.11</string>
           </property>
           <property name="maxLength">
            <number>8</number>
@@ -230,7 +230,7 @@
         <item>
          <widget class="QComboBox" name="Comp_AHRI_std_sh_unit">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <item>
            <property name="text">
@@ -239,7 +239,7 @@
           </item>
           <item>
            <property name="text">
-            <string>F</string>
+            <string>R</string>
            </property>
           </item>
          </widget>
@@ -309,7 +309,7 @@
            <string>Standard superheat for the mass flowrate of the map. It is usually 20 F.</string>
           </property>
           <property name="text">
-           <string>20</string>
+           <string>35</string>
           </property>
           <property name="maxLength">
            <number>8</number>

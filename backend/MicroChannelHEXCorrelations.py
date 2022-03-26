@@ -1146,7 +1146,18 @@ class CorrelationsClass():
             k = AS.conductivity() #[W/m-K]
             rho = AS.rhomass() #[kg/m^3]
         else:
-            AS.update(CP.HmassP_INPUTS,h,p)
+            AS.update(CP.PQ_INPUTS,p,0.0)
+            hf = AS.hmass()
+    
+            AS.update(CP.PQ_INPUTS,p,1.0)
+            hg = AS.hmass()
+            
+            if abs(h/hf-1) < 1E-3:
+                AS.update(CP.PQ_INPUTS, p, 0.0)
+            elif abs(h/hg-1) < 1E-3:
+                AS.update(CP.PQ_INPUTS, p, 1.0)
+            else:
+                AS.update(CP.HmassP_INPUTS,h, p)
             mu = AS.viscosity() #[Pa-s OR kg/m-s]
             cp = AS.cpmass() #[J/kg-K]
             k = AS.conductivity() #[W/m-K]
@@ -1181,7 +1192,18 @@ class CorrelationsClass():
             k = AS.conductivity() #[W/m-K]
             rho = AS.rhomass() #[kg/m^3]
         else:
-            AS.update(CP.HmassP_INPUTS,h,p)
+            AS.update(CP.PQ_INPUTS,p,0.0)
+            hf = AS.hmass()
+    
+            AS.update(CP.PQ_INPUTS,p,1.0)
+            hg = AS.hmass()
+            
+            if abs(h/hf-1) < 1E-3:
+                AS.update(CP.PQ_INPUTS, p, 0.0)
+            elif abs(h/hg-1) < 1E-3:
+                AS.update(CP.PQ_INPUTS, p, 1.0)
+            else:
+                AS.update(CP.HmassP_INPUTS,h, p)
             mu = AS.viscosity() #[Pa-s OR kg/m-s]
             cp = AS.cpmass() #[J/kg-K]
             k = AS.conductivity() #[W/m-K]

@@ -2433,7 +2433,19 @@ class CorrelationsClass():
         """
         calculates single phase heat transfer coefficient with Gnielinski
         """
-        AS.update(CP.HmassP_INPUTS,h, p)
+        AS.update(CP.PQ_INPUTS,p,0.0)
+        hf = AS.hmass()
+
+        AS.update(CP.PQ_INPUTS,p,1.0)
+        hg = AS.hmass()
+        
+        if abs(h/hf-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, p, 0.0)
+        elif abs(h/hg-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, p, 1.0)
+        else:
+            AS.update(CP.HmassP_INPUTS,h, p)
+
         mu = AS.viscosity()  # [Pa-s OR kg/m-s]
         cp = AS.cpmass()  # [J/kg-K]
         rho = AS.rhomass()  # [kg/m^3]
@@ -2480,7 +2492,19 @@ class CorrelationsClass():
         """
         Calculates friction factor with Churchill
         """
-        AS.update(CP.HmassP_INPUTS,h, p)
+        AS.update(CP.PQ_INPUTS,p,0.0)
+        hf = AS.hmass()
+
+        AS.update(CP.PQ_INPUTS,p,1.0)
+        hg = AS.hmass()
+        
+        if abs(h/hf-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, p, 0.0)
+        elif abs(h/hg-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, p, 1.0)
+        else:
+            AS.update(CP.HmassP_INPUTS,h, p)
+
         mu = AS.viscosity()  # [Pa-s OR kg/m-s]
         cp = AS.cpmass()  # [J/kg-K]
         rho = AS.rhomass()  # [kg/m^3]
@@ -2501,7 +2525,19 @@ class CorrelationsClass():
         """
         Calculates friction factor with Churchill
         """
-        AS.update(CP.HmassP_INPUTS,h, p)
+        AS.update(CP.PQ_INPUTS,p,0.0)
+        hf = AS.hmass()
+
+        AS.update(CP.PQ_INPUTS,p,1.0)
+        hg = AS.hmass()
+        
+        if abs(h/hf-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, p, 0.0)
+        elif abs(h/hg-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, p, 1.0)
+        else:
+            AS.update(CP.HmassP_INPUTS,h, p)
+
         mu = AS.viscosity()  # [Pa-s OR kg/m-s]
         cp = AS.cpmass()  # [J/kg-K]
         rho = AS.rhomass()  # [kg/m^3]
@@ -2755,8 +2791,20 @@ class CorrelationsClass():
         w: top width of fin
         beta: tube helix angle (degrees)
         '''
-                
-        AS.update(CP.HmassP_INPUTS,h, P)
+        
+        AS.update(CP.PQ_INPUTS,P,0.0)
+        hf = AS.hmass()
+
+        AS.update(CP.PQ_INPUTS,P,1.0)
+        hg = AS.hmass()
+        
+        if abs(h/hf-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, P, 0.0)
+        elif abs(h/hg-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, P, 1.0)
+        else:
+            AS.update(CP.HmassP_INPUTS,h, P)
+
         mu = AS.viscosity()  # [Pa-s OR kg/m-s]
         cp = AS.cpmass()  # [J/kg-K]
         rho = AS.rhomass()  # [kg/m^3]
@@ -2769,7 +2817,7 @@ class CorrelationsClass():
         Nu = 0.023 * pow(Re, 0.8) * pow(Pr, 0.4) * F
         h_single = Nu * k / Dh
         h_single *= Aa / An
-
+                
         return h_single
 
     def Carnavos_single_f(self, AS, G, P, h, Do, n, e, t, d, w, beta, Afa, Afn, Di, Dh):
@@ -2786,7 +2834,19 @@ class CorrelationsClass():
         beta: tube helix angle (degrees)
         '''
 
-        AS.update(CP.HmassP_INPUTS,h, P)
+        AS.update(CP.PQ_INPUTS,P,0.0)
+        hf = AS.hmass()
+
+        AS.update(CP.PQ_INPUTS,P,1.0)
+        hg = AS.hmass()
+        
+        if abs(h/hf-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, P, 0.0)
+        elif abs(h/hg-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, P, 1.0)
+        else:
+            AS.update(CP.HmassP_INPUTS,h, P)
+
         mu = AS.viscosity()  # [Pa-s OR kg/m-s]
         G *= Afa / Afn
         Re = G * Di / mu
@@ -2834,7 +2894,19 @@ class CorrelationsClass():
         beta: tube helix angle (degrees)
         '''
 
-        AS.update(CP.HmassP_INPUTS, h, P)
+        AS.update(CP.PQ_INPUTS,P,0.0)
+        hf = AS.hmass()
+
+        AS.update(CP.PQ_INPUTS,P,1.0)
+        hg = AS.hmass()
+        
+        if abs(h/hf-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, P, 0.0)
+        elif abs(h/hg-1) < 1E-3:
+            AS.update(CP.PQ_INPUTS, P, 1.0)
+        else:
+            AS.update(CP.HmassP_INPUTS,h, P)
+
         mu = AS.viscosity()  # [Pa-s OR kg/m-s]
         cp = AS.cpmass()  # [J/kg-K]
         rho = AS.rhomass()  # [kg/m^3]
