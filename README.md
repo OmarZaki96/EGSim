@@ -83,6 +83,7 @@ EGSim is a vapor compression system tool developed based on physics-based simula
   - lxml
   - matplotlib
   - numpy
+  - openpyxl
   - pandas
   - PsychroLib
   - pyperclip
