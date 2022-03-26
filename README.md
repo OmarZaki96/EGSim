@@ -93,7 +93,7 @@ EGSim is a vapor compression system tool developed based on physics-based simula
 
   To install all the packages at once, you can use the following command 
   ```sh
-  python -m pip install appdirs CoolProp lxml matplotlib numpy pandas PsychroLib pyperclip PyQt5 scikit_learn scipy sympy
+  python -m pip install appdirs CoolProp lxml matplotlib numpy openoyxl pandas PsychroLib pyperclip PyQt5 scikit_learn scipy sympy
   ```
 
 ### Installation
