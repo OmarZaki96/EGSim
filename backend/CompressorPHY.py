@@ -154,8 +154,27 @@ class CompressorPHYClass():
         
         # calculating mass flow rate from volumetric efficiency
         mdot = V_rev * N / 60 * rho1 * vol_eff_value
-
+        
         mdot *= self.Vdot_ratio_M
+        
+        # using reference state to find reference density
+        AS.update(CP.PQ_INPUTS, self.Pin_r, 1.0)
+        Tsat_s_K=AS.T() #[K]
+        
+        if hasattr(self,"SH_Ref"):
+            SH_Ref = self.SH_Ref # in k
+            
+        elif hasattr(self,"Suction_Ref"):
+            SH_Ref = self.Suction_Ref - Tsat_s_K
+        
+        if SH_Ref <= 1e-3:
+            SH_Ref = 1e-3
+        
+        T1_ref = Tsat_s_K + SH_Ref
+        AS.update(CP.PT_INPUTS, P1, T1_ref)
+        rho_ref = AS.rhomass() #[m^3/kg]
+        
+        mdot = (1 + self.F_factor * (rho1 / rho_ref - 1)) * mdot
         
         # calculating outlet enthalpy from isentropic efficiency
         AS.update(CP.PSmass_INPUTS, P2, s1)
@@ -226,7 +245,9 @@ if __name__=='__main__':
               'Vdot_ratio_M': 1.0, #Displacement Scale factor
               'Displacement':0.000530671 * 0.3048**3, # displacement volume per revolution
               'act_speed':5200, # operating speed of the compressor
-              'Elec_eff':1.0 # electrical efficiency
+              'Elec_eff':1.0, # electrical efficiency
+              'Suction_Ref':35+273, # electrical efficiency
+              'F_factor':0.75, # electrical efficiency
               }
         Comp=CompressorPHYClass(**kwds)
         Comp.Calculate()

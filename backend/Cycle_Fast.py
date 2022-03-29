@@ -730,6 +730,7 @@ if __name__ == '__main__':
             Cycle.Compressor.Elec_eff = 1.0
             Cycle.Compressor.isen_eff = "0.7"
             Cycle.Compressor.vol_eff = "0.8"
+            Cycle.Compressor.Suction_Ref = 35 + 273.15
             
         if Cycle.Expansion_Device_Type == 'Capillary':
             Cycle.Capillary.L = 4.0

@@ -104,6 +104,25 @@ def read_comp_xml(path):
         if comp.Comp_model == "physics":
             comp.isentropic_exp = str(root.find("Compressor_Isentropic_Efficiency").text)
             comp.vol_exp = str(root.find("Compressor_Volumetric_Efficiency").text)
+            F_factor = root.find("Compressor_F_factor")
+            if F_factor != None:
+                comp.F_factor = float(root.find("Compressor_F_factor").text)
+            else:
+                comp.F_factor = 0.75
+            SH_type = root.find("Compressor_Standard_Type")
+            if SH_type != None:
+                comp.SH_type = int(root.find("Compressor_Standard_Type").text)
+            else:
+                comp.SH_type = 0
+            if comp.SH_type == 0:
+                SH_Ref = root.find("Compressor_Standard_Superheat")
+                if SH_Ref != None:
+                    comp.SH_Ref = float(root.find("Compressor_Standard_Superheat").text)
+                else:
+                    comp.SH_Ref = 11.11
+            else:
+                comp.Suction_Ref = float(root.find("Compressor_Standard_Suction_Temperature").text)                
+            
             comp.model_data_exist = True
                
         elif comp.Comp_model == "10coefficients":
@@ -280,6 +299,16 @@ def write_comp_xml(comp,path):
             isentropic_exp.text = str(comp.isentropic_exp)
             vol_exp = ET.SubElement(data, 'Compressor_Volumetric_Efficiency')
             vol_exp.text = str(comp.vol_exp)
+            F_factor = ET.SubElement(data, 'Compressor_F_factor')
+            F_factor.text = str(comp.F_factor)
+            SH_type = ET.SubElement(data, 'Compressor_Standard_Type')
+            SH_type.text = str(comp.SH_type)
+            if comp.SH_type == 0:
+                std_sh = ET.SubElement(data, 'Compressor_Standard_Superheat')
+                std_sh.text = str(comp.SH_Ref)
+            elif comp.SH_type == 1:
+                std_suction = ET.SubElement(data, 'Compressor_Standard_Suction_Temperature')
+                std_suction.text = str(comp.Suction_Ref)
 
         elif comp.Comp_model == "10coefficients":
             unit_system = ET.SubElement(data, 'Compressor_Coefficients_Unit_System')

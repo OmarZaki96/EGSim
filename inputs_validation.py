@@ -142,6 +142,11 @@ def check_compressor_capacity(compressor):
         Compressor.Elec_eff = compressor.Comp_elec_eff
         Compressor.isen_eff = compressor.isentropic_exp
         Compressor.vol_eff = compressor.vol_exp
+        Compressor.F_factor = compressor.F_factor
+        if compressor.SH_type == 0:
+            Compressor.SH_Ref = compressor.SH_Ref
+        elif compressor.SH_type == 1:
+            Compressor.Suction_Ref = compressor.Suction_Ref
     
     elif compressor.Comp_model == "map":
         Compressor = CompressorAHRIClass()
@@ -1088,6 +1093,10 @@ def check_compressor_physics(comp):
 
     if comp.Comp_ratio_P == 0:
         return (0,"Compressor power scale ratio can not be zero")
+
+    if comp.SH_type == 0:
+        if comp.SH_Ref == 0:
+            return (0,"Compressor standard superheat in compressor map model can not be zero")
 
     if hasattr(comp,"capacity_validation_table"):
         try:

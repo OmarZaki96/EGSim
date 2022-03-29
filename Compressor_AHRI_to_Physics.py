@@ -10,7 +10,7 @@ from backend.CompressorAHRI import CompressorAHRIClass
 from backend.CompressorPHY import CompressorPHYClass
 import CoolProp as CP
 
-def calculate_efficiencies(Comp_props,AS,Pin_r,Pout_r,SH):
+def calculate_efficiencies(Comp_props,AS,Pin_r,Pout_r):
     F_factor = Comp_props['F_factor']
     act_speed = Comp_props['act_speed']
     Displacement = Comp_props['Displacement']
@@ -44,12 +44,12 @@ def calculate_efficiencies(Comp_props,AS,Pin_r,Pout_r,SH):
     AS.update(CP.PQ_INPUTS, Pout_r, 1.0)
     Tsat_d_K=AS.T() #[K]
     
-    DT_sh_K=SH
-
     if SH_type == 0:
         SH_Ref = max(Comp_props['SH_Ref'], 0)
     elif SH_type == 1:
         SH_Ref = max(Comp_props['Suction_Ref'] - Tsat_s_K,0)
+
+    DT_sh_K=SH_Ref
 
     if Unit_system == "ip":
     #Convert saturation temperatures in K to F
@@ -177,7 +177,7 @@ def calculate_efficiencies(Comp_props,AS,Pin_r,Pout_r,SH):
     
     return eta_v, eta_isen
 
-def AHRI_to_Physics(Comp_props,AS,SH,Tevap_range,Tcond_range,volum_model_degree,isen_model_degree):
+def AHRI_to_Physics(Comp_props,AS,Tevap_range,Tcond_range,volum_model_degree,isen_model_degree):
     Tevap = tuple(np.linspace(Tevap_range[0],Tevap_range[1],Tevap_range[2]))
     Tcond = tuple(np.linspace(Tcond_range[0],Tcond_range[1],Tcond_range[2]))
     potentials = product(Tevap,Tcond)
@@ -188,7 +188,7 @@ def AHRI_to_Physics(Comp_props,AS,SH,Tevap_range,Tcond_range,volum_model_degree,
             Pin=AS.p()
             AS.update(CP.QT_INPUTS, 1.0, Tcond_i)
             Pout=AS.p()
-            eta_v, eta_isen = calculate_efficiencies(Comp_props,AS,Pin,Pout,SH)
+            eta_v, eta_isen = calculate_efficiencies(Comp_props,AS,Pin,Pout)
             results.append([Tevap_i,Tcond_i,Pin,Pout,eta_v,eta_isen])
         except:
             import traceback
@@ -202,8 +202,6 @@ def AHRI_to_Physics(Comp_props,AS,SH,Tevap_range,Tcond_range,volum_model_degree,
         # regression for isentropic efficiency model
         data = np.array([[row[3]/row[2],row[4],row[5]] for row in results])
         coeffs_isen = np.flip(np.polyfit(data[:,0], data[:,2],isen_model_degree))
-        print(coeffs_volum)
-        print(coeffs_isen)
         
         volum_exp = "%.5g" % coeffs_volum[0]
         if len(coeffs_volum) > 1:
@@ -223,7 +221,7 @@ def AHRI_to_Physics(Comp_props,AS,SH,Tevap_range,Tcond_range,volum_model_degree,
     else:
         raise Exception("Failed to find model")
 
-def validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff,AS,SH,Ref):
+def validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff,AS,Ref):
     results = []
     for Tevap,Tcond in product(tuple(np.linspace(*Tevap_range)),tuple(np.linspace(*Tcond_range))):
         try:
@@ -232,7 +230,12 @@ def validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff
             Pout_r = AS.p()
             AS.update(CP.QT_INPUTS,1.0,Tevap)
             Pin_r = AS.p()
-            DT = SH
+            if Comp_props['SH_type'] == 0:
+                SH_Ref = max(Comp_props['SH_Ref'], 0)
+            elif Comp_props['SH_type'] == 1:
+                SH_Ref = max(Comp_props['Suction_Ref'] - Tevap,0)
+        
+            DT=SH_Ref
             AS.update(CP.PT_INPUTS,Pin_r,Tevap+DT)
             hin_r = AS.hmass()
             kwds={
@@ -263,6 +266,7 @@ def validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff
             kwds={
                   'isen_eff': isen_eff,
                   'vol_eff': vol_eff,
+                  'F_factor': Comp_props['F_factor'],
                   'AS': AS, #Abstract state
                   'Ref': Ref,
                   'hin_r':hin_r,
@@ -276,12 +280,15 @@ def validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff
                   'Elec_eff':1.0,
                   }
             Comp_PHY=CompressorPHYClass(**kwds)
+            if Comp_props['SH_type'] == 0:
+                Comp_PHY.SH_Ref = Comp_props['SH_Ref']
+            elif Comp_props['SH_type'] == 1:
+                Comp_PHY.Suction_Ref = Comp_props['Suction_Ref']
             Comp_PHY.Calculate()
             results.append([Comp_AHRI.power_mech,Comp_PHY.power_mech,Comp_AHRI.mdot_r,Comp_PHY.mdot_r])
         except ValueError:
             pass
     results = np.array(results)
-    print(results)
     rmse_M = np.sqrt((((results[:,0] - results[:,1])/results[:,0])**2).mean(axis=None))*100
     rmse_P = np.sqrt((((results[:,2] - results[:,3])/results[:,2])**2).mean(axis=None))*100
     return "%.5g" % rmse_M, "%.5g" %rmse_P
@@ -297,20 +304,20 @@ if __name__ == '__main__':
                   'fp':0.0,
                   'Unit_system':'ip',
                   'Speeds':[2900],
+                  'SH_type':0,
                   'SH_Ref':20*5/9
                   }
     
     Ref = 'R410a'
     Backend = "HEOS"
     AS = CP.AbstractState(Backend, Ref)
-    SH = 20 * 5 / 9
     Tevap_range = (260,290,32)
     Tcond_range = (300,320,21)
     volum_model_degree = 2
     isen_model_degree = 2
-    vol_eff, isen_eff = AHRI_to_Physics(Comp_props,AS,SH,Tevap_range,Tcond_range,volum_model_degree,isen_model_degree)
+    vol_eff, isen_eff = AHRI_to_Physics(Comp_props,AS,Tevap_range,Tcond_range,volum_model_degree,isen_model_degree)
     
-    print(validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff,AS,SH,Ref))
+    print(validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff,AS,Ref))
     # Validation
     results = []
     for Tevap,Tcond in product(tuple(np.linspace(*Tevap_range)),tuple(np.linspace(*Tcond_range))):
@@ -320,7 +327,7 @@ if __name__ == '__main__':
             Pout_r = AS.p()
             AS.update(CP.QT_INPUTS,1.0,Tevap)
             Pin_r = AS.p()
-            DT = SH
+            DT = 20*5/9
             AS.update(CP.PT_INPUTS,Pin_r,Tevap+DT)
             hin_r = AS.hmass()
             kwds={
@@ -337,6 +344,7 @@ if __name__ == '__main__':
                   'Vdot_ratio_P': 1.0, #Displacement Scale factor
                   'Vdot_ratio_M': 1.0, #Displacement Scale factor
                   'Displacement':Comp_props['Displacement'],
+                  'SH_type':Comp_props['SH_type'],
                   'SH_Ref':Comp_props['SH_Ref'],
                   'act_speed': Comp_props['act_speed'],
                   'Unit_system':Comp_props['Unit_system'],
@@ -348,6 +356,9 @@ if __name__ == '__main__':
             kwds={
                   'isen_eff': isen_eff,
                   'vol_eff': vol_eff,
+                  'SH_type':Comp_props['SH_type'],
+                  'SH_Ref':Comp_props['SH_Ref'],
+                  'F_factor':Comp_props['F_factor'], # volumetric efficiency correction factor, used as 0.75 in several sources
                   'AS': AS, #Abstract state
                   'Ref': Ref,
                   'hin_r':hin_r,

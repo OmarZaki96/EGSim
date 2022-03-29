@@ -357,16 +357,16 @@ class Compressor_select_datasheet_window(QDialog, FROM_COMPRESSOR_SELECT_MAIN):
                         Comp[1].Comp_vol = Vdot
                         Comp[1].Comp_speed = Speed
                         Comp[1].Comp_fp = "0.0"
-                        Comp[1].Comp_elec_eff = "1"
+                        Comp[1].Comp_elec_eff = 1
                         Comp[1].Comp_ratio_M = "1"
                         Comp[1].Comp_ratio_P = "1"
                         Comp[1].Comp_model = "physics"
                         Comp[1].isentropic_exp = str(isen_eff)
                         Comp[1].vol_exp = str(vol_eff)
+                        Comp[1].F_factor = 0.75
+                        Comp[1].SH_type = 1
+                        Comp[1].Suction_Ref = Suction_T
                         result = write_comp_xml(Comp[1],path)
-                    except:
-                        import traceback
-                        print(traceback.format_exc())                        
                         result = False
                         
                     if not result:
@@ -384,11 +384,8 @@ class Compressor_select_datasheet_window(QDialog, FROM_COMPRESSOR_SELECT_MAIN):
                     msg.setText("Some compressors could not be added")
                     msg.setWindowTitle("Compressors were not added!")
                     msg.setStandardButtons(QMessageBox.Ok)
-                    msg.exec_()
-                    
-            except:           
-                import traceback
-                print(traceback.format_exc())
+                    msg.exec_()                    
+            except:
                 self.raise_error_message("Failed to add compressors")
         else:
             self.raise_error_message("Please select a compressor first")

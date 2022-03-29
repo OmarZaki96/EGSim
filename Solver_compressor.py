@@ -64,7 +64,13 @@ class solver(QObject):
             self.Compressor.Elec_eff = compressor.Comp_elec_eff
             self.Compressor.isen_eff = compressor.isentropic_exp
             self.Compressor.vol_eff = compressor.vol_exp
-        
+            self.Compressor.F_factor = compressor.F_factor
+            self.Compressor.SH_type = compressor.SH_type
+            if compressor.SH_type == 0:
+                self.Compressor.SH_Ref = compressor.SH_Ref
+            elif compressor.SH_type == 1:
+                self.Compressor.Suction_Ref = compressor.Suction_Ref
+                        
         elif compressor.Comp_model == "map":
             self.Compressor = CompressorAHRIClass()
             self.Compressor.name = compressor.Comp_name

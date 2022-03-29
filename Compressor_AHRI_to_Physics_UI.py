@@ -148,11 +148,9 @@ class Compressor_to_physics_Window(QDialog, FROM_Compressor_to_Physics):
                     if self.Compressor.std_type == 0:
                         Comp_props['SH_type'] = 0
                         Comp_props['SH_Ref'] = self.Compressor.std_sh
-                        SH = self.Compressor.std_sh
                     elif self.Compressor.std_type == 1:
                         Comp_props['SH_type'] = 1
                         Comp_props['Suction_Ref'] = self.Compressor.std_suction
-                        SH = self.Compressor.std_suction
                     
                 elif self.Compressor.Comp_model == "map":
                     Comp_props = {'F_factor': self.Compressor.map_data.F_value,
@@ -178,8 +176,8 @@ class Compressor_to_physics_Window(QDialog, FROM_Compressor_to_Physics):
                 Tcond_range = (self.Tc_from.value()+273.15,self.Tc_to.value()+273.15,self.Tc_step.value())
                 volum_model_degree = self.volumetric_degree.value()
                 isen_model_degree = self.isentropic_degree.value()
-                vol_eff, isen_eff = AHRI_to_Physics(Comp_props,AS,SH,Tevap_range,Tcond_range,volum_model_degree,isen_model_degree)
-                RMSE_M,RMSE_P = validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff,AS,SH,self.Compressor.Ref)
+                vol_eff, isen_eff = AHRI_to_Physics(Comp_props,AS,Tevap_range,Tcond_range,volum_model_degree,isen_model_degree)
+                RMSE_M,RMSE_P = validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff,AS,self.Compressor.Ref)
                 succeeded = True
             except:
                 import traceback
@@ -197,6 +195,12 @@ class Compressor_to_physics_Window(QDialog, FROM_Compressor_to_Physics):
                 Compressor[1].Comp_model = "physics"
                 Compressor[1].isentropic_exp = self.eta_isentropic.text().replace("^","**")
                 Compressor[1].vol_exp = self.eta_volumetric.text().replace("^","**")
+                Compressor[1].SH_type = Comp_props['SH_type']
+                if Comp_props['SH_type'] == 0:    
+                    Compressor[1].SH_Ref = Comp_props['SH_Ref']
+                elif Comp_props['SH_type'] == 1:
+                    Compressor[1].Suction_Ref = Comp_props['Suction_Ref']
+                Compressor[1].F_factor = Comp_props['F_factor']
                 Compressor[1].Comp_ratio_P = 1.0
                 Compressor[1].Comp_ratio_M = 1.0
                 Compressor[1].Comp_speed = float(self.Speed.text())
@@ -209,7 +213,6 @@ class Compressor_to_physics_Window(QDialog, FROM_Compressor_to_Physics):
                 self.Comp_ref.setEnabled(False)
                 self.Create_compressor_button.setEnabled(False)
 
-        
     def validate_create_compressor(self):
         if self.Speed.text() in ["","-","."]:
             self.raise_error_meesage("Please enter compressor operating speed")

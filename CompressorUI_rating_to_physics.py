@@ -211,6 +211,7 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
             Vdot = volume_unit_converter(self.Vdot.text(),self.Vdot_unit.currentIndex())
             Speed = float(self.Speed.text())
             results = []
+            Data = np.array(Data)
             for i,row in enumerate(Data):
                 try:
                     Cycle_Mode = row[0]
@@ -305,6 +306,10 @@ class Compressor_rating_to_physics_Window(QDialog, FROM_Compressor_rating_to_Phy
                 comp.Comp_model = "physics"
                 comp.isentropic_exp = isen_exp
                 comp.vol_exp = volum_exp
+                comp.SH_type = 0
+                comp.SH_Ref = np.average(Data[:,4])
+                comp.F_factor = 0.75
+                comp.Cost = 0
                 self.Compressor = comp
             else:
                 self.Comp_name.setEnabled(False)

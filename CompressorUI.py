@@ -77,6 +77,13 @@ class CompressorWindow(QDialog, FROM_Compressor_Main):
             if self.Comp_model.currentIndex() == 0:
                 self.isentropic_exp = comp.isentropic_exp
                 self.vol_exp = comp.vol_exp
+                self.F_factor = comp.F_factor
+                self.SH_type = comp.SH_type
+                if self.SH_type == 0:
+                    self.SH_Ref = comp.SH_Ref
+                elif self.SH_type == 1:
+                    self.Suction_Ref = comp.Suction_Ref
+                self.F_factor = comp.F_factor
             elif self.Comp_model.currentIndex() == 1:
                 self.unit_system = comp.unit_system
                 self.num_speeds = comp.num_speeds
@@ -168,6 +175,12 @@ class CompressorWindow(QDialog, FROM_Compressor_Main):
                     comp.Comp_model = "physics"
                     comp.isentropic_exp = self.isentropic_exp
                     comp.vol_exp = self.vol_exp
+                    comp.F_factor = self.F_factor
+                    comp.SH_type = self.SH_type
+                    if comp.SH_type == 0:
+                        comp.SH_Ref = self.SH_Ref
+                    elif comp.SH_type == 1:
+                        comp.Suction_Ref = self.Suction_Ref
                 elif self.Comp_model.currentIndex() == 1:
                     comp.Comp_model = "10coefficients"
                     comp.unit_system = self.unit_system
@@ -243,6 +256,12 @@ class CompressorWindow(QDialog, FROM_Compressor_Main):
                 Compressor.Comp_model = "physics"
                 Compressor.isentropic_exp = self.isentropic_exp
                 Compressor.vol_exp = self.vol_exp
+                Compressor.F_factor = self.F_factor
+                Compressor.SH_type = self.SH_type
+                if Compressor.SH_type == 0:
+                    Compressor.SH_Ref = self.SH_Ref
+                elif Compressor.SH_type == 1:
+                    Compressor.Suction_Ref = self.Suction_Ref
                 validation = check_compressor_physics(Compressor)
             elif self.Comp_model.currentIndex() == 1:
                 Compressor.Comp_model = "10coefficients"
@@ -357,10 +376,24 @@ class CompressorWindow(QDialog, FROM_Compressor_Main):
                 Comp_physics_dialog.Comp_physics_isentropic_eff.setText(self.isentropic_exp.replace("**","^"))
             if hasattr(self,'vol_exp'):
                 Comp_physics_dialog.Comp_physics_vol_eff.setText(self.vol_exp.replace("**","^"))
+            if hasattr(self,'SH_type'):
+                if self.SH_type == 0:
+                    Comp_physics_dialog.Comp_std_sh_radio.setChecked(True)
+                    Comp_physics_dialog.Comp_std_sh.setText("%.5g" % self.SH_Ref)
+                elif self.SH_type == 1:
+                    Comp_physics_dialog.Comp_std_suction_radio.setChecked(True)
+                    Comp_physics_dialog.Comp_std_suction.setText("%.5g" % temperature_unit_converter(self.Suction_Ref,0,True))
+                Comp_physics_dialog.Comp_F_factor.setText(str(self.F_factor))
             Comp_physics_dialog.exec_()
             if hasattr(Comp_physics_dialog,"isentropic_exp"):
                 self.isentropic_exp = Comp_physics_dialog.isentropic_exp
                 self.vol_exp = Comp_physics_dialog.vol_exp
+                self.F_factor = Comp_physics_dialog.F_factor
+                self.SH_type = Comp_physics_dialog.SH_type
+                if self.SH_type == 0:
+                    self.SH_Ref = Comp_physics_dialog.SH_Ref
+                if self.SH_type == 1:
+                    self.Suction_Ref = Comp_physics_dialog.Suction_Ref
                 self.Comp_save_button.setEnabled(True)
                 self.Comp_ok_button.setEnabled(True)
         elif self.Comp_model.currentIndex() == 1:
@@ -445,6 +478,12 @@ class CompressorWindow(QDialog, FROM_Compressor_Main):
             delattr(self,"isentropic_exp")
         if hasattr(self,"vol_exp"):
             delattr(self,"vol_exp")
+        if hasattr(self,"SH_Ref"):
+            delattr(self,"SH_Ref")
+        if hasattr(self,"Suction_Ref"):
+            delattr(self,"Suction_Ref")
+        if hasattr(self,"SH_type"):
+            delattr(self,"SH_type")
         if hasattr(self,"num_speeds"):
             delattr(self,"num_speeds")
         if hasattr(self,"unit_system"):

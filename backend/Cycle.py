@@ -1371,8 +1371,8 @@ if __name__ == '__main__':
         Cycle = CycleClass()
         
         # defining cycle parameters
-        Cycle.Compressor_Type = 'AHRI'
-        # Cycle.Compressor_Type = 'Physics'
+        # Cycle.Compressor_Type = 'AHRI'
+        Cycle.Compressor_Type = 'Physics'
         
         Cycle.Condenser_Type = 'Fin-tube'
         Cycle.Evaporator_Type = 'Fin-tube'
@@ -1646,11 +1646,13 @@ if __name__ == '__main__':
             Cycle.Compressor.fp = 0.0
             Cycle.Compressor.Vdot_ratio_P = 1.0
             Cycle.Compressor.Vdot_ratio_M = 1.0
-            Cycle.Compressor.Displacement = 0.001
+            Cycle.Compressor.Displacement = 30E-6
             Cycle.Compressor.act_speed = 2500
             Cycle.Compressor.Elec_eff = 1.0
-            Cycle.Compressor.isen_eff = "0.6"
-            Cycle.Compressor.vol_eff = "0.45"
+            Cycle.Compressor.isen_eff = "0.7"
+            Cycle.Compressor.vol_eff = "0.92"
+            Cycle.Compressor.Suction_Ref = 35+273.15
+            Cycle.Compressor.F_factor = 0.75
             
         if Cycle.Expansion_Device_Type == 'Capillary':
             Cycle.Capillary.L = 4.0        

@@ -151,6 +151,12 @@ def define_single(compressor,condenser,evaporator,liquid_line,suction_line,
             Cycle.Compressor.Elec_eff = compressor.Comp_elec_eff
             Cycle.Compressor.isen_eff = compressor.isentropic_exp
             Cycle.Compressor.vol_eff = compressor.vol_exp
+            Cycle.Compressor.F_factor = compressor.F_factor
+            Cycle.Compressor.SH_type = compressor.SH_type
+            if compressor.SH_type == 0:
+                Cycle.Compressor.SH_Ref = compressor.SH_Ref
+            elif compressor.SH_type == 1:
+                Cycle.Compressor.Suction_Ref = compressor.Suction_Ref
             
         elif Compressor_Type == "AHRI-map":
             Cycle.Compressor.name = compressor.Comp_name
