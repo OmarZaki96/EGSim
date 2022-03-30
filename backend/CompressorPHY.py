@@ -174,7 +174,7 @@ class CompressorPHYClass():
         AS.update(CP.PT_INPUTS, P1, T1_ref)
         rho_ref = AS.rhomass() #[m^3/kg]
         
-        mdot = (1 + self.F_factor * (rho1 / rho_ref - 1)) * mdot
+        mdot = (1 + self.F_factor * (rho_ref /rho1 - 1)) * mdot
         
         # calculating outlet enthalpy from isentropic efficiency
         AS.update(CP.PSmass_INPUTS, P2, s1)

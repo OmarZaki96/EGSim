@@ -367,10 +367,10 @@ class Compressor_select_datasheet_window(QDialog, FROM_COMPRESSOR_SELECT_MAIN):
                         Comp[1].SH_type = 1
                         Comp[1].Suction_Ref = Suction_T
                         result = write_comp_xml(Comp[1],path)
-                        result = False
+                        error = result
+                    except:
+                        error = True                    
                         
-                    if not result:
-                        error = True
                 if not error:
                     msg = QMessageBox()
                     msg.setIcon(QMessageBox.Information)
