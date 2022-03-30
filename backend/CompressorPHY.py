@@ -88,7 +88,7 @@ class CompressorPHYClass():
             ('Pressure ratio','-',self.PR),
             ('','',''),
             ('','',''),
-            ('','',''),
+            ('Reference Mass flow rate','kg/s',self.mdot_ref),
             ('','',''),
             ('Entropy generation','W/K',self.S_gen),
          ]
@@ -151,12 +151,7 @@ class CompressorPHYClass():
         rho1 = AS.rhomass() #[kg/m^3]
         s1 = AS.smass()
         T1 = AS.T()
-        
-        # calculating mass flow rate from volumetric efficiency
-        mdot = V_rev * N / 60 * rho1 * vol_eff_value
-        
-        mdot *= self.Vdot_ratio_M
-        
+                
         # using reference state to find reference density
         AS.update(CP.PQ_INPUTS, self.Pin_r, 1.0)
         Tsat_s_K=AS.T() #[K]
@@ -173,8 +168,15 @@ class CompressorPHYClass():
         T1_ref = Tsat_s_K + SH_Ref
         AS.update(CP.PT_INPUTS, P1, T1_ref)
         rho_ref = AS.rhomass() #[m^3/kg]
+
+        # calculating mass flow rate from volumetric efficiency
+        mdot_ref = V_rev * N / 60 * rho_ref * vol_eff_value
         
-        mdot = (1 + self.F_factor * (rho_ref /rho1 - 1)) * mdot
+        mdot_ref *= self.Vdot_ratio_M
+        
+        self.mdot_ref = mdot_ref
+        
+        mdot = (1 + self.F_factor * (rho1 / rho_ref - 1)) * mdot_ref
         
         # calculating outlet enthalpy from isentropic efficiency
         AS.update(CP.PSmass_INPUTS, P2, s1)
@@ -195,11 +197,15 @@ class CompressorPHYClass():
         AS.update(CP.HmassP_INPUTS, h2, P2)
         s2 = AS.smass()
         T2 = AS.T()
+
+        # recalculating the volumetric efficiency using the corrected mass flow rate        
+        self.eta_v = mdot/(self.Displacement*rho1*self.act_speed/60)
+
+        # calculating actual isentropic efficiency
+        self.eta_isen = mdot * (h2s - h1) / shaft_power
         
         # saving results
-        self.eta_v=vol_eff_value
-        self.eta_isen=isen_eff_value
-        self.mdot_r_adj = 1.0
+        self.mdot_r_adj = (1 + self.F_factor * (rho1 / rho_ref - 1))
         self.hout_r_s = h2s
         self.vin_r = 1 / rho1
         self.Tin_r = T1
