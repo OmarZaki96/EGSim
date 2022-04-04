@@ -6,8 +6,6 @@ import CoolProp as CP
 
 machine_eps = np.finfo(float).eps
 
-# TODO: add correlations choosing algorithm
-
 class CorrelationsClass():
     def __init__(self):
         self.imposed_h_subcool = False
@@ -831,13 +829,13 @@ class CorrelationsClass():
             satTransport['mu_g']=AS.viscosity() #[Pa-s OR kg/m-s]
             
             #Calculate Dp and h over the range of xx
-            xx=np.linspace(x_min,x_max,100)
+            xx=np.linspace(x_min,x_max,10)
             DP=np.zeros_like(xx)
             for i in range(len(xx)):
                 DP[i]=KMFunc(xx[i])
             
             #Use Simpson's rule to carry out numerical integration to get average DP and average h
-            if abs(x_max-x_min)<100*machine_eps:
+            if abs(x_max-x_min)<10*machine_eps:
                 #return just one of the edge values
                 return DP[0]
             else:
@@ -876,7 +874,7 @@ class CorrelationsClass():
             cp_f=satTransport['cp_f']
             k_f=satTransport['k_f']
         
-        AS.update(CP.PQ_INPUTS,p,x)
+        AS.update(CP.PQ_INPUTS,p,0)
         sigma=AS.surface_tension() #surface tesnion [N/m]
         
         Pr_f = cp_f * mu_f / k_f #[-]
@@ -884,7 +882,6 @@ class CorrelationsClass():
         Re_f = G*(1-x)*Dh/mu_f
         Re_g = G*x*Dh/mu_g
     
-        
         if x==1: #No liquid
             f_f = 0 #Just to be ok until next step
         elif (Re_f<2000): #Laminar

@@ -2266,26 +2266,26 @@ class FinTubeCircuitClass():
             def objective(w_1phase):
                 Results = self.solver_1phase(Ref,Air,w_1phase) 
                 return Results.x_out
-            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_1phase
         
         if change == "Vto2phase":
             def objective(w_1phase):
                 Results = self.solver_1phase(Ref,Air,w_1phase)
                 return Results.x_out-1
-            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_1phase
         if change == "2phasetoL":
             def objective(w_2phase):
                Results = self.solver_2phase(Ref,Air,w_2phase) 
                return Results.x_out
-            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_2phase
         if change == "2phasetoV":
             def objective(w_2phase):
                Results = self.solver_2phase(Ref,Air,w_2phase) 
                return Results.x_out-1
-            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_2phase
         
     def solver_2phase(self,Ref_inputs,Air_inputs,w_2phase=1.0):

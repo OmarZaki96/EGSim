@@ -2577,26 +2577,26 @@ class MicroChannelHEXClass():
             def objective(w_1phase):
                 Results = self.solver_1phase(Ref,Air,w_1phase) 
                 return Results.x_out
-            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_1phase
         
         if change == "Vto2phase":
             def objective(w_1phase):
                 Results = self.solver_1phase(Ref,Air,w_1phase)
                 return Results.x_out-1
-            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_1phase
         if change == "2phasetoL":
             def objective(w_2phase):
                Results = self.solver_2phase(Ref,Air,w_2phase) 
                return Results.x_out
-            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_2phase
         if change == "2phasetoV":
             def objective(w_2phase):
                Results = self.solver_2phase(Ref,Air,w_2phase) 
                return Results.x_out-1
-            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_2phase
         
     def solver_2phase(self,Ref_inputs,Air_inputs,w_2phase=1.0):
@@ -3349,7 +3349,7 @@ class MicroChannelHEXClass():
             self.Solver_Error = "User Terminated run!"
             raise
 
-        '''the function will solve a 2 phase segment for phase solver'''        
+        '''the function will solve a 2 phase segment for phase solver'''
         N_passes = 0
         N_tubes = 0
         for row in self.Geometry.N_tube_per_bank_per_pass:
@@ -3606,7 +3606,7 @@ class MicroChannelHEXClass():
             AS.update(CP.PQ_INPUTS,Pin_r,1.0)
             h_V = AS.hmass()
             x_out = (hout_r - h_L) / (h_V - h_L)
-            old_DP = 50
+            old_DP = 0
             error_DP = 50
             i = 0
             while error_DP > 1 and i < 5:
@@ -3631,7 +3631,7 @@ class MicroChannelHEXClass():
                     if not hasattr(self,"Solver_Error"):
                         self.Solver_Error = "Pressure drop is very high that negative pressure exists; please check mass flow rate from compressor or circuit length in "
                     raise ValueError("Pressure drop is very high, the pressure became negative")
-                error_DP = abs(DP_total - old_DP)
+                error_DP = abs(DP_total - old_DP)/(abs(old_DP)+.000001)
                 # correcting outlet quality with new pressure
                 AS.update(CP.PQ_INPUTS,Pout_r,0.0)
                 h_L = AS.hmass()
@@ -4119,7 +4119,8 @@ class MicroChannelHEXClass():
             float.
 
         '''
-        
+        w_HX = float(w_HX)
+
         Ref = ValuesClass()
         Air = ValuesClass()
         Ref.hin_r = Segment.hin_r
@@ -4138,27 +4139,39 @@ class MicroChannelHEXClass():
         if change == "Lto2phase":
             def objective(w_1phase):
                 Results = self.solver_1phase_phase(Ref,Air,w_1phase,w_HX=w_HX) 
-                return Results.x_out
-            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+                if abs(Results.x_out) < 1e-3:
+                    return 0
+                else:
+                    return Results.x_out
+            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_1phase
         
         if change == "Vto2phase":
             def objective(w_1phase):
                 Results = self.solver_1phase_phase(Ref,Air,w_1phase,w_HX=w_HX)
-                return Results.x_out-1
-            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+                if abs(Results.x_out-1) < 1e-3:
+                    return 0
+                else:
+                    return Results.x_out-1
+            w_1phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_1phase
         if change == "2phasetoL":
             def objective(w_2phase):
-               Results = self.solver_2phase_phase(Ref,Air,w_2phase,w_HX=w_HX) 
-               return Results.x_out
-            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+                Results = self.solver_2phase_phase(Ref,Air,w_2phase,w_HX=w_HX)
+                if abs(Results.x_out) < 1e-3:
+                    return 0
+                else:
+                    return Results.x_out
+            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_2phase
         if change == "2phasetoV":
             def objective(w_2phase):
-               Results = self.solver_2phase_phase(Ref,Air,w_2phase,w_HX=w_HX) 
-               return Results.x_out-1
-            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps)
+                Results = self.solver_2phase_phase(Ref,Air,w_2phase,w_HX=w_HX) 
+                if abs(Results.x_out-1) < 1e-3:
+                    return 0
+                else:
+                    return Results.x_out-1
+            w_2phase = brentq(objective,np.finfo(float).eps,1-np.finfo(float).eps, xtol=1e-6)
             return w_2phase
 
     def phase_by_phase_solver(self):
@@ -4312,8 +4325,8 @@ class MicroChannelHEXClass():
 
 if __name__=='__main__':
     import time
-    Ref = 'R410A'
-    Backend = 'HEOS'
+    Ref = 'R454B.MIX'
+    Backend = 'REFPROP'
     AS = CP.AbstractState(Backend, Ref)
     Cond = MicroChannelHEXClass()
     Cond.AS = AS # AbstractState
@@ -4460,36 +4473,36 @@ if __name__=='__main__':
     print('A_r:',Cond.Geometry.A_r)
     print('SC:',Cond.Results.SC)
     print('Converged:',Cond.Converged)
-    from copy import deepcopy
-    Cond1 = deepcopy(Cond.Results)
-    Cond.model='segment'
-    T1 = time.time()
-    Cond.solve(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
-    T2 = time.time()
-    print("----------------------")
-    print("total time:",T2-T1)
-    print('model:',Cond.model)
-    print('DP_r:',Cond.Results.DP_r)
-    print('DP_r_subcool:',Cond.Results.DP_r_subcool)
-    print('DP_r_2phase:',Cond.Results.DP_r_2phase)
-    print('DP_r_superheat:',Cond.Results.DP_r_superheat)
-    print('h_r_subcool:',Cond.Results.h_r_subcool)
-    print('h_r_2phase:',Cond.Results.h_r_2phase)
-    print('h_r_superheat:',Cond.Results.h_r_superheat)
-    print('DP_a:',Cond.Results.DP_a)
-    print('h_a_dry:',Cond.Results.h_a_dry)
-    print('h_a_wet:',Cond.Results.h_a_wet)
-    print('Q:',Cond.Results.Q)
-    print('Q_superheat:',Cond.Results.Q_superheat)
-    print('Q_2phase:',Cond.Results.Q_2phase)
-    print('Q_subcool:',Cond.Results.Q_subcool)
-    print('Q_sensible:',Cond.Results.Q_sensible)
-    print('Q_latent:',Cond.Results.Q - Cond.Results.Q_sensible)
-    print('w_superheat:',Cond.Results.w_superheat)
-    print('w_2phase:',Cond.Results.w_2phase)
-    print('w_subcool:',Cond.Results.w_subcool)
-    print('x_out',Cond.Results.xout_r)
-    print('Charge',Cond.Results.Charge)
-    print('A_r:',Cond.Geometry.A_r)
-    print('Converged:',Cond.Converged)
+    # from copy import deepcopy
+    # Cond1 = deepcopy(Cond.Results)
+    # Cond.model='segment'
+    # T1 = time.time()
+    # Cond.solve(Max_Q_error=0.01,Max_num_iter=30, initial_Nsegments=1)
+    # T2 = time.time()
+    # print("----------------------")
+    # print("total time:",T2-T1)
+    # print('model:',Cond.model)
+    # print('DP_r:',Cond.Results.DP_r)
+    # print('DP_r_subcool:',Cond.Results.DP_r_subcool)
+    # print('DP_r_2phase:',Cond.Results.DP_r_2phase)
+    # print('DP_r_superheat:',Cond.Results.DP_r_superheat)
+    # print('h_r_subcool:',Cond.Results.h_r_subcool)
+    # print('h_r_2phase:',Cond.Results.h_r_2phase)
+    # print('h_r_superheat:',Cond.Results.h_r_superheat)
+    # print('DP_a:',Cond.Results.DP_a)
+    # print('h_a_dry:',Cond.Results.h_a_dry)
+    # print('h_a_wet:',Cond.Results.h_a_wet)
+    # print('Q:',Cond.Results.Q)
+    # print('Q_superheat:',Cond.Results.Q_superheat)
+    # print('Q_2phase:',Cond.Results.Q_2phase)
+    # print('Q_subcool:',Cond.Results.Q_subcool)
+    # print('Q_sensible:',Cond.Results.Q_sensible)
+    # print('Q_latent:',Cond.Results.Q - Cond.Results.Q_sensible)
+    # print('w_superheat:',Cond.Results.w_superheat)
+    # print('w_2phase:',Cond.Results.w_2phase)
+    # print('w_subcool:',Cond.Results.w_subcool)
+    # print('x_out',Cond.Results.xout_r)
+    # print('Charge',Cond.Results.Charge)
+    # print('A_r:',Cond.Geometry.A_r)
+    # print('Converged:',Cond.Converged)
     
