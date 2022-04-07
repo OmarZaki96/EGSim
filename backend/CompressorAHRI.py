@@ -278,7 +278,7 @@ class CompressorAHRIClass():
         #Shaft power based on reference superheat calculation from fit overall isentropic efficiency
         power = power_map * (mdot / mdot_map) * ((h2s_actual - h1_actual) / (h2s_map - h1_map))
         h2 = power * (1 - self.fp) / mdot + h1_actual
-
+        
         # calculating actual isentropic efficiency
         self.eta_isen = mdot * (h2s_actual - h1_actual) / power
         

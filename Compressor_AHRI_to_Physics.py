@@ -137,13 +137,6 @@ def calculate_efficiencies(Comp_props,AS,Pin_r,Pout_r):
     P1 = Pin_r
     P2 = Pout_r
     
-    # inlet temperature to the compressor
-    if DT_sh_K >= 1e-3:
-        T1_actual = Tsat_s_K + DT_sh_K
-    
-    else: # if superheat in the compressor is negative, then assume inlet to compressor is saturated (1e-3 is just a small margin for CoolProp to be able to calculate the value)
-        T1_actual = Tsat_s_K + 1e-3
-        
     T1_map = Tsat_s_K + SH_Ref
     
     # getting values at T1_map
@@ -152,28 +145,15 @@ def calculate_efficiencies(Comp_props,AS,Pin_r,Pout_r):
     s1_map = AS.smass() #[J/kg-K]
     h1_map = AS.hmass() #[J/kg]
     
-    # getting values at T1_actual
-    AS.update(CP.PT_INPUTS, P1, T1_actual)
-    s1_actual = AS.smass() #[J/kg-K]
-    h1_actual = AS.hmass() #[J/kg]
-    v_actual = 1 / AS.rhomass() #[m^3/kg]
-    F = F_factor # Volumetric efficiency correction factor
-    mdot = (1 + F * (v_map / v_actual - 1)) * mdot_map
-
     #volumetric efficiency calculation
-    eta_v = mdot/(Displacement/v_actual*act_speed/60)
+    eta_v = mdot_map/(Displacement/v_map*act_speed/60)
     
     # getting outlet isentropic values
     AS.update(CP.PSmass_INPUTS, P2, s1_map)
     h2s_map = AS.hmass() #[J/kg]        
-    AS.update(CP.PSmass_INPUTS, P2, s1_actual)
-    h2s_actual = AS.hmass() #[J/kg]
-    
-    #Shaft power based on reference superheat calculation from fit overall isentropic efficiency
-    power = power_map * (mdot / mdot_map) * (h2s_actual - h1_actual) / (h2s_map - h1_map)
-
+        
     # calculating actual isentropic efficiency
-    eta_isen = mdot * (h2s_actual - h1_actual) / power
+    eta_isen = mdot_map * (h2s_map - h1_map) / power_map
     
     return eta_v, eta_isen
 
@@ -289,8 +269,8 @@ def validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff
         except ValueError:
             pass
     results = np.array(results)
-    rmse_M = np.sqrt((((results[:,0] - results[:,1])/results[:,0])**2).mean(axis=None))*100
-    rmse_P = np.sqrt((((results[:,2] - results[:,3])/results[:,2])**2).mean(axis=None))*100
+    rmse_P = np.sqrt((((results[:,0] - results[:,1])/results[:,0])**2).mean(axis=None))*100
+    rmse_M = np.sqrt((((results[:,2] - results[:,3])/results[:,2])**2).mean(axis=None))*100
     return "%.5g" % rmse_M, "%.5g" %rmse_P
 
 if __name__ == '__main__':
@@ -317,7 +297,6 @@ if __name__ == '__main__':
     isen_model_degree = 2
     vol_eff, isen_eff = AHRI_to_Physics(Comp_props,AS,Tevap_range,Tcond_range,volum_model_degree,isen_model_degree)
     
-    print(validation_physics_model(Comp_props,Tevap_range,Tcond_range,vol_eff,isen_eff,AS,Ref))
     # Validation
     results = []
     for Tevap,Tcond in product(tuple(np.linspace(*Tevap_range)),tuple(np.linspace(*Tcond_range))):

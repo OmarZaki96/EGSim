@@ -435,7 +435,6 @@ class CycleClass():
         Tdew_cond=self.Condenser.Tin_a+DT_cond
         Tdew_evap=self.Evaporator.Tin_a-DT_evap        
         #Condenser and evaporator saturation pressures
-        print(Tdew_cond, Tdew_evap)
         
         DT_sh = self.SH_value
 
@@ -471,8 +470,6 @@ class CycleClass():
         try:
             self.Compressor.Calculate()
         except:
-            import traceback
-            print(traceback.format_exc())
             self.Solver_Error = "Failed to solve compressor!"
 
         # solve Discharge line
@@ -500,8 +497,6 @@ class CycleClass():
         try:
             self.Condenser.solve()
         except:
-            import traceback
-            print(traceback.format_exc())
             if hasattr(self.Condenser,"Solver_Error"):
                 self.Solver_Error = self.Condenser.Solver_Error + "condenser"
             else:
@@ -599,7 +594,6 @@ class CycleClass():
         self.DT_evap = DT_evap
         self.DT_cond = DT_cond
         self.iter += 1
-        print(resid)
         return resid
 
     def PreconditionedSolve_TXV(self,solver):
@@ -758,8 +752,6 @@ class CycleClass():
                                 solver = "least squares"
                         main_solver(objective,[DT_evap_init,DT_cond_init],max_iter=self.max_n_iterations,method = solver,bounds = ([DT_evap_min,DT_cond_min],[DT_evap_max,DT_cond_max]))
                     except:
-                        import traceback
-                        print(traceback.format_exc())
                         pass
                         
                     # error in low pressure side

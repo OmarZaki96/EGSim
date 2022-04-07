@@ -87,7 +87,7 @@ class CompressorPHYClass():
             ('Ambient heat loss','W',self.Q_amb),
             ('Pressure ratio','-',self.PR),
             ('','',''),
-            ('','',''),
+            ('Reference Mechanical Power','W',self.power_ref),
             ('Reference Mass flow rate','kg/s',self.mdot_ref),
             ('','',''),
             ('Entropy generation','W/K',self.S_gen),
@@ -136,7 +136,7 @@ class CompressorPHYClass():
                     
             # evaluating expression
             vol_eff_value = float(vol_eff.subs(symbol_vals_vol))
-                
+        
         # getting values
         h1 = self.hin_r
         P1 = self.Pin_r
@@ -168,31 +168,38 @@ class CompressorPHYClass():
         T1_ref = Tsat_s_K + SH_Ref
         AS.update(CP.PT_INPUTS, P1, T1_ref)
         rho_ref = AS.rhomass() #[m^3/kg]
-
+        s1_ref = AS.smass()
+        h1_ref = AS.hmass()
+        
         # calculating mass flow rate from volumetric efficiency
-        mdot_ref = V_rev * N / 60 * rho_ref * vol_eff_value
-        
-        mdot_ref *= self.Vdot_ratio_M
-        
+        mdot_ref = V_rev * N / 60 * rho_ref * vol_eff_value        
         self.mdot_ref = mdot_ref
         
-        mdot = (1 + self.F_factor * (rho1 / rho_ref - 1)) * mdot_ref
         
-        # calculating outlet enthalpy from isentropic efficiency
+        # calculating power from reference state and isentropic efficiency
+        AS.update(CP.PSmass_INPUTS, P2, s1_ref)
+        h2s_ref = AS.hmass()
+        power_ref = mdot_ref * (h2s_ref - h1_ref)/ isen_eff_value
+        self.power_ref = power_ref
+
+        # calculating outlet isentropic enthalpy from actual state
         AS.update(CP.PSmass_INPUTS, P2, s1)
         h2s = AS.hmass()
-        h2 = (h2s - h1) / isen_eff_value * (1-fp) + h1
         
-        # calculating shaft power
-        shaft_power = mdot * (h2 - h1) / (1 - fp)
+        # calculating actual mass flow rate using superheat correction factor
+        mdot = (1 + self.F_factor * (rho1 / rho_ref - 1)) * mdot_ref
+        
+        # calculating actual power using superheat correction factor and assuming constant isentropic efficiency
+        power = power_ref * (mdot / mdot_ref) * ((h2s - h1) / (h2s_ref - h1_ref))
 
-        shaft_power *= self.Vdot_ratio_P
+        mdot *= self.Vdot_ratio_M
+        power *= self.Vdot_ratio_P
 
-        h2 = shaft_power * (1 - fp) / mdot + h1
+        h2 = power * (1 - fp) / mdot + h1
         
         # calculating electrical power
-        elect_power = shaft_power / elec_eff
-                
+        elect_power = power / elec_eff
+        
         # outlet properties
         AS.update(CP.HmassP_INPUTS, h2, P2)
         s2 = AS.smass()
@@ -202,7 +209,7 @@ class CompressorPHYClass():
         self.eta_v = mdot/(self.Displacement*rho1*self.act_speed/60)
 
         # calculating actual isentropic efficiency
-        self.eta_isen = mdot * (h2s - h1) / shaft_power
+        self.eta_isen = mdot * (h2s - h1) / power
         
         # saving results
         self.mdot_r_adj = (1 + self.F_factor * (rho1 / rho_ref - 1))
@@ -215,44 +222,44 @@ class CompressorPHYClass():
         self.hout_r = h2
         self.hin_r = h1
         self.mdot_r = mdot
-        self.power_mech = shaft_power
+        self.power_mech = power
         self.power_elec = elect_power
         self.Vdot_pumped = mdot/rho1
-        self.Q_amb = -shaft_power * fp
+        self.Q_amb = -power * fp
         self.PR = PR
         self.S_gen = mdot * (s2 - s1)
         
 if __name__=='__main__':
     def fun1():
         #Abstract State        
-        Ref = 'R410a'
-        Backend = 'HEOS'
+        Ref = 'R410A'
+        Backend = 'REFPROP'
         AS = CP.AbstractState(Backend, Ref)
-        Tcond = (125 - 32) * 5 / 9
-        Tevap = (51 - 32) * 5 / 9
+        Tcond = 50
+        Tevap = 7
         AS.update(CP.QT_INPUTS,1.0,Tcond+273.15)
         Pout_r = AS.p()
         AS.update(CP.QT_INPUTS,1.0,Tevap+273.15)
         Pin_r = AS.p()
-        DT = 7*5/9
+        DT = 5
         AS.update(CP.PT_INPUTS,Pin_r,Tevap+DT+273.15)
         hin_r = AS.hmass()
         kwds={
               'name': 'physics_generic_compressor',
-              'isen_eff': '0.7', # isentropic efficiency expression as f(Pressure ratio)
-              'vol_eff': '0.9', # volumetric efficiency expression as f(Pressure ratio)
+              'isen_eff': '0.65881 + 0.049088*PR**1 - 0.023303*PR**2 + 0.0020221*PR**3', # isentropic efficiency expression as f(Pressure ratio)
+              'vol_eff': '1.0761 - 0.10969*PR**1 + 0.0087367*PR**2', # volumetric efficiency expression as f(Pressure ratio)
               'AS': AS, #Abstract state
               'Ref': Ref, # refrgierant name
               'hin_r':hin_r, # inlet refrigerant enthalpy
               'Pin_r':Pin_r, # inlet refrigerant pressure
               'Pout_r':Pout_r, # outlet refrigerant pressure
-              'fp':0.1, #Fraction of electrical power lost as heat to ambient
-              'Vdot_ratio_P': 1.0, #Displacement Scale factor
-              'Vdot_ratio_M': 1.0, #Displacement Scale factor
-              'Displacement':0.000530671 * 0.3048**3, # displacement volume per revolution
-              'act_speed':5200, # operating speed of the compressor
+              'fp':0.05, #Fraction of electrical power lost as heat to ambient
+              'Vdot_ratio_P': 1.05, #Displacement Scale factor
+              'Vdot_ratio_M': 1.03, #Displacement Scale factor
+              'Displacement':21E-6, # displacement volume per revolution
+              'act_speed':2900, # operating speed of the compressor
               'Elec_eff':1.0, # electrical efficiency
-              'Suction_Ref':35+273, # electrical efficiency
+              'SH_Ref':11.1,
               'F_factor':0.75, # electrical efficiency
               }
         Comp=CompressorPHYClass(**kwds)
