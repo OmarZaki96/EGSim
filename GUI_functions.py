@@ -406,8 +406,6 @@ def write_comp_xml(comp,path):
             myfile.write(mydata)
         return 1
     except:
-        import traceback
-        print(traceback.format_exc())
         return 0
 
 def write_Fin_tube(HX,path):
