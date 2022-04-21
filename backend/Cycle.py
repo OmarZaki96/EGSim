@@ -1301,7 +1301,7 @@ class CycleClass():
         elif self.Mode == 'HP':
             self.Results = ValuesClass()
             
-            self.Results.Capacity = abs(self.Condenser.Results.Q) + abs(self.Evaporator.Fan.power)
+            self.Results.Capacity = abs(self.Condenser.Results.Q) + abs(self.Condenser.Fan.power)
             self.Results.Power = abs(self.Compressor.power_elec) + abs(self.Evaporator.Fan.power) + abs(self.Condenser.Fan.power)            
             self.Results.Charge_cycle = self.Evaporator.Results.Charge + self.Condenser.Results.Charge + self.Line_Liquid.Results.Charge + self.Line_Suction.Results.Charge + self.Line_Discharge.Results.Charge + self.Line_Discharge.Results.Charge
             self.Results.Charge_system = self.Results.Charge_cycle / (1 - self.Accum_charge_per)
